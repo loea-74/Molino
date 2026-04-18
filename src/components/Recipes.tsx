@@ -125,7 +125,7 @@ export default function Recipes() {
               </p>
               <button
                 onClick={() => setModalOpen(true)}
-                style={{ fontSize: 13, fontWeight: 500, color: "var(--maiz)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, borderBottom: "1px solid rgba(232,184,88,0.35)", paddingBottom: 3, background: "none", border: "none", borderBottom: "1px solid rgba(232,184,88,0.35)", cursor: "pointer", padding: "0 0 3px" }}
+                style={{ fontSize: 13, fontWeight: 500, color: "var(--maiz)", display: "inline-flex", alignItems: "center", gap: 8, background: "none", border: "none", borderBottom: "1px solid rgba(232,184,88,0.35)", cursor: "pointer", padding: "0 0 3px" }}
               >
                 {featured.cta[lang]} <IconArrow size={12} color="var(--maiz)" />
               </button>
