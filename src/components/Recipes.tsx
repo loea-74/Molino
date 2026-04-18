@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import { IconChevronLeft, IconChevronRight, IconArrow } from "./icons";
@@ -44,7 +45,7 @@ export default function Recipes() {
 
       {/* Header */}
       <div
-        style={{ padding: "0 48px", maxWidth: 1280, margin: "0 auto 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16 }}
+        style={{ padding: "0 20px", maxWidth: 1600, margin: "0 auto 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16 }}
         className="max-sm:!px-5"
       >
         <div>
@@ -88,9 +89,9 @@ export default function Recipes() {
       </div>
 
       {/* Bento grid */}
-      <div style={{ padding: "0 48px", maxWidth: 1280, margin: "0 auto" }} className="max-sm:!px-5">
+      <div style={{ padding: "0 20px", maxWidth: 1600, margin: "0 auto" }} className="max-sm:!px-5">
         <div
-          style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 640 }}
+          style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gridTemplateRows: "1fr 1fr", gap: 16, height: 760 }}
           className="max-md:!grid-cols-1 max-md:!h-auto max-md:!grid-rows-[none]"
         >
           {/* Featured card — spans 2 rows */}
@@ -105,7 +106,16 @@ export default function Recipes() {
             }}
             className="max-md:!min-h-[420px] max-md:!row-auto"
           >
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.96) 0%, rgba(26,18,5,0.35) 55%, transparent 100%)" }} />
+            {"image" in featured && featured.image && (
+              <Image
+                src={(featured as { image: string }).image}
+                alt={featured.title["es"]}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 60vw"
+              />
+            )}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.96) 0%, rgba(26,18,5,0.45) 55%, transparent 100%)" }} />
 
             {/* Date badge */}
             <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(245,237,224,0.12)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(245,237,224,0.18)", padding: "5px 14px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--crema-light)" }}>
@@ -113,7 +123,7 @@ export default function Recipes() {
             </div>
 
             {/* Content */}
-            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px 36px" }} className="max-sm:!p-6">
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "44px 44px" }} className="max-sm:!p-6">
               <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--maiz)", marginBottom: 12 }}>
                 {featured.kicker[lang]}
               </div>
@@ -149,6 +159,15 @@ export default function Recipes() {
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.8"; e.currentTarget.style.transform = "scale(0.985)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1)"; }}
               >
+                {"image" in r && r.image && (
+                  <Image
+                    src={(r as { image: string }).image}
+                    alt={r.title["es"]}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                )}
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.93) 0%, rgba(26,18,5,0.15) 60%, transparent 100%)" }} />
 
                 {/* Date badge */}
@@ -156,7 +175,7 @@ export default function Recipes() {
                   {r.date[lang]}
                 </div>
 
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "22px 26px" }}>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "28px 32px" }}>
                   <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--maiz)", marginBottom: 7 }}>
                     {r.kicker[lang]}
                   </div>

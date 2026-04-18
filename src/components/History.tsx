@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 
@@ -19,13 +20,14 @@ export default function History() {
       >
         {/* Photo */}
         <div style={{ position: "relative" }}>
-          <div
-            style={{ width: "100%", aspectRatio: "3/4", background: "rgba(255,255,255,0.08)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center" }}
-            aria-hidden="true"
-          >
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--linea)" }}>
-              {t.historyImgLabel}
-            </span>
+          <div style={{ width: "100%", aspectRatio: "3/4", borderRadius: 14, overflow: "hidden", position: "relative" }}>
+            <Image
+              src="/fotos/antigua.png"
+              alt="Foto antigua del Molino la Jalisciense"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
           <div style={{ position: "absolute", top: 16, left: 16, background: "var(--maiz)", color: "var(--grano)", padding: "6px 12px", borderRadius: 999, fontSize: 10, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>
             {t.historyBadge}
