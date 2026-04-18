@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "cacahuazintle",
+    "name": { "es": "Maíz cacahuazintle", "en": "Cacahuazintle corn" },
+    "tag": { "es": "Producto estrella", "en": "Signature" },
+    "description": {
+      "es": "Grande, blanco, perfecto para pozole. Se vende por kilo, descabezado y listo.",
+      "en": "Large, white kernels — the one you want for pozole. Sold by the kilo, husked and ready."
+    },
+    "unit": { "es": "por kilo", "en": "per kilo" },
+    "price": 98,
+    "image": "/fotos/cacahuazintle.jpg",
+    "imageAlt": "Maíz cacahuazintle",
+    "whatsappMessage": "Hola, me interesa comprar maíz cacahuazintle"
+  },
+  {
+    "slug": "harina-nixtamalizada",
+    "name": { "es": "Harina de maíz nixtamalizado", "en": "Nixtamalized corn flour" },
+    "tag": { "es": "Recién molida", "en": "Freshly milled" },
+    "description": {
+      "es": "Para tortillas, sopes y tlacoyos. Molida diariamente al pedido.",
+      "en": "For tortillas, sopes and tlacoyos. Milled daily to order."
+    },
+    "unit": { "es": "por kilo", "en": "per kilo" },
+    "price": null,
+    "image": "/fotos/harina-nixtamalizada.jpg",
+    "imageAlt": "Harina nixtamalizada",
+    "whatsappMessage": "Hola, me interesa comprar harina de maíz nixtamalizado"
+  },
+  {
+    "slug": "masa-tortillas",
+    "name": { "es": "Masa para tortillas", "en": "Fresh tortilla masa" },
+    "tag": { "es": "Del día", "en": "Same-day" },
+    "description": {
+      "es": "Masa fresca, lista para tortillear. Recomendamos recogerla antes de mediodía.",
+      "en": "Ready-to-press masa. We recommend picking it up before noon."
+    },
+    "unit": { "es": "por kilo", "en": "per kilo" },
+    "price": null,
+    "image": "/fotos/masa-tortillas.jpg",
+    "imageAlt": "Masa fresca",
+    "whatsappMessage": "Hola, me interesa comprar masa para tortillas"
+  },
+  {
+    "slug": "harinas-surtidas",
+    "name": { "es": "Harina de trigo y otras", "en": "Wheat & specialty flours" },
+    "tag": { "es": "Granel", "en": "Bulk" },
+    "description": {
+      "es": "Harinas blancas, integrales, para tamales y repostería tradicional.",
+      "en": "White, whole wheat, for tamales and traditional baking."
+    },
+    "unit": { "es": "consulta", "en": "ask us" },
+    "price": null,
+    "image": "/fotos/harinas-surtidas.jpg",
+    "imageAlt": "Harinas surtidas",
+    "whatsappMessage": "Hola, me interesa comprar harinas"
+  }
+]

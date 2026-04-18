@@ -1,0 +1,26 @@
+[
+  {
+    "quote": {
+      "es": "Vengo cada diciembre desde hace veinte años. El pozole de mi suegra no sabe igual con otro maíz.",
+      "en": "I've come every December for twenty years. My mother-in-law's pozole doesn't taste the same with any other corn."
+    },
+    "name": "Laura M.",
+    "meta": { "es": "Cliente desde 2005", "en": "Customer since 2005" }
+  },
+  {
+    "quote": {
+      "es": "Surtimos la cocina de tres restaurantes. Calidad pareja y respuesta rápida por WhatsApp.",
+      "en": "We stock three restaurants. Consistent quality and fast response on WhatsApp."
+    },
+    "name": "Restaurante La Milpa",
+    "meta": { "es": "Mayoreo · Roma Norte", "en": "Wholesale · Roma Norte" }
+  },
+  {
+    "quote": {
+      "es": "Don Rafa recuerda el pedido sin que se lo diga. Eso ya no existe en esta ciudad.",
+      "en": "Don Rafa remembers my order without me saying a word. That doesn't exist anymore in this city."
+    },
+    "name": "Carlos T.",
+    "meta": { "es": "Cliente desde 2011", "en": "Customer since 2011" }
+  }
+]

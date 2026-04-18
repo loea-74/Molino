@@ -1,0 +1,47 @@
+/* Design tokens — Molino la Jalisciense */
+:root {
+  /* Paleta */
+  --terracota: #B8542E;
+  --terracota-dark: #8B3E1F;
+  --maiz: #E8B858;
+  --maiz-light: #F2D58A;
+  --crema: #F5EDE0;
+  --crema-light: #FBF6ED;
+  --grano: #2A1D14;
+  --grano-soft: #4A3728;
+  --nopal: #556B3A;
+  --linea: #D9C8A8;
+
+  /* Tipografía */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Escala tipográfica */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 17px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 40px;
+  --text-4xl: 56px;
+  --text-5xl: 72px;
+  --text-hero: 108px;
+
+  /* Espaciado */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-full: 999px;
+}
