@@ -37,8 +37,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="antialiased font-body bg-crema-light text-grano-soft">
-        <LangProvider>{children}</LangProvider>
+      <body className="antialiased font-body bg-crema-light text-grano-soft" style={{ position: "relative" }}>
+        {/* Imagen de fondo translúcida */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 0,
+            backgroundImage: "url('/fotos/botes.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+            backgroundSize: "60%",
+            opacity: 0.07,
+            pointerEvents: "none",
+          }}
+        />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <LangProvider>{children}</LangProvider>
+        </div>
       </body>
     </html>
   );

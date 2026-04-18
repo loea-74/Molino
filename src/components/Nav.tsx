@@ -51,7 +51,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop nav */}
-        <div className="max-md:hidden" style={{ display: "flex", alignItems: "center", gap: 28 }}>
+        <div className="max-md:!hidden flex items-center" style={{ gap: 28 }}>
           {t.nav.map((label, i) => (
             <a key={navHrefs[i]} href={navHrefs[i]} style={{ fontSize: 14, color: "var(--grano)", textDecoration: "none", fontWeight: 500 }}>
               {label}
@@ -100,7 +100,7 @@ export default function Nav() {
         </div>
 
         {/* Mobile controls */}
-        <div className="md:hidden" style={{ display: "flex", gap: 10, alignItems: "center" }}>
+        <div className="md:!hidden flex items-center" style={{ gap: 10 }}>
           <button
             onClick={toggle}
             aria-pressed={lang === "en"}

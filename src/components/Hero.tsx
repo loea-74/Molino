@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import { IconWhatsApp, IconMap } from "./icons";
@@ -109,36 +110,47 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: image + floating price card */}
+        {/* Right: image + floating schedule card */}
         <div style={{ position: "relative" }}>
-          <div
-            style={{ width: "100%", aspectRatio: "4/5", background: "var(--linea)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center" }}
-            aria-hidden="true"
-          >
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--grano-soft)", textAlign: "center", padding: "0 16px" }}>
-              {lang === "es" ? "foto · maíz cacahuazintle en costal" : "photo · cacahuazintle corn in sack"}
-            </span>
+          <div style={{ width: "100%", aspectRatio: "4/5", borderRadius: 14, overflow: "hidden", position: "relative" }}>
+            <Image
+              src="/fotos/foto-frente.jpg"
+              alt="Fachada del Molino la Jalisciense"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
 
-          {/* Floating price card */}
+          {/* Floating schedule card */}
           <div
             style={{
-              position: "absolute", bottom: -24, left: -24,
+              position: "absolute", bottom: -28, left: -32,
               background: "var(--crema-light)", border: "1px solid var(--linea)",
-              padding: "16px 20px", borderRadius: 12,
-              boxShadow: "0 12px 40px -12px rgba(42, 29, 20, 0.25)",
+              padding: "22px 28px", borderRadius: 16,
+              boxShadow: "0 16px 48px -12px rgba(42, 29, 20, 0.28)",
+              minWidth: 230,
             }}
-            className="max-sm:!-bottom-4 max-sm:!left-3 max-sm:!px-3.5 max-sm:!py-3"
+            className="max-sm:!-bottom-4 max-sm:!left-3 max-sm:!px-4 max-sm:!py-4"
           >
-            <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.15em", color: "var(--grano-soft)", textTransform: "uppercase" }}>
-              {lang === "es" ? "Hoy" : "Today"}
+            <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", color: "var(--terracota)", textTransform: "uppercase", marginBottom: 14 }}>
+              {lang === "es" ? "Horario" : "Hours"}
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 22, marginTop: 4, color: "var(--grano)" }}>
-              Cacahuazintle
-            </div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginTop: 6 }}>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 32, color: "var(--terracota)", fontWeight: 500, lineHeight: 1 }}>$98</span>
-              <span style={{ fontSize: 11, color: "var(--grano-soft)" }}>/ kilo</span>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
+                <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
+                  {lang === "es" ? "Lun – Sáb" : "Mon – Sat"}
+                </span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>8am – 6pm</span>
+              </div>
+              <div style={{ height: 1, background: "var(--linea)" }} />
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
+                <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
+                  {lang === "es" ? "Domingo" : "Sunday"}
+                </span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>9am – 3pm</span>
+              </div>
             </div>
           </div>
         </div>

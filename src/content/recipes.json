@@ -9,7 +9,55 @@
     },
     "date": { "es": "12 Abr 2026", "en": "Apr 12, 2026" },
     "cta": { "es": "Leer receta", "en": "Read recipe" },
-    "image": "/fotos/pozole-rojo.jpg"
+    "image": "/fotos/pozole-rojo.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "El pozole rojo es uno de los platillos más representativos de la cocina mexicana. La clave está en el maíz cacahuazintle bien descabezado y en un chile ancho con guajillo bien tostado. Esta receta es de la familia García, clientes nuestros desde 1978.",
+        "ingredients": [
+          "1 kg de maíz cacahuazintle descabezado (del molino)",
+          "1 kg de carne de cerdo (cabeza, pierna o maciza)",
+          "6 chiles guajillo",
+          "3 chiles ancho",
+          "4 dientes de ajo",
+          "1 cebolla blanca",
+          "Orégano seco, sal al gusto"
+        ],
+        "steps": [
+          "Remoja el maíz desde la noche anterior en agua fría abundante.",
+          "Cuece el maíz en olla express por 45 min o hasta que florezca (abra).",
+          "Aparte, cuece la carne con ajo, cebolla y sal hasta que esté suave.",
+          "Desvena y tuesta los chiles en comal seco; remójalos 20 min en agua caliente.",
+          "Licúa los chiles con un poco del caldo, ajo y cebolla. Cuela.",
+          "Fríe la salsa en una olla con un poco de aceite hasta que cambie de color (5 min).",
+          "Incorpora el caldo de la carne y el maíz. Cocina 20 min más.",
+          "Ajusta sal y sirve con tostadas, rábano, lechuga, orégano y limón."
+        ],
+        "tip": "El maíz debe quedar bien florecido antes de agregar el caldo. Si el centro está duro, continúa la cocción."
+      },
+      "en": {
+        "intro": "Red pozole is one of the most iconic dishes in Mexican cooking. The secret lies in properly husked cacahuazintle corn and well-toasted ancho and guajillo chiles. This recipe comes from the García family, customers of ours since 1978.",
+        "ingredients": [
+          "1 kg husked cacahuazintle corn (from the mill)",
+          "1 kg pork (head, leg or shoulder)",
+          "6 guajillo chiles",
+          "3 ancho chiles",
+          "4 garlic cloves",
+          "1 white onion",
+          "Dried oregano, salt to taste"
+        ],
+        "steps": [
+          "Soak the corn overnight in plenty of cold water.",
+          "Cook the corn in a pressure cooker for 45 min until it blooms (opens up).",
+          "Separately, cook the pork with garlic, onion and salt until tender.",
+          "Devein and toast the chiles on a dry comal; soak 20 min in hot water.",
+          "Blend the chiles with some broth, garlic and onion. Strain.",
+          "Fry the sauce in a pot with a little oil until it darkens (5 min).",
+          "Add the pork broth and corn. Cook 20 more minutes.",
+          "Adjust salt and serve with tostadas, radish, lettuce, oregano and lime."
+        ],
+        "tip": "The corn must be fully bloomed before adding the broth. If the center is still hard, keep cooking."
+      }
+    }
   },
   {
     "slug": "como-descabezar-maiz",
@@ -21,7 +69,43 @@
     },
     "date": { "es": "03 Abr 2026", "en": "Apr 03, 2026" },
     "cta": { "es": "Leer guía", "en": "Read guide" },
-    "image": "/fotos/descabezado.jpg"
+    "image": "/fotos/descabezado.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "Descabezar el maíz es retirar el germen (la \"cabeza\" o punta negra) de cada grano. Es el paso que más se omite en las recetas caseras, y el que más afecta el resultado: sin descabezar, el pozole queda con textura pastosa y un sabor menos limpio.",
+        "ingredients": [
+          "Maíz cacahuazintle seco (cantidad deseada)",
+          "Cal (si vas a nixtamalizar antes)",
+          "Agua fría"
+        ],
+        "steps": [
+          "Extiende el maíz sobre una superficie plana y revisa grano por grano.",
+          "Localiza la punta oscura (germen) en uno de los extremos de cada grano.",
+          "Retírala pellizcando con las uñas o con un cuchillo pequeño.",
+          "En el molino lo hacemos con máquina descabezadora para garantizar uniformidad.",
+          "Una vez descabezado, lava el maíz tres veces en agua fría.",
+          "Remoja mínimo 8 horas antes de cocer para asegurar que florezca parejo."
+        ],
+        "tip": "En nuestro molino vendemos el maíz ya descabezado. Ahórrate el paso y pídelo listo para cocer."
+      },
+      "en": {
+        "intro": "Husking corn means removing the germ (the dark \"head\" or tip) from each kernel. It's the most skipped step in home recipes, and the one that impacts the result most: un-husked corn makes pozole pasty with a muddier flavor.",
+        "ingredients": [
+          "Dry cacahuazintle corn (desired amount)",
+          "Lime (if nixtamalizing first)",
+          "Cold water"
+        ],
+        "steps": [
+          "Spread the corn on a flat surface and inspect each kernel.",
+          "Find the dark tip (germ) at one end of each kernel.",
+          "Remove it by pinching with your nails or using a small knife.",
+          "At the mill we use a husking machine to ensure uniformity.",
+          "Once husked, rinse the corn three times in cold water.",
+          "Soak at least 8 hours before cooking so it blooms evenly."
+        ],
+        "tip": "At our mill we sell corn already husked. Skip the step — ask for it ready to cook."
+      }
+    }
   },
   {
     "slug": "calendario-pozolero",
@@ -33,7 +117,35 @@
     },
     "date": { "es": "28 Mar 2026", "en": "Mar 28, 2026" },
     "cta": { "es": "Ver calendario", "en": "See calendar" },
-    "image": "/fotos/calendario.jpg"
+    "image": "/fotos/calendario.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "Hay fechas en el año donde la demanda de maíz cacahuazintle se dispara. En esas semanas el molino trabaja al doble y el stock se agota rápido. Si sabes cuándo vas a hacer pozole, planea con anticipación.",
+        "ingredients": [],
+        "steps": [
+          "🗓 15 Sep — Fiestas Patrias. La semana previa es la más alta del año. Pide con 5 días de anticipación.",
+          "🗓 1–2 Nov — Día de Muertos. Ofrenda con pozole blanco: pide desde el 28 de octubre.",
+          "🗓 12 Dic — Virgen de Guadalupe. Pozoladas masivas en colonias. Stock limitado.",
+          "🗓 24–25 Dic — Navidad. Segunda temporada más alta. Pedidos desde el 18 de diciembre.",
+          "🗓 1 Ene — Año Nuevo. Pozole de resaca. Solemos tener stock, pero no garantizado.",
+          "🗓 Semana Santa — Pozole blanco. Demanda moderada, sin problema de stock normalmente."
+        ],
+        "tip": "Para eventos de más de 20 personas, escríbenos por WhatsApp con una semana de anticipación y apartamos tu cantidad."
+      },
+      "en": {
+        "intro": "There are dates throughout the year when demand for cacahuazintle corn spikes. During those weeks the mill runs double shifts and stock runs out fast. If you know when you're making pozole, plan ahead.",
+        "ingredients": [],
+        "steps": [
+          "🗓 Sep 15 — Independence Day. The prior week is the highest of the year. Order 5 days ahead.",
+          "🗓 Nov 1–2 — Day of the Dead. White pozole offerings: order from October 28.",
+          "🗓 Dec 12 — Virgin of Guadalupe. Massive pozoladas in neighborhoods. Limited stock.",
+          "🗓 Dec 24–25 — Christmas. Second busiest season. Orders from December 18.",
+          "🗓 Jan 1 — New Year. Hangover pozole. Usually have stock, but not guaranteed.",
+          "🗓 Holy Week — White pozole. Moderate demand, usually no stock issues."
+        ],
+        "tip": "For events of 20+ people, message us on WhatsApp a week ahead and we'll set aside your quantity."
+      }
+    }
   },
   {
     "slug": "harina-maiz-azul",
@@ -45,7 +157,41 @@
     },
     "date": { "es": "15 Mar 2026", "en": "Mar 15, 2026" },
     "cta": { "es": "Conocer más", "en": "Learn more" },
-    "image": "/fotos/maiz-azul.jpg"
+    "image": "/fotos/maiz-azul.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "A partir de abril de 2026, Molino la Jalisciense ofrece harina de maíz azul de Tlaxcala, molida en piedra el mismo día del pedido. El maíz azul tiene un perfil nutricional superior al blanco — más antocianinas, más proteína — y un sabor ligeramente más dulce y terroso.",
+        "ingredients": [
+          "Maíz azul tlaxcalteca (variedad nativa)",
+          "Molienda en piedra volcánica",
+          "Sin aditivos, sin conservadores"
+        ],
+        "steps": [
+          "Disponible únicamente por pedido anticipado vía WhatsApp.",
+          "Presentación: bolsa de 1 kg o costal de 5 kg.",
+          "Tiempo de entrega: 24–48 horas desde el pedido.",
+          "Ideal para: tlayudas, tostadas, tamales azules y tortillas de color.",
+          "Se recomienda refrigerar y consumir en menos de 5 días por ser harina fresca."
+        ],
+        "tip": "Las cantidades son limitadas según disponibilidad de cosecha. Escríbenos para saber si hay stock esta semana."
+      },
+      "en": {
+        "intro": "Starting April 2026, Molino la Jalisciense offers blue corn flour from Tlaxcala, stone-ground the same day as your order. Blue corn has a superior nutritional profile to white — more anthocyanins, more protein — and a slightly sweeter, earthier flavor.",
+        "ingredients": [
+          "Tlaxcalan blue corn (native variety)",
+          "Stone-ground on volcanic millstones",
+          "No additives, no preservatives"
+        ],
+        "steps": [
+          "Available by advance order via WhatsApp only.",
+          "Presentation: 1 kg bag or 5 kg sack.",
+          "Delivery time: 24–48 hours from order.",
+          "Ideal for: tlayudas, tostadas, blue tamales and colored tortillas.",
+          "Refrigerate and consume within 5 days as it is fresh flour."
+        ],
+        "tip": "Quantities are limited based on harvest availability. Message us to check stock for this week."
+      }
+    }
   },
   {
     "slug": "tamales-rajas-queso",
@@ -57,7 +203,55 @@
     },
     "date": { "es": "02 Mar 2026", "en": "Mar 02, 2026" },
     "cta": { "es": "Leer receta", "en": "Read recipe" },
-    "image": "/fotos/tamales-rajas.jpg"
+    "image": "/fotos/tamales-rajas.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "Los tamales de rajas con queso son el favorito de las posadas y reuniones familiares. Con la masa fresca del molino —ya con cal y punto exacto de humedad— el proceso es mucho más rápido que partir de cero.",
+        "ingredients": [
+          "1 kg de masa para tamales (del molino, fresca)",
+          "150 g de manteca de cerdo",
+          "1 taza de caldo de pollo tibio",
+          "1 cdta de polvo para hornear",
+          "Sal al gusto",
+          "4 chiles poblanos asados, pelados y en rajas",
+          "300 g de queso Oaxaca o manchego en tiras",
+          "Hojas de maíz remojadas"
+        ],
+        "steps": [
+          "Bate la manteca hasta que esté esponjosa y cremosa (5–8 min).",
+          "Añade la masa en porciones, alternando con el caldo tibio. Bate bien.",
+          "Incorpora el polvo para hornear y sal. La masa está lista cuando un pedacito flota en agua.",
+          "Extiende una cucharada generosa de masa sobre cada hoja de maíz.",
+          "Coloca una raja de chile poblano y una tira de queso al centro.",
+          "Dobla la hoja y cierra. Acomoda los tamales de pie en la vaporera.",
+          "Cuece al vapor 60–75 min. Están listos cuando la masa se despega sola de la hoja."
+        ],
+        "tip": "Si la masa la pides directamente en el molino dinos que es para tamales — ajustamos el punto de sal y humedad."
+      },
+      "en": {
+        "intro": "Rajas and cheese tamales are the favorite at posadas and family gatherings. With fresh masa from the mill — already nixtamalized and at the perfect moisture level — the process is much faster than starting from scratch.",
+        "ingredients": [
+          "1 kg fresh tamale masa (from the mill)",
+          "150 g lard",
+          "1 cup warm chicken broth",
+          "1 tsp baking powder",
+          "Salt to taste",
+          "4 roasted, peeled poblano chiles, cut into strips",
+          "300 g Oaxaca or manchego cheese, in strips",
+          "Soaked corn husks"
+        ],
+        "steps": [
+          "Beat the lard until fluffy and creamy (5–8 min).",
+          "Add masa in portions, alternating with warm broth. Beat well.",
+          "Mix in baking powder and salt. Masa is ready when a small piece floats in water.",
+          "Spread a generous spoonful of masa onto each corn husk.",
+          "Place a chile strip and cheese strip in the center.",
+          "Fold the husk and close. Stand the tamales upright in the steamer.",
+          "Steam 60–75 min. They're done when the masa peels cleanly off the husk."
+        ],
+        "tip": "If you order masa directly at the mill, tell us it's for tamales — we'll adjust the salt and moisture level."
+      }
+    }
   },
   {
     "slug": "don-rafa-50-anos",
@@ -69,6 +263,32 @@
     },
     "date": { "es": "18 Feb 2026", "en": "Feb 18, 2026" },
     "cta": { "es": "Leer historia", "en": "Read story" },
-    "image": "/fotos/don-rafa.jpg"
+    "image": "/fotos/don-rafa.jpg",
+    "fullContent": {
+      "es": {
+        "intro": "Rafael García Mendoza entró al molino a los 17 años para ayudar a su padre. Cincuenta años después, sigue ahí. Le hicimos unas preguntas el día de su aniversario.",
+        "ingredients": [],
+        "steps": [
+          "**¿Qué ha cambiado en 50 años?** — Las máquinas, la colonia, los precios. Antes un kilo costaba menos que un chicle. Ahora la gente llega en Uber.",
+          "**¿Qué no ha cambiado?** — El maíz. La gente que busca pozole de verdad sigue buscando lo mismo: grano grande, bien descabezado, fresco. Eso no cambia.",
+          "**¿Cuál es su receta favorita?** — El pozole de mi mamá, con el cacahuazintle de aquí. Sin trucos. Solo maíz bueno, caldo de cerdo y tiempo.",
+          "**¿Cuándo cierra el molino?** — Cuando yo cierre los ojos. Mientras pueda, aquí estamos.",
+          "**Mensaje para los clientes nuevos** — Bienvenidos. Aquí no hay sucursales, no hay franquicia, no hay cadena. Solo este local, esta familia y este maíz."
+        ],
+        "tip": "Don Rafa está en el molino de lunes a sábado desde las 8am. Si tienes dudas sobre el maíz o las preparaciones, pregúntale directamente."
+      },
+      "en": {
+        "intro": "Rafael García Mendoza entered the mill at 17 to help his father. Fifty years later, he's still there. We asked him a few questions on his anniversary.",
+        "ingredients": [],
+        "steps": [
+          "**What has changed in 50 years?** — The machines, the neighborhood, the prices. A kilo used to cost less than a piece of gum. Now people arrive by Uber.",
+          "**What hasn't changed?** — The corn. People who want real pozole keep looking for the same thing: big kernels, properly husked, fresh. That doesn't change.",
+          "**What's your favorite recipe?** — My mother's pozole, with the cacahuazintle from here. No tricks. Just good corn, pork broth and time.",
+          "**When does the mill close?** — When I close my eyes. As long as I can, we're here.",
+          "**Message for new customers** — Welcome. No branches, no franchise, no chain. Just this place, this family and this corn."
+        ],
+        "tip": "Don Rafa is at the mill Monday through Saturday from 8am. If you have questions about the corn or preparations, ask him directly."
+      }
+    }
   }
 ]
