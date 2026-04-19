@@ -68,7 +68,7 @@ export const L = {
     footerTag: "Molino artesanal — CDMX",
     footerSite: "Sitio",
     footerFollow: "Síguenos",
-    footerRights: "© 2026 Molino la Jalisciense · Todos los derechos reservados",
+    footerRights: "© 2026 Molino la Gran Jalisciense · Todos los derechos reservados",
     footerLocation: "CDMX · MÉX",
   },
   en: {
@@ -138,7 +138,7 @@ export const L = {
     footerTag: "Artisan mill — Mexico City",
     footerSite: "Site",
     footerFollow: "Follow us",
-    footerRights: "© 2026 Molino la Jalisciense · All rights reserved",
+    footerRights: "© 2026 Molino la Gran Jalisciense · All rights reserved",
     footerLocation: "CDMX · MEX",
   },
 } as const;

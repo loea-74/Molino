@@ -2,7 +2,8 @@
 
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
-import { SealLight, IconWhatsApp, IconInstagram, IconFacebook } from "./icons";
+import Image from "next/image";
+import { IconWhatsApp, IconInstagram, IconFacebook } from "./icons";
 
 const WHATSAPP = "https://wa.me/525543612880";
 
@@ -19,10 +20,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-              <SealLight size={48} />
+              <div style={{ width: 48, height: 48, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+                <Image src="/fotos/logo.jpg" alt="Logo" width={48} height={48} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+              </div>
               <div>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontStyle: "italic", color: "var(--crema-light)" }}>
-                  Molino la Jalisciense
+                  Molino la Gran Jalisciense
                 </div>
                 <div style={{ fontSize: 11, opacity: 0.6, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 2 }}>
                   {t.footerTag}
