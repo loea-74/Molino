@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import { IconArrow } from "./icons";
 import products from "@/content/products.json";
+import siteContent from "@/content/site.json";
 
 const PHONE = "525543612880";
 
@@ -11,9 +14,49 @@ function waUrl(msg: string) {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
+function CatalogModal({ onClose }: { onClose: () => void }) {
+  const { page1, page2 } = siteContent.catalog;
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 100,
+        background: "rgba(20,12,6,0.85)", backdropFilter: "blur(6px)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        padding: "24px 16px",
+      }}
+    >
+      <div onClick={(e) => e.stopPropagation()} style={{ maxWidth: 1000, width: "100%" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
+          <button
+            onClick={onClose}
+            style={{
+              background: "rgba(245,237,224,0.15)", border: "1px solid rgba(245,237,224,0.3)",
+              color: "#f5ede0", borderRadius: 999, padding: "6px 16px",
+              fontSize: 13, cursor: "pointer",
+            }}
+          >
+            Cerrar ✕
+          </button>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}
+          className="max-sm:!grid-cols-1">
+          <div style={{ borderRadius: 10, overflow: "hidden", position: "relative", aspectRatio: "3/4" }}>
+            <Image src={page1} alt="Folleto — frente" fill style={{ objectFit: "contain" }} sizes="50vw" />
+          </div>
+          <div style={{ borderRadius: 10, overflow: "hidden", position: "relative", aspectRatio: "3/4" }}>
+            <Image src={page2} alt="Folleto — reverso" fill style={{ objectFit: "contain" }} sizes="50vw" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Products() {
   const { lang } = useLang();
   const t = L[lang];
+  const [showCatalog, setShowCatalog] = useState(false);
 
   return (
     <section
@@ -40,7 +83,7 @@ export default function Products() {
           </p>
         </div>
 
-        {/* Cards — horizontal 2-col */}
+        {/* Cards */}
         <div
           style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}
           className="max-md:!grid-cols-1 max-md:!gap-4"
@@ -102,16 +145,16 @@ export default function Products() {
         </div>
 
         <div style={{ marginTop: 40, textAlign: "center" }}>
-          <a
-            href={`https://wa.me/525543612880?text=${encodeURIComponent(lang === "es" ? "Hola, me gustaría ver el catálogo completo" : "Hi, I'd like to see the full catalogue")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontSize: 14, color: "var(--grano)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, borderBottom: "1px solid var(--grano)", paddingBottom: 4 }}
+          <button
+            onClick={() => setShowCatalog(true)}
+            style={{ fontSize: 14, color: "var(--grano)", fontWeight: 500, background: "none", border: "none", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8, borderBottom: "1px solid var(--grano)", paddingBottom: 4 }}
           >
             {t.productsMore} <IconArrow size={14} />
-          </a>
+          </button>
         </div>
       </div>
+
+      {showCatalog && <CatalogModal onClose={() => setShowCatalog(false)} />}
     </section>
   );
 }

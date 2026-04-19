@@ -116,5 +116,9 @@
     "phone": "55 4361 2880",
     "whatsapp": "525543612880",
     "email": "contacto@molinolajalisciense.com.mx"
+  },
+  "catalog": {
+    "page1": "/fotos/folletodelane.png",
+    "page2": "/fotos/folletotracera.png"
   }
 }

@@ -27,6 +27,7 @@ type Site = {
     address: Lang; hours: Lang;
     phone: string; whatsapp: string; email: string;
   };
+  catalog: { page1: string; page2: string };
 };
 
 const inputStyle: React.CSSProperties = {
@@ -88,7 +89,7 @@ function SingleField({ lbl, value, onChange, placeholder }: { lbl: string; value
 
 export default function SiteEditor() {
   const [site, setSite] = useState<Site | null>(null);
-  const [section, setSection] = useState<"hero" | "history" | "visit">("hero");
+  const [section, setSection] = useState<"hero" | "history" | "visit" | "catalog">("hero");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -135,7 +136,7 @@ export default function SiteEditor() {
 
       {/* Sub-tabs */}
       <div style={{ display: "flex", gap: 6, marginBottom: 28, borderBottom: "1.5px solid #e0d4c0" }}>
-        {([["hero", "01 · Inicio"], ["history", "03 · Historia"], ["visit", "06 · Visítanos"]] as const).map(([key, lbl]) => (
+        {([["hero", "01 · Inicio"], ["history", "03 · Historia"], ["visit", "06 · Visítanos"], ["catalog", "Folleto"]] as const).map(([key, lbl]) => (
           <button key={key} onClick={() => setSection(key)}
             style={{ padding: "8px 18px", border: "none", cursor: "pointer", fontSize: 13, fontWeight: 500, background: "none",
               borderBottom: section === key ? "2.5px solid #8b3e1f" : "2.5px solid transparent",
@@ -224,6 +225,20 @@ export default function SiteEditor() {
             <SingleField lbl="WhatsApp (solo números, sin +)" value={site.visit.whatsapp} onChange={(v) => setVisit("whatsapp", v)} placeholder="525543612880" />
           </div>
           <SingleField lbl="Correo electrónico" value={site.visit.email} onChange={(v) => setVisit("email", v)} placeholder="contacto@..." />
+        </div>
+      )}
+
+      {!loading && site && section === "catalog" && (
+        <div>
+          <p style={{ fontSize: 13, color: "#9a6040", marginBottom: 20 }}>
+            Las dos imágenes se muestran en el modal al hacer clic en &ldquo;Ver catálogo completo&rdquo;. Usa nombres de archivo en <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code>.
+          </p>
+          <SingleField lbl="Página 1 — frente del folleto" value={site.catalog.page1}
+            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page1: v } } : s)}
+            placeholder="/fotos/folletodelane.png" />
+          <SingleField lbl="Página 2 — reverso del folleto" value={site.catalog.page2}
+            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page2: v } } : s)}
+            placeholder="/fotos/folletotracera.png" />
         </div>
       )}
     </div>
