@@ -1,0 +1,21 @@
+import { NextRequest, NextResponse } from "next/server";
+
+// Solo bloquea acceso directo a la API de recetas sin cookie
+// La página /admin se protege en el servidor (muestra login si no hay sesión)
+export function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl;
+
+  // Bloquear /api/admin/recipes sin cookie de sesión
+  if (pathname.startsWith("/api/admin/recipes")) {
+    const token = req.cookies.get("admin_token")?.value;
+    if (!token) {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ["/api/admin/:path*"],
+};
