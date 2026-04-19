@@ -3,12 +3,13 @@
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import { IconWhatsApp, IconMail } from "./icons";
-
-const WHATSAPP = "https://wa.me/525543612880";
+import siteContent from "@/content/site.json";
 
 export default function Visit() {
   const { lang } = useLang();
   const t = L[lang];
+  const v = siteContent.visit;
+  const WHATSAPP = `https://wa.me/${v.whatsapp}`;
 
   return (
     <section
@@ -26,18 +27,18 @@ export default function Visit() {
             {t.visitEyebrow}
           </div>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 5.5vw, 72px)", lineHeight: 0.98, fontWeight: 300, margin: "0 0 20px", letterSpacing: "-0.03em", color: "var(--crema-light)" }}>
-            {t.visitTitle}
+            {v.title[lang]}
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.55, maxWidth: 480, margin: "0 0 28px", color: "var(--crema-light)", opacity: 0.92 }} className="max-sm:!text-sm">
-            {t.visitBody}
+            {v.body[lang]}
           </p>
 
           {/* Notice */}
           <div style={{ background: "rgba(42, 29, 20, 0.25)", border: "1px solid rgba(245, 237, 224, 0.3)", borderRadius: 12, padding: "18px 22px", display: "flex", gap: 14, alignItems: "flex-start" }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", background: "var(--maiz)", color: "var(--grano)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14 }} aria-hidden="true">!</div>
             <div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 500, marginBottom: 4, color: "var(--crema-light)" }}>{t.noticeTitle}</div>
-              <div style={{ fontSize: 13, lineHeight: 1.45, opacity: 0.9, color: "var(--crema-light)" }}>{t.noticeBody}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 500, marginBottom: 4, color: "var(--crema-light)" }}>{v.noticeTitle[lang]}</div>
+              <div style={{ fontSize: 13, lineHeight: 1.45, opacity: 0.9, color: "var(--crema-light)" }}>{v.noticeBody[lang]}</div>
             </div>
           </div>
         </div>
@@ -58,20 +59,20 @@ export default function Visit() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             <div>
               <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.7, marginBottom: 6 }}>{t.visitAddressL}</div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, lineHeight: 1.4, whiteSpace: "pre-line", color: "var(--crema-light)" }} className="max-sm:!text-base">{t.visitAddress}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, lineHeight: 1.4, whiteSpace: "pre-line", color: "var(--crema-light)" }} className="max-sm:!text-base">{v.address[lang]}</div>
             </div>
             <div>
               <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.7, marginBottom: 6 }}>{t.visitHoursL}</div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, lineHeight: 1.4, whiteSpace: "pre-line", color: "var(--crema-light)" }} className="max-sm:!text-base">{t.visitHours}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, lineHeight: 1.4, whiteSpace: "pre-line", color: "var(--crema-light)" }} className="max-sm:!text-base">{v.hours[lang]}</div>
             </div>
           </div>
 
           <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid rgba(245, 237, 224, 0.25)", display: "flex", flexDirection: "column", gap: 10 }}>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, fontWeight: 500 }}>
-              <IconWhatsApp size={18} color="var(--crema-light)" /> 55 4361 2880
+              <IconWhatsApp size={18} color="var(--crema-light)" /> {v.phone}
             </a>
-            <a href="mailto:contacto@molinolajalisciense.com.mx" style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, opacity: 0.85 }}>
-              <IconMail size={18} /> contacto@molinolajalisciense.com.mx
+            <a href={`mailto:${v.email}`} style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, opacity: 0.85 }}>
+              <IconMail size={18} /> {v.email}
             </a>
           </div>
         </div>

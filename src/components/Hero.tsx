@@ -2,20 +2,19 @@
 
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
 import { IconWhatsApp, IconMap } from "./icons";
-
-const WHATSAPP = "https://wa.me/525543612880?text=Hola%2C%20me%20interesa%20hacer%20un%20pedido";
-const MAPS = "https://maps.google.com/?q=Abraham+Gonz%C3%A1lez+143+Ju%C3%A1rez+CDMX";
+import siteContent from "@/content/site.json";
 
 export default function Hero() {
   const { lang } = useLang();
-  const t = L[lang];
+  const h = siteContent.hero;
+  const WHATSAPP = `https://wa.me/${h.whatsapp}?text=Hola%2C%20me%20interesa%20hacer%20un%20pedido`;
+  const MAPS = "https://maps.google.com/?q=Abraham+Gonz%C3%A1lez+143+Ju%C3%A1rez+CDMX";
 
   const stats = [
-    { n: t.heroStat1N, l: t.heroStat1L },
-    { n: t.heroStat2N, l: t.heroStat2L },
-    { n: t.heroStat3N, l: t.heroStat3L },
+    { n: h.stat1.number, l: h.stat1.label[lang] },
+    { n: h.stat2.number, l: h.stat2.label[lang] },
+    { n: h.stat3.number, l: h.stat3.label[lang] },
   ];
 
   return (
@@ -28,7 +27,7 @@ export default function Hero() {
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 28 }}>
         <div style={{ width: 28, height: 1, background: "var(--terracota)" }} />
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--terracota)" }}>
-          {t.heroPill}
+          {h.pill[lang]}
         </span>
       </div>
 
@@ -50,7 +49,7 @@ export default function Hero() {
               color: "var(--grano)",
             }}
           >
-            {t.heroTitle.map((line, i) => (
+            {h.title[lang].map((line: string, i: number) => (
               <div
                 key={i}
                 style={{
@@ -65,7 +64,7 @@ export default function Hero() {
           </h1>
 
           <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--grano-soft)", maxWidth: 560, marginTop: 32 }} className="max-sm:!text-base max-sm:!mt-6">
-            {t.heroBody}
+            {h.body[lang]}
           </p>
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 36 }} className="max-sm:!mt-6">
@@ -84,9 +83,9 @@ export default function Hero() {
               className="max-sm:!text-sm max-sm:!px-5 max-sm:!py-3.5"
             >
               <IconWhatsApp size={18} color="var(--crema-light)" />
-              {t.heroCta1}
+              {lang === "es" ? "Pedir por WhatsApp" : "Order on WhatsApp"}
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, opacity: 0.7, marginLeft: 4 }}>
-                {t.heroPhone}
+                {h.phone}
               </span>
             </a>
 
@@ -114,7 +113,7 @@ export default function Hero() {
         <div style={{ position: "relative" }}>
           <div style={{ width: "100%", aspectRatio: "4/5", borderRadius: 14, overflow: "hidden", position: "relative" }}>
             <Image
-              src="/fotos/foto-frente.jpg"
+              src={h.image}
               alt="Fachada del Molino la Jalisciense"
               fill
               style={{ objectFit: "cover" }}
@@ -140,16 +139,16 @@ export default function Hero() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
                 <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
-                  {lang === "es" ? "Lun – Sáb" : "Mon – Sat"}
+                  {h.hours.weekdays[lang]}
                 </span>
-                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>8am – 6pm</span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>{h.hours.weekdayHours}</span>
               </div>
               <div style={{ height: 1, background: "var(--linea)" }} />
               <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
                 <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
-                  {lang === "es" ? "Domingo" : "Sunday"}
+                  {h.hours.sunday[lang]}
                 </span>
-                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>9am – 3pm</span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>{h.hours.sundayHours}</span>
               </div>
             </div>
           </div>
@@ -174,7 +173,7 @@ export default function Hero() {
           </div>
         ))}
         <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", color: "var(--grano-soft)", textAlign: "right", letterSpacing: "0.1em", textTransform: "uppercase" }} className="max-md:hidden">
-          {t.heroAddress}
+          {h.address[lang]}
         </div>
       </div>
     </section>

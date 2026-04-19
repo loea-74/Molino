@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "pill": {
+      "es": "Molino artesanal · CDMX · Desde 1962",
+      "en": "Artisan mill · Mexico City · Since 1962"
+    },
+    "title": {
+      "es": ["Maíz", "cacahuazintle", "molido fresco,", "todos los días."],
+      "en": ["Cacahuazintle", "corn, freshly", "milled — every", "single day."]
+    },
+    "body": {
+      "es": "Desde hace más de sesenta años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
+      "en": "For over sixty years, in the heart of Colonia Juárez, we've been milling corn and flours for kitchens that take their pozole, tamales and homemade tortillas seriously."
+    },
+    "phone": "55 4361 2880",
+    "whatsapp": "525543612880",
+    "address": {
+      "es": "Abraham González 143 · CDMX",
+      "en": "Abraham González 143 · CDMX"
+    },
+    "image": "/fotos/foto-frente.jpg",
+    "stat1": { "number": "3", "label": { "es": "generaciones", "en": "generations" } },
+    "stat2": { "number": "60+", "label": { "es": "años moliendo", "en": "years milling" } },
+    "stat3": { "number": "1", "label": { "es": "sucursal única", "en": "single location" } },
+    "hours": {
+      "weekdays": { "es": "Lun – Sáb", "en": "Mon – Sat" },
+      "weekdayHours": "8am – 6pm",
+      "sunday": { "es": "Domingo", "en": "Sunday" },
+      "sundayHours": "9am – 3pm"
+    }
+  },
+  "history": {
+    "title": {
+      "es": "Tres generaciones en la colonia Juárez.",
+      "en": "Three generations in Colonia Juárez."
+    },
+    "body1": {
+      "es": "El Molino abrió sus puertas en 1962 en Abraham González 143. Desde entonces no nos hemos movido — y no pensamos hacerlo.",
+      "en": "The mill opened its doors in 1962 at Abraham González 143. We haven't moved since — and we don't plan to."
+    },
+    "body2": {
+      "es": "Nuestros clientes, muchos de ellos hijos y nietos de nuestros primeros clientes, vienen por lo mismo: maíz molido fresco, atención directa del dueño y precio justo.",
+      "en": "Many of our customers today are the children and grandchildren of our first customers, and they come for the same thing: fresh-milled corn, the owner at the counter, and a fair price."
+    },
+    "quote": {
+      "es": "\u201cAquí el maíz se huele antes de verse.\u201d",
+      "en": "\u201cHere, you smell the corn before you see it.\u201d"
+    },
+    "caption": {
+      "es": "— Don Rafael, tercera generación",
+      "en": "— Don Rafael, third generation"
+    },
+    "badge": {
+      "es": "Archivo · 1975",
+      "en": "Archive · 1975"
+    },
+    "image": "/fotos/antigua.png"
+  },
+  "visit": {
+    "title": {
+      "es": "Ven al molino.",
+      "en": "Come to the mill."
+    },
+    "body": {
+      "es": "No tenemos sucursales ni franquicias. Un solo lugar, el de siempre, en la colonia Juárez.",
+      "en": "No branches, no franchises. One place, the same one, in Colonia Juárez."
+    },
+    "noticeTitle": {
+      "es": "Un solo local, sin sucursales.",
+      "en": "One shop. No branches."
+    },
+    "noticeBody": {
+      "es": "Si alguien te vende maíz diciendo que es nuestro y no estás aquí, en Abraham González 143 — no lo es. Gracias por cuidarnos.",
+      "en": "If someone is selling you \"our\" corn anywhere other than here, at Abraham González 143 — it isn't ours. Thanks for looking out for us."
+    },
+    "address": {
+      "es": "Abraham González 143, L1\nJuárez, Cuauhtémoc\n06600 CDMX",
+      "en": "Abraham González 143, L1\nJuárez, Cuauhtémoc\n06600 Mexico City"
+    },
+    "hours": {
+      "es": "Lunes a sábado\n08:00 – 18:00",
+      "en": "Monday to Saturday\n08:00 – 18:00"
+    },
+    "phone": "55 4361 2880",
+    "whatsapp": "525543612880",
+    "email": "contacto@molinolajalisciense.com.mx"
+  }
+}

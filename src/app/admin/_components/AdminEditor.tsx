@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ProductEditor from "./ProductEditor";
+import SiteEditor from "./SiteEditor";
+import TestimonialsEditor from "./TestimonialsEditor";
 
 type LangContent = { es: string; en: string };
 type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -200,7 +202,7 @@ const inputStyle: React.CSSProperties = {
 
 export default function AdminEditor() {
   const router = useRouter();
-  const [tab, setTab] = useState<"recetas" | "catalogo">("recetas");
+  const [tab, setTab] = useState<"recetas" | "catalogo" | "secciones" | "testimonios">("recetas");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [sha, setSha] = useState("");
   const [loading, setLoading] = useState(true);
@@ -258,7 +260,7 @@ export default function AdminEditor() {
 
         {/* Tabs */}
         <div style={{ display: "flex", gap: 8, marginBottom: 32, borderBottom: "1.5px solid #e0d4c0", paddingBottom: 0 }}>
-          {([["recetas", "Recetas y noticias"], ["catalogo", "Catálogo de productos"]] as const).map(([key, label]) => (
+          {([["recetas", "Recetas y noticias"], ["catalogo", "Catálogo"], ["secciones", "Secciones"], ["testimonios", "Testimonios"]] as const).map(([key, label]) => (
             <button
               key={key}
               onClick={() => { setTab(key); setMsg(""); }}
@@ -308,6 +310,12 @@ export default function AdminEditor() {
 
         {/* Catálogo */}
         {tab === "catalogo" && <ProductEditor />}
+
+        {/* Secciones */}
+        {tab === "secciones" && <SiteEditor />}
+
+        {/* Testimonios */}
+        {tab === "testimonios" && <TestimonialsEditor />}
       </div>
     </div>
   );
