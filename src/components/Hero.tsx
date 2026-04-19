@@ -153,7 +153,7 @@ export default function Hero() {
             <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", color: "var(--terracota)", textTransform: "uppercase", marginBottom: 10 }}>
               {h.heroNotice.title[lang]}
             </div>
-            <div style={{ fontSize: 14, color: "var(--grano)", lineHeight: 1.55 }}>
+            <div style={{ fontSize: 14, color: "var(--grano)", lineHeight: 1.55, whiteSpace: "pre-wrap", fontFamily: "var(--font-mono)" }}>
               <MiniMd text={h.heroNotice.body[lang]} />
             </div>
           </div>
