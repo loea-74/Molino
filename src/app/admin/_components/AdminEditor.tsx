@@ -14,6 +14,7 @@ type Recipe = {
   date: LangContent;
   cta: LangContent;
   image: string;
+  video?: string;
   fullContent: { es: FullLang; en: FullLang };
 };
 
@@ -114,7 +115,7 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
           ))}
 
           {/* Imagen */}
-          <div style={{ marginBottom: 20 }}>
+          <div style={{ marginBottom: 16 }}>
             <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 6 }}>
               Imagen (nombre de archivo en <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code>)
             </div>
@@ -122,6 +123,22 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
               value={recipe.image}
               onChange={(e) => setField("image", e.target.value)}
               placeholder="/fotos/mi-foto.jpg"
+              style={inputStyle}
+            />
+          </div>
+
+          {/* Video */}
+          <div style={{ marginBottom: 20 }}>
+            <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 4 }}>
+              Video (opcional — se usa solo si no hay imagen)
+            </div>
+            <div style={{ fontSize: 11, color: "#b08060", marginBottom: 6 }}>
+              Archivo local: <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code> · o URL externa
+            </div>
+            <input
+              value={recipe.video ?? ""}
+              onChange={(e) => setField("video", e.target.value)}
+              placeholder="/fotos/mi-video.mp4"
               style={inputStyle}
             />
           </div>
