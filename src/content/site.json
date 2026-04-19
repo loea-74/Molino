@@ -5,8 +5,18 @@
       "en": "Artisan mill · Mexico City · Since 1962"
     },
     "title": {
-      "es": ["Maíz", "cacahuazintle", "molido fresco,", "todos los días."],
-      "en": ["Cacahuazintle", "corn, freshly", "milled — every", "single day."]
+      "es": [
+        "Maíz",
+        "cacahuazintle",
+        "molido fresco,",
+        "todos los días."
+      ],
+      "en": [
+        "Cacahuazintle",
+        "corn, freshly",
+        "milled — every",
+        "single day."
+      ]
     },
     "body": {
       "es": "Desde hace más de sesenta años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
@@ -19,12 +29,36 @@
       "en": "Abraham González 143 · CDMX"
     },
     "image": "/fotos/foto-frente.jpg",
-    "stat1": { "number": "3", "label": { "es": "generaciones", "en": "generations" } },
-    "stat2": { "number": "60+", "label": { "es": "años moliendo", "en": "years milling" } },
-    "stat3": { "number": "1", "label": { "es": "sucursal única", "en": "single location" } },
+    "stat1": {
+      "number": "4",
+      "label": {
+        "es": "generaciones",
+        "en": "generations"
+      }
+    },
+    "stat2": {
+      "number": "100+",
+      "label": {
+        "es": "Conservando tradiciones",
+        "en": "Preserving traditions"
+      }
+    },
+    "stat3": {
+      "number": "1",
+      "label": {
+        "es": "sucursal única",
+        "en": "single location"
+      }
+    },
     "heroNotice": {
-      "title": { "es": "Horario", "en": "Hours" },
-      "body": { "es": "Lun – Sáb: 8am – 6pm\nDomingo: 9am – 3pm", "en": "Mon – Sat: 8am – 6pm\nSunday: 9am – 3pm" }
+      "title": {
+        "es": "Horario",
+        "en": "Hours"
+      },
+      "body": {
+        "es": "Lun – Sáb:      8am – 6pm\nDomingo:       9am – 3pm",
+        "en": "Mon – Sat:      8am – 6pm\nSunday:          9am – 3pm"
+      }
     }
   },
   "history": {
@@ -41,8 +75,8 @@
       "en": "Many of our customers today are the children and grandchildren of our first customers, and they come for the same thing: fresh-milled corn, the owner at the counter, and a fair price."
     },
     "quote": {
-      "es": "\u201cAquí el maíz se huele antes de verse.\u201d",
-      "en": "\u201cHere, you smell the corn before you see it.\u201d"
+      "es": "“Aquí el maíz se huele antes de verse.”",
+      "en": "“Here, you smell the corn before you see it.”"
     },
     "caption": {
       "es": "— Don Rafael, tercera generación",
