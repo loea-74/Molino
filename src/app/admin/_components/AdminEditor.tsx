@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import ProductEditor from "./ProductEditor";
 
 type LangContent = { es: string; en: string };
 type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -199,6 +200,7 @@ const inputStyle: React.CSSProperties = {
 
 export default function AdminEditor() {
   const router = useRouter();
+  const [tab, setTab] = useState<"recetas" | "catalogo">("recetas");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [sha, setSha] = useState("");
   const [loading, setLoading] = useState(true);
@@ -253,33 +255,59 @@ export default function AdminEditor() {
       </div>
 
       <div style={{ maxWidth: 860, margin: "0 auto", padding: "32px 24px" }}>
-        {/* Save bar */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
-          <h1 style={{ fontFamily: "serif", fontSize: 24, fontWeight: 400, color: "#3a2010", margin: 0 }}>Recetas y noticias</h1>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            {msg && <span style={{ fontSize: 13, color: msg.startsWith("✓") ? "#2d7a3a" : "#c0392b" }}>{msg}</span>}
+
+        {/* Tabs */}
+        <div style={{ display: "flex", gap: 8, marginBottom: 32, borderBottom: "1.5px solid #e0d4c0", paddingBottom: 0 }}>
+          {([["recetas", "Recetas y noticias"], ["catalogo", "Catálogo de productos"]] as const).map(([key, label]) => (
             <button
-              onClick={handleSave}
-              disabled={saving || loading}
+              key={key}
+              onClick={() => { setTab(key); setMsg(""); }}
               style={{
-                padding: "10px 24px", borderRadius: 999, border: "none",
-                background: saving || loading ? "#c4a87a" : "#8b3e1f",
-                color: "#f5ede0", fontSize: 14, fontWeight: 500,
-                cursor: saving || loading ? "default" : "pointer",
+                padding: "10px 22px", border: "none", cursor: "pointer", fontSize: 14, fontWeight: 500,
+                background: "none", borderBottom: tab === key ? "2.5px solid #8b3e1f" : "2.5px solid transparent",
+                color: tab === key ? "#8b3e1f" : "#9a6040",
+                marginBottom: -1.5,
+                transition: "all 150ms",
               }}
             >
-              {saving ? "Guardando..." : "Guardar y publicar"}
+              {label}
             </button>
-          </div>
+          ))}
         </div>
 
-        {loading ? (
-          <div style={{ textAlign: "center", color: "#9a6040", padding: 48 }}>Cargando recetas...</div>
-        ) : (
-          recipes.map((r, i) => (
-            <RecipeCard key={r.slug} recipe={r} index={i} onChange={(updated) => updateRecipe(i, updated)} />
-          ))
+        {/* Recetas */}
+        {tab === "recetas" && (
+          <>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
+              <h1 style={{ fontFamily: "serif", fontSize: 24, fontWeight: 400, color: "#3a2010", margin: 0 }}>Recetas y noticias</h1>
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                {msg && <span style={{ fontSize: 13, color: msg.startsWith("✓") ? "#2d7a3a" : "#c0392b" }}>{msg}</span>}
+                <button
+                  onClick={handleSave}
+                  disabled={saving || loading}
+                  style={{
+                    padding: "10px 24px", borderRadius: 999, border: "none",
+                    background: saving || loading ? "#c4a87a" : "#8b3e1f",
+                    color: "#f5ede0", fontSize: 14, fontWeight: 500,
+                    cursor: saving || loading ? "default" : "pointer",
+                  }}
+                >
+                  {saving ? "Guardando..." : "Guardar y publicar"}
+                </button>
+              </div>
+            </div>
+            {loading ? (
+              <div style={{ textAlign: "center", color: "#9a6040", padding: 48 }}>Cargando recetas...</div>
+            ) : (
+              recipes.map((r, i) => (
+                <RecipeCard key={r.slug} recipe={r} index={i} onChange={(updated) => updateRecipe(i, updated)} />
+              ))
+            )}
+          </>
         )}
+
+        {/* Catálogo */}
+        {tab === "catalogo" && <ProductEditor />}
       </div>
     </div>
   );

@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Bloquear /api/admin/recipes sin cookie de sesión
-  if (pathname.startsWith("/api/admin/recipes")) {
+  // Bloquear rutas admin sin cookie de sesión
+  if (pathname.startsWith("/api/admin/recipes") || pathname.startsWith("/api/admin/products")) {
     const token = req.cookies.get("admin_token")?.value;
     if (!token) {
       return NextResponse.json({ error: "No autorizado" }, { status: 401 });
