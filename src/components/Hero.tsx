@@ -104,7 +104,7 @@ export default function Hero() {
               className="max-sm:!text-sm max-sm:!px-4 max-sm:!py-3.5"
             >
               <IconMap size={16} />
-              {t.heroCta2}
+              {lang === "es" ? "Cómo llegar" : "Get directions"}
             </a>
           </div>
         </div>
