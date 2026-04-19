@@ -24,45 +24,41 @@ function CatalogModal({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, zIndex: 100,
-        background: "rgba(20,12,6,0.92)", backdropFilter: "blur(8px)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "16px",
+        background: "rgba(20,12,6,0.96)",
+        display: "flex", flexDirection: "column",
       }}
     >
-      <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 640, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+      {/* Top bar */}
+      <div onClick={(e) => e.stopPropagation()} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 20px", flexShrink: 0 }}>
+        <span style={{ color: "rgba(245,237,224,0.6)", fontSize: 13, fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+          {current + 1} / {pages.length}
+        </span>
+        <button onClick={onClose} style={{ background: "rgba(245,237,224,0.12)", border: "1px solid rgba(245,237,224,0.25)", color: "#f5ede0", borderRadius: 999, padding: "6px 18px", fontSize: 13, cursor: "pointer" }}>
+          Cerrar ✕
+        </button>
+      </div>
 
-        {/* Top bar */}
-        <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ color: "rgba(245,237,224,0.6)", fontSize: 13, fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
-            {current + 1} / {pages.length}
-          </span>
-          <button onClick={onClose} style={{ background: "rgba(245,237,224,0.12)", border: "1px solid rgba(245,237,224,0.25)", color: "#f5ede0", borderRadius: 999, padding: "6px 16px", fontSize: 13, cursor: "pointer" }}>
-            Cerrar ✕
-          </button>
-        </div>
+      {/* Image — fills all remaining space */}
+      <div onClick={(e) => e.stopPropagation()} style={{ flex: 1, position: "relative", overflow: "hidden" }}>
+        <Image src={pages[current]} alt={`Folleto página ${current + 1}`} fill style={{ objectFit: "contain" }} sizes="100vw" priority />
+      </div>
 
-        {/* Image */}
-        <div style={{ width: "100%", borderRadius: 12, overflow: "hidden", position: "relative", aspectRatio: "3/4", background: "#fff" }}>
-          <Image src={pages[current]} alt={`Folleto página ${current + 1}`} fill style={{ objectFit: "contain" }} sizes="640px" priority />
-        </div>
-
-        {/* Navigation */}
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <button
-            onClick={() => setCurrent(0)}
-            disabled={current === 0}
-            style={{ padding: "10px 24px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 0 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 14, cursor: current === 0 ? "default" : "pointer", opacity: current === 0 ? 0.4 : 1 }}
-          >
-            ← Frente
-          </button>
-          <button
-            onClick={() => setCurrent(1)}
-            disabled={current === 1}
-            style={{ padding: "10px 24px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 1 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 14, cursor: current === 1 ? "default" : "pointer", opacity: current === 1 ? 0.4 : 1 }}
-          >
-            Reverso →
-          </button>
-        </div>
+      {/* Navigation */}
+      <div onClick={(e) => e.stopPropagation()} style={{ display: "flex", gap: 12, justifyContent: "center", padding: "14px 20px", flexShrink: 0 }}>
+        <button
+          onClick={() => setCurrent(0)}
+          disabled={current === 0}
+          style={{ padding: "12px 32px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 0 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 15, cursor: current === 0 ? "default" : "pointer", opacity: current === 0 ? 0.4 : 1 }}
+        >
+          ← Frente
+        </button>
+        <button
+          onClick={() => setCurrent(1)}
+          disabled={current === 1}
+          style={{ padding: "12px 32px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 1 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 15, cursor: current === 1 ? "default" : "pointer", opacity: current === 1 ? 0.4 : 1 }}
+        >
+          Reverso →
+        </button>
       </div>
     </div>
   );
