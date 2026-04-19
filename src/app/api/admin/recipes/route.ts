@@ -49,7 +49,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No autorizado" }, { status: 401 });
   }
   try {
-    const { recipes, sha } = await req.json();
+    const { recipes } = await req.json();
+    // Siempre obtener el SHA fresco para evitar conflictos
+    const current = await getFileFromGitHub();
+    const sha = current.sha;
     const content = Buffer.from(JSON.stringify(recipes, null, 2)).toString("base64");
 
     const res = await fetch(

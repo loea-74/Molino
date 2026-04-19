@@ -82,8 +82,6 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
   const [tab, setTab] = useState<"es" | "en">("es");
 
   const setField = (field: keyof Recipe, val: unknown) => onChange({ ...recipe, [field]: val });
-  const setLang = (field: keyof Recipe, lang: "es" | "en", val: string) =>
-    onChange({ ...recipe, [field]: { ...(recipe[field] as LangContent), [lang]: val } });
   const setFull = (lang: "es" | "en", field: keyof FullLang, val: string | string[]) =>
     onChange({ ...recipe, fullContent: { ...recipe.fullContent, [lang]: { ...recipe.fullContent[lang], [field]: val } } });
 
