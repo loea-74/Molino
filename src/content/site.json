@@ -110,8 +110,8 @@
       "en": "Abraham González 143, L1\nJuárez, Cuauhtémoc\n06600 Mexico City"
     },
     "hours": {
-      "es": "Lunes a sábado\n08:00 – 18:00",
-      "en": "Monday to Saturday\n08:00 – 18:00"
+      "es": "Lunes a sábado\n08:00 – 18:00\nDomingo\n09:00 - 15:00",
+      "en": "Monday to Saturday\n08:00 – 18:00\nSundey \n09:00 - 15:00"
     },
     "phone": "55 4361 2880",
     "whatsapp": "525543612880",
