@@ -45,10 +45,10 @@ export default function Nav() {
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 17, letterSpacing: "-0.01em", lineHeight: 1, color: "var(--grano)" }}>
-              Molino la Jalisciense
+              Molino la Gran Jalisciense
             </div>
             <div style={{ fontSize: 11, color: "var(--grano-soft)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 3 }}>
-              Desde 1962
+              Desde 1932
             </div>
           </div>
         </a>
