@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
-import { Seal, IconWhatsApp, IconMenu } from "./icons";
+import { IconWhatsApp, IconMenu } from "./icons";
 
 const WHATSAPP = "https://wa.me/525543612880";
 
@@ -39,7 +40,9 @@ export default function Nav() {
       >
         {/* Logo */}
         <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-          <Seal size={44} />
+          <div style={{ width: 44, height: 44, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+            <Image src="/fotos/logo.jpg" alt="Logo Molino la Jalisciense" width={44} height={44} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+          </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 17, letterSpacing: "-0.01em", lineHeight: 1, color: "var(--grano)" }}>
               Molino la Jalisciense
