@@ -106,19 +106,19 @@ export default function Recipes() {
             }}
             className="max-md:!min-h-[420px] max-md:!row-auto"
           >
-            {"image" in featured && featured.image ? (
+            {"video" in featured && featured.video ? (
+              <video
+                src={(featured as { video: string }).video}
+                autoPlay muted loop playsInline
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            ) : "image" in featured && featured.image ? (
               <Image
                 src={(featured as { image: string }).image}
                 alt={featured.title["es"]}
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 60vw"
-              />
-            ) : "video" in featured && featured.video ? (
-              <video
-                src={(featured as { video: string }).video}
-                autoPlay muted loop playsInline
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
               />
             ) : null}
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.96) 0%, rgba(26,18,5,0.45) 55%, transparent 100%)" }} />
@@ -165,7 +165,7 @@ export default function Recipes() {
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.8"; e.currentTarget.style.transform = "scale(0.985)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1)"; }}
               >
-                {"image" in r && r.image && (
+                {"image" in r && r.image ? (
                   <Image
                     src={(r as { image: string }).image}
                     alt={r.title["es"]}
@@ -173,7 +173,13 @@ export default function Recipes() {
                     style={{ objectFit: "cover" }}
                     sizes="(max-width: 768px) 100vw, 40vw"
                   />
-                )}
+                ) : "video" in r && r.video ? (
+                  <video
+                    src={(r as { video: string }).video}
+                    autoPlay muted loop playsInline
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                ) : null}
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.93) 0%, rgba(26,18,5,0.15) 60%, transparent 100%)" }} />
 
                 {/* Date badge */}
