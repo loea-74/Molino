@@ -16,37 +16,52 @@ function waUrl(msg: string) {
 
 function CatalogModal({ onClose }: { onClose: () => void }) {
   const { page1, page2 } = siteContent.catalog;
+  const pages = [page1, page2];
+  const [current, setCurrent] = useState(0);
+
   return (
     <div
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, zIndex: 100,
-        background: "rgba(20,12,6,0.85)", backdropFilter: "blur(6px)",
+        background: "rgba(20,12,6,0.92)", backdropFilter: "blur(8px)",
         display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "24px 16px",
+        padding: "16px",
       }}
     >
-      <div onClick={(e) => e.stopPropagation()} style={{ maxWidth: 1000, width: "100%" }}>
-        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
-          <button
-            onClick={onClose}
-            style={{
-              background: "rgba(245,237,224,0.15)", border: "1px solid rgba(245,237,224,0.3)",
-              color: "#f5ede0", borderRadius: 999, padding: "6px 16px",
-              fontSize: 13, cursor: "pointer",
-            }}
-          >
+      <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 640, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+
+        {/* Top bar */}
+        <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ color: "rgba(245,237,224,0.6)", fontSize: 13, fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+            {current + 1} / {pages.length}
+          </span>
+          <button onClick={onClose} style={{ background: "rgba(245,237,224,0.12)", border: "1px solid rgba(245,237,224,0.25)", color: "#f5ede0", borderRadius: 999, padding: "6px 16px", fontSize: 13, cursor: "pointer" }}>
             Cerrar ✕
           </button>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}
-          className="max-sm:!grid-cols-1">
-          <div style={{ borderRadius: 10, overflow: "hidden", position: "relative", aspectRatio: "3/4" }}>
-            <Image src={page1} alt="Folleto — frente" fill style={{ objectFit: "contain" }} sizes="50vw" />
-          </div>
-          <div style={{ borderRadius: 10, overflow: "hidden", position: "relative", aspectRatio: "3/4" }}>
-            <Image src={page2} alt="Folleto — reverso" fill style={{ objectFit: "contain" }} sizes="50vw" />
-          </div>
+
+        {/* Image */}
+        <div style={{ width: "100%", borderRadius: 12, overflow: "hidden", position: "relative", aspectRatio: "3/4", background: "#fff" }}>
+          <Image src={pages[current]} alt={`Folleto página ${current + 1}`} fill style={{ objectFit: "contain" }} sizes="640px" priority />
+        </div>
+
+        {/* Navigation */}
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <button
+            onClick={() => setCurrent(0)}
+            disabled={current === 0}
+            style={{ padding: "10px 24px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 0 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 14, cursor: current === 0 ? "default" : "pointer", opacity: current === 0 ? 0.4 : 1 }}
+          >
+            ← Frente
+          </button>
+          <button
+            onClick={() => setCurrent(1)}
+            disabled={current === 1}
+            style={{ padding: "10px 24px", borderRadius: 999, border: "1.5px solid rgba(245,237,224,0.3)", background: current === 1 ? "rgba(245,237,224,0.15)" : "transparent", color: "#f5ede0", fontSize: 14, cursor: current === 1 ? "default" : "pointer", opacity: current === 1 ? 0.4 : 1 }}
+          >
+            Reverso →
+          </button>
         </div>
       </div>
     </div>
