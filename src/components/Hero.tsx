@@ -122,34 +122,22 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating schedule card */}
+          {/* Floating notice card */}
           <div
             style={{
               position: "absolute", bottom: -28, left: -32,
               background: "var(--crema-light)", border: "1px solid var(--linea)",
               padding: "22px 28px", borderRadius: 16,
               boxShadow: "0 16px 48px -12px rgba(42, 29, 20, 0.28)",
-              minWidth: 230,
+              minWidth: 230, maxWidth: 280,
             }}
             className="max-sm:!-bottom-4 max-sm:!left-3 max-sm:!px-4 max-sm:!py-4"
           >
-            <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", color: "var(--terracota)", textTransform: "uppercase", marginBottom: 14 }}>
-              {lang === "es" ? "Horario" : "Hours"}
+            <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", color: "var(--terracota)", textTransform: "uppercase", marginBottom: 10 }}>
+              {h.heroNotice.title[lang]}
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
-                <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
-                  {h.hours.weekdays[lang]}
-                </span>
-                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>{h.hours.weekdayHours}</span>
-              </div>
-              <div style={{ height: 1, background: "var(--linea)" }} />
-              <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "baseline" }}>
-                <span style={{ fontSize: 14, color: "var(--grano-soft)", fontFamily: "var(--font-mono)" }}>
-                  {h.hours.sunday[lang]}
-                </span>
-                <span style={{ fontSize: 15, fontWeight: 600, color: "var(--grano)", fontFamily: "var(--font-mono)" }}>{h.hours.sundayHours}</span>
-              </div>
+            <div style={{ fontSize: 14, color: "var(--grano)", lineHeight: 1.55, whiteSpace: "pre-line" }}>
+              {h.heroNotice.body[lang]}
             </div>
           </div>
         </div>

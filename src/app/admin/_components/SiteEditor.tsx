@@ -15,7 +15,7 @@ type Site = {
     stat1: { number: string; label: Lang };
     stat2: { number: string; label: Lang };
     stat3: { number: string; label: Lang };
-    hours: { weekdays: Lang; weekdayHours: string; sunday: Lang; sundayHours: string };
+    heroNotice: { title: Lang; body: Lang };
   };
   history: {
     title: Lang; body1: Lang; body2: Lang;
@@ -192,16 +192,9 @@ export default function SiteEditor() {
           </div>
 
           <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 16, marginTop: 8 }}>
-            <div style={{ fontSize: 12, color: "#9a6040", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Horario (tarjeta flotante)</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 8 }}>
-              <div>{label("Días ES")}<input value={site.hero.hours.weekdays.es} onChange={(e) => setHero("hours", { ...site.hero.hours, weekdays: { ...site.hero.hours.weekdays, es: e.target.value } })} style={inputStyle} /></div>
-              <div>{label("Días EN")}<input value={site.hero.hours.weekdays.en} onChange={(e) => setHero("hours", { ...site.hero.hours, weekdays: { ...site.hero.hours.weekdays, en: e.target.value } })} style={inputStyle} /></div>
-              <div>{label("Horario entre semana")}<input value={site.hero.hours.weekdayHours} onChange={(e) => setHero("hours", { ...site.hero.hours, weekdayHours: e.target.value })} style={inputStyle} /></div>
-              <div></div>
-              <div>{label("Domingo ES")}<input value={site.hero.hours.sunday.es} onChange={(e) => setHero("hours", { ...site.hero.hours, sunday: { ...site.hero.hours.sunday, es: e.target.value } })} style={inputStyle} /></div>
-              <div>{label("Domingo EN")}<input value={site.hero.hours.sunday.en} onChange={(e) => setHero("hours", { ...site.hero.hours, sunday: { ...site.hero.hours.sunday, en: e.target.value } })} style={inputStyle} /></div>
-              <div>{label("Horario domingo")}<input value={site.hero.hours.sundayHours} onChange={(e) => setHero("hours", { ...site.hero.hours, sundayHours: e.target.value })} style={inputStyle} /></div>
-            </div>
+            <div style={{ fontSize: 12, color: "#9a6040", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Tarjeta flotante (aviso / horario / temporada…)</div>
+            <BiField lbl="Título de la tarjeta" value={site.hero.heroNotice.title} onChange={(v) => setHero("heroNotice", { ...site.hero.heroNotice, title: v })} />
+            <BiTextarea lbl="Mensaje (saltos de línea permitidos)" value={site.hero.heroNotice.body} onChange={(v) => setHero("heroNotice", { ...site.hero.heroNotice, body: v })} rows={3} />
           </div>
         </div>
       )}

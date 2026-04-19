@@ -22,11 +22,9 @@
     "stat1": { "number": "3", "label": { "es": "generaciones", "en": "generations" } },
     "stat2": { "number": "60+", "label": { "es": "años moliendo", "en": "years milling" } },
     "stat3": { "number": "1", "label": { "es": "sucursal única", "en": "single location" } },
-    "hours": {
-      "weekdays": { "es": "Lun – Sáb", "en": "Mon – Sat" },
-      "weekdayHours": "8am – 6pm",
-      "sunday": { "es": "Domingo", "en": "Sunday" },
-      "sundayHours": "9am – 3pm"
+    "heroNotice": {
+      "title": { "es": "Horario", "en": "Hours" },
+      "body": { "es": "Lun – Sáb: 8am – 6pm\nDomingo: 9am – 3pm", "en": "Mon – Sat: 8am – 6pm\nSunday: 9am – 3pm" }
     }
   },
   "history": {
