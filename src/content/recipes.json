@@ -1,14 +1,26 @@
 [
   {
     "slug": "pozole-rojo-tradicional",
-    "kicker": { "es": "Receta · 30 min", "en": "Recipe · 30 min" },
-    "title": { "es": "Pozole rojo tradicional", "en": "Traditional red pozole" },
+    "kicker": {
+      "es": "Receta · 30 min",
+      "en": "Recipe · 30 min"
+    },
+    "title": {
+      "es": "Pozole rojo tradicional",
+      "en": "Traditional red pozole"
+    },
     "body": {
       "es": "Con nuestro cacahuazintle, receta de la abuela Teresa — paso a paso, sin atajos.",
       "en": "With our cacahuazintle — Grandma Teresa's recipe, step by step, no shortcuts."
     },
-    "date": { "es": "12 Abr 2026", "en": "Apr 12, 2026" },
-    "cta": { "es": "Leer receta", "en": "Read recipe" },
+    "date": {
+      "es": "12 Abr 2026",
+      "en": "Apr 12, 2026"
+    },
+    "cta": {
+      "es": "Leer receta",
+      "en": "Read recipe"
+    },
     "image": "/fotos/pozole-rojo.jpg",
     "fullContent": {
       "es": {
@@ -61,14 +73,26 @@
   },
   {
     "slug": "como-descabezar-maiz",
-    "kicker": { "es": "Guía · 5 min", "en": "Guide · 5 min" },
-    "title": { "es": "Cómo se descabeza el maíz", "en": "How to husk the corn" },
+    "kicker": {
+      "es": "Guía · 5 min",
+      "en": "Guide · 5 min"
+    },
+    "title": {
+      "es": "Cómo se descabeza el maíz",
+      "en": "How to husk the corn"
+    },
     "body": {
       "es": "El paso que la mayoría se salta y que define la textura del pozole.",
       "en": "The step most people skip — and what defines the texture of the pozole."
     },
-    "date": { "es": "03 Abr 2026", "en": "Apr 03, 2026" },
-    "cta": { "es": "Leer guía", "en": "Read guide" },
+    "date": {
+      "es": "03 Abr 2026",
+      "en": "Apr 03, 2026"
+    },
+    "cta": {
+      "es": "Leer guía",
+      "en": "Read guide"
+    },
     "image": "/fotos/descabezado.jpg",
     "fullContent": {
       "es": {
@@ -109,14 +133,26 @@
   },
   {
     "slug": "calendario-pozolero",
-    "kicker": { "es": "Temporada", "en": "Season" },
-    "title": { "es": "Calendario pozolero 2026", "en": "2026 pozole calendar" },
+    "kicker": {
+      "es": "Temporada",
+      "en": "Season"
+    },
+    "title": {
+      "es": "Calendario pozolero 2026",
+      "en": "2026 pozole calendar"
+    },
     "body": {
       "es": "Fechas fuertes del año y cómo pedir con anticipación para no quedarte sin maíz.",
       "en": "Peak dates of the year and how to order ahead so you don't run short."
     },
-    "date": { "es": "28 Mar 2026", "en": "Mar 28, 2026" },
-    "cta": { "es": "Ver calendario", "en": "See calendar" },
+    "date": {
+      "es": "28 Mar 2026",
+      "en": "Mar 28, 2026"
+    },
+    "cta": {
+      "es": "Ver calendario",
+      "en": "See calendar"
+    },
     "image": "/fotos/calendario.jpg",
     "fullContent": {
       "es": {
@@ -149,14 +185,26 @@
   },
   {
     "slug": "harina-maiz-azul",
-    "kicker": { "es": "Noticia", "en": "News" },
-    "title": { "es": "Nueva harina de maíz azul", "en": "New blue corn flour" },
+    "kicker": {
+      "es": "Noticia",
+      "en": "News"
+    },
+    "title": {
+      "es": "Nueva harina de maíz azul",
+      "en": "New blue corn flour"
+    },
     "body": {
       "es": "Desde abril molemos maíz azul de Tlaxcala — en cantidades limitadas, por pedido.",
       "en": "Since April we've been milling blue corn from Tlaxcala — limited quantities, by order."
     },
-    "date": { "es": "15 Mar 2026", "en": "Mar 15, 2026" },
-    "cta": { "es": "Conocer más", "en": "Learn more" },
+    "date": {
+      "es": "15 Mar 2026",
+      "en": "Mar 15, 2026"
+    },
+    "cta": {
+      "es": "Conocer más",
+      "en": "Learn more"
+    },
     "image": "/fotos/maiz-azul.jpg",
     "fullContent": {
       "es": {
@@ -195,14 +243,26 @@
   },
   {
     "slug": "tamales-rajas-queso",
-    "kicker": { "es": "Receta · 45 min", "en": "Recipe · 45 min" },
-    "title": { "es": "Tamales de rajas con queso", "en": "Rajas & cheese tamales" },
+    "kicker": {
+      "es": "Receta · 45 min",
+      "en": "Recipe · 45 min"
+    },
+    "title": {
+      "es": "Tamales de rajas con queso",
+      "en": "Rajas & cheese tamales"
+    },
     "body": {
       "es": "Con nuestra masa del día, el relleno clásico que nunca falla en posadas.",
       "en": "With our same-day masa, the classic filling that never fails at Posadas."
     },
-    "date": { "es": "02 Mar 2026", "en": "Mar 02, 2026" },
-    "cta": { "es": "Leer receta", "en": "Read recipe" },
+    "date": {
+      "es": "02 Mar 2026",
+      "en": "Mar 02, 2026"
+    },
+    "cta": {
+      "es": "Leer receta",
+      "en": "Read recipe"
+    },
     "image": "/fotos/tamales-rajas.jpg",
     "fullContent": {
       "es": {
@@ -255,14 +315,26 @@
   },
   {
     "slug": "don-rafa-50-anos",
-    "kicker": { "es": "Historia", "en": "Story" },
-    "title": { "es": "Don Rafa cumple 50 años", "en": "Don Rafa hits 50 years" },
+    "kicker": {
+      "es": "Historia",
+      "en": "Story"
+    },
+    "title": {
+      "es": "Don Rafa cumple 50 años",
+      "en": "Don Rafa hits 50 years"
+    },
     "body": {
       "es": "Medio siglo detrás del mostrador. Le preguntamos qué ha cambiado y qué no.",
       "en": "Half a century behind the counter. We asked him what has changed and what hasn't."
     },
-    "date": { "es": "18 Feb 2026", "en": "Feb 18, 2026" },
-    "cta": { "es": "Leer historia", "en": "Read story" },
+    "date": {
+      "es": "18 Feb 2026",
+      "en": "Feb 18, 2026"
+    },
+    "cta": {
+      "es": "Leer historia",
+      "en": "Read story"
+    },
     "image": "/fotos/don-rafa.jpg",
     "fullContent": {
       "es": {
