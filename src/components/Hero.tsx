@@ -5,6 +5,23 @@ import { useLang } from "@/lib/LangContext";
 import { IconWhatsApp, IconMap } from "./icons";
 import siteContent from "@/content/site.json";
 
+function MiniMd({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("\n").map((line, i) => {
+        const parts = line.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, j) => {
+          if (part.startsWith("**") && part.endsWith("**"))
+            return <strong key={j}>{part.slice(2, -2)}</strong>;
+          if (part.startsWith("*") && part.endsWith("*"))
+            return <em key={j}>{part.slice(1, -1)}</em>;
+          return part;
+        });
+        return <div key={i}>{parts}</div>;
+      })}
+    </>
+  );
+}
+
 export default function Hero() {
   const { lang } = useLang();
   const h = siteContent.hero;
@@ -136,8 +153,8 @@ export default function Hero() {
             <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", color: "var(--terracota)", textTransform: "uppercase", marginBottom: 10 }}>
               {h.heroNotice.title[lang]}
             </div>
-            <div style={{ fontSize: 14, color: "var(--grano)", lineHeight: 1.55, whiteSpace: "pre-line" }}>
-              {h.heroNotice.body[lang]}
+            <div style={{ fontSize: 14, color: "var(--grano)", lineHeight: 1.55 }}>
+              <MiniMd text={h.heroNotice.body[lang]} />
             </div>
           </div>
         </div>
