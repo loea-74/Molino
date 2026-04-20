@@ -1,13 +1,60 @@
 "use client";
 
+import { useState } from "react";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import Image from "next/image";
-import { IconWhatsApp, IconInstagram, IconFacebook } from "./icons";
-
-const WHATSAPP = "https://wa.me/525543612880";
+import { IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconYouTube, IconTwitter } from "./icons";
+import siteContent from "@/content/site.json";
 
 const NAV_HREFS = ["#productos", "#historia", "#recetas", "#visita"];
+
+function SocialIcons() {
+  const [hovered, setHovered] = useState<string | null>(null);
+  const s = siteContent.social;
+
+  const links = [
+    { key: "instagram", icon: <IconInstagram size={16} />, href: s.instagram },
+    { key: "facebook",  icon: <IconFacebook size={16} />,  href: s.facebook },
+    { key: "whatsapp",  icon: <IconWhatsApp size={16} color="currentColor" />, href: s.whatsapp ? `https://wa.me/${s.whatsapp}` : "" },
+    { key: "tiktok",    icon: <IconTikTok size={16} />,    href: s.tiktok },
+    { key: "youtube",   icon: <IconYouTube size={16} />,   href: s.youtube },
+    { key: "twitter",   icon: <IconTwitter size={16} />,   href: s.twitter },
+  ].filter(({ href }) => href);
+
+  if (links.length === 0) return null;
+
+  return (
+    <div style={{ display: "flex", gap: 12 }}>
+      {links.map(({ key, icon, href }) => {
+        const dimmed = hovered !== null && hovered !== key;
+        return (
+          <a
+            key={key}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={key}
+            onMouseEnter={() => setHovered(key)}
+            onMouseLeave={() => setHovered(null)}
+            style={{
+              width: 36, height: 36, borderRadius: "50%",
+              border: "1px solid rgba(245,237,224,0.3)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "var(--crema-light)", textDecoration: "none",
+              background: hovered === key ? "rgba(245,237,224,0.18)" : "transparent",
+              opacity: dimmed ? 0.3 : 1,
+              transform: hovered === key ? "scale(1.15)" : "scale(1)",
+              transition: "opacity 200ms ease, transform 200ms ease, background 200ms ease",
+            }}
+          >
+            {icon}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Footer() {
   const { lang } = useLang();
@@ -51,18 +98,7 @@ export default function Footer() {
             <div style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>
               {t.footerFollow}
             </div>
-            <div style={{ display: "flex", gap: 12 }}>
-              {[
-                { label: "Instagram", icon: <IconInstagram size={16} />, href: "#" },
-                { label: "Facebook",  icon: <IconFacebook size={16} />,  href: "#" },
-                { label: "WhatsApp",  icon: <IconWhatsApp size={16} color="currentColor" />, href: WHATSAPP },
-              ].map(({ label, icon, href }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid rgba(245,237,224,0.3)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--crema-light)", textDecoration: "none" }}>
-                  {icon}
-                </a>
-              ))}
-            </div>
+            <SocialIcons />
           </div>
         </div>
 

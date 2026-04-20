@@ -28,6 +28,7 @@ type Site = {
     phone: string; whatsapp: string; email: string;
   };
   catalog: { page1: string; page2: string };
+  social: { instagram: string; facebook: string; whatsapp: string; tiktok: string; youtube: string; twitter: string };
 };
 
 const inputStyle: React.CSSProperties = {
@@ -89,7 +90,7 @@ function SingleField({ lbl, value, onChange, placeholder }: { lbl: string; value
 
 export default function SiteEditor() {
   const [site, setSite] = useState<Site | null>(null);
-  const [section, setSection] = useState<"hero" | "history" | "visit" | "catalog">("hero");
+  const [section, setSection] = useState<"hero" | "history" | "visit" | "catalog" | "social">("hero");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -136,7 +137,7 @@ export default function SiteEditor() {
 
       {/* Sub-tabs */}
       <div style={{ display: "flex", gap: 6, marginBottom: 28, borderBottom: "1.5px solid #e0d4c0" }}>
-        {([["hero", "01 · Inicio"], ["history", "03 · Historia"], ["visit", "06 · Visítanos"], ["catalog", "Folleto"]] as const).map(([key, lbl]) => (
+        {([["hero", "01 · Inicio"], ["history", "03 · Historia"], ["visit", "06 · Visítanos"], ["catalog", "Folleto"], ["social", "Redes"]] as const).map(([key, lbl]) => (
           <button key={key} onClick={() => setSection(key)}
             style={{ padding: "8px 18px", border: "none", cursor: "pointer", fontSize: 13, fontWeight: 500, background: "none",
               borderBottom: section === key ? "2.5px solid #8b3e1f" : "2.5px solid transparent",
@@ -239,6 +240,30 @@ export default function SiteEditor() {
           <SingleField lbl="Página 2 — reverso del folleto" value={site.catalog.page2}
             onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page2: v } } : s)}
             placeholder="/fotos/folletotracera.png" />
+        </div>
+      )}
+
+      {!loading && site && section === "social" && (
+        <div>
+          <p style={{ fontSize: 13, color: "#9a6040", marginBottom: 20 }}>
+            Deja vacío cualquier red que no uses — el ícono no aparecerá en el sitio.
+          </p>
+          {([
+            ["instagram", "Instagram", "https://instagram.com/tu_usuario"],
+            ["facebook",  "Facebook",  "https://facebook.com/tu_pagina"],
+            ["whatsapp",  "WhatsApp (solo números, sin +)", "525543612880"],
+            ["tiktok",    "TikTok",    "https://tiktok.com/@tu_usuario"],
+            ["youtube",   "YouTube",   "https://youtube.com/@tu_canal"],
+            ["twitter",   "X / Twitter", "https://x.com/tu_usuario"],
+          ] as const).map(([key, lbl, placeholder]) => (
+            <SingleField
+              key={key}
+              lbl={lbl}
+              value={site.social[key]}
+              onChange={(v) => setSite((s) => s ? { ...s, social: { ...s.social, [key]: v } } : s)}
+              placeholder={placeholder}
+            />
+          ))}
         </div>
       )}
     </div>
