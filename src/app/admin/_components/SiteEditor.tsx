@@ -28,7 +28,7 @@ type Site = {
     phone: string; whatsapp: string; email: string;
   };
   catalog: { page1: string; page2: string };
-  social: { instagram: string; facebook: string; whatsapp: string; tiktok: string; youtube: string; twitter: string };
+  social: { instagram: string; facebook: string; whatsapp: string; tiktok: string; youtube: string; twitter: string; linkedin: string };
 };
 
 const inputStyle: React.CSSProperties = {
@@ -255,6 +255,7 @@ export default function SiteEditor() {
             ["tiktok",    "TikTok",    "https://tiktok.com/@tu_usuario"],
             ["youtube",   "YouTube",   "https://youtube.com/@tu_canal"],
             ["twitter",   "X / Twitter", "https://x.com/tu_usuario"],
+            ["linkedin",  "LinkedIn",    "https://linkedin.com/company/tu_empresa"],
           ] as const).map(([key, lbl, placeholder]) => (
             <SingleField
               key={key}

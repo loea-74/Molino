@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
 import Image from "next/image";
-import { IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconYouTube, IconTwitter } from "./icons";
+import { IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconYouTube, IconTwitter, IconLinkedIn } from "./icons";
 import siteContent from "@/content/site.json";
 
 const NAV_HREFS = ["#productos", "#historia", "#recetas", "#visita"];
@@ -20,6 +20,7 @@ function SocialIcons() {
     { key: "tiktok",    icon: <IconTikTok size={16} />,    href: s.tiktok },
     { key: "youtube",   icon: <IconYouTube size={16} />,   href: s.youtube },
     { key: "twitter",   icon: <IconTwitter size={16} />,   href: s.twitter },
+    { key: "linkedin",  icon: <IconLinkedIn size={16} />,  href: s.linkedin },
   ].filter(({ href }) => href);
 
   if (links.length === 0) return null;
