@@ -6,7 +6,7 @@
       "en": "Recipe · 30 min"
     },
     "title": {
-      "es": "POZOLE",
+      "es": "MI POZOLE ",
       "en": "Traditional red pozole"
     },
     "body": {
@@ -26,25 +26,54 @@
       "es": {
         "intro": "El pozole rojo es uno de los platillos más representativos de la cocina mexicana. La clave está en el maíz cacahuazintle bien descabezado y en un chile ancho con guajillo bien tostado. Esta receta es de la familia García, clientes nuestros desde 1978.",
         "ingredients": [
-          "1 kg de maíz cacahuazintle descabezado (del molino)",
-          "1 kg de carne de cerdo (cabeza, pierna o maciza)",
-          "6 chiles guajillo",
-          "3 chiles ancho",
-          "4 dientes de ajo",
-          "1 cebolla blanca",
-          "Orégano seco, sal al gusto"
+          "Para la sopa:",
+          "",
+          "4 litros de agua",
+          "1 kilo de carne de puerco o pollo ",
+          "½ kilo de costilla de puerco o pollo con hueso",
+          "1½ kilos de maíz para pozole cacahuazintle precocido descabezado, del molino jalisciense. (rinde de 12 a 15 platos)",
+          "1 cebolla blanca cortada en cuatro partes",
+          "8 dientes de ajo grandes",
+          "Sal para sazonar al gusto",
+          "",
+          "Para la guarnición:",
+          "",
+          "1 lechuga finamente picada",
+          "1 ½ taza de cebolla blanca finamente picada",
+          "1 ½ taza de rábanos finamente rebanados",
+          "Chile piquín matajado",
+          "Orégano mexicano al gusto para sazonar",
+          "Tostadas 2–3 por persona",
+          "Crema para las tostadas.",
+          "Limones cortados en cuartos",
+          "Aguacate cortado en cubos opcional",
+          "",
+          "Pozole Rojo ",
+          "",
+          "Para la salsa:",
+          "",
+          "5 chiles anchos limpios sin semillas y desvenados.",
+          "5 chiles guajillo limpios sin semillas y desvenados.",
+          "6 dientes de ajo",
+          "½ cebolla mediana picadita.",
+          "2 cucharadas soperas de aceite vegetal",
+          "½ cucharadita cafetera de orégano mexicano",
+          "Sal al gusto para sazonar"
         ],
         "steps": [
-          "Remoja el maíz desde la noche anterior en agua fría abundante.",
-          "Cuece el maíz en olla express por 45 min o hasta que florezca (abra).",
-          "Aparte, cuece la carne con ajo, cebolla y sal hasta que esté suave.",
-          "Desvena y tuesta los chiles en comal seco; remójalos 20 min en agua caliente.",
-          "Licúa los chiles con un poco del caldo, ajo y cebolla. Cuela.",
-          "Fríe la salsa en una olla con un poco de aceite hasta que cambie de color (5 min).",
-          "Incorpora el caldo de la carne y el maíz. Cocina 20 min más.",
-          "Ajusta sal y sirve con tostadas, rábano, lechuga, orégano y limón."
+          "Calienta el agua con la cebolla, el ajo, cuando suelte el primer hervor añade el maíz y cocina por 1 hora con 30 minutos o hasta que el maíz este tierno. (poner la sal al final para que el maíz reviente bien)",
+          "Añade la carne; cocina por 1 hora con 30 minutos o hasta que la carne esté suave y el maiz reviente. Retira el ajo, la cebolla, y la carne, deshébrala y reserva.",
+          "Mientras se cuece la carne, remueve con un cucharón la capa de espuma y grasa que se vaya formando en la superficie del caldo. Si es necesario agrega más agua caliente para mantener el mismo nivel de caldo en la olla.",
+          "",
+          "Pozole Rojo",
+          "",
+          "Para preparar la salsa, remoja los chiles anchos y guajillo durante 25 minutos en suficiente agua que los cubra.",
+          "Una vez que los chiles estén blandos, escúrrelos y colócalos en la licuadora junto con el ajo, la cebolla y el orégano, agregando un poco del agua donde se remojaron éstos. Licua hasta que tenga la consistencia de una salsa suave.",
+          "Calienta el aceite en un sartén a  temperatura media alta; agrega la salsa, y sazonar con sal al gusto. (Revuelve constantemente, ya que tiende a brincar). Reduce la flama y hierve a fuego lento por aprox. 25 minutos.",
+          "Agrega la salsa al caldo pasándola primero por un colador. Deja que suelte el hervor y agrega la carne. Hierve a fuego bajo por aprox. 10 minutos",
+          "Sirve el pozole en plato hondo y coloca la guarnición "
         ],
-        "tip": "El maíz debe quedar bien florecido antes de agregar el caldo. Si el centro está duro, continúa la cocción."
+        "tip": "Puedes preparar la salsa desde días antes para que no se te haga tan elaborado hacerlo todo el mismo día. La salsa se puede también congelar.\nEl Pozole sabe más rico al día siguiente, así que si lo vas a preparar para una fiesta u ocasión especial lo puedes preparar con anticipación, y solo recalentar. Aparte se conserva muy bien en el congelador con todo y el maíz, y recalentar."
       },
       "en": {
         "intro": "Red pozole is one of the most iconic dishes in Mexican cooking. The secret lies in properly husked cacahuazintle corn and well-toasted ancho and guajillo chiles. This recipe comes from the García family, customers of ours since 1978.",
