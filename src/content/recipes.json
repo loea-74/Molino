@@ -293,7 +293,7 @@
       "es": "Leer receta",
       "en": "Read recipe"
     },
-    "image": "/fotos/tamales-rajas.jpg",
+    "image": "/fotos/TAMALES.jpg",
     "fullContent": {
       "es": {
         "intro": "Los tamales de rajas con queso son el favorito de las posadas y reuniones familiares. Con la masa fresca del molino —ya con cal y punto exacto de humedad— el proceso es mucho más rápido que partir de cero.",
@@ -340,7 +340,8 @@
         ],
         "tip": "If you order masa directly at the mill, tell us it's for tamales — we'll adjust the salt and moisture level."
       }
-    }
+    },
+    "video": "/fotos/TAMALES.mp4"
   },
   {
     "slug": "don-rafa-50-anos",
