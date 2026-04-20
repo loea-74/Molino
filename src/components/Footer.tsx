@@ -70,6 +70,9 @@ export default function Footer() {
           <div>{t.footerRights}</div>
           <div style={{ fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>{t.footerLocation}</div>
         </div>
+        <div style={{ marginTop: 14, textAlign: "center", fontSize: 10, opacity: 0.35, letterSpacing: "0.1em" }}>
+          Creado por LoeaaSolutions
+        </div>
       </div>
     </footer>
   );
