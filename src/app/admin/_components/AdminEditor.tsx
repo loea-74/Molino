@@ -1,328 +1,122 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
-import ProductEditor from "./ProductEditor";
-import SiteEditor from "./SiteEditor";
-import TestimonialsEditor from "./TestimonialsEditor";
-import CampoImagen from "./CampoImagen";
-import CampoVideo from "./CampoVideo";
-import BotonEliminar from "./BotonEliminar";
-import { recetaNueva } from "@/lib/nuevosItems";
+import "../admin.css";
 
-type LangContent = { es: string; en: string };
-type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
+import { C, esp } from "./ui";
+import { BarraSuperior, Menu, CabeceraSeccion, type Seccion } from "./Armazon";
+import { useArchivo, useAvisoSinGuardar } from "./useArchivo";
+import {
+  PanelInicio, PanelHistoria, PanelVisita, PanelFolleto, PanelRedes, type Site,
+} from "./PanelesSitio";
+import PanelRecetas from "./PanelRecetas";
+import PanelCatalogo from "./PanelCatalogo";
+import PanelTestimonios from "./PanelTestimonios";
 
-type Recipe = {
-  slug: string;
-  kicker: LangContent;
-  title: LangContent;
-  body: LangContent;
-  date: LangContent;
-  cta: LangContent;
-  image: string;
-  video?: string;
-  fullContent: { es: FullLang; en: FullLang };
-};
+/**
+ * El menú sigue el mismo orden que la página. Antes había cuatro pestañas y,
+ * dentro de "Secciones", otras cinco: "Historia" quedaba enterrada y no había
+ * forma de adivinar que Recetas era de primer nivel pero Historia no.
+ */
+const SECCIONES: (Seccion & { archivo: "site" | "recipes" | "products" | "testimonials" })[] = [
+  { id: "inicio", nombre: "Inicio", donde: "Lo primero de la página", archivo: "site" },
+  { id: "recetas", nombre: "Recetas y noticias", donde: "Las tarjetas con foto o video", archivo: "recipes" },
+  { id: "catalogo", nombre: "Catálogo", donde: "Los productos", archivo: "products" },
+  { id: "historia", nombre: "Historia", donde: "El texto sobre el molino", archivo: "site" },
+  { id: "testimonios", nombre: "Testimonios", donde: "Lo que dicen los clientes", archivo: "testimonials" },
+  { id: "visita", nombre: "Visítanos", donde: "Dirección, horario y mapa", archivo: "site" },
+  { id: "folleto", nombre: "Folleto", donde: "Las dos páginas del catálogo", archivo: "site" },
+  { id: "redes", nombre: "Redes sociales", donde: "Los íconos del pie", archivo: "site" },
+];
 
-const FIELD_LABEL: Record<string, string> = {
-  kicker: "Etiqueta (kicker)",
-  title: "Título",
-  body: "Resumen (card)",
-  date: "Fecha",
-  cta: "Botón (CTA)",
-};
-
-function BilingualField({ label, value, onChange }: { label: string; value: LangContent; onChange: (v: LangContent) => void }) {
-  return (
-    <div style={{ marginBottom: 16 }}>
-      <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 6 }}>{label}</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-        <div>
-          <div style={{ fontSize: 10, color: "#aaa", marginBottom: 3 }}>Español</div>
-          <input
-            value={value.es}
-            onChange={(e) => onChange({ ...value, es: e.target.value })}
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <div style={{ fontSize: 10, color: "#aaa", marginBottom: 3 }}>English</div>
-          <input
-            value={value.en}
-            onChange={(e) => onChange({ ...value, en: e.target.value })}
-            style={inputStyle}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TextareaField({ label, value, onChange, rows = 3 }: { label: string; value: string; onChange: (v: string) => void; rows?: number }) {
-  return (
-    <div style={{ marginBottom: 14 }}>
-      <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 5 }}>{label}</div>
-      <textarea
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        rows={rows}
-        style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }}
-      />
-    </div>
-  );
-}
-
-function ListField({ label, value, onChange }: { label: string; value: string[]; onChange: (v: string[]) => void }) {
-  const text = value.join("\n");
-  return (
-    <TextareaField
-      label={`${label} (una por línea)`}
-      value={text}
-      onChange={(v) => onChange(v.split("\n"))}
-      rows={4}
-    />
-  );
-}
-
-function RecipeCard({ recipe, index, onChange, onDelete }: { recipe: Recipe; index: number; onChange: (r: Recipe) => void; onDelete: () => void }) {
-  const [open, setOpen] = useState(false);
-  const [tab, setTab] = useState<"es" | "en">("es");
-
-  const setField = (field: keyof Recipe, val: unknown) => onChange({ ...recipe, [field]: val });
-  const setFull = (lang: "es" | "en", field: keyof FullLang, val: string | string[]) =>
-    onChange({ ...recipe, fullContent: { ...recipe.fullContent, [lang]: { ...recipe.fullContent[lang], [field]: val } } });
-
-  return (
-    <div style={{ border: "1.5px solid #e0d4c0", borderRadius: 12, marginBottom: 12, overflow: "hidden" }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{ width: "100%", padding: "16px 20px", background: open ? "#f0e6d8" : "#f5ede0", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", textAlign: "left" }}
-      >
-        <div>
-          <span style={{ fontSize: 11, color: "#9a6040", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-            {index + 1} · {recipe.kicker.es}
-          </span>
-          <div style={{ fontSize: 16, color: "#3a2010", fontWeight: 500, marginTop: 2 }}>{recipe.title.es}</div>
-        </div>
-        <span style={{ fontSize: 18, color: "#9a6040" }}>{open ? "▲" : "▼"}</span>
-      </button>
-
-      {open && (
-        <div style={{ padding: "24px 20px", background: "#fff" }}>
-
-          {/* Campos bilingüe simples */}
-          {(Object.keys(FIELD_LABEL) as (keyof Recipe)[]).map((field) => (
-            <BilingualField
-              key={field}
-              label={FIELD_LABEL[field as string]}
-              value={recipe[field] as LangContent}
-              onChange={(v) => setField(field, v)}
-            />
-          ))}
-
-          <CampoImagen
-            etiqueta="Imagen de la receta"
-            valor={recipe.image}
-            onChange={(ruta) => setField("image", ruta)}
-          />
-
-          <CampoVideo
-            etiqueta="Video de la receta"
-            valor={recipe.video ?? ""}
-            onChange={(url) => setField("video", url)}
-          />
-
-          {/* Contenido completo — tabs es/en */}
-          <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 20, marginTop: 4 }}>
-            <div style={{ fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 14 }}>
-              Contenido completo (modal)
-            </div>
-            <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-              {(["es", "en"] as const).map((l) => (
-                <button key={l} onClick={() => setTab(l)}
-                  style={{ padding: "5px 16px", borderRadius: 999, border: "1.5px solid", fontSize: 12, cursor: "pointer", fontWeight: 500,
-                    borderColor: tab === l ? "#8b3e1f" : "#d4c4b0",
-                    background: tab === l ? "#8b3e1f" : "transparent",
-                    color: tab === l ? "#fff" : "#9a6040" }}>
-                  {l === "es" ? "Español" : "English"}
-                </button>
-              ))}
-            </div>
-
-            <TextareaField
-              label="Introducción"
-              value={recipe.fullContent[tab].intro}
-              onChange={(v) => setFull(tab, "intro", v)}
-              rows={3}
-            />
-            <ListField
-              label="Ingredientes"
-              value={recipe.fullContent[tab].ingredients}
-              onChange={(v) => setFull(tab, "ingredients", v)}
-            />
-            <ListField
-              label="Pasos / Steps"
-              value={recipe.fullContent[tab].steps}
-              onChange={(v) => setFull(tab, "steps", v)}
-            />
-            <TextareaField
-              label="Consejo del molino / Tip"
-              value={recipe.fullContent[tab].tip}
-              onChange={(v) => setFull(tab, "tip", v)}
-              rows={2}
-            />
-          </div>
-
-          <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 16, marginTop: 20 }}>
-            <BotonEliminar que="entrada" onDelete={onDelete} />
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-const inputStyle: React.CSSProperties = {
-  width: "100%", boxSizing: "border-box",
-  padding: "9px 12px", borderRadius: 7,
-  border: "1.5px solid #d4c4b0",
-  fontSize: 14, outline: "none", background: "#faf6f0",
-  color: "#3a2010",
+const EXPLICACION: Record<string, string> = {
+  inicio: "La portada: el título grande, la foto principal y la tarjeta que va encima.",
+  recetas: "Cada entrada es una tarjeta en la página. Puedes ponerle foto o video.",
+  catalogo: "Los productos que se muestran, con su descripción y su precio.",
+  historia: "El texto y la foto antigua de la sección Historia.",
+  testimonios: "Las frases de clientes que aparecen en la página.",
+  visita: "Dirección, horario, teléfonos y el mapa de Google.",
+  folleto: "Las dos imágenes que se abren al pulsar Ver catálogo completo.",
+  redes: "Las ligas a tus redes. La que dejes vacía no aparece en el sitio.",
 };
 
 export default function AdminEditor() {
   const router = useRouter();
-  const [tab, setTab] = useState<"recetas" | "catalogo" | "secciones" | "testimonios">("recetas");
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [sha, setSha] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
-  const [msg, setMsg] = useState("");
+  const [activa, setActiva] = useState("inicio");
 
-  useEffect(() => {
-    cargarDelAdmin<{ recipes: Recipe[]; sha: string }>("/api/admin/recipes")
-      .then(({ recipes, sha }) => { setRecipes(recipes ?? []); setSha(sha); setLoading(false); })
-      .catch((e) => { setMsg(mensajeDeError(e)); setLoading(false); });
-  }, []);
+  // site.json lo comparten cuatro secciones del menú, así que se carga y se
+  // guarda una sola vez aquí arriba.
+  const sitio = useArchivo<Site>("site", "site");
 
-  const updateRecipe = (i: number, r: Recipe) => setRecipes((prev) => prev.map((x, j) => (j === i ? r : x)));
+  const seccion = SECCIONES.find((s) => s.id === activa)!;
+  const esDeSitio = seccion.archivo === "site";
 
-  async function handleSave() {
-    setSaving(true);
-    setMsg("");
-    const res = await fetch("/api/admin/recipes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ recipes, sha }),
-    });
-    const data = await res.json();
-    setSaving(false);
-    if (res.ok) {
-      setMsg("✓ Guardado. Vercel desplegará los cambios en ~1 minuto.");
-    } else {
-      setMsg(`Error: ${data.error}`);
-    }
-  }
+  useAvisoSinGuardar(sitio.sucio);
 
-  async function handleLogout() {
+  // El punto de "sin publicar" aparece en todas las secciones que comparten
+  // site.json, porque un cambio en Inicio también queda pendiente en Historia.
+  const sucios: Record<string, boolean> = {};
+  for (const s of SECCIONES) if (s.archivo === "site") sucios[s.id] = sitio.sucio;
+
+  async function salir() {
+    if (sitio.sucio && !confirm("Tienes cambios sin publicar. ¿Salir de todos modos?")) return;
     await fetch("/api/admin/auth", { method: "DELETE" });
     router.refresh();
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f5ede0", padding: "0 0 80px" }}>
-      {/* Header */}
-      <div style={{ background: "#3a2010", padding: "18px 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div>
-          <div style={{ fontFamily: "serif", fontSize: 18, color: "#f5ede0" }}>Molino la Jalisciense</div>
-          <div style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "#c4a07a" }}>Panel de administración</div>
-        </div>
-        <button
-          onClick={handleLogout}
-          style={{ fontSize: 12, color: "#c4a07a", background: "none", border: "1px solid #6a4030", padding: "6px 14px", borderRadius: 999, cursor: "pointer" }}
-        >
-          Cerrar sesión
-        </button>
+    <div style={{ minHeight: "100vh", background: C.papel, color: C.tinta, fontSize: 15 }}>
+      <BarraSuperior onSalir={salir} />
+
+      <div className="admin-cuerpo">
+        <Menu secciones={SECCIONES} activa={activa} onCambiar={setActiva} sucios={sucios} />
+
+        <main className="admin-panel">
+          {esDeSitio && (
+            <CabeceraSeccion
+              titulo={seccion.nombre}
+              explicacion={EXPLICACION[seccion.id]}
+              sucio={sitio.sucio}
+              guardando={sitio.guardando}
+              cargando={sitio.cargando}
+              msg={sitio.msg}
+              error={sitio.error}
+              onGuardar={sitio.guardar}
+            />
+          )}
+
+          {esDeSitio && sitio.cargando && <Cargando />}
+
+          {esDeSitio && sitio.datos && (
+            <>
+              {activa === "inicio" && <PanelInicio site={sitio.datos} set={sitio.cambiar} />}
+              {activa === "historia" && <PanelHistoria site={sitio.datos} set={sitio.cambiar} />}
+              {activa === "visita" && <PanelVisita site={sitio.datos} set={sitio.cambiar} />}
+              {activa === "folleto" && <PanelFolleto site={sitio.datos} set={sitio.cambiar} />}
+              {activa === "redes" && <PanelRedes site={sitio.datos} set={sitio.cambiar} />}
+            </>
+          )}
+
+          {activa === "recetas" && (
+            <PanelRecetas titulo={seccion.nombre} explicacion={EXPLICACION.recetas} />
+          )}
+          {activa === "catalogo" && (
+            <PanelCatalogo titulo={seccion.nombre} explicacion={EXPLICACION.catalogo} />
+          )}
+          {activa === "testimonios" && (
+            <PanelTestimonios titulo={seccion.nombre} explicacion={EXPLICACION.testimonios} />
+          )}
+        </main>
       </div>
+    </div>
+  );
+}
 
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "32px 24px" }}>
-
-        {/* Tabs */}
-        <div style={{ display: "flex", gap: 8, marginBottom: 32, borderBottom: "1.5px solid #e0d4c0", paddingBottom: 0 }}>
-          {([["recetas", "Recetas y noticias"], ["catalogo", "Catálogo"], ["secciones", "Secciones"], ["testimonios", "Testimonios"]] as const).map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => { setTab(key); setMsg(""); }}
-              style={{
-                padding: "10px 22px", border: "none", cursor: "pointer", fontSize: 14, fontWeight: 500,
-                background: "none", borderBottom: tab === key ? "2.5px solid #8b3e1f" : "2.5px solid transparent",
-                color: tab === key ? "#8b3e1f" : "#9a6040",
-                marginBottom: -1.5,
-                transition: "all 150ms",
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* Recetas */}
-        {tab === "recetas" && (
-          <>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
-              <h1 style={{ fontFamily: "serif", fontSize: 24, fontWeight: 400, color: "#3a2010", margin: 0 }}>Recetas y noticias</h1>
-              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                {msg && <span style={{ fontSize: 13, color: msg.startsWith("✓") ? "#2d7a3a" : "#c0392b" }}>{msg}</span>}
-                <button
-                  onClick={handleSave}
-                  disabled={saving || loading}
-                  style={{
-                    padding: "10px 24px", borderRadius: 999, border: "none",
-                    background: saving || loading ? "#c4a87a" : "#8b3e1f",
-                    color: "#f5ede0", fontSize: 14, fontWeight: 500,
-                    cursor: saving || loading ? "default" : "pointer",
-                  }}
-                >
-                  {saving ? "Guardando..." : "Guardar y publicar"}
-                </button>
-              </div>
-            </div>
-            {loading ? (
-              <div style={{ textAlign: "center", color: "#9a6040", padding: 48 }}>Cargando recetas...</div>
-            ) : (
-              <>
-                {recipes.map((r, i) => (
-                  <RecipeCard
-                    key={r.slug}
-                    recipe={r}
-                    index={i}
-                    onChange={(updated) => updateRecipe(i, updated)}
-                    onDelete={() => setRecipes((prev) => prev.filter((_, j) => j !== i))}
-                  />
-                ))}
-                <button
-                  type="button"
-                  onClick={() => setRecipes((prev) => [...prev, recetaNueva(prev.map((x) => x.slug))])}
-                  style={{ width: "100%", padding: 14, borderRadius: 12, border: "1.5px dashed #c4a87a", background: "transparent", color: "#9a6040", fontSize: 14, cursor: "pointer", marginTop: 4 }}
-                >
-                  + Agregar receta o noticia
-                </button>
-              </>
-            )}
-          </>
-        )}
-
-        {/* Catálogo */}
-        {tab === "catalogo" && <ProductEditor />}
-
-        {/* Secciones */}
-        {tab === "secciones" && <SiteEditor />}
-
-        {/* Testimonios */}
-        {tab === "testimonios" && <TestimonialsEditor />}
-      </div>
+function Cargando() {
+  return (
+    <div style={{ textAlign: "center", color: C.marron, padding: esp.xl, fontSize: 14 }}>
+      Cargando…
     </div>
   );
 }
