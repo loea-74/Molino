@@ -8,6 +8,8 @@ import SiteEditor from "./SiteEditor";
 import TestimonialsEditor from "./TestimonialsEditor";
 import CampoImagen from "./CampoImagen";
 import CampoVideo from "./CampoVideo";
+import BotonEliminar from "./BotonEliminar";
+import { recetaNueva } from "@/lib/nuevosItems";
 
 type LangContent = { es: string; en: string };
 type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -84,7 +86,7 @@ function ListField({ label, value, onChange }: { label: string; value: string[];
   );
 }
 
-function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number; onChange: (r: Recipe) => void }) {
+function RecipeCard({ recipe, index, onChange, onDelete }: { recipe: Recipe; index: number; onChange: (r: Recipe) => void; onDelete: () => void }) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"es" | "en">("es");
 
@@ -171,6 +173,10 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
               onChange={(v) => setFull(tab, "tip", v)}
               rows={2}
             />
+          </div>
+
+          <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 16, marginTop: 20 }}>
+            <BotonEliminar que="entrada" onDelete={onDelete} />
           </div>
         </div>
       )}
@@ -286,9 +292,24 @@ export default function AdminEditor() {
             {loading ? (
               <div style={{ textAlign: "center", color: "#9a6040", padding: 48 }}>Cargando recetas...</div>
             ) : (
-              recipes.map((r, i) => (
-                <RecipeCard key={r.slug} recipe={r} index={i} onChange={(updated) => updateRecipe(i, updated)} />
-              ))
+              <>
+                {recipes.map((r, i) => (
+                  <RecipeCard
+                    key={r.slug}
+                    recipe={r}
+                    index={i}
+                    onChange={(updated) => updateRecipe(i, updated)}
+                    onDelete={() => setRecipes((prev) => prev.filter((_, j) => j !== i))}
+                  />
+                ))}
+                <button
+                  type="button"
+                  onClick={() => setRecipes((prev) => [...prev, recetaNueva(prev.map((x) => x.slug))])}
+                  style={{ width: "100%", padding: 14, borderRadius: 12, border: "1.5px dashed #c4a87a", background: "transparent", color: "#9a6040", fontSize: 14, cursor: "pointer", marginTop: 4 }}
+                >
+                  + Agregar receta o noticia
+                </button>
+              </>
             )}
           </>
         )}

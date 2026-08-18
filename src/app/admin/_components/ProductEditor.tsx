@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 import CampoImagen from "./CampoImagen";
+import BotonEliminar from "./BotonEliminar";
+import { productoNuevo } from "@/lib/nuevosItems";
 
 type LangContent = { es: string; en: string };
 
@@ -44,7 +46,7 @@ function BilingualField({ label, value, onChange }: { label: string; value: Lang
   );
 }
 
-function ProductCard({ product, index, onChange }: { product: Product; index: number; onChange: (p: Product) => void }) {
+function ProductCard({ product, index, onChange, onDelete }: { product: Product; index: number; onChange: (p: Product) => void; onDelete: () => void }) {
   const [open, setOpen] = useState(false);
   const set = (field: keyof Product, val: unknown) => onChange({ ...product, [field]: val });
 
@@ -89,6 +91,10 @@ function ProductCard({ product, index, onChange }: { product: Product; index: nu
             valor={product.image}
             onChange={(ruta) => set("image", ruta)}
           />
+
+          <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 16, marginTop: 8 }}>
+            <BotonEliminar que="producto" onDelete={onDelete} />
+          </div>
 
           {/* Texto alternativo imagen */}
           <div style={{ marginBottom: 16 }}>
@@ -166,9 +172,24 @@ export default function ProductEditor() {
       {loading ? (
         <div style={{ textAlign: "center", color: "#9a6040", padding: 48 }}>Cargando productos...</div>
       ) : (
-        products.map((p, i) => (
-          <ProductCard key={p.slug} product={p} index={i} onChange={(updated) => updateProduct(i, updated)} />
-        ))
+        <>
+          {products.map((p, i) => (
+            <ProductCard
+              key={p.slug}
+              product={p}
+              index={i}
+              onChange={(updated) => updateProduct(i, updated)}
+              onDelete={() => setProducts((prev) => prev.filter((_, j) => j !== i))}
+            />
+          ))}
+          <button
+            type="button"
+            onClick={() => setProducts((prev) => [...prev, productoNuevo(prev.map((x) => x.slug))])}
+            style={{ width: "100%", padding: 14, borderRadius: 12, border: "1.5px dashed #c4a87a", background: "transparent", color: "#9a6040", fontSize: 14, cursor: "pointer", marginTop: 4 }}
+          >
+            + Agregar producto
+          </button>
+        </>
       )}
     </div>
   );
