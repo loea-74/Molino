@@ -47,7 +47,7 @@ export default function Visit() {
         <div>
           <div style={{ height: 320, borderRadius: 14, border: "1px solid rgba(245, 237, 224, 0.3)", overflow: "hidden", marginBottom: 20 }} className="max-sm:!h-52">
             <iframe
-              src="https://maps.google.com/maps?q=19.4258083,-99.1554354&z=18&hl=es&output=embed"
+              src="https://maps.google.com/maps?q=19.4258083,-99.1554354+(MOLINO+LA+GRAN+JALISCIENSE)&z=17&hl=es&output=embed"
               width="100%" height="100%"
               style={{ border: 0 }}
               allowFullScreen loading="lazy"
