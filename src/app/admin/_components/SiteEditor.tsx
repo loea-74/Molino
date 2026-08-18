@@ -25,7 +25,7 @@ type Site = {
     title: Lang; body: Lang;
     noticeTitle: Lang; noticeBody: Lang;
     address: Lang; hours: Lang;
-    phone: string; whatsapp: string; email: string;
+    phone: string; phone2: string; whatsapp: string; email: string; mapsUrl: string;
   };
   catalog: { page1: string; page2: string };
   social: { instagram: string; facebook: string; whatsapp: string; tiktok: string; youtube: string; twitter: string; linkedin: string };
@@ -223,6 +223,8 @@ export default function SiteEditor() {
           <BiTextarea lbl="Horario" value={site.visit.hours} onChange={(v) => setVisit("hours", v)} rows={2} />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             <SingleField lbl="Teléfono (visible)" value={site.visit.phone} onChange={(v) => setVisit("phone", v)} placeholder="55 4361 2880" />
+            <SingleField lbl="Segundo teléfono" value={site.visit.phone2} onChange={(v) => setVisit("phone2", v)} placeholder="55 5566 5817" />
+            <SingleField lbl="Liga de Google Maps (botón Cómo llegar)" value={site.visit.mapsUrl} onChange={(v) => setVisit("mapsUrl", v)} placeholder="https://www.google.com/maps/place/..." />
             <SingleField lbl="WhatsApp (solo números, sin +)" value={site.visit.whatsapp} onChange={(v) => setVisit("whatsapp", v)} placeholder="525543612880" />
           </div>
           <SingleField lbl="Correo electrónico" value={site.visit.email} onChange={(v) => setVisit("email", v)} placeholder="contacto@..." />

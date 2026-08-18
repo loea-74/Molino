@@ -2,7 +2,7 @@
 
 import { useLang } from "@/lib/LangContext";
 import { L } from "@/lib/i18n";
-import { IconWhatsApp, IconMail } from "./icons";
+import { IconWhatsApp, IconMail, IconMap } from "./icons";
 import siteContent from "@/content/site.json";
 
 export default function Visit() {
@@ -47,7 +47,7 @@ export default function Visit() {
         <div>
           <div style={{ height: 320, borderRadius: 14, border: "1px solid rgba(245, 237, 224, 0.3)", overflow: "hidden", marginBottom: 20 }} className="max-sm:!h-52">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.696938025!2d-99.162748!3d19.427231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff42c18a6bcb%3A0x1!2sAbraham+Gonz%C3%A1lez+143%2C+Ju%C3%A1rez%2C+CDMX!5e0!3m2!1ses!2smx!4v1713000000000"
+              src="https://maps.google.com/maps?q=19.4258083,-99.1554354&z=18&hl=es&output=embed"
               width="100%" height="100%"
               style={{ border: 0 }}
               allowFullScreen loading="lazy"
@@ -55,6 +55,15 @@ export default function Visit() {
               title="Ubicación de Molino la Jalisciense"
             />
           </div>
+
+          <a
+            href={v.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: 9, marginBottom: 22, color: "var(--crema-light)", textDecoration: "none", fontSize: 14, fontWeight: 500, border: "1px solid rgba(245, 237, 224, 0.45)", borderRadius: 999, padding: "9px 18px" }}
+          >
+            <IconMap size={16} /> {t.visitDirections}
+          </a>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             <div>
@@ -70,6 +79,9 @@ export default function Visit() {
           <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid rgba(245, 237, 224, 0.25)", display: "flex", flexDirection: "column", gap: 10 }}>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, fontWeight: 500 }}>
               <IconWhatsApp size={18} color="var(--crema-light)" /> {v.phone}
+            </a>
+            <a href={`tel:+52${v.phone2.replace(/\s/g, "")}`} style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, opacity: 0.85, paddingLeft: 28 }}>
+              {v.phone2}
             </a>
             <a href={`mailto:${v.email}`} style={{ color: "var(--crema-light)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, fontSize: 15, opacity: 0.85 }}>
               <IconMail size={18} /> {v.email}

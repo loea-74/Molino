@@ -30,6 +30,7 @@ export const L = {
 
     // Visit
     visitEyebrow: "06 · Visítanos",
+    visitDirections: "Cómo llegar",
     visitAddressL: "Dirección",
     visitHoursL: "Horario",
 
@@ -69,6 +70,7 @@ export const L = {
 
     // Visit
     visitEyebrow: "06 · Visit",
+    visitDirections: "Get directions",
     visitAddressL: "Address",
     visitHoursL: "Hours",
 
