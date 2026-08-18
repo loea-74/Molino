@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 import ProductEditor from "./ProductEditor";
 import SiteEditor from "./SiteEditor";
 import TestimonialsEditor from "./TestimonialsEditor";
@@ -210,10 +211,9 @@ export default function AdminEditor() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/recipes")
-      .then((r) => r.json())
-      .then(({ recipes, sha }) => { setRecipes(recipes); setSha(sha); setLoading(false); })
-      .catch(() => { setMsg("Error al cargar recetas"); setLoading(false); });
+    cargarDelAdmin<{ recipes: Recipe[]; sha: string }>("/api/admin/recipes")
+      .then(({ recipes, sha }) => { setRecipes(recipes ?? []); setSha(sha); setLoading(false); })
+      .catch((e) => { setMsg(mensajeDeError(e)); setLoading(false); });
   }, []);
 
   const updateRecipe = (i: number, r: Recipe) => setRecipes((prev) => prev.map((x, j) => (j === i ? r : x)));

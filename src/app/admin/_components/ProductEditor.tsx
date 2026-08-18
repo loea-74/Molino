@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 
 type LangContent = { es: string; en: string };
 
@@ -118,10 +119,9 @@ export default function ProductEditor() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/products")
-      .then((r) => r.json())
-      .then(({ products }) => { setProducts(products); setLoading(false); })
-      .catch(() => { setMsg("Error al cargar productos"); setLoading(false); });
+    cargarDelAdmin<{ products: Product[] }>("/api/admin/products")
+      .then(({ products }) => { setProducts(products ?? []); setLoading(false); })
+      .catch((e) => { setMsg(mensajeDeError(e)); setLoading(false); });
   }, []);
 
   const updateProduct = (i: number, p: Product) => setProducts((prev) => prev.map((x, j) => (j === i ? p : x)));

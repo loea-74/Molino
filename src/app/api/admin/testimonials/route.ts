@@ -25,7 +25,19 @@ async function getFileFromGitHub() {
       cache: "no-store",
     }
   );
-  if (!res.ok) throw new Error("No se pudo leer el archivo de GitHub");
+  if (!res.ok) {
+    // Causa mas comun: el GITHUB_TOKEN caduco. Decirlo explicitamente evita
+    // que el panel se quede en blanco sin explicacion.
+    if (res.status === 401 || res.status === 403) {
+      throw new Error(
+        "GitHub rechazó las credenciales. El GITHUB_TOKEN está caducado o le faltan permisos — revísalo en Vercel."
+      );
+    }
+    if (res.status === 404) {
+      throw new Error(`No se encontró ${FILE_PATH} en el repositorio.`);
+    }
+    throw new Error(`GitHub respondió ${res.status} al leer ${FILE_PATH}.`);
+  }
   return res.json();
 }
 
@@ -38,7 +50,8 @@ export async function GET(req: NextRequest) {
     const content = Buffer.from(file.content, "base64").toString("utf-8");
     return NextResponse.json({ testimonials: JSON.parse(content), sha: file.sha });
   } catch (e) {
-    return NextResponse.json({ error: String(e) }, { status: 500 });
+    const msg = e instanceof Error ? e.message : "Error inesperado en el servidor.";
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
 
@@ -75,6 +88,7 @@ export async function POST(req: NextRequest) {
     }
     return NextResponse.json({ ok: true });
   } catch (e) {
-    return NextResponse.json({ error: String(e) }, { status: 500 });
+    const msg = e instanceof Error ? e.message : "Error inesperado en el servidor.";
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

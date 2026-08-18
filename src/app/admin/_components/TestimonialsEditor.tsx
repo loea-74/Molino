@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 
 type Testimonial = {
   quote: { es: string; en: string };
@@ -81,10 +82,9 @@ export default function TestimonialsEditor() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/testimonials")
-      .then((r) => r.json())
-      .then(({ testimonials }) => { setItems(testimonials); setLoading(false); })
-      .catch(() => { setMsg("Error al cargar"); setLoading(false); });
+    cargarDelAdmin<{ testimonials: Testimonial[] }>("/api/admin/testimonials")
+      .then(({ testimonials }) => { setItems(testimonials ?? []); setLoading(false); })
+      .catch((e) => { setMsg(mensajeDeError(e)); setLoading(false); });
   }, []);
 
   async function handleSave() {

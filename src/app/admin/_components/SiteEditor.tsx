@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 
 type Lang = { es: string; en: string };
 type Site = {
@@ -96,10 +97,9 @@ export default function SiteEditor() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/site")
-      .then((r) => r.json())
+    cargarDelAdmin<{ site: Site }>("/api/admin/site")
       .then(({ site }) => { setSite(site); setLoading(false); })
-      .catch(() => { setMsg("Error al cargar contenido"); setLoading(false); });
+      .catch((e) => { setMsg(mensajeDeError(e)); setLoading(false); });
   }, []);
 
   async function handleSave() {
