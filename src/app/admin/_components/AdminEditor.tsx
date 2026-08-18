@@ -7,6 +7,7 @@ import ProductEditor from "./ProductEditor";
 import SiteEditor from "./SiteEditor";
 import TestimonialsEditor from "./TestimonialsEditor";
 import CampoImagen from "./CampoImagen";
+import CampoVideo from "./CampoVideo";
 
 type LangContent = { es: string; en: string };
 type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -125,21 +126,11 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
             onChange={(ruta) => setField("image", ruta)}
           />
 
-          {/* Video */}
-          <div style={{ marginBottom: 20 }}>
-            <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 4 }}>
-              Video (opcional — se usa solo si no hay imagen)
-            </div>
-            <div style={{ fontSize: 11, color: "#b08060", marginBottom: 6 }}>
-              Archivo local: <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code> · o URL externa
-            </div>
-            <input
-              value={recipe.video ?? ""}
-              onChange={(e) => setField("video", e.target.value)}
-              placeholder="/fotos/mi-video.mp4"
-              style={inputStyle}
-            />
-          </div>
+          <CampoVideo
+            etiqueta="Video de la receta"
+            valor={recipe.video ?? ""}
+            onChange={(url) => setField("video", url)}
+          />
 
           {/* Contenido completo — tabs es/en */}
           <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 20, marginTop: 4 }}>
