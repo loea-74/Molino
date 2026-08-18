@@ -48,7 +48,7 @@ export default function Nav() {
               Molino la Gran Jalisciense
             </div>
             <div style={{ fontSize: 11, color: "var(--grano-soft)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 3 }}>
-              Desde 1932
+              Desde 1930
             </div>
           </div>
         </a>

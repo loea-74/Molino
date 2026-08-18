@@ -1,8 +1,8 @@
 {
   "hero": {
     "pill": {
-      "es": "Molino artesanal · CDMX · Desde 1962",
-      "en": "Artisan mill · Mexico City · Since 1962"
+      "es": "Molino artesanal · CDMX · Desde 1930",
+      "en": "Artisan mill · Mexico City · Since 1930"
     },
     "title": {
       "es": [
@@ -19,8 +19,8 @@
       ]
     },
     "body": {
-      "es": "Desde hace más de sesenta años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
-      "en": "For over sixty years, in the heart of Colonia Juárez, we've been milling corn and flours for kitchens that take their pozole, tamales and homemade tortillas seriously."
+      "es": "Desde hace casi cien años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
+      "en": "For nearly a hundred years, in the heart of Colonia Juárez, we've been milling corn and flours for kitchens that take their pozole, tamales and homemade tortillas seriously."
     },
     "phone": "55 4361 2880",
     "whatsapp": "525543612880",
@@ -67,8 +67,8 @@
       "en": "Four generations in Colonia Juárez."
     },
     "body1": {
-      "es": "El Molino abrió sus puertas en 1962 en Abraham González 143. Desde entonces no nos hemos movido — y no pensamos hacerlo.",
-      "en": "The mill opened its doors in 1962 at Abraham González 143. We haven't moved since — and we don't plan to."
+      "es": "El Molino abrió sus puertas en 1930 en Abraham González 143. Desde entonces no nos hemos movido — y no pensamos hacerlo.",
+      "en": "The mill opened its doors in 1930 at Abraham González 143. We haven't moved since — and we don't plan to."
     },
     "body2": {
       "es": "Nuestros clientes, muchos de ellos hijos y nietos de nuestros primeros clientes, vienen por lo mismo: maíz molido fresco, atención directa del dueño y precio justo.",
@@ -111,7 +111,7 @@
     },
     "hours": {
       "es": "Lunes a sábado\n08:00 – 18:00\nDomingo\n09:00 - 15:00",
-      "en": "Monday to Saturday\n08:00 – 18:00\nSundey \n09:00 - 15:00"
+      "en": "Monday to Saturday\n08:00 – 18:00\nSunday \n09:00 - 15:00"
     },
     "phone": "55 4361 2880",
     "whatsapp": "525543612880",

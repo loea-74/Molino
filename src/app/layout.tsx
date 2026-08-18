@@ -19,12 +19,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Molino la Jalisciense — Maíz cacahuazintle molido fresco · CDMX desde 1962",
+  title: "Molino la Jalisciense — Maíz cacahuazintle molido fresco · CDMX desde 1930",
   description:
-    "Molino artesanal en la colonia Juárez desde 1962. Maíz cacahuazintle para pozole, harinas frescas, masa del día. Pedidos por WhatsApp.",
+    "Molino artesanal en la colonia Juárez desde 1930. Maíz cacahuazintle para pozole, harinas frescas, masa del día. Pedidos por WhatsApp.",
   openGraph: {
     title: "Molino la Jalisciense",
-    description: "Maíz cacahuazintle molido fresco · CDMX desde 1962",
+    description: "Maíz cacahuazintle molido fresco · CDMX desde 1930",
     locale: "es_MX",
     type: "website",
   },
