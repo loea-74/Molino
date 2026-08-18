@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
+import CampoImagen from "./CampoImagen";
 
 type Lang = { es: string; en: string };
 type Site = {
@@ -171,7 +172,7 @@ export default function SiteEditor() {
             <SingleField lbl="WhatsApp (solo números, sin +)" value={site.hero.whatsapp} onChange={(v) => setHero("whatsapp", v)} placeholder="525543612880" />
           </div>
           <BiField lbl="Dirección (en el pie del hero)" value={site.hero.address} onChange={(v) => setHero("address", v)} />
-          <SingleField lbl="Imagen principal (en public/fotos/)" value={site.hero.image} onChange={(v) => setHero("image", v)} placeholder="/fotos/foto-frente.jpg" />
+          <CampoImagen etiqueta="Imagen principal" valor={site.hero.image} onChange={(v) => setHero("image", v)} />
 
           <div style={{ borderTop: "1px solid #e0d4c0", paddingTop: 16, marginTop: 8, marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: "#9a6040", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Estadísticas</div>
@@ -209,7 +210,7 @@ export default function SiteEditor() {
           <BiField lbl="Cita (quote)" value={site.history.quote} onChange={(v) => setHistory("quote", v)} />
           <BiField lbl="Firma de la cita" value={site.history.caption} onChange={(v) => setHistory("caption", v)} />
           <BiField lbl="Etiqueta de la foto (badge)" value={site.history.badge} onChange={(v) => setHistory("badge", v)} />
-          <SingleField lbl="Foto histórica (en public/fotos/)" value={site.history.image} onChange={(v) => setHistory("image", v)} placeholder="/fotos/antigua.png" />
+          <CampoImagen etiqueta="Foto histórica" valor={site.history.image} onChange={(v) => setHistory("image", v)} />
         </div>
       )}
 
@@ -236,12 +237,10 @@ export default function SiteEditor() {
           <p style={{ fontSize: 13, color: "#9a6040", marginBottom: 20 }}>
             Las dos imágenes se muestran en el modal al hacer clic en &ldquo;Ver catálogo completo&rdquo;. Usa nombres de archivo en <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code>.
           </p>
-          <SingleField lbl="Página 1 — frente del folleto" value={site.catalog.page1}
-            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page1: v } } : s)}
-            placeholder="/fotos/folletodelane.png" />
-          <SingleField lbl="Página 2 — reverso del folleto" value={site.catalog.page2}
-            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page2: v } } : s)}
-            placeholder="/fotos/folletotracera.png" />
+          <CampoImagen etiqueta="Página 1 — frente del folleto" valor={site.catalog.page1}
+            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page1: v } } : s)} />
+          <CampoImagen etiqueta="Página 2 — reverso del folleto" valor={site.catalog.page2}
+            onChange={(v) => setSite((s) => s ? { ...s, catalog: { ...s.catalog, page2: v } } : s)} />
         </div>
       )}
 

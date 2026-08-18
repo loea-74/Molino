@@ -6,6 +6,7 @@ import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 import ProductEditor from "./ProductEditor";
 import SiteEditor from "./SiteEditor";
 import TestimonialsEditor from "./TestimonialsEditor";
+import CampoImagen from "./CampoImagen";
 
 type LangContent = { es: string; en: string };
 type FullLang = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -118,18 +119,11 @@ function RecipeCard({ recipe, index, onChange }: { recipe: Recipe; index: number
             />
           ))}
 
-          {/* Imagen */}
-          <div style={{ marginBottom: 16 }}>
-            <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 6 }}>
-              Imagen (nombre de archivo en <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code>)
-            </div>
-            <input
-              value={recipe.image}
-              onChange={(e) => setField("image", e.target.value)}
-              placeholder="/fotos/mi-foto.jpg"
-              style={inputStyle}
-            />
-          </div>
+          <CampoImagen
+            etiqueta="Imagen de la receta"
+            valor={recipe.image}
+            onChange={(ruta) => setField("image", ruta)}
+          />
 
           {/* Video */}
           <div style={{ marginBottom: 20 }}>

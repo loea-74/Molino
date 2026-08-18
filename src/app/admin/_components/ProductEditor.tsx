@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
+import CampoImagen from "./CampoImagen";
 
 type LangContent = { es: string; en: string };
 
@@ -83,13 +84,11 @@ function ProductCard({ product, index, onChange }: { product: Product; index: nu
             />
           </div>
 
-          {/* Imagen */}
-          <div style={{ marginBottom: 16 }}>
-            <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9a6040", marginBottom: 6 }}>
-              Imagen (en <code style={{ background: "#f0e6d8", padding: "1px 5px", borderRadius: 4 }}>public/fotos/</code>)
-            </div>
-            <input value={product.image} onChange={(e) => set("image", e.target.value)} placeholder="/fotos/mi-foto.jpg" style={inputStyle} />
-          </div>
+          <CampoImagen
+            etiqueta="Foto del producto"
+            valor={product.image}
+            onChange={(ruta) => set("image", ruta)}
+          />
 
           {/* Texto alternativo imagen */}
           <div style={{ marginBottom: 16 }}>
