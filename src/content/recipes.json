@@ -74,7 +74,7 @@
       "es": "Leer receta",
       "en": "Read recipe"
     },
-    "image": "/fotos/Pozole.png",
+    "image": "/fotos/imagen-de-codex-3-sept-2026-11-55-48-p-m-f36251.webp",
     "fullContent": {
       "es": {
         "intro": "El pozole rojo es uno de los platillos más representativos de la cocina mexicana. La clave está en el maíz cacahuazintle bien descabezado y en un chile ancho con guajillo bien tostado. Esta receta es de la familia García, clientes nuestros desde 1978.",
@@ -152,7 +152,7 @@
         "tip": "The corn must be fully bloomed before adding the broth. If the center is still hard, keep cooking."
       }
     },
-    "video": "/fotos/pozole.mp4"
+    "video": "https://wuesgqqutu5ruswd.public.blob.vercel-storage.com/videos/mexican-independence-food-scene-VvwgfKPStpzWHwgctGqn2vBBLkW8BF"
   },
   {
     "slug": "tamales-rajas-queso",
