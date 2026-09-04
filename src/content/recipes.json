@@ -104,11 +104,11 @@
   {
     "slug": "calendario-pozolero",
     "kicker": {
-      "es": "Temporada",
+      "es": "Horario de Temporada",
       "en": "Season"
     },
     "title": {
-      "es": "Calendario pozolero 2026",
+      "es": "Fiestas patrias",
       "en": "2026 pozole calendar"
     },
     "body": {
@@ -120,7 +120,7 @@
       "en": "Mar 28, 2026"
     },
     "cta": {
-      "es": "Ver calendario",
+      "es": "Ver Noticia",
       "en": "See calendar"
     },
     "image": "/fotos/calendario.jpg",
