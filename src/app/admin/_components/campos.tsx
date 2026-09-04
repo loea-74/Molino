@@ -58,10 +58,12 @@ export function CampoArea({
  * siempre en dos columnas y en el celular quedaban dos campos de ~130 px.
  */
 export function CampoBilingue({
-  rotulo, valor, onChange, nota, largo = false, filas = 3,
+  rotulo, valor, onChange, nota, largo = false, filas = 3, placeholder,
 }: {
   rotulo: string; valor: Bilingue; onChange: (v: Bilingue) => void;
   nota?: string; largo?: boolean; filas?: number;
+  /** Lo que la página muestra si el campo se deja vacío. */
+  placeholder?: Bilingue;
 }) {
   const props = {
     style: { ...campo, ...(largo ? { resize: "vertical" as const, lineHeight: 1.5 } : {}) },
@@ -79,12 +81,14 @@ export function CampoBilingue({
               <textarea
                 value={valor[l]}
                 rows={filas}
+                placeholder={placeholder?.[l]}
                 onChange={(e) => onChange({ ...valor, [l]: e.target.value })}
                 {...props}
               />
             ) : (
               <input
                 value={valor[l]}
+                placeholder={placeholder?.[l]}
                 onChange={(e) => onChange({ ...valor, [l]: e.target.value })}
                 {...props}
               />

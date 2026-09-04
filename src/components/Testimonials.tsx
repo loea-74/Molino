@@ -1,13 +1,13 @@
 "use client";
 
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import { IconStar } from "./icons";
 import testimonials from "@/content/testimonials.json";
 
 export default function Testimonials() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
 
   return (
     <section style={{ padding: "48px 48px 96px" }} className="max-sm:!px-5 max-sm:!py-14">

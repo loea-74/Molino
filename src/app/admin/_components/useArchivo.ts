@@ -5,6 +5,25 @@ import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 
 export type Archivo = "site" | "recipes" | "products" | "testimonials";
 
+/** Lo que devuelve useArchivo. Se nombra para poder pasarlo entero como prop. */
+export type Control<T> = {
+  datos: T | null;
+  cambiar: (nuevo: T | ((prev: T) => T)) => void;
+  guardar: () => Promise<void>;
+  cargando: boolean;
+  guardando: boolean;
+  sucio: boolean;
+  msg: string;
+  error: boolean;
+};
+
+/**
+ * La parte de Control que no depende del tipo de datos. Sirve para tratar los
+ * cuatro archivos como una lista homogénea (¿alguno tiene cambios sin
+ * publicar?, ¿alguno está guardando?) sin pelearse con los genéricos.
+ */
+export type Estado = Omit<Control<never>, "datos" | "cambiar">;
+
 /**
  * Carga y guarda uno de los archivos de contenido.
  *
@@ -12,7 +31,7 @@ export type Archivo = "site" | "recipes" | "products" | "testimonials";
  * además se lleva la cuenta de si hay cambios sin guardar, que antes no existía:
  * se podía cerrar la pestaña y perder todo sin ningún aviso.
  */
-export function useArchivo<T>(archivo: Archivo, clave: string) {
+export function useArchivo<T>(archivo: Archivo, clave: string): Control<T> {
   const [datos, setDatos] = useState<T | null>(null);
   const [cargando, setCargando] = useState(true);
   const [guardando, setGuardando] = useState(false);

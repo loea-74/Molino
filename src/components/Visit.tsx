@@ -1,13 +1,13 @@
 "use client";
 
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import { IconWhatsApp, IconMail, IconMap } from "./icons";
 import siteContent from "@/content/site.json";
 
 export default function Visit() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
   const v = siteContent.visit;
   const WHATSAPP = `https://wa.me/${v.whatsapp}`;
 

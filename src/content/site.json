@@ -127,5 +127,51 @@
     "youtube": "https://www.youtube.com/@MolinoLaJalisciense",
     "twitter": "",
     "linkedin": ""
+  },
+  "labels": {
+    "productsEyebrow": {
+      "es": "02 · Catálogo",
+      "en": "02 · Catalogue"
+    },
+    "productsTitle": {
+      "es": "Lo que sale del molino",
+      "en": "What comes out of the mill"
+    },
+    "productsBody": {
+      "es": "Producto fresco, molido el mismo día. Pedidos por WhatsApp para llevar o recoger en tienda.",
+      "en": "Fresh product, milled the same day. WhatsApp orders for pickup or delivery."
+    },
+    "historyEyebrow": {
+      "es": "03 · Historia",
+      "en": "03 · History"
+    },
+    "recipesEyebrow": {
+      "es": "04 · Recetas y noticias",
+      "en": "04 · Recipes & news"
+    },
+    "recipesTitle": {
+      "es": "Cómo se usa bien nuestro maíz",
+      "en": "Getting the most out of our corn"
+    },
+    "recipesKicker": {
+      "es": "Desliza · últimas entradas",
+      "en": "Swipe · latest entries"
+    },
+    "testimonialsEyebrow": {
+      "es": "05 · Clientes",
+      "en": "05 · Customers"
+    },
+    "visitEyebrow": {
+      "es": "06 · Visítanos",
+      "en": "06 · Visit"
+    },
+    "footerTag": {
+      "es": "Molino artesanal — CDMX",
+      "en": "Artisan mill — Mexico City"
+    },
+    "footerRights": {
+      "es": "© 2026 Molino la Gran Jalisciense · Todos los derechos reservados",
+      "en": "© 2026 Molino la Gran Jalisciense · All rights reserved"
+    }
   }
 }

@@ -4,8 +4,7 @@ import { useState } from "react";
 import { C, esp, radio, tarjeta } from "./ui";
 import { CampoTexto, CampoBilingue, type Bilingue } from "./campos";
 import BotonEliminar from "./BotonEliminar";
-import { CabeceraSeccion } from "./Armazon";
-import { useArchivo, useAvisoSinGuardar } from "./useArchivo";
+import { BloqueEncabezado, type Site } from "./PanelesSitio";
 
 export type Testimonial = {
   quote: Bilingue;
@@ -70,51 +69,39 @@ function Ficha({
   );
 }
 
-export default function PanelTestimonios({ titulo, explicacion }: { titulo: string; explicacion: string }) {
-  const a = useArchivo<Testimonial[]>("testimonials", "testimonials");
-  useAvisoSinGuardar(a.sucio);
-  const items = a.datos ?? [];
-
+export default function PanelTestimonios({
+  datos, cambiar, site, setSite,
+}: {
+  datos: Testimonial[];
+  cambiar: (f: (prev: Testimonial[]) => Testimonial[]) => void;
+  site: Site | null;
+  setSite: (f: (s: Site) => Site) => void;
+}) {
   return (
     <>
-      <CabeceraSeccion
-        titulo={titulo}
-        explicacion={explicacion}
-        sucio={a.sucio}
-        guardando={a.guardando}
-        cargando={a.cargando}
-        msg={a.msg}
-        error={a.error}
-        onGuardar={a.guardar}
-      />
+      {site && <BloqueEncabezado site={site} set={setSite} seccion="testimonios" />}
 
-      {a.cargando ? (
-        <div style={{ textAlign: "center", color: C.marron, padding: esp.xl, fontSize: 14 }}>Cargando…</div>
-      ) : (
-        <>
-          {items.map((t, i) => (
-            <Ficha
-              key={i}
-              t={t}
-              indice={i}
-              onChange={(v) => a.cambiar((prev) => prev.map((x, j) => (j === i ? v : x)))}
-              onDelete={() => a.cambiar((prev) => prev.filter((_, j) => j !== i))}
-            />
-          ))}
-          <button
-            type="button"
-            onClick={() => a.cambiar((prev) => [...prev, testimonioNuevo()])}
-            style={{
-              width: "100%", padding: 15, borderRadius: radio.grande,
-              border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
-              color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
-              fontFamily: "inherit",
-            }}
-          >
-            + Agregar testimonio
-          </button>
-        </>
-      )}
+      {datos.map((t, i) => (
+        <Ficha
+          key={i}
+          t={t}
+          indice={i}
+          onChange={(v) => cambiar((prev) => prev.map((x, j) => (j === i ? v : x)))}
+          onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+        />
+      ))}
+      <button
+        type="button"
+        onClick={() => cambiar((prev) => [...prev, testimonioNuevo()])}
+        style={{
+          width: "100%", padding: 15, borderRadius: radio.grande,
+          border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
+          color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
+          fontFamily: "inherit",
+        }}
+      >
+        + Agregar testimonio
+      </button>
     </>
   );
 }

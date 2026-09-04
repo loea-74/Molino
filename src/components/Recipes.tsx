@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import { IconChevronLeft, IconChevronRight, IconArrow } from "./icons";
 import RecipeModal from "./RecipeModal";
 import recipes from "@/content/recipes.json";
@@ -19,7 +19,7 @@ const GRADIENTS = [
 
 export default function Recipes() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
   const [active, setActive] = useState(0);
   const [fading, setFading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);

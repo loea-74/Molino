@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import siteContent from "@/content/site.json";
 
 export default function History() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
   const hs = siteContent.history;
 
   return (

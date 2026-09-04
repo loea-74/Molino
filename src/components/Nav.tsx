@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import { IconWhatsApp, IconMenu } from "./icons";
 
 const WHATSAPP = "https://wa.me/525543612880";
 
 export default function Nav() {
   const { lang, toggle } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navHrefs = ["#productos", "#historia", "#recetas", "#visita"];

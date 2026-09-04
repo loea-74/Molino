@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import { IconArrow } from "./icons";
 import products from "@/content/products.json";
 import siteContent from "@/content/site.json";
@@ -66,7 +66,7 @@ function CatalogModal({ onClose }: { onClose: () => void }) {
 
 export default function Products() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
   const [showCatalog, setShowCatalog] = useState(false);
 
   return (

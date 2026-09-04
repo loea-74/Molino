@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useLang } from "@/lib/LangContext";
-import { L } from "@/lib/i18n";
+import { textos } from "@/lib/textos";
 import Image from "next/image";
 import { IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconYouTube, IconTwitter, IconLinkedIn } from "./icons";
 import siteContent from "@/content/site.json";
@@ -59,7 +59,7 @@ function SocialIcons() {
 
 export default function Footer() {
   const { lang } = useLang();
-  const t = L[lang];
+  const t = textos(lang);
 
   return (
     <footer style={{ background: "var(--grano)", color: "var(--crema-light)", padding: "56px 48px 32px" }} className="max-sm:!px-5 max-sm:!py-10">

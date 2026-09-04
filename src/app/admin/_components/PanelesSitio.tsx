@@ -3,6 +3,7 @@
 import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
 import { C, campo, etiqueta, esp } from "./ui";
+import { L } from "@/lib/i18n";
 
 export type Site = {
   hero: {
@@ -33,6 +34,8 @@ export type Site = {
     instagram: string; facebook: string; whatsapp: string;
     tiktok: string; youtube: string; twitter: string; linkedin: string;
   };
+  /** Encabezados de cada sección. Antes vivían en i18n.ts y no eran editables. */
+  labels: Record<string, Bilingue>;
 };
 
 type Props = { site: Site; set: (f: (s: Site) => Site) => void };
@@ -117,6 +120,8 @@ export function PanelHistoria({ site, set }: Props) {
 
   return (
     <>
+      <BloqueEncabezado site={site} set={set} seccion="historia" />
+
       <Bloque titulo="El texto">
         <CampoBilingue rotulo="Título" valor={site.history.title} onChange={(v) => h("title", v)} />
         <CampoBilingue rotulo="Primer párrafo" valor={site.history.body1} onChange={(v) => h("body1", v)} largo />
@@ -144,6 +149,8 @@ export function PanelVisita({ site, set }: Props) {
 
   return (
     <>
+      <BloqueEncabezado site={site} set={set} seccion="visita" />
+
       <Bloque titulo="El texto">
         <CampoBilingue rotulo="Título" valor={site.visit.title} onChange={(v) => h("title", v)} />
         <CampoBilingue rotulo="Descripción" valor={site.visit.body} onChange={(v) => h("body", v)} largo />
@@ -211,7 +218,10 @@ const REDES = [
 
 export function PanelRedes({ site, set }: Props) {
   return (
-    <Bloque titulo="Íconos del pie de página" nota="Deja vacía la que no uses y su ícono no aparece">
+    <>
+      <BloqueEncabezado site={site} set={set} seccion="pie" titulo="Textos del pie de página" nota="Lo que se lee abajo del todo" />
+
+      <Bloque titulo="Íconos del pie de página" nota="Deja vacía la que no uses y su ícono no aparece">
       {REDES.map(([k, nombre, ejemplo]) => (
         <CampoTexto
           key={k}
@@ -220,6 +230,75 @@ export function PanelRedes({ site, set }: Props) {
           valor={site.social[k]}
           onChange={(v) => set((s) => ({ ...s, social: { ...s.social, [k]: v } }))}
           placeholder={ejemplo}
+        />
+      ))}
+      </Bloque>
+    </>
+  );
+}
+
+
+/* ───────────────────── ENCABEZADOS DE SECCIÓN ───────────────────── */
+
+type CampoEncabezado = { clave: string; rotulo: string; nota?: string; largo?: boolean };
+
+/**
+ * Qué encabezado corresponde a cada sección del panel.
+ *
+ * Las claves son las mismas de i18n.ts porque src/lib/textos.ts superpone
+ * site.json → labels sobre los valores de ahí. Si un campo se deja vacío, la
+ * página sigue mostrando el texto original en vez de quedarse en blanco.
+ */
+export const ENCABEZADOS: Record<string, CampoEncabezado[]> = {
+  catalogo: [
+    { clave: "productsEyebrow", rotulo: "Etiqueta chica de arriba", nota: "Va en letras chicas sobre el título. Hoy dice: 02 · Catálogo." },
+    { clave: "productsTitle", rotulo: "Título de la sección" },
+    { clave: "productsBody", rotulo: "Descripción", nota: "El párrafo a la derecha del título.", largo: true },
+  ],
+  recetas: [
+    { clave: "recipesEyebrow", rotulo: "Etiqueta chica de arriba" },
+    { clave: "recipesTitle", rotulo: "Título de la sección" },
+    { clave: "recipesKicker", rotulo: "Texto junto al título", nota: "Hoy dice: Desliza · últimas entradas." },
+  ],
+  historia: [{ clave: "historyEyebrow", rotulo: "Etiqueta chica de arriba" }],
+  testimonios: [{ clave: "testimonialsEyebrow", rotulo: "Etiqueta chica de arriba" }],
+  visita: [{ clave: "visitEyebrow", rotulo: "Etiqueta chica de arriba" }],
+  pie: [
+    { clave: "footerTag", rotulo: "Frase bajo el logo" },
+    { clave: "footerRights", rotulo: "Aviso de derechos", nota: "El año está escrito dentro del texto: si cambia, cámbialo aquí.", largo: true },
+  ],
+};
+
+/** Los encabezados de una sección, listos para editar. */
+export function BloqueEncabezado({
+  site, set, seccion, titulo = "Encabezado de la sección", nota = "Lo que va arriba, antes del contenido. Si lo dejas vacío se usa el texto en gris.",
+}: {
+  site: Site;
+  set: (f: (s: Site) => Site) => void;
+  seccion: keyof typeof ENCABEZADOS;
+  titulo?: string;
+  nota?: string;
+}) {
+  const campos = ENCABEZADOS[seccion];
+  const cambiar = (clave: string, v: Bilingue) =>
+    set((s) => ({ ...s, labels: { ...s.labels, [clave]: v } }));
+
+  return (
+    <Bloque titulo={titulo} nota={nota}>
+      {campos.map((c) => (
+        <CampoBilingue
+          key={c.clave}
+          rotulo={c.rotulo}
+          nota={c.nota}
+          largo={c.largo}
+          valor={site.labels?.[c.clave] ?? { es: "", en: "" }}
+          // Un campo vacío no deja hueco en la página: se usa el texto de
+          // siempre. Mostrarlo como guía evita que parezca que se borró.
+          placeholder={{
+            es: String(L.es[c.clave as keyof typeof L.es] ?? ""),
+            en: String(L.en[c.clave as keyof typeof L.en] ?? ""),
+          }}
+          onChange={(v) => cambiar(c.clave, v)}
         />
       ))}
     </Bloque>

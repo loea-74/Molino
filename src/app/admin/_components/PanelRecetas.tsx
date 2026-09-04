@@ -6,8 +6,7 @@ import { CampoBilingue, CampoArea, CampoLista, Bloque, type Bilingue } from "./c
 import CampoImagen from "./CampoImagen";
 import CampoVideo from "./CampoVideo";
 import BotonEliminar from "./BotonEliminar";
-import { CabeceraSeccion } from "./Armazon";
-import { useArchivo, useAvisoSinGuardar } from "./useArchivo";
+import { BloqueEncabezado, type Site } from "./PanelesSitio";
 import { recetaNueva } from "@/lib/nuevosItems";
 
 type Idioma = { intro: string; ingredients: string[]; steps: string[]; tip: string };
@@ -132,51 +131,39 @@ function Ficha({
   );
 }
 
-export default function PanelRecetas({ titulo, explicacion }: { titulo: string; explicacion: string }) {
-  const a = useArchivo<Recipe[]>("recipes", "recipes");
-  useAvisoSinGuardar(a.sucio);
-  const recetas = a.datos ?? [];
-
+export default function PanelRecetas({
+  datos, cambiar, site, setSite,
+}: {
+  datos: Recipe[];
+  cambiar: (f: (prev: Recipe[]) => Recipe[]) => void;
+  site: Site | null;
+  setSite: (f: (s: Site) => Site) => void;
+}) {
   return (
     <>
-      <CabeceraSeccion
-        titulo={titulo}
-        explicacion={explicacion}
-        sucio={a.sucio}
-        guardando={a.guardando}
-        cargando={a.cargando}
-        msg={a.msg}
-        error={a.error}
-        onGuardar={a.guardar}
-      />
+      {site && <BloqueEncabezado site={site} set={setSite} seccion="recetas" />}
 
-      {a.cargando ? (
-        <div style={{ textAlign: "center", color: C.marron, padding: esp.xl, fontSize: 14 }}>Cargando…</div>
-      ) : (
-        <>
-          {recetas.map((r, i) => (
-            <Ficha
-              key={r.slug}
-              receta={r}
-              indice={i}
-              onChange={(nueva) => a.cambiar((prev) => prev.map((x, j) => (j === i ? nueva : x)))}
-              onDelete={() => a.cambiar((prev) => prev.filter((_, j) => j !== i))}
-            />
-          ))}
-          <button
-            type="button"
-            onClick={() => a.cambiar((prev) => [...prev, recetaNueva(prev.map((x) => x.slug))])}
-            style={{
-              width: "100%", padding: 15, borderRadius: radio.grande,
-              border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
-              color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
-              fontFamily: "inherit",
-            }}
-          >
-            + Agregar receta o noticia
-          </button>
-        </>
-      )}
+      {datos.map((r, i) => (
+        <Ficha
+          key={r.slug}
+          receta={r}
+          indice={i}
+          onChange={(nueva) => cambiar((prev) => prev.map((x, j) => (j === i ? nueva : x)))}
+          onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+        />
+      ))}
+      <button
+        type="button"
+        onClick={() => cambiar((prev) => [...prev, recetaNueva(prev.map((x) => x.slug))])}
+        style={{
+          width: "100%", padding: 15, borderRadius: radio.grande,
+          border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
+          color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
+          fontFamily: "inherit",
+        }}
+      >
+        + Agregar receta o noticia
+      </button>
     </>
   );
 }

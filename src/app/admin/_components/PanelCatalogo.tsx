@@ -5,8 +5,7 @@ import { C, esp, radio, campo, etiqueta, tarjeta } from "./ui";
 import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
 import BotonEliminar from "./BotonEliminar";
-import { CabeceraSeccion } from "./Armazon";
-import { useArchivo, useAvisoSinGuardar } from "./useArchivo";
+import { BloqueEncabezado, type Site } from "./PanelesSitio";
 import { productoNuevo } from "@/lib/nuevosItems";
 
 export type Product = {
@@ -122,51 +121,39 @@ function Ficha({
   );
 }
 
-export default function PanelCatalogo({ titulo, explicacion }: { titulo: string; explicacion: string }) {
-  const a = useArchivo<Product[]>("products", "products");
-  useAvisoSinGuardar(a.sucio);
-  const productos = a.datos ?? [];
-
+export default function PanelCatalogo({
+  datos, cambiar, site, setSite,
+}: {
+  datos: Product[];
+  cambiar: (f: (prev: Product[]) => Product[]) => void;
+  site: Site | null;
+  setSite: (f: (s: Site) => Site) => void;
+}) {
   return (
     <>
-      <CabeceraSeccion
-        titulo={titulo}
-        explicacion={explicacion}
-        sucio={a.sucio}
-        guardando={a.guardando}
-        cargando={a.cargando}
-        msg={a.msg}
-        error={a.error}
-        onGuardar={a.guardar}
-      />
+      {site && <BloqueEncabezado site={site} set={setSite} seccion="catalogo" />}
 
-      {a.cargando ? (
-        <div style={{ textAlign: "center", color: C.marron, padding: esp.xl, fontSize: 14 }}>Cargando…</div>
-      ) : (
-        <>
-          {productos.map((p, i) => (
-            <Ficha
-              key={p.slug}
-              producto={p}
-              indice={i}
-              onChange={(nuevo) => a.cambiar((prev) => prev.map((x, j) => (j === i ? nuevo : x)))}
-              onDelete={() => a.cambiar((prev) => prev.filter((_, j) => j !== i))}
-            />
-          ))}
-          <button
-            type="button"
-            onClick={() => a.cambiar((prev) => [...prev, productoNuevo(prev.map((x) => x.slug))])}
-            style={{
-              width: "100%", padding: 15, borderRadius: radio.grande,
-              border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
-              color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
-              fontFamily: "inherit",
-            }}
-          >
-            + Agregar producto
-          </button>
-        </>
-      )}
+      {datos.map((p, i) => (
+        <Ficha
+          key={p.slug}
+          producto={p}
+          indice={i}
+          onChange={(nuevo) => cambiar((prev) => prev.map((x, j) => (j === i ? nuevo : x)))}
+          onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+        />
+      ))}
+      <button
+        type="button"
+        onClick={() => cambiar((prev) => [...prev, productoNuevo(prev.map((x) => x.slug))])}
+        style={{
+          width: "100%", padding: 15, borderRadius: radio.grande,
+          border: `1.5px dashed ${C.accionApagada}`, background: "transparent",
+          color: C.marron, fontSize: 14.5, cursor: "pointer", marginTop: esp.xs,
+          fontFamily: "inherit",
+        }}
+      >
+        + Agregar producto
+      </button>
     </>
   );
 }
