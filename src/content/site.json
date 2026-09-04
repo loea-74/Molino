@@ -177,7 +177,8 @@
   "theme": {
     "fuente": "inter",
     "colores": {
-      "terracotaDark": "#6D2108"
+      "terracotaDark": "#6D2108",
+      "terracota": "#6D2108"
     }
   }
 }
