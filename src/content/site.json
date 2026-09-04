@@ -175,9 +175,8 @@
     }
   },
   "theme": {
-    "fuente": "inter",
+    "fuente": "actual",
     "colores": {
-      "terracotaDark": "#ABA3A0",
       "terracota": "#B8542E"
     }
   }
