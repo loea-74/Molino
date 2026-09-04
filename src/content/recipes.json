@@ -1,5 +1,58 @@
 [
   {
+    "slug": "calendario-pozolero",
+    "kicker": {
+      "es": "Horario de Temporada",
+      "en": "Season"
+    },
+    "title": {
+      "es": "Fiestas patrias",
+      "en": "2026 pozole calendar"
+    },
+    "body": {
+      "es": "Fechas fuertes del año y cómo pedir con anticipación para no quedarte sin maíz.",
+      "en": "Peak dates of the year and how to order ahead so you don't run short."
+    },
+    "date": {
+      "es": "28 Mar 2026",
+      "en": "Mar 28, 2026"
+    },
+    "cta": {
+      "es": "Ver Noticia",
+      "en": "See calendar"
+    },
+    "image": "/fotos/imagen-de-codex-3-sept-2026-11-55-48-p-m-997b10.webp",
+    "fullContent": {
+      "es": {
+        "intro": "Hay fechas en el año donde la demanda de maíz cacahuazintle se dispara. En esas semanas el molino trabaja al doble y el stock se agota rápido. Si sabes cuándo vas a hacer pozole, planea con anticipación.",
+        "ingredients": [],
+        "steps": [
+          "🗓 15 Sep — Fiestas Patrias. La semana previa es la más alta del año. Pide con 5 días de anticipación.",
+          "🗓 1–2 Nov — Día de Muertos. Ofrenda con pozole blanco: pide desde el 28 de octubre.",
+          "🗓 12 Dic — Virgen de Guadalupe. Pozoladas masivas en colonias. Stock limitado.",
+          "🗓 24–25 Dic — Navidad. Segunda temporada más alta. Pedidos desde el 18 de diciembre.",
+          "🗓 1 Ene — Año Nuevo. Pozole de resaca. Solemos tener stock, pero no garantizado.",
+          "🗓 Semana Santa — Pozole blanco. Demanda moderada, sin problema de stock normalmente."
+        ],
+        "tip": "Para eventos de más de 20 personas, escríbenos por WhatsApp con una semana de anticipación y apartamos tu cantidad."
+      },
+      "en": {
+        "intro": "There are dates throughout the year when demand for cacahuazintle corn spikes. During those weeks the mill runs double shifts and stock runs out fast. If you know when you're making pozole, plan ahead.",
+        "ingredients": [],
+        "steps": [
+          "🗓 Sep 15 — Independence Day. The prior week is the highest of the year. Order 5 days ahead.",
+          "🗓 Nov 1–2 — Day of the Dead. White pozole offerings: order from October 28.",
+          "🗓 Dec 12 — Virgin of Guadalupe. Massive pozoladas in neighborhoods. Limited stock.",
+          "🗓 Dec 24–25 — Christmas. Second busiest season. Orders from December 18.",
+          "🗓 Jan 1 — New Year. Hangover pozole. Usually have stock, but not guaranteed.",
+          "🗓 Holy Week — White pozole. Moderate demand, usually no stock issues."
+        ],
+        "tip": "For events of 20+ people, message us on WhatsApp a week ahead and we'll set aside your quantity."
+      }
+    },
+    "video": "https://wuesgqqutu5ruswd.public.blob.vercel-storage.com/videos/fiestas-patrias-pozole-D8Is6nrHzqGWxlk1vmaemBhhfoG3HQ"
+  },
+  {
     "slug": "pozole-rojo-tradicional",
     "kicker": {
       "es": "Receta artesanal",
@@ -100,59 +153,6 @@
       }
     },
     "video": "/fotos/pozole.mp4"
-  },
-  {
-    "slug": "calendario-pozolero",
-    "kicker": {
-      "es": "Horario de Temporada",
-      "en": "Season"
-    },
-    "title": {
-      "es": "Fiestas patrias",
-      "en": "2026 pozole calendar"
-    },
-    "body": {
-      "es": "Fechas fuertes del año y cómo pedir con anticipación para no quedarte sin maíz.",
-      "en": "Peak dates of the year and how to order ahead so you don't run short."
-    },
-    "date": {
-      "es": "28 Mar 2026",
-      "en": "Mar 28, 2026"
-    },
-    "cta": {
-      "es": "Ver Noticia",
-      "en": "See calendar"
-    },
-    "image": "/fotos/imagen-de-codex-3-sept-2026-11-55-48-p-m-997b10.webp",
-    "fullContent": {
-      "es": {
-        "intro": "Hay fechas en el año donde la demanda de maíz cacahuazintle se dispara. En esas semanas el molino trabaja al doble y el stock se agota rápido. Si sabes cuándo vas a hacer pozole, planea con anticipación.",
-        "ingredients": [],
-        "steps": [
-          "🗓 15 Sep — Fiestas Patrias. La semana previa es la más alta del año. Pide con 5 días de anticipación.",
-          "🗓 1–2 Nov — Día de Muertos. Ofrenda con pozole blanco: pide desde el 28 de octubre.",
-          "🗓 12 Dic — Virgen de Guadalupe. Pozoladas masivas en colonias. Stock limitado.",
-          "🗓 24–25 Dic — Navidad. Segunda temporada más alta. Pedidos desde el 18 de diciembre.",
-          "🗓 1 Ene — Año Nuevo. Pozole de resaca. Solemos tener stock, pero no garantizado.",
-          "🗓 Semana Santa — Pozole blanco. Demanda moderada, sin problema de stock normalmente."
-        ],
-        "tip": "Para eventos de más de 20 personas, escríbenos por WhatsApp con una semana de anticipación y apartamos tu cantidad."
-      },
-      "en": {
-        "intro": "There are dates throughout the year when demand for cacahuazintle corn spikes. During those weeks the mill runs double shifts and stock runs out fast. If you know when you're making pozole, plan ahead.",
-        "ingredients": [],
-        "steps": [
-          "🗓 Sep 15 — Independence Day. The prior week is the highest of the year. Order 5 days ahead.",
-          "🗓 Nov 1–2 — Day of the Dead. White pozole offerings: order from October 28.",
-          "🗓 Dec 12 — Virgin of Guadalupe. Massive pozoladas in neighborhoods. Limited stock.",
-          "🗓 Dec 24–25 — Christmas. Second busiest season. Orders from December 18.",
-          "🗓 Jan 1 — New Year. Hangover pozole. Usually have stock, but not guaranteed.",
-          "🗓 Holy Week — White pozole. Moderate demand, usually no stock issues."
-        ],
-        "tip": "For events of 20+ people, message us on WhatsApp a week ahead and we'll set aside your quantity."
-      }
-    },
-    "video": "https://wuesgqqutu5ruswd.public.blob.vercel-storage.com/videos/fiestas-patrias-pozole-D8Is6nrHzqGWxlk1vmaemBhhfoG3HQ"
   },
   {
     "slug": "tamales-rajas-queso",
