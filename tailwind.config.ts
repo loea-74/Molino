@@ -8,29 +8,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Apuntan a las variables de tokens.css, no a los colores escritos a
+      // mano: layout.tsx vuelve a declarar esas variables con el tema elegido
+      // en el panel, y una clase que compile "#B8542E" se queda fuera del
+      // cambio. Se pueden usar var() porque ninguna clase de la paleta lleva
+      // modificador de opacidad (bg-terracota/50), que es lo único que esto
+      // rompería.
       colors: {
         terracota: {
-          DEFAULT: "#B8542E",
-          dark: "#8B3E1F",
+          DEFAULT: "var(--terracota)",
+          dark: "var(--terracota-dark)",
         },
         maiz: {
-          DEFAULT: "#E8B858",
-          light: "#F2D58A",
+          DEFAULT: "var(--maiz)",
+          light: "var(--maiz-light)",
         },
         crema: {
-          DEFAULT: "#F5EDE0",
-          light: "#FBF6ED",
+          DEFAULT: "var(--crema)",
+          light: "var(--crema-light)",
         },
         grano: {
-          DEFAULT: "#2A1D14",
-          soft: "#4A3728",
+          DEFAULT: "var(--grano)",
+          soft: "var(--grano-soft)",
         },
-        nopal: "#556B3A",
-        linea: "#D9C8A8",
+        nopal: "var(--nopal)",
+        linea: "var(--linea)",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
       },
       fontSize: {
         "2xs": "11px",

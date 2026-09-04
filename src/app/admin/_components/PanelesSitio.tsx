@@ -4,6 +4,7 @@ import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
 import { C, campo, etiqueta, esp } from "./ui";
 import { L } from "@/lib/i18n";
+import type { Tema } from "@/lib/tema";
 
 export type Site = {
   hero: {
@@ -36,6 +37,8 @@ export type Site = {
   };
   /** Encabezados de cada sección. Antes vivían en i18n.ts y no eran editables. */
   labels: Record<string, Bilingue>;
+  /** Colores y tipografía. Vacío = los de siempre. */
+  theme?: Tema;
 };
 
 type Props = { site: Site; set: (f: (s: Site) => Site) => void };

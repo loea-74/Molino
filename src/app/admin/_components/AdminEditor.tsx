@@ -13,6 +13,7 @@ import {
 import PanelRecetas, { type Recipe } from "./PanelRecetas";
 import PanelCatalogo, { type Product } from "./PanelCatalogo";
 import PanelTestimonios, { type Testimonial } from "./PanelTestimonios";
+import PanelApariencia from "./PanelApariencia";
 
 /**
  * El menú sigue el mismo orden que la página. Antes había cuatro pestañas y,
@@ -28,6 +29,7 @@ const SECCIONES: (Seccion & { archivo: Archivo })[] = [
   { id: "visita", nombre: "Visítanos", donde: "Dirección, horario y mapa", archivo: "site" },
   { id: "folleto", nombre: "Folleto", donde: "Las dos páginas del catálogo", archivo: "site" },
   { id: "redes", nombre: "Redes sociales", donde: "Los íconos del pie", archivo: "site" },
+  { id: "apariencia", nombre: "Apariencia", donde: "Colores y tipografía", archivo: "site" },
 ];
 
 const EXPLICACION: Record<string, string> = {
@@ -39,6 +41,7 @@ const EXPLICACION: Record<string, string> = {
   visita: "Dirección, horario, teléfonos y el mapa de Google.",
   folleto: "Las dos imágenes que se abren al pulsar Ver catálogo completo.",
   redes: "Las ligas a tus redes. La que dejes vacía no aparece en el sitio.",
+  apariencia: "Los colores y la letra de todo el sitio. Arriba se ve cómo va quedando antes de publicar.",
 };
 
 export default function AdminEditor() {
@@ -149,6 +152,7 @@ export default function AdminEditor() {
                   {activa === "visita" && <PanelVisita site={sitio.datos} set={sitio.cambiar} />}
                   {activa === "folleto" && <PanelFolleto site={sitio.datos} set={sitio.cambiar} />}
                   {activa === "redes" && <PanelRedes site={sitio.datos} set={sitio.cambiar} />}
+                  {activa === "apariencia" && <PanelApariencia site={sitio.datos} set={sitio.cambiar} />}
                 </>
               )}
 

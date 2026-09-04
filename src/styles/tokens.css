@@ -12,9 +12,15 @@
   --nopal: #556B3A;
   --linea: #D9C8A8;
 
-  /* Tipografía */
-  --font-display: 'Fraunces', 'Georgia', serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Tipografía.
+     Estos son los valores de reserva: layout.tsx los vuelve a declarar con la
+     pareja elegida en el panel. Antes decían 'Fraunces' e 'Inter' a secas, pero
+     next/font auto-hospeda esas familias bajo un nombre con hash y por su
+     nombre normal no existen: el sitio las descargaba en cada visita y acababa
+     pintando con Georgia y la fuente del sistema. Ahora dicen lo que de verdad
+     se veía. */
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Escala tipográfica */
