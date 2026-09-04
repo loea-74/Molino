@@ -63,7 +63,22 @@ export async function POST(req: NextRequest) {
     const { site } = await req.json();
     const current = await getFileFromGitHub();
     const sha = current.sha;
-    const content = Buffer.from(JSON.stringify(site, null, 2)).toString("base64");
+
+    // Fusión de primer nivel en vez de reemplazo.
+    //
+    // El panel manda el archivo ENTERO tal como lo cargó al abrirse. Si entre
+    // medias se despliega una versión que añade una llave nueva, la pestaña
+    // vieja no la conoce y al publicar la borraba sin avisar: así desapareció
+    // `theme` en el commit 3ad8cdb. Lo que manda el panel sigue ganando, pero
+    // las llaves que no conoce sobreviven.
+    //
+    // Sólo vale para site.json, que tiene una forma fija. Recetas, catálogo y
+    // testimonios son listas: ahí fusionar impediría borrar elementos.
+    const enGitHub = JSON.parse(
+      Buffer.from(current.content, "base64").toString("utf-8")
+    );
+    const fusionado = { ...enGitHub, ...site };
+    const content = Buffer.from(JSON.stringify(fusionado, null, 2)).toString("base64");
 
     const res = await fetch(
       `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`,

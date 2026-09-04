@@ -42,7 +42,7 @@ function SocialIcons() {
               width: 36, height: 36, borderRadius: "50%",
               border: "1px solid rgba(245,237,224,0.3)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              color: "var(--crema-light)", textDecoration: "none",
+              color: "var(--texto-claro)", textDecoration: "none",
               background: hovered === key ? "rgba(245,237,224,0.18)" : "transparent",
               opacity: dimmed ? 0.3 : 1,
               transform: hovered === key ? "scale(1.15)" : "scale(1)",
@@ -62,7 +62,7 @@ export default function Footer() {
   const t = textos(lang);
 
   return (
-    <footer style={{ background: "var(--grano)", color: "var(--crema-light)", padding: "56px 48px 32px" }} className="max-sm:!px-5 max-sm:!py-10">
+    <footer style={{ background: "var(--franja-oscura)", color: "var(--texto-claro)", padding: "56px 48px 32px" }} className="max-sm:!px-5 max-sm:!py-10">
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 32, marginBottom: 36 }} className="max-md:!grid-cols-1 max-md:!gap-8">
           {/* Brand */}
@@ -72,7 +72,7 @@ export default function Footer() {
                 <Image src="/fotos/logo.jpg" alt="Logo" width={48} height={48} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
               </div>
               <div>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontStyle: "italic", color: "var(--crema-light)" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontStyle: "italic", color: "var(--texto-claro)" }}>
                   Molino la Gran Jalisciense
                 </div>
                 <div style={{ fontSize: 11, opacity: 0.6, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 2 }}>

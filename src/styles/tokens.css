@@ -12,6 +12,17 @@
   --nopal: #556B3A;
   --linea: #D9C8A8;
 
+  /* Estas tres nacen con el mismo valor que --grano, --terracota y
+     --crema-light, y existen para poder cambiarlas por separado.
+     Antes cada una de esas tres hacia dos trabajos: --grano era el fondo de la
+     franja de recetas Y el color de los titulos, asi que no se podia oscurecer
+     la franja sin teñir todos los titulos. El peor caso era --crema-light:
+     fondo de la pagina Y texto sobre las franjas oscuras, de modo que oscurecer
+     el fondo dejaba ese texto invisible. */
+  --franja-oscura: #2A1D14;  /* fondo de la franja de recetas y del pie */
+  --franja-naranja: #B8542E; /* fondo de "Ven al molino" */
+  --texto-claro: #FBF6ED;    /* texto encima de esas dos franjas */
+
   /* Tipografía.
      Estos son los valores de reserva: layout.tsx los vuelve a declarar con la
      pareja elegida en el panel. Antes decían 'Fraunces' e 'Inter' a secas, pero

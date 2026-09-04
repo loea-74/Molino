@@ -188,3 +188,24 @@
 @media (prefers-reduced-motion: reduce) {
   .admin-menu { transition: none; }
 }
+
+/* ─────────────── mapa del sitio (sección Apariencia) ─────────────── */
+
+/* Se queda pegado arriba para poder cambiar un color y ver el efecto sin
+   perder de vista la página. En celular no cabe pegado — ocuparía media
+   pantalla — así que ahí va estático y el panel sube solo al señalar. */
+.admin-mapa {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f5ede0;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .admin-mapa {
+    position: static;
+    scroll-margin-top: 8px;
+  }
+}

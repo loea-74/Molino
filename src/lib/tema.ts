@@ -24,44 +24,109 @@ export type DefColor = {
   /** La variable CSS que se vuelve a declarar. */
   css: string;
   nombre: string;
+  /** Frase corta para la lista. */
   donde: string;
+  /** Las zonas del mapa que este color pinta. Nombres de ZONAS. */
+  zonas: string[];
   omision: string;
 };
 
-/** Agrupados por para qué sirven, no por su nombre en el código. */
+/**
+ * Los colores que DE VERDAD pintan algo, y cada uno con UN SOLO trabajo.
+ *
+ * Se comprobó uno por uno contra los componentes. `--terracota-dark`,
+ * `--maiz-light` y `--nopal` estaban en tokens.css pero no se usan en ninguna
+ * parte: tenerlos aquí era prometer un cambio que nunca ocurre.
+ *
+ * Tres variables hacían dos trabajos a la vez y se partieron, porque no había
+ * forma de tocar una sin arrastrar la otra:
+ *   --grano        era el fondo de la franja de recetas Y el color de los
+ *                  títulos  →  se separó --franja-oscura
+ *   --terracota    era el fondo de "Ven al molino" Y los botones
+ *                  →  se separó --franja-naranja
+ *   --crema-light  era el fondo de la página Y el texto sobre las franjas
+ *                  oscuras  →  se separó --texto-claro. Este era el peligroso:
+ *                  oscurecer el fondo dejaba ese texto invisible.
+ *
+ * Los nombres dicen dónde se ve el color, no cómo se llama en el código.
+ */
 export const GRUPOS_COLOR: { titulo: string; nota: string; colores: DefColor[] }[] = [
   {
-    titulo: "Fondos",
-    nota: "El papel sobre el que va todo",
+    titulo: "Las franjas de color",
+    nota: "Los bloques que se ven de lejos al bajar por la página",
     colores: [
-      { clave: "cremaLight", css: "--crema-light", nombre: "Fondo de la página", donde: "El color general del sitio", omision: "#FBF6ED" },
-      { clave: "crema", css: "--crema", nombre: "Fondo de tarjetas", donde: "Recuadros y franjas sobre el fondo", omision: "#F5EDE0" },
+      {
+        clave: "cremaLight", css: "--crema-light", omision: "#FBF6ED",
+        nombre: "Fondo de la página",
+        donde: "El papel sobre el que va todo",
+        zonas: ["fondo", "tarjetaTestimonio"],
+      },
+      {
+        clave: "franjaOscura", css: "--franja-oscura", omision: "#2A1D14",
+        nombre: "Fondo de la franja oscura",
+        donde: "La franja de recetas y el pie de página. Sólo el fondo.",
+        zonas: ["recetas", "pie"],
+      },
+      {
+        clave: "franjaNaranja", css: "--franja-naranja", omision: "#B8542E",
+        nombre: "Fondo de la franja naranja",
+        donde: "La franja de «Ven al molino». Sólo el fondo.",
+        zonas: ["visita"],
+      },
+      {
+        clave: "crema", css: "--crema", omision: "#F5EDE0",
+        nombre: "Fondo de recuadros",
+        donde: "La barra de arriba y las tarjetas de producto",
+        zonas: ["nav", "tarjetaProducto", "franjaTestimonios"],
+      },
     ],
   },
   {
-    titulo: "Texto",
-    nota: "Cuanto más contraste con el fondo, más fácil de leer",
+    titulo: "Los textos",
+    nota: "Cuanto más contraste con su fondo, más fácil de leer",
     colores: [
-      { clave: "grano", css: "--grano", nombre: "Títulos", donde: "Los encabezados grandes", omision: "#2A1D14" },
-      { clave: "granoSoft", css: "--grano-soft", nombre: "Texto normal", donde: "Los párrafos", omision: "#4A3728" },
+      {
+        clave: "grano", css: "--grano", omision: "#2A1D14",
+        nombre: "Títulos",
+        donde: "Los encabezados grandes sobre fondo claro",
+        zonas: ["tituloPortada", "tituloCatalogo", "navTexto"],
+      },
+      {
+        clave: "granoSoft", css: "--grano-soft", omision: "#4A3728",
+        nombre: "Párrafos",
+        donde: "El texto normal, el que más se lee",
+        zonas: ["parrafoPortada", "parrafoProducto"],
+      },
+      {
+        clave: "textoClaro", css: "--texto-claro", omision: "#FBF6ED",
+        nombre: "Texto sobre las franjas",
+        donde: "Todo lo que se lee encima de la franja oscura y de la naranja",
+        zonas: ["textoRecetas", "textoVisita", "textoPie"],
+      },
     ],
   },
   {
-    titulo: "Acento",
-    nota: "Lo que llama la atención: botones, ligas, precios",
-    colores: [
-      { clave: "terracota", css: "--terracota", nombre: "Color principal", donde: "Botones y ligas", omision: "#B8542E" },
-      { clave: "terracotaDark", css: "--terracota-dark", nombre: "Principal oscuro", donde: "Al pasar el ratón por encima", omision: "#8B3E1F" },
-      { clave: "maiz", css: "--maiz", nombre: "Amarillo maíz", donde: "Las etiquetas sobre las tarjetas", omision: "#E8B858" },
-      { clave: "maizLight", css: "--maiz-light", nombre: "Amarillo claro", donde: "Realces suaves", omision: "#F2D58A" },
-      { clave: "nopal", css: "--nopal", nombre: "Verde nopal", donde: "Detalles sueltos", omision: "#556B3A" },
-    ],
-  },
-  {
-    titulo: "Líneas",
+    titulo: "Detalles",
     nota: "",
     colores: [
-      { clave: "linea", css: "--linea", nombre: "Bordes y separadores", donde: "Las rayas finas entre bloques", omision: "#D9C8A8" },
+      {
+        clave: "terracota", css: "--terracota", omision: "#B8542E",
+        nombre: "Botones y ligas",
+        donde: "El botón de WhatsApp, el «Pedir» de cada producto",
+        zonas: ["botonPortada", "botonNav", "pedir"],
+      },
+      {
+        clave: "maiz", css: "--maiz", omision: "#E8B858",
+        nombre: "Amarillo maíz",
+        donde: "Las etiquetas de las tarjetas, las estrellas y los avisos",
+        zonas: ["etiquetaProducto", "kickerRecetas", "avisoVisita", "estrellas"],
+      },
+      {
+        clave: "linea", css: "--linea", omision: "#D9C8A8",
+        nombre: "Líneas finas",
+        donde: "Los bordes y las rayas que separan bloques",
+        zonas: ["bordes"],
+      },
     ],
   },
 ];

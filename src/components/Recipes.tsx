@@ -41,7 +41,7 @@ export default function Recipes() {
 
   return (
     <>
-    <section id="recetas" style={{ padding: "96px 0", background: "var(--grano)" }} className="max-sm:!py-14">
+    <section id="recetas" style={{ padding: "96px 0", background: "var(--franja-oscura)" }} className="max-sm:!py-14">
 
       {/* Header */}
       <div
@@ -52,7 +52,7 @@ export default function Recipes() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--maiz)", marginBottom: 14 }}>
             {t.recipesEyebrow}
           </div>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 4.5vw, 56px)", lineHeight: 1, fontWeight: 400, margin: "0 0 10px", letterSpacing: "-0.025em", color: "var(--crema-light)" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 4.5vw, 56px)", lineHeight: 1, fontWeight: 400, margin: "0 0 10px", letterSpacing: "-0.025em", color: "var(--texto-claro)" }}>
             {t.recipesTitle}
           </h2>
           <div style={{ fontSize: 12, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,237,224,0.45)" }}>
@@ -73,13 +73,13 @@ export default function Recipes() {
                   width: 44, height: 44, borderRadius: "50%",
                   border: "1px solid rgba(245,237,224,0.25)",
                   background: "rgba(245,237,224,0.08)",
-                  color: "var(--crema-light)",
+                  color: "var(--texto-claro)",
                   cursor: "pointer",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   transition: "all 180ms ease",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "var(--crema-light)"; e.currentTarget.style.color = "var(--grano)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(245,237,224,0.08)"; e.currentTarget.style.color = "var(--crema-light)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "var(--texto-claro)"; e.currentTarget.style.color = "var(--franja-oscura)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(245,237,224,0.08)"; e.currentTarget.style.color = "var(--texto-claro)"; }}
               >
                 <Icon size={16} />
               </button>
@@ -124,7 +124,7 @@ export default function Recipes() {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.96) 0%, rgba(26,18,5,0.45) 55%, transparent 100%)" }} />
 
             {/* Date badge */}
-            <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(245,237,224,0.12)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(245,237,224,0.18)", padding: "5px 14px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--crema-light)" }}>
+            <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(245,237,224,0.12)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(245,237,224,0.18)", padding: "5px 14px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--texto-claro)" }}>
               {featured.date[lang]}
             </div>
 
@@ -133,7 +133,7 @@ export default function Recipes() {
               <div style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--maiz)", marginBottom: 12 }}>
                 {featured.kicker[lang]}
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(26px, 3vw, 38px)", fontWeight: 400, margin: "0 0 14px", letterSpacing: "-0.02em", color: "var(--crema-light)", lineHeight: 1.1 }}>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(26px, 3vw, 38px)", fontWeight: 400, margin: "0 0 14px", letterSpacing: "-0.02em", color: "var(--texto-claro)", lineHeight: 1.1 }}>
                 {featured.title[lang]}
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.55, color: "rgba(245,237,224,0.78)", margin: "0 0 22px", maxWidth: 440 }} className="max-sm:!text-sm">
@@ -183,7 +183,7 @@ export default function Recipes() {
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.93) 0%, rgba(26,18,5,0.15) 60%, transparent 100%)" }} />
 
                 {/* Date badge */}
-                <div style={{ position: "absolute", top: 16, left: 16, background: "rgba(245,237,224,0.1)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", border: "1px solid rgba(245,237,224,0.15)", padding: "4px 11px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--crema-light)" }}>
+                <div style={{ position: "absolute", top: 16, left: 16, background: "rgba(245,237,224,0.1)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", border: "1px solid rgba(245,237,224,0.15)", padding: "4px 11px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--texto-claro)" }}>
                   {r.date[lang]}
                 </div>
 
@@ -191,7 +191,7 @@ export default function Recipes() {
                   <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--maiz)", marginBottom: 7 }}>
                     {r.kicker[lang]}
                   </div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 400, margin: 0, letterSpacing: "-0.01em", color: "var(--crema-light)", lineHeight: 1.2 }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 400, margin: 0, letterSpacing: "-0.01em", color: "var(--texto-claro)", lineHeight: 1.2 }}>
                     {r.title[lang]}
                   </h3>
                 </div>
@@ -221,9 +221,9 @@ export default function Recipes() {
           </div>
           <a
             href="#"
-            style={{ fontSize: 14, color: "var(--crema-light)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, borderBottom: "1px solid rgba(245,237,224,0.35)", paddingBottom: 4 }}
+            style={{ fontSize: 14, color: "var(--texto-claro)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, borderBottom: "1px solid rgba(245,237,224,0.35)", paddingBottom: 4 }}
           >
-            {t.recipesAll} <IconArrow size={14} color="var(--crema-light)" />
+            {t.recipesAll} <IconArrow size={14} color="var(--texto-claro)" />
           </a>
         </div>
       </div>
