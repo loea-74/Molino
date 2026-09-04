@@ -1,8 +1,13 @@
+/* El @import va ANTES que todo lo demas: el estandar de CSS exige que las
+   reglas @import precedan a cualquier otra regla. Estaba despues de los
+   @tailwind y, aunque el build de produccion lo resolvia igual, el servidor de
+   desarrollo lo descartaba: en local el sitio salia sin ningun token — fondo
+   blanco, texto negro y Times New Roman en vez de la paleta y las fuentes. */
+@import '../styles/tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '../styles/tokens.css';
 
 @layer base {
   html {
