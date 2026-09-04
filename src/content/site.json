@@ -173,5 +173,11 @@
       "es": "© 2026 Molino la Gran Jalisciense · Todos los derechos reservados",
       "en": "© 2026 Molino la Gran Jalisciense · All rights reserved"
     }
+  },
+  "theme": {
+    "fuente": "inter",
+    "colores": {
+      "terracotaDark": "#6D2108"
+    }
   }
 }
