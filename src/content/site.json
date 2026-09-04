@@ -75,7 +75,7 @@
       "en": "“Here, you smell the corn before you see it.”"
     },
     "caption": {
-      "es": "— Don Rafael, tercera generación",
+      "es": "100 años conservando tradiciones",
       "en": "— Don Rafael, third generation"
     },
     "badge": {
@@ -173,9 +173,5 @@
       "es": "© 2026 Molino la Gran Jalisciense · Todos los derechos reservados",
       "en": "© 2026 Molino la Gran Jalisciense · All rights reserved"
     }
-  },
-  "theme": {
-    "colores": {},
-    "fuente": "actual"
   }
 }
