@@ -4,6 +4,7 @@ import { useState } from "react";
 import { C, esp, radio, tarjeta } from "./ui";
 import { CampoTexto, CampoBilingue, type Bilingue } from "./campos";
 import BotonEliminar from "./BotonEliminar";
+import BotonesOrden, { moverEnLista } from "./BotonesOrden";
 import { BloqueEncabezado, type Site } from "./PanelesSitio";
 
 export type Testimonial = {
@@ -17,20 +18,29 @@ function testimonioNuevo(): Testimonial {
 }
 
 function Ficha({
-  t, indice, onChange, onDelete,
+  t, indice, total, abierta, onAbrir, onChange, onDelete, onMover,
 }: {
-  t: Testimonial; indice: number;
+  t: Testimonial; indice: number; total: number;
+  abierta: boolean; onAbrir: () => void;
   onChange: (v: Testimonial) => void; onDelete: () => void;
+  onMover: (destino: number) => void;
 }) {
-  const [abierta, setAbierta] = useState(false);
 
   return (
     <div style={{ ...tarjeta, marginBottom: esp.sm }}>
+      {/* La fila entera era un <button>; los de ordenar no pueden ir dentro de
+          otro botón, así que ahora son hermanos dentro de un contenedor. */}
+      <div
+        style={{
+          display: "flex", alignItems: "center",
+          background: abierta ? C.papelHueso : C.papelClaro,
+        }}
+      >
       <button
-        onClick={() => setAbierta(!abierta)}
+        onClick={onAbrir}
         aria-expanded={abierta}
         style={{
-          width: "100%", padding: "15px 18px", background: abierta ? C.papelHueso : C.papelClaro,
+          flex: 1, minWidth: 0, padding: "15px 18px", background: "transparent",
           border: "none", cursor: "pointer", display: "flex", gap: 12,
           justifyContent: "space-between", alignItems: "center", textAlign: "left",
           fontFamily: "inherit",
@@ -49,6 +59,9 @@ function Ficha({
         </span>
       </button>
 
+        <BotonesOrden indice={indice} total={total} onMover={onMover} que="este testimonio" />
+      </div>
+
       {abierta && (
         <div style={{ padding: "22px 18px", background: "#fff", borderTop: `1px solid ${C.lineaSuave}` }}>
           <CampoBilingue rotulo="Lo que dijo" valor={t.quote} onChange={(v) => onChange({ ...t, quote: v })} largo filas={3} />
@@ -61,7 +74,7 @@ function Ficha({
           />
 
           <div style={{ borderTop: `1px solid ${C.lineaSuave}`, paddingTop: esp.md, marginTop: esp.xs }}>
-            <BotonEliminar que="testimonio" onDelete={onDelete} />
+            <BotonEliminar que="este testimonio" onDelete={onDelete} />
           </div>
         </div>
       )}
@@ -77,6 +90,15 @@ export default function PanelTestimonios({
   site: Site | null;
   setSite: (f: (s: Site) => Site) => void;
 }) {
+  const [abiertaIdx, setAbiertaIdx] = useState<number | null>(null);
+
+  function mover(de: number, a: number) {
+    cambiar((prev) => moverEnLista(prev, de, a));
+    // Los botones sólo intercambian con el vecino, así que la tarjeta abierta
+    // sigue siendo la misma: basta con cambiarle el número.
+    setAbiertaIdx((ab) => (ab === de ? a : ab === a ? de : ab));
+  }
+
   return (
     <>
       {site && <BloqueEncabezado site={site} set={setSite} seccion="testimonios" />}
@@ -86,8 +108,15 @@ export default function PanelTestimonios({
           key={i}
           t={t}
           indice={i}
+          total={datos.length}
+          abierta={abiertaIdx === i}
+          onAbrir={() => setAbiertaIdx(abiertaIdx === i ? null : i)}
           onChange={(v) => cambiar((prev) => prev.map((x, j) => (j === i ? v : x)))}
-          onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+          onDelete={() => {
+            cambiar((prev) => prev.filter((_, j) => j !== i));
+            setAbiertaIdx(null);
+          }}
+          onMover={(destino) => mover(i, destino)}
         />
       ))}
       <button

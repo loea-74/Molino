@@ -125,6 +125,16 @@ export default function AdminEditor() {
       />
 
       <div className="admin-cuerpo">
+        <Menu
+          secciones={SECCIONES}
+          activa={activa}
+          onCambiar={setActiva}
+          sucios={sucios}
+          abierto={menuAbierto}
+          onCerrar={() => setMenuAbierto(false)}
+          onSalir={salir}
+        />
+
         <main className="admin-panel">
           <CabeceraSeccion titulo={seccion.nombre} explicacion={EXPLICACION[seccion.id]} />
 
@@ -173,15 +183,6 @@ export default function AdminEditor() {
           )}
         </main>
 
-        <Menu
-          secciones={SECCIONES}
-          activa={activa}
-          onCambiar={setActiva}
-          sucios={sucios}
-          abierto={menuAbierto}
-          onCerrar={() => setMenuAbierto(false)}
-          onSalir={salir}
-        />
       </div>
 
       <BarraGuardar

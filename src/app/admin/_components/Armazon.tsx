@@ -22,7 +22,7 @@ export function BarraSuperior({
       <div style={{ minWidth: 0 }}>
         <div
           style={{
-            fontFamily: "Georgia, serif", fontSize: 17, color: C.papel,
+            fontFamily: "Georgia, serif", fontSize: 19, color: C.papel,
             lineHeight: 1.2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
           }}
         >
@@ -47,7 +47,7 @@ export function BarraSuperior({
           rel="noopener noreferrer"
           className="admin-oculto-movil"
           style={{
-            fontSize: 12, color: C.dorado, textDecoration: "none",
+            fontSize: 13, color: C.dorado, textDecoration: "none",
             border: `1px solid ${C.borde}`, padding: "7px 15px",
             borderRadius: radio.pastilla, whiteSpace: "nowrap",
           }}
@@ -84,7 +84,7 @@ export function BarraSuperior({
 }
 
 const botonBarra: React.CSSProperties = {
-  fontSize: 12, color: C.dorado, background: "none",
+  fontSize: 13, color: C.dorado, background: "none",
   border: `1px solid ${C.borde}`, padding: "7px 15px",
   borderRadius: radio.pastilla, cursor: "pointer", whiteSpace: "nowrap",
   fontFamily: "inherit",
@@ -145,21 +145,21 @@ export function Menu({
                 color: on ? C.tinta : C.marron,
               }}
             >
-              <span style={{ fontSize: 10, color: C.gris, fontVariantNumeric: "tabular-nums" }}>
+              <span style={{ fontSize: 11.5, color: C.gris, fontVariantNumeric: "tabular-nums" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span style={{ flex: 1, minWidth: 0 }}>
-                <span style={{ display: "block", fontSize: 14.5, fontWeight: on ? 600 : 400 }}>
+                <span style={{ display: "block", fontSize: 16.5, fontWeight: on ? 600 : 400 }}>
                   {s.nombre}
                 </span>
-                <span style={{ display: "block", fontSize: 11.5, color: C.marronClaro, marginTop: 1 }}>
+                <span style={{ display: "block", fontSize: 13, color: C.marronClaro, marginTop: 2 }}>
                   {s.donde}
                 </span>
               </span>
               {sucios[s.id] && (
                 <span
                   title="Tiene cambios sin publicar"
-                  style={{ width: 7, height: 7, borderRadius: "50%", background: C.accion, flexShrink: 0 }}
+                  style={{ width: 8, height: 8, borderRadius: "50%", background: C.accion, flexShrink: 0 }}
                 />
               )}
             </button>
@@ -189,7 +189,7 @@ const cerrarCajon: React.CSSProperties = {
 };
 
 const pieCajon: React.CSSProperties = {
-  display: "block", padding: "12px 18px", fontSize: 13.5,
+  display: "block", padding: "14px 20px", fontSize: 15,
   color: C.marron, textDecoration: "none", border: "none",
   textAlign: "left", width: "100%", boxSizing: "border-box",
 };
@@ -200,10 +200,10 @@ const pieCajon: React.CSSProperties = {
 export function CabeceraSeccion({ titulo, explicacion }: { titulo: string; explicacion: string }) {
   return (
     <div style={{ marginBottom: esp.lg }}>
-      <h1 style={{ fontFamily: "Georgia, serif", fontSize: 26, fontWeight: 400, color: C.tinta, margin: 0 }}>
+      <h1 style={{ fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 400, color: C.tinta, margin: 0 }}>
         {titulo}
       </h1>
-      <p style={{ margin: "5px 0 0", fontSize: 13.5, color: C.marronClaro, maxWidth: "56ch", lineHeight: 1.5 }}>
+      <p style={{ margin: "6px 0 0", fontSize: 15, color: C.marronClaro, maxWidth: "56ch", lineHeight: 1.5 }}>
         {explicacion}
       </p>
     </div>
@@ -253,7 +253,7 @@ export function BarraGuardar({
       )}
 
       <div className="admin-barra-guardar-fila">
-        <span style={{ fontSize: 13.5, color: hay ? C.tinta : C.marronClaro, minWidth: 0 }}>
+        <span style={{ fontSize: 15, color: hay ? C.tinta : C.marronClaro, minWidth: 0 }}>
           {cargando ? (
             "Cargando el contenido…"
           ) : hay ? (

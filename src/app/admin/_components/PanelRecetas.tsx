@@ -6,6 +6,7 @@ import { CampoBilingue, CampoArea, CampoLista, Bloque, type Bilingue } from "./c
 import CampoImagen from "./CampoImagen";
 import CampoVideo from "./CampoVideo";
 import BotonEliminar from "./BotonEliminar";
+import BotonesOrden, { moverEnLista } from "./BotonesOrden";
 import { BloqueEncabezado, type Site } from "./PanelesSitio";
 import { recetaNueva } from "@/lib/nuevosItems";
 
@@ -24,10 +25,11 @@ export type Recipe = {
 };
 
 function Ficha({
-  receta, indice, onChange, onDelete,
+  receta, indice, total, onChange, onDelete, onMover,
 }: {
-  receta: Recipe; indice: number;
+  receta: Recipe; indice: number; total: number;
   onChange: (r: Recipe) => void; onDelete: () => void;
+  onMover: (destino: number) => void;
 }) {
   const [abierta, setAbierta] = useState(false);
   const [idioma, setIdioma] = useState<"es" | "en">("es");
@@ -41,11 +43,19 @@ function Ficha({
 
   return (
     <div style={{ ...tarjeta, marginBottom: esp.sm }}>
+      {/* La fila entera era un <button>; los de ordenar no pueden ir dentro de
+          otro botón, así que ahora son hermanos dentro de un contenedor. */}
+      <div
+        style={{
+          display: "flex", alignItems: "center",
+          background: abierta ? C.papelHueso : C.papelClaro,
+        }}
+      >
       <button
         onClick={() => setAbierta(!abierta)}
         aria-expanded={abierta}
         style={{
-          width: "100%", padding: "15px 18px", background: abierta ? C.papelHueso : C.papelClaro,
+          flex: 1, minWidth: 0, padding: "15px 18px", background: "transparent",
           border: "none", cursor: "pointer", display: "flex", gap: 12,
           justifyContent: "space-between", alignItems: "center", textAlign: "left",
           fontFamily: "inherit",
@@ -81,6 +91,9 @@ function Ficha({
           {abierta ? "Cerrar ▲" : "Abrir ▼"}
         </span>
       </button>
+
+        <BotonesOrden indice={indice} total={total} onMover={onMover} que="esta receta" />
+      </div>
 
       {abierta && (
         <div style={{ padding: "22px 18px", background: "#fff", borderTop: `1px solid ${C.lineaSuave}` }}>
@@ -148,8 +161,10 @@ export default function PanelRecetas({
           key={r.slug}
           receta={r}
           indice={i}
+          total={datos.length}
           onChange={(nueva) => cambiar((prev) => prev.map((x, j) => (j === i ? nueva : x)))}
           onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+          onMover={(destino) => cambiar((prev) => moverEnLista(prev, i, destino))}
         />
       ))}
       <button

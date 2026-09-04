@@ -5,6 +5,7 @@ import { C, esp, radio, campo, etiqueta, tarjeta } from "./ui";
 import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
 import BotonEliminar from "./BotonEliminar";
+import BotonesOrden, { moverEnLista } from "./BotonesOrden";
 import { BloqueEncabezado, type Site } from "./PanelesSitio";
 import { productoNuevo } from "@/lib/nuevosItems";
 
@@ -21,21 +22,30 @@ export type Product = {
 };
 
 function Ficha({
-  producto, indice, onChange, onDelete,
+  producto, indice, total, onChange, onDelete, onMover,
 }: {
-  producto: Product; indice: number;
+  producto: Product; indice: number; total: number;
   onChange: (p: Product) => void; onDelete: () => void;
+  onMover: (destino: number) => void;
 }) {
   const [abierta, setAbierta] = useState(false);
   const set = (c: keyof Product, v: unknown) => onChange({ ...producto, [c]: v });
 
   return (
     <div style={{ ...tarjeta, marginBottom: esp.sm }}>
+      {/* La fila entera era un <button>; los de ordenar no pueden ir dentro de
+          otro botón, así que ahora son hermanos dentro de un contenedor. */}
+      <div
+        style={{
+          display: "flex", alignItems: "center",
+          background: abierta ? C.papelHueso : C.papelClaro,
+        }}
+      >
       <button
         onClick={() => setAbierta(!abierta)}
         aria-expanded={abierta}
         style={{
-          width: "100%", padding: "15px 18px", background: abierta ? C.papelHueso : C.papelClaro,
+          flex: 1, minWidth: 0, padding: "15px 18px", background: "transparent",
           border: "none", cursor: "pointer", display: "flex", gap: 12,
           justifyContent: "space-between", alignItems: "center", textAlign: "left",
           fontFamily: "inherit",
@@ -69,6 +79,9 @@ function Ficha({
           {abierta ? "Cerrar ▲" : "Abrir ▼"}
         </span>
       </button>
+
+        <BotonesOrden indice={indice} total={total} onMover={onMover} que="este producto" />
+      </div>
 
       {abierta && (
         <div style={{ padding: "22px 18px", background: "#fff", borderTop: `1px solid ${C.lineaSuave}` }}>
@@ -113,7 +126,7 @@ function Ficha({
           </Bloque>
 
           <div style={{ borderTop: `1px solid ${C.lineaSuave}`, paddingTop: esp.md }}>
-            <BotonEliminar que="producto" onDelete={onDelete} />
+            <BotonEliminar que="este producto" onDelete={onDelete} />
           </div>
         </div>
       )}
@@ -138,8 +151,10 @@ export default function PanelCatalogo({
           key={p.slug}
           producto={p}
           indice={i}
+          total={datos.length}
           onChange={(nuevo) => cambiar((prev) => prev.map((x, j) => (j === i ? nuevo : x)))}
           onDelete={() => cambiar((prev) => prev.filter((_, j) => j !== i))}
+          onMover={(destino) => cambiar((prev) => moverEnLista(prev, i, destino))}
         />
       ))}
       <button

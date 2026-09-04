@@ -33,10 +33,10 @@ export const esp = { xs: 6, sm: 10, md: 16, lg: 24, xl: 36 } as const;
 export const campo: React.CSSProperties = {
   width: "100%",
   boxSizing: "border-box",
-  padding: "10px 13px",
+  padding: "11px 14px",
   borderRadius: radio.chico,
   border: `1.5px solid ${C.linea}`,
-  fontSize: 15,
+  fontSize: 16,
   outline: "none",
   background: C.papelClaro,
   color: C.tinta,
@@ -44,7 +44,7 @@ export const campo: React.CSSProperties = {
 };
 
 export const etiqueta: React.CSSProperties = {
-  fontSize: 11,
+  fontSize: 12,
   letterSpacing: "0.12em",
   textTransform: "uppercase",
   color: C.marron,
@@ -53,7 +53,7 @@ export const etiqueta: React.CSSProperties = {
 };
 
 export const ayuda: React.CSSProperties = {
-  fontSize: 12,
+  fontSize: 13.5,
   color: C.marronClaro,
   marginTop: 5,
   lineHeight: 1.45,
@@ -61,12 +61,12 @@ export const ayuda: React.CSSProperties = {
 
 export function botonPrincipal(inactivo = false): React.CSSProperties {
   return {
-    padding: "11px 24px",
+    padding: "12px 26px",
     borderRadius: radio.pastilla,
     border: "none",
     background: inactivo ? C.accionApagada : C.accion,
     color: C.papel,
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 500,
     cursor: inactivo ? "default" : "pointer",
     fontFamily: "inherit",
