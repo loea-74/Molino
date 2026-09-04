@@ -102,66 +102,6 @@
     "video": "/fotos/pozole.mp4"
   },
   {
-    "slug": "como-descabezar-maiz",
-    "kicker": {
-      "es": "Guía · 5 min",
-      "en": "Guide · 5 min"
-    },
-    "title": {
-      "es": "Cómo se descabeza el maíz",
-      "en": "How to husk the corn"
-    },
-    "body": {
-      "es": "El paso que la mayoría se salta y que define la textura del pozole.",
-      "en": "The step most people skip — and what defines the texture of the pozole."
-    },
-    "date": {
-      "es": "03 Abr 2026",
-      "en": "Apr 03, 2026"
-    },
-    "cta": {
-      "es": "Leer guía",
-      "en": "Read guide"
-    },
-    "image": "/fotos/descabezado.jpg",
-    "fullContent": {
-      "es": {
-        "intro": "Descabezar el maíz es retirar el germen (la \"cabeza\" o punta negra) de cada grano. Es el paso que más se omite en las recetas caseras, y el que más afecta el resultado: sin descabezar, el pozole queda con textura pastosa y un sabor menos limpio.",
-        "ingredients": [
-          "Maíz cacahuazintle seco (cantidad deseada)",
-          "Cal (si vas a nixtamalizar antes)",
-          "Agua fría"
-        ],
-        "steps": [
-          "Extiende el maíz sobre una superficie plana y revisa grano por grano.",
-          "Localiza la punta oscura (germen) en uno de los extremos de cada grano.",
-          "Retírala pellizcando con las uñas o con un cuchillo pequeño.",
-          "En el molino lo hacemos con máquina descabezadora para garantizar uniformidad.",
-          "Una vez descabezado, lava el maíz tres veces en agua fría.",
-          "Remoja mínimo 8 horas antes de cocer para asegurar que florezca parejo."
-        ],
-        "tip": "En nuestro molino vendemos el maíz ya descabezado. Ahórrate el paso y pídelo listo para cocer."
-      },
-      "en": {
-        "intro": "Husking corn means removing the germ (the dark \"head\" or tip) from each kernel. It's the most skipped step in home recipes, and the one that impacts the result most: un-husked corn makes pozole pasty with a muddier flavor.",
-        "ingredients": [
-          "Dry cacahuazintle corn (desired amount)",
-          "Lime (if nixtamalizing first)",
-          "Cold water"
-        ],
-        "steps": [
-          "Spread the corn on a flat surface and inspect each kernel.",
-          "Find the dark tip (germ) at one end of each kernel.",
-          "Remove it by pinching with your nails or using a small knife.",
-          "At the mill we use a husking machine to ensure uniformity.",
-          "Once husked, rinse the corn three times in cold water.",
-          "Soak at least 8 hours before cooking so it blooms evenly."
-        ],
-        "tip": "At our mill we sell corn already husked. Skip the step — ask for it ready to cook."
-      }
-    }
-  },
-  {
     "slug": "calendario-pozolero",
     "kicker": {
       "es": "Temporada",
@@ -210,64 +150,6 @@
           "🗓 Holy Week — White pozole. Moderate demand, usually no stock issues."
         ],
         "tip": "For events of 20+ people, message us on WhatsApp a week ahead and we'll set aside your quantity."
-      }
-    }
-  },
-  {
-    "slug": "harina-maiz-azul",
-    "kicker": {
-      "es": "Noticia",
-      "en": "News"
-    },
-    "title": {
-      "es": "Nueva harina de maíz azul",
-      "en": "New blue corn flour"
-    },
-    "body": {
-      "es": "Desde abril molemos maíz azul de Tlaxcala — en cantidades limitadas, por pedido.",
-      "en": "Since April we've been milling blue corn from Tlaxcala — limited quantities, by order."
-    },
-    "date": {
-      "es": "15 Mar 2026",
-      "en": "Mar 15, 2026"
-    },
-    "cta": {
-      "es": "Conocer más",
-      "en": "Learn more"
-    },
-    "image": "/fotos/maiz-azul.jpg",
-    "fullContent": {
-      "es": {
-        "intro": "A partir de abril de 2026, Molino la Jalisciense ofrece harina de maíz azul de Tlaxcala, molida en piedra el mismo día del pedido. El maíz azul tiene un perfil nutricional superior al blanco — más antocianinas, más proteína — y un sabor ligeramente más dulce y terroso.",
-        "ingredients": [
-          "Maíz azul tlaxcalteca (variedad nativa)",
-          "Molienda en piedra volcánica",
-          "Sin aditivos, sin conservadores"
-        ],
-        "steps": [
-          "Disponible únicamente por pedido anticipado vía WhatsApp.",
-          "Presentación: bolsa de 1 kg o costal de 5 kg.",
-          "Tiempo de entrega: 24–48 horas desde el pedido.",
-          "Ideal para: tlayudas, tostadas, tamales azules y tortillas de color.",
-          "Se recomienda refrigerar y consumir en menos de 5 días por ser harina fresca."
-        ],
-        "tip": "Las cantidades son limitadas según disponibilidad de cosecha. Escríbenos para saber si hay stock esta semana."
-      },
-      "en": {
-        "intro": "Starting April 2026, Molino la Jalisciense offers blue corn flour from Tlaxcala, stone-ground the same day as your order. Blue corn has a superior nutritional profile to white — more anthocyanins, more protein — and a slightly sweeter, earthier flavor.",
-        "ingredients": [
-          "Tlaxcalan blue corn (native variety)",
-          "Stone-ground on volcanic millstones",
-          "No additives, no preservatives"
-        ],
-        "steps": [
-          "Available by advance order via WhatsApp only.",
-          "Presentation: 1 kg bag or 5 kg sack.",
-          "Delivery time: 24–48 hours from order.",
-          "Ideal for: tlayudas, tostadas, blue tamales and colored tortillas.",
-          "Refrigerate and consume within 5 days as it is fresh flour."
-        ],
-        "tip": "Quantities are limited based on harvest availability. Message us to check stock for this week."
       }
     }
   },
@@ -342,55 +224,5 @@
       }
     },
     "video": "/fotos/TAMALES.mp4"
-  },
-  {
-    "slug": "don-rafa-50-anos",
-    "kicker": {
-      "es": "Historia",
-      "en": "Story"
-    },
-    "title": {
-      "es": "Don Rafa cumple 50 años",
-      "en": "Don Rafa hits 50 years"
-    },
-    "body": {
-      "es": "Medio siglo detrás del mostrador. Le preguntamos qué ha cambiado y qué no.",
-      "en": "Half a century behind the counter. We asked him what has changed and what hasn't."
-    },
-    "date": {
-      "es": "18 Feb 2026",
-      "en": "Feb 18, 2026"
-    },
-    "cta": {
-      "es": "Leer historia",
-      "en": "Read story"
-    },
-    "image": "/fotos/don-rafa.jpg",
-    "fullContent": {
-      "es": {
-        "intro": "Rafael García Mendoza entró al molino a los 17 años para ayudar a su padre. Cincuenta años después, sigue ahí. Le hicimos unas preguntas el día de su aniversario.",
-        "ingredients": [],
-        "steps": [
-          "**¿Qué ha cambiado en 50 años?** — Las máquinas, la colonia, los precios. Antes un kilo costaba menos que un chicle. Ahora la gente llega en Uber.",
-          "**¿Qué no ha cambiado?** — El maíz. La gente que busca pozole de verdad sigue buscando lo mismo: grano grande, bien descabezado, fresco. Eso no cambia.",
-          "**¿Cuál es su receta favorita?** — El pozole de mi mamá, con el cacahuazintle de aquí. Sin trucos. Solo maíz bueno, caldo de cerdo y tiempo.",
-          "**¿Cuándo cierra el molino?** — Cuando yo cierre los ojos. Mientras pueda, aquí estamos.",
-          "**Mensaje para los clientes nuevos** — Bienvenidos. Aquí no hay sucursales, no hay franquicia, no hay cadena. Solo este local, esta familia y este maíz."
-        ],
-        "tip": "Don Rafa está en el molino de lunes a sábado desde las 8am. Si tienes dudas sobre el maíz o las preparaciones, pregúntale directamente."
-      },
-      "en": {
-        "intro": "Rafael García Mendoza entered the mill at 17 to help his father. Fifty years later, he's still there. We asked him a few questions on his anniversary.",
-        "ingredients": [],
-        "steps": [
-          "**What has changed in 50 years?** — The machines, the neighborhood, the prices. A kilo used to cost less than a piece of gum. Now people arrive by Uber.",
-          "**What hasn't changed?** — The corn. People who want real pozole keep looking for the same thing: big kernels, properly husked, fresh. That doesn't change.",
-          "**What's your favorite recipe?** — My mother's pozole, with the cacahuazintle from here. No tricks. Just good corn, pork broth and time.",
-          "**When does the mill close?** — When I close my eyes. As long as I can, we're here.",
-          "**Message for new customers** — Welcome. No branches, no franchise, no chain. Just this place, this family and this corn."
-        ],
-        "tip": "Don Rafa is at the mill Monday through Saturday from 8am. If you have questions about the corn or preparations, ask him directly."
-      }
-    }
   }
 ]
