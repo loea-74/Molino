@@ -1,5 +1,5 @@
 {
-  "generado": "scripts/generar-catalogo.py, desde el export del punto de venta",
+  "generado": "scripts/generar-catalogo.py",
   "servicios": [
     {
       "nombre": "Molienda de maíz",
@@ -29,7 +29,7 @@
   "departamentos": [
     {
       "nombre": "Abarrotes",
-      "total": 326,
+      "total": 325,
       "categorias": [
         {
           "nombre": "Condimentos",
@@ -249,7 +249,7 @@
         },
         {
           "nombre": "Otros",
-          "total": 29,
+          "total": 28,
           "muestra": [
             "Acitrón",
             "Bacalao Noruego",
@@ -916,9 +916,9 @@
           "muestra": [
             "Ajonjolí Blanco",
             "Ajonjolí sin Cuticula",
-            "Piñon Blanco",
-            "Piñon Confitado",
-            "Piñon Rosa"
+            "Piñón Blanco",
+            "Piñón Confitado",
+            "Piñón Rosa"
           ]
         },
         {

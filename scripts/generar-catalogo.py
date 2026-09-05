@@ -1,60 +1,40 @@
 """
-Genera src/content/catalogo.json a partir del export del punto de venta.
+Genera src/content/catalogo.json, que es lo que la página enseña.
 
-    python scripts/generar-catalogo.py [ruta/al/Plantilla_Productos.xlsx]
+    python scripts/generar-catalogo.py
 
-El export trae 1029 renglones tal como los teclearon en la caja: TODO EN
-MAYUSCULAS, sin acentos, con categorias repetidas ("OTROS" y "OTRAS"), codigos
-internos ("C1", "D1") y variantes de un mismo servicio. Nada de eso se puede
-enseñar tal cual en una web, asi que este script lo limpia. Se guarda para que
-cuando cambien la lista de precios no haya que rehacer la limpieza a mano.
+Lee dos archivos, con papeles distintos a propósito:
 
-Lo que hace, en orden:
-  - descarta los departamentos internos y los productos no marcados para venta
-  - pasa los nombres de MAYUSCULAS a texto legible y les devuelve los acentos
-  - junta "OTROS" y "OTRAS", que son el mismo cajon con dos nombres
-  - saca los servicios de molienda a su propia lista, sin las variantes de caja
-  - de cada categoria deja unos pocos productos de muestra y cuenta el resto
+  Plantilla_Productos.xlsx   el export del punto de venta. Dice qué EXISTE.
+  Catalogo_Control.xlsx      opcional. Dice qué se ENSEÑA, con qué nombre y en
+                             qué orden. Se crea con scripts/crear-control.py.
+
+Si no hay archivo de control, sale todo con los nombres limpiados
+automáticamente. Si lo hay, manda él: sus nombres pisan a los automáticos y lo
+marcado como NO no aparece.
+
+El export viene tal como se teclea en caja: TODO EN MAYUSCULAS, sin acentos,
+con "OTROS" y "OTRAS" como categorías distintas y códigos internos sueltos. La
+limpieza vive en generar_catalogo_comun.py, compartida con crear-control.py
+para que las dos herramientas digan lo mismo.
 """
 
 import json
-import re
 import sys
 from collections import OrderedDict, defaultdict
 from pathlib import Path
 
 import openpyxl
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generar_catalogo_comun import bonito, es_codigo, leer_export  # noqa: E402
+
 RAIZ = Path(__file__).resolve().parent.parent
-ENTRADA = Path(sys.argv[1]) if len(sys.argv) > 1 else RAIZ / "Plantilla_Productos.xlsx"
+CONTROL = RAIZ / "Catalogo_Control.xlsx"
 SALIDA = RAIZ / "src" / "content" / "catalogo.json"
 
-#: Cuántos productos se enseñan de cada categoría. El resto se cuenta ("y N más").
+#: Cuántos productos se enseñan de cada categoría cuando el control no dice otra cosa.
 POR_CATEGORIA = 5
-
-#: Departamentos que son de uso interno, no catálogo de cara al público.
-FUERA = {"PRODUCCION", "D1"}
-
-#: Palabras que en el export perdieron la tilde.
-TILDES = {
-    "maiz": "maíz", "maices": "maíces", "cafe": "café", "azucar": "azúcar",
-    "limon": "limón", "anis": "anís", "oregano": "orégano", "almibar": "almíbar",
-    "chia": "chía", "arandano": "arándano", "arandanos": "arándanos",
-    "mazapan": "mazapán", "ajonjoli": "ajonjolí", "pina": "piña",
-    "jalapeno": "jalapeño", "sesamo": "sésamo", "curcuma": "cúrcuma",
-    "pimenton": "pimentón", "mani": "maní", "platano": "plátano",
-    "platanos": "plátanos", "anon": "anón", "rabano": "rábano",
-    "azafran": "azafrán", "nixtamalizacion": "nixtamalización",
-    "kilogramo": "kilogramo", "articulo": "artículo", "botanico": "botánico",
-    # encontradas barriendo el catálogo por terminaciones que suelen llevar tilde
-    "clasica": "clásica", "camaron": "camarón", "corazon": "corazón",
-    "bombon": "bombón", "chiltepin": "chiltepín", "algodon": "algodón",
-    "garrafon": "garrafón", "acitron": "acitrón", "exotica": "exótica",
-    "citrico": "cítrico", "tajin": "Tajín",
-}
-
-#: Palabras que van en minúscula aunque estén dentro del nombre.
-MENUDAS = {"de", "del", "la", "las", "el", "los", "y", "o", "con", "sin", "para", "en", "a", "al"}
 
 #: Los servicios de molienda, ya consolidados. El export los trae repetidos por
 #: variantes de cobro ("Molienda 45", "Molienda Maiz Kilo"), que dentro de la
@@ -69,99 +49,143 @@ SERVICIOS = [
 ]
 
 
-def bonito(texto: str) -> str:
-    """De MAYUSCULAS DEL PUNTO DE VENTA a texto que se pueda leer."""
-    texto = re.sub(r"\s+", " ", texto.strip())
-    salida = []
-    for i, palabra in enumerate(texto.split(" ")):
-        baja = palabra.lower()
-        # las medidas se quedan en minúscula: 500ml, 1kg
-        if re.fullmatch(r"[\d.,]+(ml|l|kg|g|gr|pz|pzs|oz)?", baja):
-            salida.append(baja)
-            continue
-        baja = TILDES.get(baja, baja)
-        if i > 0 and baja in MENUDAS:
-            salida.append(baja)
-            continue
-        salida.append(baja[:1].upper() + baja[1:])
-    return " ".join(salida)
+def leer_control():
+    """Las decisiones del archivo de control, si existe."""
+    if not CONTROL.exists():
+        return {}, {}, {}
+
+    libro = openpyxl.load_workbook(CONTROL, data_only=True)
+
+    def hoja(nombre, claves):
+        if nombre not in libro.sheetnames:
+            return {}
+        h = libro[nombre]
+        cab = [c.value for c in h[1]]
+        salida = {}
+        for fila in h.iter_rows(min_row=2, values_only=True):
+            if not fila or fila[0] is None:
+                continue
+            reg = dict(zip(cab, fila))
+            try:
+                salida[tuple(str(reg[k]) for k in claves)] = reg
+            except KeyError:
+                continue
+        return salida
+
+    return (
+        hoja("Menu", ["Clave del departamento"]),
+        hoja("Categorias", ["Clave del departamento", "Clave de la categoria"]),
+        hoja("Productos", ["Clave"]),
+    )
 
 
-def es_codigo(categoria: str) -> bool:
-    """"C1", "D3" y demás son códigos de caja, no nombres de categoría."""
-    return bool(re.fullmatch(r"[A-Z]\d+", categoria))
+def si(valor, por_omision=True):
+    """Lee un SI/NO del archivo de control. Vacío = lo que diga por omisión."""
+    if valor is None or str(valor).strip() == "":
+        return por_omision
+    return str(valor).strip().upper().startswith("S")
+
+
+def texto(valor):
+    return (str(valor).strip() if valor is not None else "")
 
 
 def main() -> None:
-    if not ENTRADA.exists():
-        sys.exit(f"No encuentro {ENTRADA}")
+    productos, _ = leer_export()
+    if not productos:
+        sys.exit("El export no trajo productos. ¿Está Plantilla_Productos.xlsx en su sitio?")
 
-    hoja = openpyxl.load_workbook(ENTRADA, data_only=True)["Plantilla"]
-    filas = list(hoja.iter_rows(values_only=True))
-    cabecera = [str(c).strip().lower() if c else "" for c in filas[0]]
-    col = {n: i for i, n in enumerate(cabecera)}
-    DESC = "descripción *" if "descripción *" in col else "descripcion *"
-
-    def dato(fila, nombre):
-        i = col.get(nombre)
-        valor = fila[i] if i is not None and i < len(fila) else None
-        return str(valor).strip() if valor is not None else ""
+    ctrl_menu, ctrl_cats, ctrl_prods = leer_control()
+    hay_control = bool(ctrl_menu or ctrl_cats or ctrl_prods)
+    ocultos = {"productos": 0, "categorias": 0, "departamentos": 0}
+    renombrados = 0
 
     arbol = defaultdict(lambda: defaultdict(list))
-    for fila in filas[1:]:
-        if not dato(fila, DESC):
+    for p in productos:
+        reg = ctrl_prods.get((p["clave"],), {})
+        if not si(reg.get("Mostrar")):
+            ocultos["productos"] += 1
             continue
-        departamento = dato(fila, "departamento")
-        if not departamento or departamento in FUERA or departamento == "SERVICIOS":
-            continue
-        if dato(fila, "(s/n) mostrar en ventas") == "n":
-            continue
-        categoria = dato(fila, "categoria")
-        if not categoria or es_codigo(categoria) or categoria == "OTRAS":
-            categoria = "OTROS"
-        arbol[departamento][categoria].append({
-            "nombre": bonito(dato(fila, DESC)),
-            "favorito": dato(fila, "(s/n) favorito") == "s",
+        nombre = texto(reg.get("Nombre en la web")) or p["nombre"]
+        if nombre != p["nombre"]:
+            renombrados += 1
+        arbol[p["departamento"]][p["categoria"]].append({
+            "nombre": nombre,
+            "destacado": si(reg.get("Destacar"), p["favorito"]),
         })
 
     departamentos = []
-    for nombre in sorted(arbol, key=lambda d: -sum(len(p) for p in arbol[d].values())):
+    for dep in arbol:
+        reg_dep = ctrl_menu.get((dep,), {})
+        if not si(reg_dep.get("Mostrar")):
+            ocultos["departamentos"] += 1
+            continue
+
         categorias = []
-        # "Otros" siempre al final: es el cajón de sastre, no una categoría real
-        for cat, productos in sorted(
-            arbol[nombre].items(), key=lambda x: (x[0] == "OTROS", -len(x[1]), x[0])
-        ):
-            # primero los marcados como favoritos en la caja, luego alfabético
-            orden = sorted(productos, key=lambda p: (not p["favorito"], p["nombre"]))
-            categorias.append(OrderedDict([
-                ("nombre", bonito(cat)),
-                ("total", len(productos)),
-                ("muestra", [p["nombre"] for p in orden[:POR_CATEGORIA]]),
-            ]))
-        departamentos.append(OrderedDict([
-            ("nombre", bonito(nombre)),
-            ("total", sum(len(p) for p in arbol[nombre].values())),
-            ("categorias", categorias),
-        ]))
+        for cat, prods in arbol[dep].items():
+            reg_cat = ctrl_cats.get((dep, cat), {})
+            if not si(reg_cat.get("Mostrar"), not es_codigo(cat)):
+                ocultos["categorias"] += 1
+                continue
+            try:
+                cuantos = max(1, int(reg_cat.get("Cuantos productos enseñar") or POR_CATEGORIA))
+            except (TypeError, ValueError):
+                cuantos = POR_CATEGORIA
+            # primero lo destacado, luego alfabético
+            orden = sorted(prods, key=lambda x: (not x["destacado"], x["nombre"]))
+            categorias.append({
+                "nombre": texto(reg_cat.get("Nombre en la web")) or bonito(cat),
+                "total": len(prods),
+                "muestra": [x["nombre"] for x in orden[:cuantos]],
+                # "Otros" al final: es el cajón de sastre, no una categoría real
+                "_orden": (cat == "OTROS", -len(prods), cat),
+            })
+
+        if not categorias:
+            continue
+        categorias.sort(key=lambda c: c["_orden"])
+        total = sum(c["total"] for c in categorias)
+        orden_dep = reg_dep.get("Orden")
+        departamentos.append({
+            "nombre": texto(reg_dep.get("Nombre en la web")) or bonito(dep),
+            "total": total,
+            "categorias": [
+                OrderedDict([("nombre", c["nombre"]), ("total", c["total"]), ("muestra", c["muestra"])])
+                for c in categorias
+            ],
+            "_orden": (orden_dep if isinstance(orden_dep, int) else 999, -total),
+        })
+
+    departamentos.sort(key=lambda d: d["_orden"])
+    limpios = [
+        OrderedDict([("nombre", d["nombre"]), ("total", d["total"]), ("categorias", d["categorias"])])
+        for d in departamentos
+    ]
 
     SALIDA.write_text(
         json.dumps(
             OrderedDict([
-                ("generado", "scripts/generar-catalogo.py, desde el export del punto de venta"),
+                ("generado", "scripts/generar-catalogo.py"),
                 ("servicios", SERVICIOS),
-                ("departamentos", departamentos),
+                ("departamentos", limpios),
             ]),
             ensure_ascii=False, indent=2,
         ) + "\n",
         encoding="utf-8",
     )
 
-    total = sum(d["total"] for d in departamentos)
-    muestra = sum(len(c["muestra"]) for d in departamentos for c in d["categorias"])
-    categorias = sum(len(d["categorias"]) for d in departamentos)
+    total = sum(d["total"] for d in limpios)
+    muestra = sum(len(c["muestra"]) for d in limpios for c in d["categorias"])
+    cats = sum(len(d["categorias"]) for d in limpios)
     print(f"{SALIDA.relative_to(RAIZ)}")
-    print(f"  {len(departamentos)} departamentos · {categorias} categorías · {total} productos")
-    print(f"  {muestra} productos de muestra · {len(SERVICIOS)} servicios")
+    print(f"  {len(limpios)} departamentos · {cats} categorías · {total} productos")
+    print(f"  {muestra} de muestra · {len(SERVICIOS)} servicios")
+    if hay_control:
+        print(f"  control aplicado: {renombrados} renombrados · ocultos "
+              f"{ocultos['productos']} productos, {ocultos['categorias']} categorías, "
+              f"{ocultos['departamentos']} departamentos")
+    else:
+        print("  (sin archivo de control: sale todo con los nombres automáticos)")
 
 
 if __name__ == "__main__":
