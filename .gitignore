@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python de los scripts del catálogo
+__pycache__/
+*.pyc
