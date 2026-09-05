@@ -130,8 +130,8 @@
   },
   "labels": {
     "productsEyebrow": {
-      "es": "Productos relevantes",
-      "en": "Featured products"
+      "es": "02 · Catálogo",
+      "en": "02 · Catalogue"
     },
     "productsTitle": {
       "es": "Productos de temporada",
@@ -172,36 +172,13 @@
     "footerRights": {
       "es": "© 2026 Molino la Gran Jalisciense · Todos los derechos reservados",
       "en": "© 2026 Molino la Gran Jalisciense · All rights reserved"
-    },
-    "catalogoEyebrow": {
-      "es": "02 · Catálogo",
-      "en": "02 · Catalogue"
-    },
-    "catalogoTitle": {
-      "es": "Todo lo que sale del molino",
-      "en": "Everything the mill carries"
-    },
-    "catalogoBody": {
-      "es": "Más de mil productos entre harinas, especias, chiles, frutos secos, salsas y abarrotes. Abajo va una muestra de cada categoría.",
-      "en": "Over a thousand products: flours, spices, chillies, nuts, sauces and groceries. Below is a sample from each category."
-    },
-    "catalogoServicios": {
-      "es": "Lo que hacemos aquí mismo",
-      "en": "What we mill here"
-    },
-    "catalogoServiciosBody": {
-      "es": "Traes el grano y te lo molemos al punto que pidas.",
-      "en": "Bring your grain and we grind it just how you want it."
-    },
-    "catalogoPrecios": {
-      "es": "Pregúntanos precios y existencias por WhatsApp.",
-      "en": "Ask us for prices and stock on WhatsApp."
     }
   },
   "theme": {
     "fuente": "inter",
     "colores": {
-      "franjaOscura": "#510524",
+      "franjaNaranja": "#D9C8A8",
+      "franjaOscura": "#800020",
       "pieFondo": "#2A1D14"
     }
   },
