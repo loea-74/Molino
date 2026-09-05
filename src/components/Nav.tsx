@@ -41,7 +41,7 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ width: 44, height: 44, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
-            <Image src="/fotos/logo.jpg" alt="Logo Molino la Jalisciense" width={44} height={44} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+            <Image src="/fotos/logo-grande.png" alt="Logo Molino la Jalisciense" width={132} height={132} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 17, letterSpacing: "-0.01em", lineHeight: 1, color: "var(--grano)" }}>

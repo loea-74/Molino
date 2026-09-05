@@ -5,6 +5,10 @@ import { useLang } from "@/lib/LangContext";
 import { IconWhatsApp, IconMap } from "./icons";
 import siteContent from "@/content/site.json";
 
+// El logo grande, en un solo sitio. Es PNG con transparencia: sobre el crema
+// del hero se ve el disco recortado, sin cuadro de fondo.
+const LOGO = "/fotos/logo-grande.png";
+
 function MiniMd({ text }: { text: string }) {
   return (
     <>
@@ -79,6 +83,24 @@ export default function Hero() {
               </div>
             ))}
           </h1>
+
+          {/* El logo, bajo el título.
+              Va dentro de un hueco de tamaño fijo y con objectFit "contain":
+              así el acomodo no se mueve cuando se cambie el archivo por el
+              definitivo, tenga el margen que tenga. */}
+          <div
+            style={{ width: 168, height: 168, marginTop: 28, flexShrink: 0 }}
+            className="max-sm:!w-[128px] max-sm:!h-[128px] max-sm:!mt-6"
+          >
+            <Image
+              src={LOGO}
+              alt="Molino la Gran Jalisciense"
+              width={504}
+              height={504}
+              priority
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          </div>
 
           <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--grano-soft)", maxWidth: 560, marginTop: 32 }} className="max-sm:!text-base max-sm:!mt-6">
             {h.body[lang]}

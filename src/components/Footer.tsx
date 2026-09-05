@@ -67,10 +67,12 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 32, marginBottom: 36 }} className="max-md:!grid-cols-1 max-md:!gap-8">
           {/* Brand */}
           <div>
+            {/* Logo grande, en su propio renglón: a 48 px al lado del nombre
+                no se distinguía nada de lo que dice. */}
+            <div style={{ width: 108, height: 108, marginBottom: 16 }}>
+              <Image src="/fotos/logo-grande.png" alt="Molino la Gran Jalisciense" width={324} height={324} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
+            </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 48, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
-                <Image src="/fotos/logo.jpg" alt="Logo" width={48} height={48} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
-              </div>
               <div>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontStyle: "italic", color: "var(--texto-claro)" }}>
                   Molino la Gran Jalisciense
