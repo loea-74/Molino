@@ -87,7 +87,9 @@ export function aplicarControl(excel: Buffer, catalogo: Catalogo): Resumen {
   const n: Resumen = { renombrados: 0, ocultados: 0, mostrados: 0, sinCruzar: 0, leidos: porClave.size };
 
   const marcar = (antes: boolean, ahora: boolean) => {
-    if (ahora !== antes) ahora ? n.ocultados++ : n.mostrados++;
+    if (ahora === antes) return;
+    if (ahora) n.ocultados++;
+    else n.mostrados++;
   };
 
   for (const dep of catalogo.departamentos) {
