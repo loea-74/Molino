@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { textos } from "@/lib/textos";
@@ -16,6 +16,82 @@ const GRADIENTS = [
   "linear-gradient(145deg, #8aaa5c 0%, #556b3a 100%)",
   "linear-gradient(145deg, #c87840 0%, #8b5230 100%)",
 ];
+
+/**
+ * El video destacado, con botón para encender el sonido.
+ *
+ * Los navegadores NO dejan que un video arranque solo con audio: si se le quita
+ * el "muted" de entrada, Chrome y Safari sencillamente no lo reproducen. Por eso
+ * empieza mudo — que es lo que permite el arranque automático — y el sonido se
+ * enciende con un gesto de la persona, que es justo lo que el navegador exige.
+ *
+ * `muted` va atado al estado y no tocado a mano sobre el elemento, para que
+ * React no lo pise en el siguiente render.
+ */
+function VideoDestacado({ src, alt }: { src: string; alt: string }) {
+  const video = useRef<HTMLVideoElement>(null);
+  const [conSonido, setConSonido] = useState(false);
+
+  function alternar() {
+    const nuevo = !conSonido;
+    setConSonido(nuevo);
+    // Al quitar el silencio algunos navegadores pausan; se reanuda a mano.
+    if (nuevo) video.current?.play().catch(() => {});
+  }
+
+  return (
+    <>
+      <video
+        ref={video}
+        src={src}
+        aria-label={alt}
+        autoPlay
+        muted={!conSonido}
+        loop
+        playsInline
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+      />
+      <button
+        type="button"
+        onClick={alternar}
+        aria-pressed={conSonido}
+        aria-label={conSonido ? "Silenciar el video" : "Activar el sonido del video"}
+        title={conSonido ? "Silenciar" : "Activar sonido"}
+        style={{
+          position: "absolute", top: 20, right: 20, zIndex: 2,
+          // 44 px: la medida mínima para acertarle con el pulgar.
+          width: 44, height: 44, borderRadius: "50%",
+          display: "grid", placeItems: "center",
+          background: "rgba(245,237,224,0.16)",
+          backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
+          border: "1px solid rgba(245,237,224,0.3)",
+          color: "var(--texto-claro)", cursor: "pointer", padding: 0,
+        }}
+      >
+        <IconoSonido encendido={conSonido} />
+      </button>
+    </>
+  );
+}
+
+function IconoSonido({ encendido }: { encendido: boolean }) {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden focusable="false">
+      <path d="M11 5 6 9H3v6h3l5 4V5z" />
+      {encendido ? (
+        <>
+          <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+          <path d="M18.5 5.5a9 9 0 0 1 0 13" />
+        </>
+      ) : (
+        <>
+          <path d="M22 9l-6 6" />
+          <path d="M16 9l6 6" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 export default function Recipes() {
   const { lang } = useLang();
@@ -107,10 +183,9 @@ export default function Recipes() {
             className="max-md:!min-h-[420px] max-md:!row-auto"
           >
             {"video" in featured && featured.video ? (
-              <video
+              <VideoDestacado
                 src={(featured as { video: string }).video}
-                autoPlay muted loop playsInline
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                alt={featured.title[lang]}
               />
             ) : "image" in featured && featured.image ? (
               <Image

@@ -3,7 +3,7 @@ import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 import { createHash } from "crypto";
 
 // El video NO puede pasar por aquí: Vercel corta el cuerpo de una función
-// serverless en 4.5 MB y TAMALES.mp4 ya pesa 4.46 MB. Esta ruta solo FIRMA el
+// serverless en 4.5 MB, y un video de receta sin comprimir lo rebasa fácil. Esta ruta solo FIRMA el
 // permiso; el archivo viaja del navegador directo a Vercel Blob.
 //
 // Tampoco van a GitHub a propósito: Vercel clona el repo en cada compilación,

@@ -9,9 +9,10 @@ type Props = {
   onChange: (url: string) => void;
 };
 
-// Tope de peso. La portada reproduce estos videos en automático: hoy TAMALES.mp4
-// y pozole.mp4 juntos son ~7 MB en cada visita desde celular. Sin un límite
-// visible, esto se dispara sin que nadie se dé cuenta.
+// Tope de peso. La portada reproduce los tres videos de recetas en automático,
+// así que su suma se descarga entera en cada visita, también desde celular con
+// datos. Tras recomprimirlos son ~3.7 MB los tres; antes eran ~11 MB. Sin un
+// límite visible esto se vuelve a disparar sin que nadie se dé cuenta.
 const AVISO_PESADO = 12 * 1024 * 1024;
 
 function limpiarNombre(nombre: string) {
