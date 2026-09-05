@@ -6,15 +6,17 @@
     },
     "title": {
       "es": [
-        "La Gran Jalisciense"
+        "La Gran Jalisciense",
+        "",
+        ""
       ],
       "en": [
-        "La Gran Jalisciense"
+        "LA GRAN JALISCIENSE"
       ]
     },
     "body": {
-      "es": "Productos de maíz de calidad. Desde hace casi cien años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
-      "en": "Quality corn products. For nearly a hundred years, in the heart of Colonia Juárez, we've been milling corn and flours for kitchens that take their pozole, tamales and homemade tortillas seriously."
+      "es": "Productos de Maíz de Calidad\nDesde hace casi cien años en la colonia Juárez molemos maíz y harinas para las cocinas que toman en serio el pozole, los tamales y las tortillas de casa.",
+      "en": "For nearly a hundred years, in the heart of Colonia Juárez, we've been milling corn and flours for kitchens that take their pozole, tamales and homemade tortillas seriously."
     },
     "phone": "55 4361 2880",
     "whatsapp": "525543612880",
@@ -92,11 +94,11 @@
       "en": "No branches, no franchises. One place, the same one, in Colonia Juárez."
     },
     "noticeTitle": {
-      "es": "Un solo local, sin sucursales.",
+      "es": "No tenemos sucursales",
       "en": "One shop. No branches."
     },
     "noticeBody": {
-      "es": "Si alguien te vende maíz diciendo que es nuestro y no estás aquí, en Abraham González 143 — no lo es. Gracias por cuidarnos.",
+      "es": "Por el momento no tenemos sucursales te atendemos en Abraham González 143 — no lo es. Gracias por cuidarnos.",
       "en": "If someone is selling you \"our\" corn anywhere other than here, at Abraham González 143 — it isn't ours. Thanks for looking out for us."
     },
     "address": {
