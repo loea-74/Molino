@@ -63,9 +63,9 @@ export const GRUPOS_COLOR: { titulo: string; nota: string; colores: DefColor[] }
       },
       {
         clave: "franjaOscura", css: "--franja-oscura", omision: "#2A1D14",
-        nombre: "Fondo de la franja oscura",
-        donde: "La franja de recetas y el pie de página. Sólo el fondo.",
-        zonas: ["recetas", "pie"],
+        nombre: "Fondo de lo oscuro",
+        donde: "Las franjas de recetas e historia, el pie, y el botón oscuro de la barra de arriba",
+        zonas: ["recetas", "historia", "pie", "botonNav"],
       },
       {
         clave: "franjaNaranja", css: "--franja-naranja", omision: "#B8542E",
@@ -101,7 +101,7 @@ export const GRUPOS_COLOR: { titulo: string; nota: string; colores: DefColor[] }
         clave: "textoClaro", css: "--texto-claro", omision: "#FBF6ED",
         nombre: "Texto sobre las franjas",
         donde: "Todo lo que se lee encima de la franja oscura y de la naranja",
-        zonas: ["textoRecetas", "textoVisita", "textoPie"],
+        zonas: ["textoRecetas", "textoHistoria", "textoVisita", "textoPie", "textoBotonNav"],
       },
     ],
   },
@@ -112,20 +112,23 @@ export const GRUPOS_COLOR: { titulo: string; nota: string; colores: DefColor[] }
       {
         clave: "terracota", css: "--terracota", omision: "#B8542E",
         nombre: "Botones y ligas",
-        donde: "El botón de WhatsApp, el «Pedir» de cada producto",
-        zonas: ["botonPortada", "botonNav", "pedir"],
+        donde: "El botón naranja de la portada, el «Pedir» de cada producto y la raya de la cita",
+        zonas: ["botonPortada", "pedir", "citaHistoria"],
       },
       {
         clave: "maiz", css: "--maiz", omision: "#E8B858",
         nombre: "Amarillo maíz",
         donde: "Las etiquetas de las tarjetas, las estrellas y los avisos",
-        zonas: ["etiquetaProducto", "kickerRecetas", "avisoVisita", "estrellas"],
+        zonas: ["etiquetaProducto", "kickerRecetas", "kickerHistoria", "avisoVisita", "estrellas"],
       },
       {
         clave: "linea", css: "--linea", omision: "#D9C8A8",
         nombre: "Líneas finas",
-        donde: "Los bordes y las rayas que separan bloques",
-        zonas: ["bordes"],
+        // También pinta los párrafos de Historia: ahí hace de gris cálido sobre
+        // el fondo oscuro. Cambiarlo a --texto-claro alteraría cómo se ve hoy,
+        // así que se deja y se avisa en vez de esconderlo.
+        donde: "Los bordes y rayas que separan bloques · y los párrafos de Historia",
+        zonas: ["bordes", "parrafoHistoria"],
       },
     ],
   },

@@ -288,12 +288,12 @@ function Mapa({
         </span>
         <span
           style={{
-            background: c.terracota, color: c.cremaLight, fontFamily: pareja.body,
+            background: c.franjaOscura, fontFamily: pareja.body,
             fontSize: 7.5, padding: "3px 8px", borderRadius: 999, whiteSpace: "nowrap",
             ...z("botonNav"),
           }}
         >
-          Pedir por WhatsApp
+          <span style={{ color: c.textoClaro, ...z("textoBotonNav") }}>Pedir por WhatsApp</span>
         </span>
       </div>
 
@@ -352,6 +352,27 @@ function Mapa({
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* ─── franja de historia (también oscura) ─── */}
+      <div style={{ background: c.franjaOscura, padding: "13px 12px", display: "flex", gap: 10, ...z("historia") }}>
+        <div style={{ width: 52, height: 66, borderRadius: 4, background: "rgba(245,237,224,0.14)", flexShrink: 0, ...z("textoHistoria") }} />
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontFamily: mono, fontSize: 6.5, letterSpacing: "0.18em", color: c.maiz, ...z("kickerHistoria") }}>
+            03 · HISTORIA
+          </div>
+          <div style={{ fontFamily: pareja.display, fontSize: 13, color: c.textoClaro, marginTop: 3, ...z("textoHistoria") }}>
+            Cuatro generaciones en la colonia Juárez.
+          </div>
+          <div style={{ fontFamily: pareja.body, fontSize: 7.5, color: c.linea, marginTop: 4, lineHeight: 1.5, ...z("parrafoHistoria") }}>
+            El Molino abrió sus puertas en 1930 en Abraham González 143.
+          </div>
+          <div style={{ borderLeft: `2px solid ${c.terracota}`, paddingLeft: 7, marginTop: 6, ...z("citaHistoria") }}>
+            <span style={{ fontFamily: pareja.display, fontSize: 9, fontStyle: "italic", color: c.textoClaro, ...z("textoHistoria") }}>
+              “Aquí el maíz se huele antes de verse.”
+            </span>
+          </div>
         </div>
       </div>
 

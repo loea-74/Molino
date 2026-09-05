@@ -85,8 +85,8 @@ export default function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: "var(--grano)",
-              color: "var(--crema)",
+              background: "var(--franja-oscura)",
+              color: "var(--texto-claro)",
               padding: "10px 18px",
               borderRadius: 999,
               fontSize: 13,
@@ -157,7 +157,7 @@ export default function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: "var(--grano)", color: "var(--crema)",
+              background: "var(--franja-oscura)", color: "var(--texto-claro)",
               padding: "12px 18px", borderRadius: 999,
               fontSize: 14, fontWeight: 500,
               textDecoration: "none",

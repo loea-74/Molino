@@ -13,7 +13,7 @@ export default function History() {
   return (
     <section
       id="historia"
-      style={{ background: "var(--grano)", color: "var(--crema)", padding: "96px 48px", position: "relative" }}
+      style={{ background: "var(--franja-oscura)", color: "var(--texto-claro)", padding: "96px 48px", position: "relative" }}
       className="max-sm:!px-5 max-sm:!py-14"
     >
       <div
@@ -54,7 +54,7 @@ export default function History() {
           </p>
 
           <div style={{ borderLeft: "2px solid var(--terracota)", paddingLeft: 20 }}>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(20px, 2.5vw, 28px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.25, margin: "0 0 10px", color: "var(--crema-light)" }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(20px, 2.5vw, 28px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.25, margin: "0 0 10px", color: "var(--texto-claro)" }}>
               {hs.quote[lang]}
             </p>
             <p style={{ fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--maiz)", margin: 0 }}>
