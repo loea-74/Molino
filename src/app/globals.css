@@ -159,7 +159,11 @@
    fijarlo, para que quepa entero sin partirse a cualquier medida. Debajo de
    768 px se deja partir: si no, quedaría en letra diminuta. */
 .hero-titulo {
-  font-size: clamp(44px, 7.2vw, 104px);
+  /* Gagalin, la fuente del cliente. Sólo aquí: es el nombre del molino, casi
+     un logotipo, y no cambia con el selector de tipografía del panel. */
+  font-family: var(--tf-gagalin), var(--font-display);
+  font-size: clamp(40px, 6.4vw, 92px);
+  letter-spacing: -0.005em;
 }
 @media (min-width: 768px) {
   .hero-titulo { white-space: nowrap; }

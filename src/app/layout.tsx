@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, Bitter, Playfair_Display, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import { LangProvider } from "@/lib/LangContext";
 import site from "@/content/site.json";
 import { cssDelTema, type Tema } from "@/lib/tema";
@@ -59,7 +60,22 @@ const sourceSans = Source_Sans_3({
   preload: false,
 });
 
-const FUENTES = [fraunces, inter, bitter, playfair, sourceSans]
+/**
+ * Gagalin, la del título de la portada.
+ *
+ * Es un archivo del cliente, no de Google, así que se auto-hospeda desde el
+ * repositorio. Va sólo en el título: es el nombre del molino, casi un logotipo,
+ * y por eso no entra en el selector de tipografía del panel — ese cambia el
+ * resto de la página, no la marca.
+ */
+const gagalin = localFont({
+  src: "../fonts/Gagalin-Regular.otf",
+  variable: "--tf-gagalin",
+  display: "swap",
+  weight: "400",
+});
+
+const FUENTES = [fraunces, inter, bitter, playfair, sourceSans, gagalin]
   .map((f) => f.variable)
   .join(" ");
 

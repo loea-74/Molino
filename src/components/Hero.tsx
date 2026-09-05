@@ -58,7 +58,8 @@ export default function Hero() {
       <h1
         className="hero-titulo"
         style={{
-          fontFamily: "var(--font-display)",
+          // La familia y el tamaño van en la clase, no aquí: un estilo en línea
+          // gana sobre la hoja de estilos y dejaba a Gagalin sin efecto.
           lineHeight: 1,
           fontWeight: 300,
           margin: "0 0 8px",
@@ -86,17 +87,17 @@ export default function Hero() {
 
       {/* Two-column grid */}
       <div
-        style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "end" }}
+        style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "stretch" }}
         className="max-md:!grid-cols-1 max-md:!gap-8"
       >
         {/* Left: copy */}
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
           {/* El logo, al lado de la foto del local.
               Hueco de tamaño fijo con objectFit "contain": así el acomodo no
               se mueve si se cambia el archivo, tenga el margen que tenga. */}
           <div
-            style={{ width: 210, height: 210, marginBottom: 28 }}
-            className="max-sm:!w-[150px] max-sm:!h-[150px] max-sm:!mb-5"
+            style={{ width: 210, height: 210, flexShrink: 0 }}
+            className="max-sm:!w-[150px] max-sm:!h-[150px]"
           >
             <Image
               src={LOGO}
