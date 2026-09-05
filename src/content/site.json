@@ -176,6 +176,9 @@
   },
   "theme": {
     "fuente": "inter",
-    "colores": {}
+    "colores": {
+      "franjaNaranja": "#D9C8A8",
+      "franjaOscura": "#540726"
+    }
   }
 }
