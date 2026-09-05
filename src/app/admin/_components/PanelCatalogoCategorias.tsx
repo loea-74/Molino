@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { C, esp, radio, campo, etiqueta } from "./ui";
+import { C, esp, radio, campo } from "./ui";
 import { Bloque } from "./campos";
 import { BloqueEncabezado, type Site } from "./PanelesSitio";
 
@@ -42,7 +42,10 @@ export default function PanelCatalogoCategorias({
 }) {
   const [busca, setBusca] = useState("");
 
-  const deps = datos?.departamentos ?? [];
+  // useMemo y no "?? []" a secas: ese array se crearía nuevo en cada render y
+  // haría que la búsqueda entre mil productos se recalculara al teclear cada
+  // letra, aunque el catálogo no hubiera cambiado.
+  const deps = useMemo(() => datos?.departamentos ?? [], [datos]);
   const totales = useMemo(() => {
     let prod = 0, cats = 0, ocultos = 0;
     for (const d of deps)
