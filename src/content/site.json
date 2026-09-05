@@ -181,6 +181,7 @@
     }
   },
   "secciones": {
-    "productosRelevantes": true
+    "productosRelevantes": true,
+    "folleto": false
   }
 }

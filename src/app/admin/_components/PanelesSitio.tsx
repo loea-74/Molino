@@ -42,7 +42,7 @@ export type Site = {
   /** Colores y tipografía. Vacío = los de siempre. */
   theme?: Tema;
   /** Qué secciones de la página se muestran. */
-  secciones?: { productosRelevantes?: boolean };
+  secciones?: { productosRelevantes?: boolean; folleto?: boolean };
 };
 
 type Props = { site: Site; set: (f: (s: Site) => Site) => void };
@@ -207,6 +207,15 @@ export function PanelVisita({ site, set }: Props) {
 
 export function PanelFolleto({ site, set }: Props) {
   return (
+    <>
+    <Interruptor
+      site={site}
+      set={set}
+      clave="folleto"
+      porOmision
+      titulo="El folleto"
+      nota="Es el botón Ver catálogo completo y las dos páginas que abre. Apagado, el botón no sale; las páginas se quedan guardadas por si lo quieres de vuelta."
+    />
     <Bloque titulo="Las dos páginas" nota="Se ven al pulsar Ver catálogo completo">
       <CampoImagen
         etiqueta="Página 1 — frente"
@@ -219,6 +228,7 @@ export function PanelFolleto({ site, set }: Props) {
         onChange={(v) => set((s) => ({ ...s, catalog: { ...s.catalog, page2: v } }))}
       />
     </Bloque>
+    </>
   );
 }
 
@@ -342,15 +352,18 @@ export function BloqueEncabezado({
  * irreversible desde el panel.
  */
 export function Interruptor({
-  site, set, clave, titulo, nota,
+  site, set, clave, porOmision, titulo, nota,
 }: {
   site: Site;
   set: (f: (s: Site) => Site) => void;
-  clave: "productosRelevantes";
+  clave: "productosRelevantes" | "folleto";
+  /** Qué vale si site.json aún no trae la llave. El folleto siempre existió,
+      así que sin llave se muestra; los relevantes nacieron apagados. */
+  porOmision?: boolean;
   titulo: string;
   nota: string;
 }) {
-  const encendida = site.secciones?.[clave] ?? false;
+  const encendida = site.secciones?.[clave] ?? porOmision ?? false;
 
   return (
     <Bloque titulo="Mostrar u ocultar" nota="">

@@ -68,6 +68,10 @@ export default function Products() {
   const { lang } = useLang();
   const t = textos(lang);
   const [showCatalog, setShowCatalog] = useState(false);
+  // El folleto se apaga desde el panel (Admin → Folleto) sin borrar sus
+  // páginas. Sin la llave se muestra, que es como siempre fue.
+  const conFolleto = (siteContent as { secciones?: { folleto?: boolean } })
+    .secciones?.folleto ?? true;
 
   return (
     <section
@@ -177,6 +181,7 @@ export default function Products() {
           ))}
         </div>
 
+        {conFolleto && (
         <div style={{ marginTop: 40, textAlign: "center" }}>
           <button
             onClick={() => setShowCatalog(true)}
@@ -185,9 +190,10 @@ export default function Products() {
             {t.productsMore} <IconArrow size={14} />
           </button>
         </div>
+        )}
       </div>
 
-      {showCatalog && <CatalogModal onClose={() => setShowCatalog(false)} />}
+      {conFolleto && showCatalog && <CatalogModal onClose={() => setShowCatalog(false)} />}
     </section>
   );
 }
