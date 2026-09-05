@@ -176,10 +176,6 @@
   },
   "theme": {
     "fuente": "actual",
-    "colores": {
-      "terracota": "#B8542E",
-      "franjaNaranja": "#4D0510",
-      "franjaOscura": "#4D0510"
-    }
+    "colores": {}
   }
 }
