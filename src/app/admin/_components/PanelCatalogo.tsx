@@ -6,7 +6,7 @@ import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
 import BotonEliminar from "./BotonEliminar";
 import BotonesOrden, { moverEnLista } from "./BotonesOrden";
-import { BloqueEncabezado, type Site } from "./PanelesSitio";
+import { BloqueEncabezado, Interruptor, type Site } from "./PanelesSitio";
 import { productoNuevo } from "@/lib/nuevosItems";
 
 export type Product = {
@@ -144,7 +144,18 @@ export default function PanelCatalogo({
 }) {
   return (
     <>
-      {site && <BloqueEncabezado site={site} set={setSite} seccion="catalogo" />}
+      {site && (
+        <>
+          <Interruptor
+            site={site}
+            set={setSite}
+            clave="productosRelevantes"
+            titulo="Esta sección"
+            nota="Son las tarjetas con foto y precio. Están ocultas: el catálogo por categorías ocupa su lugar. Enciéndelas cuando quieras recuperarlas."
+          />
+          <BloqueEncabezado site={site} set={setSite} seccion="relevantes" />
+        </>
+      )}
 
       {datos.map((p, i) => (
         <Ficha

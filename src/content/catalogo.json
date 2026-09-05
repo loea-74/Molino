@@ -1,0 +1,1335 @@
+{
+  "generado": "scripts/generar-catalogo.py, desde el export del punto de venta",
+  "servicios": [
+    {
+      "nombre": "Molienda de maíz",
+      "nota": "Nixtamalizado, para pozole o para masa"
+    },
+    {
+      "nombre": "Nixtamalización y molienda",
+      "nota": "El proceso completo, de grano a masa"
+    },
+    {
+      "nombre": "Molienda de café",
+      "nota": "Al punto que pidas"
+    },
+    {
+      "nombre": "Molienda de especias y granos",
+      "nota": "Molemos lo que traigas"
+    },
+    {
+      "nombre": "Molienda de moles",
+      "nota": "Pastas de mole a tu receta"
+    },
+    {
+      "nombre": "Molienda de pan",
+      "nota": "Pan molido fresco"
+    }
+  ],
+  "departamentos": [
+    {
+      "nombre": "Abarrotes",
+      "total": 326,
+      "categorias": [
+        {
+          "nombre": "Condimentos",
+          "total": 54,
+          "muestra": [
+            "Concentrado de Fresa",
+            "Concentrado de Frutas Rojas",
+            "Condimento Bisteck Yucateco",
+            "Esencia Algodón de Azúcar",
+            "Esencia Almendra"
+          ]
+        },
+        {
+          "nombre": "Aceites",
+          "total": 41,
+          "muestra": [
+            "Aceite Borges Ajo Frito 250ml",
+            "Aceite Borges Soya y Jengibre 250ml",
+            "Aceite Cristal 1.5lt",
+            "Aceite Cristal 1lt",
+            "Aceite San Lucas Ajo 180ml"
+          ]
+        },
+        {
+          "nombre": "Sopas",
+          "total": 24,
+          "muestra": [
+            "Campbells Elote",
+            "Campbells Flor de Calabaza",
+            "Campbells Lentejas",
+            "Campbells P/tortilla",
+            "Campbells Pollo C/champiã‘ones"
+          ]
+        },
+        {
+          "nombre": "Aceitunas y Vegetales Enlatados",
+          "total": 23,
+          "muestra": [
+            "Aceituna Carbonell Alcaparra",
+            "Aceituna Carbonell Deshuesada 180g",
+            "Aceituna Carbonell Deshuesada 350gr",
+            "Aceituna Carbonell con Hueso 185gr",
+            "Aceituna Carbonell con Hueso 350g"
+          ]
+        },
+        {
+          "nombre": "Colorante y Esencias",
+          "total": 22,
+          "muestra": [
+            "Amarillo Huevo 100gr Alta",
+            "Amarillo Huevo 100gr Baja",
+            "Amarillo Naranja 100g",
+            "Amarillo Naranja Sobre",
+            "Amarillo Sobre"
+          ]
+        },
+        {
+          "nombre": "Salsas y Mermeladas",
+          "total": 20,
+          "muestra": [
+            "Cajeta",
+            "Catsup Heinz 567g",
+            "Chamoy 1.5 Lt",
+            "Chamoy 1lt",
+            "Chamoy 500ml"
+          ]
+        },
+        {
+          "nombre": "Semillas y Especias Picantes",
+          "total": 16,
+          "muestra": [
+            "Frutimich 1lt",
+            "Lenteja Chica",
+            "Lenteja Grande",
+            "Miguelito Bote",
+            "Miguelito Garrafón 980gr"
+          ]
+        },
+        {
+          "nombre": "Achiotes",
+          "total": 14,
+          "muestra": [
+            "Achiote Anita Anita 110g",
+            "Achiote Anita Anita 440 G",
+            "Achiote Anita Receta Especial",
+            "Achiote Liquido Yucateco",
+            "Achiote Liquido el Anita"
+          ]
+        },
+        {
+          "nombre": "Vainilla",
+          "total": 14,
+          "muestra": [
+            "Extracto de Vainilla",
+            "Vaina Vainilla Chica",
+            "Vaina Vainilla Paq. Grande",
+            "Vaina Vainilla Paq.chica",
+            "Vainilla 1/2"
+          ]
+        },
+        {
+          "nombre": "Café, Azucar, Sustitutos",
+          "total": 13,
+          "muestra": [
+            "Alulosa Stevia Bolsa",
+            "Alulosa Stevia Granel",
+            "Arroz",
+            "Azúcar Glass",
+            "Azúcar Mascabada"
+          ]
+        },
+        {
+          "nombre": "Chocolate y Enlatados Dulces",
+          "total": 12,
+          "muestra": [
+            "Choc. Don Gustavo Barra",
+            "Choc. Don Gustavo Caja C/6",
+            "Chocolate Abuelita Barra",
+            "Chocolate Abuelita Caja",
+            "Chocolate Abuelita Marqueta"
+          ]
+        },
+        {
+          "nombre": "Royal, Genetina Levadura",
+          "total": 11,
+          "muestra": [
+            "Grenetina 250gr",
+            "Grenetina Granel",
+            "Levadura Tradipan Paquete",
+            "Levadura Tradipan Sobre",
+            "Rexal Ph Chico 100gr"
+          ]
+        },
+        {
+          "nombre": "Maizena Sobres",
+          "total": 8,
+          "muestra": [
+            "Maizena Cereza",
+            "Maizena Sobres Arroz con Leche",
+            "Maizena Sobres Chocolate",
+            "Maizena Sobres Coco",
+            "Maizena Sobres Fresa"
+          ]
+        },
+        {
+          "nombre": "Bolsas Costales",
+          "total": 5,
+          "muestra": [
+            "Bolsa",
+            "Bolsa Asa",
+            "Bolsa Jalisciense",
+            "Costal Chico",
+            "Costal Grande"
+          ]
+        },
+        {
+          "nombre": "Frutas Enlatadas",
+          "total": 5,
+          "muestra": [
+            "Cereza Diana 260gr",
+            "Cocktail Frutas en Almíbar",
+            "Durazno en Almíbar",
+            "Piña en Almíbar Rebanada",
+            "Piña en Almíbar Trozo"
+          ]
+        },
+        {
+          "nombre": "Mermeladas",
+          "total": 4,
+          "muestra": [
+            "Mermelada Fresa 670g",
+            "Mermelada Fresa Mccornik 1.2k",
+            "Mermelada Piña 450g",
+            "Mermelada Zarzamora"
+          ]
+        },
+        {
+          "nombre": "Chiles",
+          "total": 3,
+          "muestra": [
+            "Jalapeños Enteros la Costeña 240gr",
+            "Jalapeños Rajas la Costeña 240gr",
+            "Pimiento Moron la Costeña 200gr"
+          ]
+        },
+        {
+          "nombre": "Saleros y Especieros",
+          "total": 3,
+          "muestra": [
+            "Especiero / Dulcero",
+            "Especiero Grandre",
+            "Saleros"
+          ]
+        },
+        {
+          "nombre": "Frutimich",
+          "total": 2,
+          "muestra": [
+            "Frutimich 500ml",
+            "Frutimich Liquido"
+          ]
+        },
+        {
+          "nombre": "Semillas y Especias",
+          "total": 2,
+          "muestra": [
+            "Piã±on Blanco",
+            "Piã±on Rosa"
+          ]
+        },
+        {
+          "nombre": "Aceites y Vinagres",
+          "total": 1,
+          "muestra": [
+            "Aceite de Aguacate Chosen Foods 1lt"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 29,
+          "muestra": [
+            "Acitrón",
+            "Bacalao Noruego",
+            "Bolsa de Papel X100 N8",
+            "Bolsa para Hornear",
+            "Charolas Aluminio Chica"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Frutos Secos",
+      "total": 269,
+      "categorias": [
+        {
+          "nombre": "Frutas",
+          "total": 39,
+          "muestra": [
+            "Banderilla Tamarindo",
+            "Bolimango",
+            "Bolitas Choc Enchilado Roja",
+            "Bolitas Mango Naranja",
+            "Bolitas Tamarindo Mini Rojas"
+          ]
+        },
+        {
+          "nombre": "Nuez",
+          "total": 21,
+          "muestra": [
+            "Macadamia Chocolate",
+            "Macadamia Cocoa",
+            "Macadamia Matcha",
+            "Macadamia Natural",
+            "Nuez Castilla"
+          ]
+        },
+        {
+          "nombre": "Botanas",
+          "total": 19,
+          "muestra": [
+            "Botana Exótica",
+            "Botana Mix Canela",
+            "Botana Mix Enchilada",
+            "Botana Mix Fina",
+            "Garbanzo Enchilado"
+          ]
+        },
+        {
+          "nombre": "Ate",
+          "total": 15,
+          "muestra": [
+            "Ate Chamoy",
+            "Ate Durazno Pza",
+            "Ate Fresa Pza",
+            "Ate Granel Sabor Durazno",
+            "Ate Granel Sabor Fresa"
+          ]
+        },
+        {
+          "nombre": "Gomitas",
+          "total": 15,
+          "muestra": [
+            "Gomita Anís",
+            "Gomita Chica",
+            "Gomita Coco",
+            "Gomita Corazón",
+            "Gomita Corazón Bicolor"
+          ]
+        },
+        {
+          "nombre": "Dulces",
+          "total": 14,
+          "muestra": [
+            "Bittes Choco Oreo",
+            "Caja Borratchitos",
+            "Chocobola",
+            "Chocomenta",
+            "Dulce Corazón"
+          ]
+        },
+        {
+          "nombre": "Cacahuate",
+          "total": 12,
+          "muestra": [
+            "Cacahuate Cantinero",
+            "Cacahuate Chipotle/ Ajo",
+            "Cacahuate Enchilado",
+            "Cacahuate Espaã‘ol",
+            "Cacahuate Espaã‘ol C/ajo"
+          ]
+        },
+        {
+          "nombre": "Mazapán",
+          "total": 12,
+          "muestra": [
+            "Mazapán 1miniatura",
+            "Mazapán 3 Miniatura",
+            "Mazapán Arándano",
+            "Mazapán Avena",
+            "Mazapán Capuchino"
+          ]
+        },
+        {
+          "nombre": "Almendra",
+          "total": 11,
+          "muestra": [
+            "Almendra Ahumada",
+            "Almendra Choc. Blanco & Café",
+            "Almendra Choc. sin Azúcar",
+            "Almendra Chocolate Amargo",
+            "Almendra Cocoa"
+          ]
+        },
+        {
+          "nombre": "Barras",
+          "total": 11,
+          "muestra": [
+            "Alegria",
+            "Barra Amaranto Chocolate",
+            "Barra Amaranto Chocolate y Nuez",
+            "Barra Amaranto Fresa/chocolate Ch.",
+            "Barra Amaranto Fresa/chocolate Gr"
+          ]
+        },
+        {
+          "nombre": "Garapiñado",
+          "total": 8,
+          "muestra": [
+            "Ajonjolí Garapiñado",
+            "Ajonjolí Garapiñado Enchilado",
+            "Avellana Garapiñada",
+            "Cacahuate Garapiñado",
+            "Nuez Garapiñada"
+          ]
+        },
+        {
+          "nombre": "Mango",
+          "total": 8,
+          "muestra": [
+            "Mango Chamoy",
+            "Mango Chicloso Picoso",
+            "Mango Gomita Enchilado",
+            "Mango Tajín",
+            "Mangos Ench Choc Blanco"
+          ]
+        },
+        {
+          "nombre": "Arándano",
+          "total": 7,
+          "muestra": [
+            "Arándano C/cocoa",
+            "Arándano Choc. Blanco",
+            "Arándano Chocolate Dulce",
+            "Arándano Chocolate Obscuro",
+            "Arándano Matcha C/chocolate"
+          ]
+        },
+        {
+          "nombre": "Galleta",
+          "total": 7,
+          "muestra": [
+            "Corazón Choc. P1",
+            "Corazón Choc. P3",
+            "Enjambre Cereal",
+            "Galleta Ajonjolí",
+            "Galleta Chocolate Bolsita"
+          ]
+        },
+        {
+          "nombre": "Granillo",
+          "total": 7,
+          "muestra": [
+            "Granillo 3 Chocolates",
+            "Granillo Aperlado",
+            "Granillo Blanco",
+            "Granillo Capuchino",
+            "Granillo Chocolate"
+          ]
+        },
+        {
+          "nombre": "Pasas",
+          "total": 7,
+          "muestra": [
+            "Pasas C/chocolate",
+            "Pasas C/chocolate Amargo",
+            "Pasas Chica",
+            "Pasas Cocoa",
+            "Pasas Grande"
+          ]
+        },
+        {
+          "nombre": "Pepita",
+          "total": 7,
+          "muestra": [
+            "Pepita Semilla Cascara Himalaya",
+            "Pepita Semilla Chipotle",
+            "Pepita Semilla Frita Morita",
+            "Pepita Semilla Frita con Sal",
+            "Pepita Semilla Natural"
+          ]
+        },
+        {
+          "nombre": "Chispas",
+          "total": 6,
+          "muestra": [
+            "Chispas Chocolate Azul",
+            "Chispas Chocolate Bicolor",
+            "Chispas Chocolate Blanco",
+            "Chispas Chocolate Grande",
+            "Chispas Chocolate Rosa"
+          ]
+        },
+        {
+          "nombre": "Obleas",
+          "total": 5,
+          "muestra": [
+            "Morelianas",
+            "Oblea Grande",
+            "Oblea Mini",
+            "Palanqueta",
+            "Palanqueta Galleta"
+          ]
+        },
+        {
+          "nombre": "Pretzel",
+          "total": 5,
+          "muestra": [
+            "Pretzel C/chocolate Amargo",
+            "Pretzel C/chocolate Blanco",
+            "Pretzel C/chocolate Dulce",
+            "Pretzel C/yogurt",
+            "Pretzel Salado"
+          ]
+        },
+        {
+          "nombre": "Amaranto",
+          "total": 4,
+          "muestra": [
+            "Amaranto",
+            "Amaranto Cubitos Chocolate",
+            "Amaranto Cubitos Nuez",
+            "Avena"
+          ]
+        },
+        {
+          "nombre": "Bombón",
+          "total": 4,
+          "muestra": [
+            "Bombón Choc Grande 3*20",
+            "Bombón con Chocolate Bolsita",
+            "Bombón con Chocolate Grande",
+            "Bombón con Chocolate Granel Mini"
+          ]
+        },
+        {
+          "nombre": "Lunetas",
+          "total": 4,
+          "muestra": [
+            "Luneta Café",
+            "Luneta Pastel",
+            "Luneta Tradicional",
+            "Luneta Yogurt"
+          ]
+        },
+        {
+          "nombre": "Pistache",
+          "total": 4,
+          "muestra": [
+            "Pistache Cascara",
+            "Pistache Choolate",
+            "Pistache Enchilado",
+            "Pistache Pelado"
+          ]
+        },
+        {
+          "nombre": "Chochito",
+          "total": 3,
+          "muestra": [
+            "Chochito Colores",
+            "Chochito Garibaldi",
+            "Chocho Chamoy"
+          ]
+        },
+        {
+          "nombre": "Avellana",
+          "total": 2,
+          "muestra": [
+            "Avellana Cocoa",
+            "Avellana Natural"
+          ]
+        },
+        {
+          "nombre": "Café Dulce",
+          "total": 2,
+          "muestra": [
+            "Café & Choc. S/azucar",
+            "Café Chocolate Amargo"
+          ]
+        },
+        {
+          "nombre": "Chía",
+          "total": 2,
+          "muestra": [
+            "Chía C/choc",
+            "Chía Natural"
+          ]
+        },
+        {
+          "nombre": "Granola",
+          "total": 2,
+          "muestra": [
+            "Granola Artesanal Natural",
+            "Granola Artesanal con Miel"
+          ]
+        },
+        {
+          "nombre": "Quinoa",
+          "total": 2,
+          "muestra": [
+            "Quinoa C/chocolate",
+            "Quinoa Simple"
+          ]
+        },
+        {
+          "nombre": "Cereal",
+          "total": 1,
+          "muestra": [
+            "Cereal C/matcha"
+          ]
+        },
+        {
+          "nombre": "Chocolate y Enlatados Dulces",
+          "total": 1,
+          "muestra": [
+            "Bites Choc Blanco"
+          ]
+        },
+        {
+          "nombre": "Semillas",
+          "total": 1,
+          "muestra": [
+            "Tapioca"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 1,
+          "muestra": [
+            "Petalo de Rosa"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Salsas",
+      "total": 132,
+      "categorias": [
+        {
+          "nombre": "Yucateco",
+          "total": 16,
+          "muestra": [
+            "Yucateco Café",
+            "Yucateco Caribbean",
+            "Yucateco Chiltepín",
+            "Yucateco Chipotle",
+            "Yucateco Ghost"
+          ]
+        },
+        {
+          "nombre": "Muzul",
+          "total": 11,
+          "muestra": [
+            "Muzul Habanera 1l",
+            "Muzul Ik Café",
+            "Muzul Ik Chocolate",
+            "Muzul Ik Habanera",
+            "Muzul Ik Mango"
+          ]
+        },
+        {
+          "nombre": "Isla",
+          "total": 10,
+          "muestra": [
+            "Isla Amarilla",
+            "Isla Arándano",
+            "Isla Cacahuate",
+            "Isla Fresa",
+            "Isla Mango"
+          ]
+        },
+        {
+          "nombre": "Loltun",
+          "total": 9,
+          "muestra": [
+            "Bufalo Jalapeño",
+            "Chiles Guerros Lol-tun 320gr",
+            "Guacamaya",
+            "Habanero Escabeche Lol-tun",
+            "Loltun Roja Habanero 240ml"
+          ]
+        },
+        {
+          "nombre": "Prego",
+          "total": 8,
+          "muestra": [
+            "Prego y Barilla Salsas Alfredo 411g",
+            "Prego y Barilla Salsas Arrabbiata",
+            "Prego y Barilla Salsas C/carne 680g",
+            "Prego y Barilla Salsas Cuatro Quesos 411g",
+            "Prego y Barilla Salsas Parmesano 400g"
+          ]
+        },
+        {
+          "nombre": "Valentina",
+          "total": 8,
+          "muestra": [
+            "Anita Adobo Pastor",
+            "Valentina Amarilla 1 Lt",
+            "Valentina Amarilla 1lt",
+            "Valentina Amarilla 370ml",
+            "Valentina Amarilla Polvo"
+          ]
+        },
+        {
+          "nombre": "Zachila",
+          "total": 8,
+          "muestra": [
+            "Zachila 3 Chiles",
+            "Zachila Arbol Taquero",
+            "Zachila Chamoy",
+            "Zachila Chipotle",
+            "Zachila Guacamole"
+          ]
+        },
+        {
+          "nombre": "Don Emilio",
+          "total": 7,
+          "muestra": [
+            "Don Emilio Ajo 250g",
+            "Don Emilio Arbol 440gr",
+            "Don Emilio Cacahuate 250g",
+            "Don Emilio Chile Morita 250g",
+            "Don Emilio Chile de Arbol 250g"
+          ]
+        },
+        {
+          "nombre": "Biza",
+          "total": 5,
+          "muestra": [
+            "Biza Arándano",
+            "Biza Cacahuate",
+            "Biza Mora",
+            "Biza Semillas",
+            "Biza Tamarindo"
+          ]
+        },
+        {
+          "nombre": "Bufalo",
+          "total": 5,
+          "muestra": [
+            "Botanera Salsa Verde",
+            "Bufalo Clásica",
+            "Bufalo Clásica 990ml",
+            "Bufalo Extra Picante",
+            "Bufalo Habanero"
+          ]
+        },
+        {
+          "nombre": "Chipotles",
+          "total": 5,
+          "muestra": [
+            "Chipotles Clemente Jacques 220g",
+            "Chipotles Clemente Jaques 105g",
+            "Chipotles Dulces",
+            "Chipotles Herdez 198g",
+            "Chipotles la Costeña 220g"
+          ]
+        },
+        {
+          "nombre": "Macha",
+          "total": 5,
+          "muestra": [
+            "Macha al Carbã“n Fuerte Chica",
+            "Macha al Carbã“n Fuerte Grande",
+            "Macha al Carbã“n Suave Chica",
+            "Macha al Carbã“n Suave Grande",
+            "Macha al Maros"
+          ]
+        },
+        {
+          "nombre": "Botanera",
+          "total": 4,
+          "muestra": [
+            "Botanera Clásica 1.5l",
+            "Botanera Clásica 1l",
+            "Botanera Clásica 500ml",
+            "Botanera Limón"
+          ]
+        },
+        {
+          "nombre": "Purhepecha",
+          "total": 4,
+          "muestra": [
+            "Purhepecha Marisquera",
+            "Purhepecha Naranja",
+            "Purhepecha Roja",
+            "Purhepecha Verde"
+          ]
+        },
+        {
+          "nombre": "Tabasco",
+          "total": 4,
+          "muestra": [
+            "Tabasco Clásica",
+            "Tabasco Garlic Pepper Sauce",
+            "Tabasco Habanero Sauce",
+            "Tabasco Mild Flavor"
+          ]
+        },
+        {
+          "nombre": "Tamazula",
+          "total": 4,
+          "muestra": [
+            "Tamazula Amarilla 140 G",
+            "Tamazula Amarilla 250 G",
+            "Tamazula Negra 140 G",
+            "Tamazula Negra 250 G"
+          ]
+        },
+        {
+          "nombre": "Huichol",
+          "total": 3,
+          "muestra": [
+            "Huichol Habanera",
+            "Huichol Negra",
+            "Lol-tun Habanero 950ml"
+          ]
+        },
+        {
+          "nombre": "Tokui",
+          "total": 3,
+          "muestra": [
+            "Soya Tokio 250",
+            "Soya Tokui 250",
+            "Soya Tokui Litro"
+          ]
+        },
+        {
+          "nombre": "Salsas y Mermeladas",
+          "total": 2,
+          "muestra": [
+            "Chilly 180ml",
+            "Chilly 50ml"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 11,
+          "muestra": [
+            "Bbq Hunts",
+            "Cholula Salsa",
+            "Habanero Mayacut",
+            "Habaneros Merida",
+            "Huichol Roja"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Especias",
+      "total": 113,
+      "categorias": [
+        {
+          "nombre": "Sal",
+          "total": 12,
+          "muestra": [
+            "Sal Ahumada Fina",
+            "Sal Ahumada Gruesa",
+            "Sal Ajo Limón",
+            "Sal Praga",
+            "Sal de Ajo Badia Granel"
+          ]
+        },
+        {
+          "nombre": "Tes",
+          "total": 12,
+          "muestra": [
+            "Lavanda",
+            "Manzanilla",
+            "Mejorana",
+            "Menta Hoja",
+            "Pasiflora"
+          ]
+        },
+        {
+          "nombre": "Pimientas",
+          "total": 11,
+          "muestra": [
+            "Pimienta Blanca Entera",
+            "Pimienta Blanca Molida",
+            "Pimienta Cayena",
+            "Pimienta Gruesa Entera",
+            "Pimienta Gruesa Molida"
+          ]
+        },
+        {
+          "nombre": "Hierbas",
+          "total": 8,
+          "muestra": [
+            "Hierbas Finas",
+            "Hierbas de Olor",
+            "Hoja Santa",
+            "Hoja de Aguacate",
+            "Hojas Laurel"
+          ]
+        },
+        {
+          "nombre": "Semillas y Especias",
+          "total": 7,
+          "muestra": [
+            "Ajo Entero",
+            "Ajonjolí Negro",
+            "Albahaca",
+            "Anís Entero",
+            "Anís Estrella"
+          ]
+        },
+        {
+          "nombre": "Camarón",
+          "total": 6,
+          "muestra": [
+            "Camarón Chico sin Cabeza",
+            "Camarón Grande con Cabeza",
+            "Camarón Grande sin Cabeza",
+            "Camarón Mediano",
+            "Camarón Molido"
+          ]
+        },
+        {
+          "nombre": "Paprika",
+          "total": 6,
+          "muestra": [
+            "Paprika Choricero Picoso 1k",
+            "Paprika Dulce 75g",
+            "Paprika Granel Dulce",
+            "Paprika Granel Picoso",
+            "Paprika Lata 90g Dulce"
+          ]
+        },
+        {
+          "nombre": "Cocoa y Cacao",
+          "total": 5,
+          "muestra": [
+            "Cacao Entero",
+            "Cacao Moneda",
+            "Cacao Tostado Molido",
+            "Cacao Tostado Triturado",
+            "Cocoa"
+          ]
+        },
+        {
+          "nombre": "Semillas",
+          "total": 5,
+          "muestra": [
+            "Ajonjolí Blanco",
+            "Ajonjolí sin Cuticula",
+            "Piñon Blanco",
+            "Piñon Confitado",
+            "Piñon Rosa"
+          ]
+        },
+        {
+          "nombre": "Orégano",
+          "total": 4,
+          "muestra": [
+            "Bolsa Orégano Entero",
+            "Bolsaoregano Molido",
+            "Orégano Entero Granel",
+            "Orégano Molido Granel"
+          ]
+        },
+        {
+          "nombre": "Canela",
+          "total": 3,
+          "muestra": [
+            "Canela Entera",
+            "Canela Molida",
+            "Canela Molida Endulzada"
+          ]
+        },
+        {
+          "nombre": "Piloncillo",
+          "total": 3,
+          "muestra": [
+            "Piloncillo Chico",
+            "Piloncillo Grande",
+            "Piloncillo Mediano"
+          ]
+        },
+        {
+          "nombre": "Ajo",
+          "total": 2,
+          "muestra": [
+            "Ajo Hojuelas",
+            "Ajo Molido"
+          ]
+        },
+        {
+          "nombre": "Cebolla",
+          "total": 2,
+          "muestra": [
+            "Cebolla Hojuela",
+            "Cebolla Molida"
+          ]
+        },
+        {
+          "nombre": "Comino",
+          "total": 2,
+          "muestra": [
+            "Comino Entero",
+            "Comino Molido"
+          ]
+        },
+        {
+          "nombre": "Condimentos",
+          "total": 2,
+          "muestra": [
+            "Azahar Bolsa",
+            "Habanero Polvo"
+          ]
+        },
+        {
+          "nombre": "Linaza",
+          "total": 2,
+          "muestra": [
+            "Linaza Molida",
+            "Linaza Simple"
+          ]
+        },
+        {
+          "nombre": "Semillas y Especias Picantes",
+          "total": 1,
+          "muestra": [
+            "Azafrán Bag"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 20,
+          "muestra": [
+            "Ablandador de Carne Bt 100gr",
+            "Acido Cítrico",
+            "Bicarbonato",
+            "Cardamomo",
+            "Cebada"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Harinas y Maíz",
+      "total": 52,
+      "categorias": [
+        {
+          "nombre": "Harinas",
+          "total": 23,
+          "muestra": [
+            "Harina Batida para Tamal",
+            "Harina P/tamal",
+            "Hoja Tamal",
+            "Hojas de Tamal Especial",
+            "Garbanzo Entero"
+          ]
+        },
+        {
+          "nombre": "Maizenas",
+          "total": 11,
+          "muestra": [
+            "Maizena Natural",
+            "Maizena de Sabor Cajeta",
+            "Maizena de Sabor Chocolate",
+            "Maizena de Sabor Coco",
+            "Maizena de Sabor Fresa"
+          ]
+        },
+        {
+          "nombre": "Maíz",
+          "total": 4,
+          "muestra": [
+            "Alto Vacío 1k",
+            "Maíz para Pozole",
+            "Maíz Azul",
+            "Maíz Palomero"
+          ]
+        },
+        {
+          "nombre": "Mantecas",
+          "total": 2,
+          "muestra": [
+            "Manteca Vegetal",
+            "Manteca de Cerdo"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 12,
+          "muestra": [
+            "Cornflakes",
+            "Fecula de Maíz",
+            "Fecula de Tapioca",
+            "Palomitas Chicas",
+            "Pan Molido 1/2 Kilo"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Tostadas",
+      "total": 42,
+      "categorias": [
+        {
+          "nombre": "Horneada",
+          "total": 9,
+          "muestra": [
+            "Frita C/25",
+            "Frita C/50",
+            "Horneada C/25",
+            "Horneada C/25 Nopal",
+            "Horneada C/50"
+          ]
+        },
+        {
+          "nombre": "Charro",
+          "total": 7,
+          "muestra": [
+            "Casera Charro 100",
+            "Casera Charro 25",
+            "Casera Charro 50",
+            "Nachos el Charro 1/2k",
+            "Nachos el Charro 1k"
+          ]
+        },
+        {
+          "nombre": "Tio Beto",
+          "total": 7,
+          "muestra": [
+            "Sopa de Tortilla Tio Beto",
+            "Tio Beto Ajonjolí",
+            "Tio Beto Amaranto",
+            "Tio Beto Linaza",
+            "Tio Beto Tostibonita"
+          ]
+        },
+        {
+          "nombre": "Sheryn",
+          "total": 5,
+          "muestra": [
+            "Dianis",
+            "Emperador Light 20",
+            "Jalisco Emperador",
+            "Chilaquiles Sheryn 500g",
+            "Sopa Tortilla Sheryn"
+          ]
+        },
+        {
+          "nombre": "Tortilla",
+          "total": 4,
+          "muestra": [
+            "Tortilla Burrito",
+            "Tortilla Harina",
+            "Tortilla Integral",
+            "Tortilla Mantequilla"
+          ]
+        },
+        {
+          "nombre": "Maizal",
+          "total": 3,
+          "muestra": [
+            "Tostadas Ajonjolí Maizsal",
+            "Tostada Chía Maizsal",
+            "Totopos Maizsal"
+          ]
+        },
+        {
+          "nombre": "Tlayudas",
+          "total": 2,
+          "muestra": [
+            "Tlayudas Chicas 10 Pz",
+            "Tlayudas Grandes 10pz"
+          ]
+        },
+        {
+          "nombre": "Cariocas",
+          "total": 1,
+          "muestra": [
+            "Tostadas Cariocas"
+          ]
+        },
+        {
+          "nombre": "Chalupas",
+          "total": 1,
+          "muestra": [
+            "Chalupas"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 3,
+          "muestra": [
+            "Nachos",
+            "Tostada Azul",
+            "Tostada Botanera"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Chiles",
+      "total": 28,
+      "categorias": [
+        {
+          "nombre": "Piquin",
+          "total": 7,
+          "muestra": [
+            "Piquin Martajado Bolsa",
+            "Piquin Martajado Granel",
+            "Piquin C/limon",
+            "Piquin Entero",
+            "Piquin Natural"
+          ]
+        },
+        {
+          "nombre": "Arbol",
+          "total": 3,
+          "muestra": [
+            "Chile de Arbol sin Pata",
+            "Chile Arbol Polvo",
+            "Chile de Arbol con Pata"
+          ]
+        },
+        {
+          "nombre": "Guajillo",
+          "total": 3,
+          "muestra": [
+            "Chile Guajillo Entero",
+            "Puya \\ Guajillo",
+            "Chile Guajillo Molido"
+          ]
+        },
+        {
+          "nombre": "Ancho",
+          "total": 2,
+          "muestra": [
+            "Chile Ancho Entero",
+            "Chile Ancho Molido"
+          ]
+        },
+        {
+          "nombre": "Pasilla",
+          "total": 2,
+          "muestra": [
+            "Chile Pasilla Entero",
+            "Chile Pasilla Molido"
+          ]
+        },
+        {
+          "nombre": "Semillas y Especias",
+          "total": 1,
+          "muestra": [
+            "Chile Serrano"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 10,
+          "muestra": [
+            "Chile Cascabel",
+            "Chile Catarina",
+            "Chile Chiltepín",
+            "Chile Chiltepín Molido Bt",
+            "Chile Chipotle Entero"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Jarabes",
+      "total": 23,
+      "categorias": [
+        {
+          "nombre": "Sirope",
+          "total": 17,
+          "muestra": [
+            "Jarabe Sirope Baylis",
+            "Jarabe Sirope Capuchino",
+            "Jarabe Sirope Cereza",
+            "Jarabe Sirope Curacao",
+            "Jarabe Sirope Curazao Gliter"
+          ]
+        },
+        {
+          "nombre": "Horchatinol",
+          "total": 4,
+          "muestra": [
+            "Cebada Preparada (agua)",
+            "Jarabes Horchata",
+            "Jarabes Jamaica",
+            "Jarabes Tamarindo"
+          ]
+        },
+        {
+          "nombre": "Flor Natural",
+          "total": 2,
+          "muestra": [
+            "Jamaica Natural",
+            "Tamarindo Natural"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Moles",
+      "total": 20,
+      "categorias": [
+        {
+          "nombre": "Casa",
+          "total": 6,
+          "muestra": [
+            "M Casa Pasta Picante",
+            "M Casa Pasta Polvo Picante",
+            "Mole Casero",
+            "Mole Jalisciense",
+            "Mole Pasta Dulce"
+          ]
+        },
+        {
+          "nombre": "Almendrado",
+          "total": 3,
+          "muestra": [
+            "Mole Almendrado C/camarã³n",
+            "Mole Almendrado Esp. Pasta",
+            "Mole Almendrado Esp. Polvo"
+          ]
+        },
+        {
+          "nombre": "Adobo",
+          "total": 2,
+          "muestra": [
+            "Adobo Pasta",
+            "Adobo Polvo"
+          ]
+        },
+        {
+          "nombre": "Moles",
+          "total": 2,
+          "muestra": [
+            "Pepita Verde Compuesta",
+            "Pepita Verde Simple"
+          ]
+        },
+        {
+          "nombre": "Pipian",
+          "total": 2,
+          "muestra": [
+            "Pipian Pasta",
+            "Pipian Polvo"
+          ]
+        },
+        {
+          "nombre": "Otros",
+          "total": 5,
+          "muestra": [
+            "Encacahuatado",
+            "Mole Negro",
+            "Mole Poblano",
+            "Mole Verde",
+            "Pasta Ajonjolí"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,17 @@ export const L = {
     navCta: "Pedir por WhatsApp",
     langToggle: "EN",
 
+    // Catálogo por categorías
+    catalogoEyebrow: "02 · Catálogo",
+    catalogoTitle: "Todo lo que sale del molino",
+    catalogoBody: "Más de mil productos entre harinas, especias, chiles, frutos secos, salsas y abarrotes. Abajo va una muestra de cada categoría.",
+    catalogoServicios: "Lo que hacemos aquí mismo",
+    catalogoServiciosBody: "Traes el grano y te lo molemos al punto que pidas.",
+    catalogoMas: "y {n} más",
+    catalogoUno: "y 1 más",
+    catalogoPrecios: "Pregúntanos precios y existencias por WhatsApp.",
+    catalogoProductos: "productos",
+
     // Products
     productsEyebrow: "02 · Catálogo",
     productsTitle: "Lo que sale del molino",
@@ -46,6 +57,17 @@ export const L = {
     nav: ["Products", "History", "Recipes", "Visit us"],
     navCta: "Order on WhatsApp",
     langToggle: "ES",
+
+    // Catálogo por categorías
+    catalogoEyebrow: "02 · Catalogue",
+    catalogoTitle: "Everything the mill carries",
+    catalogoBody: "Over a thousand products: flours, spices, chillies, nuts, sauces and groceries. Below is a sample from each category.",
+    catalogoServicios: "What we mill here",
+    catalogoServiciosBody: "Bring your grain and we grind it just how you want it.",
+    catalogoMas: "and {n} more",
+    catalogoUno: "and 1 more",
+    catalogoPrecios: "Ask us for prices and stock on WhatsApp.",
+    catalogoProductos: "products",
 
     // Products
     productsEyebrow: "02 · Catalogue",

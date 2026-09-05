@@ -23,6 +23,12 @@ import site from "@/content/site.json";
 
 /** Los únicos textos que el panel puede sobrescribir. */
 const EDITABLES = [
+  "catalogoEyebrow",
+  "catalogoTitle",
+  "catalogoBody",
+  "catalogoServicios",
+  "catalogoServiciosBody",
+  "catalogoPrecios",
   "productsEyebrow",
   "productsTitle",
   "productsBody",

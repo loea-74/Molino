@@ -14,6 +14,7 @@ import PanelRecetas, { type Recipe } from "./PanelRecetas";
 import PanelCatalogo, { type Product } from "./PanelCatalogo";
 import PanelTestimonios, { type Testimonial } from "./PanelTestimonios";
 import PanelApariencia from "./PanelApariencia";
+import PanelCatalogoCategorias from "./PanelCatalogoCategorias";
 
 /**
  * El menú sigue el mismo orden que la página. Antes había cuatro pestañas y,
@@ -23,7 +24,8 @@ import PanelApariencia from "./PanelApariencia";
 const SECCIONES: (Seccion & { archivo: Archivo })[] = [
   { id: "inicio", nombre: "Inicio", donde: "Lo primero de la página", archivo: "site" },
   { id: "recetas", nombre: "Recetas y noticias", donde: "Las tarjetas con foto o video", archivo: "recipes" },
-  { id: "catalogo", nombre: "Catálogo", donde: "Los productos", archivo: "products" },
+  { id: "catalogo", nombre: "Catálogo", donde: "Todo, por categorías", archivo: "site" },
+  { id: "relevantes", nombre: "Productos relevantes", donde: "Las tarjetas con foto y precio", archivo: "products" },
   { id: "historia", nombre: "Historia", donde: "El texto sobre el molino", archivo: "site" },
   { id: "testimonios", nombre: "Testimonios", donde: "Lo que dicen los clientes", archivo: "testimonials" },
   { id: "visita", nombre: "Visítanos", donde: "Dirección, horario y mapa", archivo: "site" },
@@ -35,7 +37,8 @@ const SECCIONES: (Seccion & { archivo: Archivo })[] = [
 const EXPLICACION: Record<string, string> = {
   inicio: "La portada: el título grande, la foto principal y la tarjeta que va encima.",
   recetas: "Cada entrada es una tarjeta en la página. Puedes ponerle foto o video.",
-  catalogo: "Los productos que se muestran, con su descripción y su precio.",
+  catalogo: "El catálogo completo por departamento y categoría. Sale del archivo del punto de venta.",
+  relevantes: "Las tarjetas con foto y precio. Ahora mismo están ocultas; aquí se encienden.",
   historia: "El texto y la foto antigua de la sección Historia.",
   testimonios: "Las frases de clientes que aparecen en la página.",
   visita: "Dirección, horario, teléfonos y el mapa de Google.",
@@ -168,6 +171,9 @@ export default function AdminEditor() {
                 />
               )}
               {activa === "catalogo" && (
+                <PanelCatalogoCategorias site={sitio.datos} set={sitio.cambiar} />
+              )}
+              {activa === "relevantes" && (
                 <PanelCatalogo
                   datos={productos.datos ?? []}
                   cambiar={productos.cambiar}

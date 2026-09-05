@@ -2,7 +2,7 @@
 
 import { CampoTexto, CampoBilingue, Bloque, type Bilingue } from "./campos";
 import CampoImagen from "./CampoImagen";
-import { C, campo, etiqueta, esp } from "./ui";
+import { C, campo, etiqueta, esp, radio } from "./ui";
 import { L } from "@/lib/i18n";
 import type { Tema } from "@/lib/tema";
 
@@ -39,6 +39,8 @@ export type Site = {
   labels: Record<string, Bilingue>;
   /** Colores y tipografía. Vacío = los de siempre. */
   theme?: Tema;
+  /** Qué secciones de la página se muestran. */
+  secciones?: { productosRelevantes?: boolean };
 };
 
 type Props = { site: Site; set: (f: (s: Site) => Site) => void };
@@ -254,9 +256,17 @@ type CampoEncabezado = { clave: string; rotulo: string; nota?: string; largo?: b
  */
 export const ENCABEZADOS: Record<string, CampoEncabezado[]> = {
   catalogo: [
-    { clave: "productsEyebrow", rotulo: "Etiqueta chica de arriba", nota: "Va en letras chicas sobre el título. Hoy dice: 02 · Catálogo." },
+    { clave: "catalogoEyebrow", rotulo: "Etiqueta chica de arriba" },
+    { clave: "catalogoTitle", rotulo: "Título de la sección" },
+    { clave: "catalogoBody", rotulo: "Descripción", nota: "El párrafo a la derecha del título.", largo: true },
+    { clave: "catalogoServicios", rotulo: "Título del recuadro de molienda" },
+    { clave: "catalogoServiciosBody", rotulo: "Frase junto a ese título" },
+    { clave: "catalogoPrecios", rotulo: "Aviso de precios", nota: "El texto de abajo, junto al botón de WhatsApp.", largo: true },
+  ],
+  relevantes: [
+    { clave: "productsEyebrow", rotulo: "Etiqueta chica de arriba" },
     { clave: "productsTitle", rotulo: "Título de la sección" },
-    { clave: "productsBody", rotulo: "Descripción", nota: "El párrafo a la derecha del título.", largo: true },
+    { clave: "productsBody", rotulo: "Descripción", largo: true },
   ],
   recetas: [
     { clave: "recipesEyebrow", rotulo: "Etiqueta chica de arriba" },
@@ -304,6 +314,69 @@ export function BloqueEncabezado({
           onChange={(v) => cambiar(c.clave, v)}
         />
       ))}
+    </Bloque>
+  );
+}
+
+
+/* ───────────────────── INTERRUPTOR DE SECCIÓN ───────────────────── */
+
+/**
+ * Enciende o apaga una sección de la página.
+ *
+ * Existe porque el cliente quiso quitar el catálogo anterior de la vista sin
+ * perderlo: le gusta y quiere poder recuperarlo. Borrarlo habría sido
+ * irreversible desde el panel.
+ */
+export function Interruptor({
+  site, set, clave, titulo, nota,
+}: {
+  site: Site;
+  set: (f: (s: Site) => Site) => void;
+  clave: "productosRelevantes";
+  titulo: string;
+  nota: string;
+}) {
+  const encendida = site.secciones?.[clave] ?? false;
+
+  return (
+    <Bloque titulo="Mostrar u ocultar" nota="">
+      <button
+        type="button"
+        role="switch"
+        aria-checked={encendida}
+        onClick={() =>
+          set((s) => ({ ...s, secciones: { ...s.secciones, [clave]: !encendida } }))
+        }
+        style={{
+          display: "flex", alignItems: "center", gap: 14, width: "100%",
+          textAlign: "left", padding: "14px 16px", borderRadius: radio.medio,
+          border: `2px solid ${encendida ? C.accion : C.lineaSuave}`,
+          background: encendida ? C.papelHueso : "#fff",
+          cursor: "pointer", fontFamily: "inherit",
+        }}
+      >
+        <span
+          aria-hidden
+          style={{
+            width: 46, height: 27, borderRadius: 999, flexShrink: 0,
+            background: encendida ? C.accion : C.linea,
+            display: "flex", alignItems: "center",
+            justifyContent: encendida ? "flex-end" : "flex-start",
+            padding: 3, boxSizing: "border-box", transition: "background 140ms",
+          }}
+        >
+          <span style={{ width: 21, height: 21, borderRadius: "50%", background: "#fff" }} />
+        </span>
+        <span style={{ minWidth: 0 }}>
+          <span style={{ display: "block", fontSize: 15.5, fontWeight: 500, color: C.tinta }}>
+            {encendida ? `${titulo}: se muestra` : `${titulo}: oculta`}
+          </span>
+          <span style={{ display: "block", fontSize: 13, color: C.marronClaro, marginTop: 2, lineHeight: 1.45 }}>
+            {nota}
+          </span>
+        </span>
+      </button>
     </Bloque>
   );
 }
