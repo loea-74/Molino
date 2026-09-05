@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { C, esp, radio, campo } from "./ui";
 import { Bloque } from "./campos";
 import { BloqueEncabezado, type Site } from "./PanelesSitio";
@@ -225,6 +225,8 @@ export default function PanelCatalogoCategorias({
         ))}
       </Bloque>
 
+      <SubirExcel />
+
       <Bloque titulo="De dónde salen" nota="">
         <div
           style={{
@@ -254,5 +256,109 @@ export default function PanelCatalogoCategorias({
         </div>
       </Bloque>
     </>
+  );
+}
+
+
+/* ───────────────────── SUBIR EL ARCHIVO DE CONTROL ───────────────────── */
+
+/**
+ * Carga Catalogo_Control.xlsx y aplica de golpe lo que diga.
+ *
+ * Es el camino para cambios grandes — esconder una categoría entera, renombrar
+ * cincuenta productos. Para arreglar una palabra suelta, el buscador de arriba
+ * es más rápido que bajar el archivo, abrirlo y volver a subirlo.
+ */
+function SubirExcel() {
+  const entrada = useRef<HTMLInputElement>(null);
+  const [subiendo, setSubiendo] = useState(false);
+  const [resultado, setResultado] = useState<string>("");
+  const [error, setError] = useState(false);
+
+  async function enviar(file: File) {
+    setSubiendo(true);
+    setResultado("");
+    setError(false);
+    try {
+      const body = new FormData();
+      body.append("archivo", file);
+      const res = await fetch("/api/admin/catalogo-excel", { method: "POST", body });
+      const r = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(r.error ?? `Error ${res.status} al aplicar el archivo.`);
+
+      const partes = [];
+      if (r.renombrados) partes.push(`${r.renombrados} renombrados`);
+      if (r.ocultados) partes.push(`${r.ocultados} ocultados`);
+      if (r.mostrados) partes.push(`${r.mostrados} vueltos a mostrar`);
+      setResultado(
+        (partes.length ? `Aplicado: ${partes.join(", ")}.` : "El archivo no traía cambios.") +
+        (r.sinCruzar ? ` ${r.sinCruzar} claves del archivo ya no existen en el catálogo y se ignoraron.` : "") +
+        " Los cambios aparecerán en el sitio en aproximadamente un minuto."
+      );
+    } catch (e) {
+      setError(true);
+      setResultado(e instanceof Error ? e.message : "No se pudo aplicar el archivo.");
+    } finally {
+      setSubiendo(false);
+    }
+  }
+
+  return (
+    <Bloque titulo="Cargar el archivo de control" nota="Para cambios grandes, de muchos productos a la vez">
+      <div
+        style={{
+          border: `1.5px dashed ${C.accionApagada}`, borderRadius: radio.medio,
+          background: C.papelClaro, padding: "18px 20px",
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => entrada.current?.click()}
+          disabled={subiendo}
+          style={{
+            padding: "11px 22px", borderRadius: radio.pastilla, border: "none",
+            background: subiendo ? C.accionApagada : C.accion, color: C.papel,
+            fontSize: 15, fontWeight: 500, cursor: subiendo ? "default" : "pointer",
+            fontFamily: "inherit",
+          }}
+        >
+          {subiendo ? "Aplicando…" : "Elegir el archivo de Excel"}
+        </button>
+
+        <div style={{ fontSize: 13.5, color: C.marronClaro, marginTop: 10, lineHeight: 1.5 }}>
+          El <strong style={{ fontWeight: 600 }}>Catalogo_Control.xlsx</strong> del
+          proyecto. Se lee y se aplica; el archivo no se guarda. Los renglones se
+          cruzan por su clave, así que renombrar un producto no lo despega de su
+          sitio. Lo que dejes en blanco no cambia nada.
+        </div>
+
+        <input
+          ref={entrada}
+          type="file"
+          accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          style={{ display: "none" }}
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) enviar(f);
+            e.target.value = "";
+          }}
+        />
+      </div>
+
+      {resultado && (
+        <div
+          role="status"
+          style={{
+            marginTop: esp.sm, padding: "11px 14px", borderRadius: radio.chico,
+            fontSize: 13.5, lineHeight: 1.5,
+            color: error ? C.error : C.exito,
+            background: error ? "#fdf0ee" : "#eef6ef",
+            border: `1px solid ${error ? C.error : C.exito}33`,
+          }}
+        >
+          {resultado}
+        </div>
+      )}
+    </Bloque>
   );
 }
