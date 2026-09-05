@@ -178,7 +178,8 @@
     "fuente": "actual",
     "colores": {
       "terracota": "#B8542E",
-      "franjaNaranja": "#5C1B05"
+      "franjaNaranja": "#5C1B05",
+      "franjaOscura": "#4D0510"
     }
   }
 }
