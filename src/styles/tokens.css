@@ -23,6 +23,8 @@
   --pie-fondo: #2A1D14;      /* fondo del pie de pagina, aparte para poder
                                 pintarlo distinto del resto */
   --texto-claro: #FBF6ED;    /* texto encima de esas dos franjas */
+  --titulo-portada: #9B0808; /* el nombre grande de la portada, aparte del
+                                resto de titulos para poder pintarlo solo */
 
   /* Tipografía.
      Estos son los valores de reserva: layout.tsx los vuelve a declarar con la

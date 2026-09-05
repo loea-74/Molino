@@ -90,8 +90,16 @@ export const GRUPOS_COLOR: { titulo: string; nota: string; colores: DefColor[] }
       {
         clave: "grano", css: "--grano", omision: "#2A1D14",
         nombre: "Títulos",
-        donde: "Los encabezados grandes sobre fondo claro",
-        zonas: ["tituloPortada", "tituloCatalogo", "navTexto"],
+        donde: "Los encabezados de cada sección, sobre fondo claro",
+        zonas: ["tituloCatalogo", "navTexto"],
+      },
+      {
+        // El nombre del molino tiene control propio: es la marca, y no debe
+        // moverse cuando se cambia el color de los demás encabezados.
+        clave: "tituloPortada", css: "--titulo-portada", omision: "#9B0808",
+        nombre: "El nombre grande de la portada",
+        donde: "Sólo «La Gran Jalisciense», lo primero que se ve",
+        zonas: ["tituloPortada"],
       },
       {
         clave: "granoSoft", css: "--grano-soft", omision: "#4A3728",
@@ -247,6 +255,7 @@ export const PARES_CONTRASTE: { fondo: string; texto: string; que: string }[] = 
   { fondo: "franjaOscura", texto: "maiz", que: "las etiquetas amarillas" },
   { fondo: "pieFondo", texto: "textoClaro", que: "el texto del pie" },
   { fondo: "cremaLight", texto: "grano", que: "los títulos" },
+  { fondo: "cremaLight", texto: "tituloPortada", que: "el nombre de la portada" },
   { fondo: "cremaLight", texto: "granoSoft", que: "los párrafos" },
   { fondo: "crema", texto: "granoSoft", que: "el texto de las tarjetas" },
   { fondo: "crema", texto: "grano", que: "los nombres de producto" },

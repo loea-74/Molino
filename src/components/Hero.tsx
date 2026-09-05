@@ -64,7 +64,7 @@ export default function Hero() {
           fontWeight: 300,
           margin: "0 0 8px",
           letterSpacing: "-0.035em",
-          color: "var(--grano)",
+          color: "var(--titulo-portada)",
         }}
       >
         {/* Se descartan los renglones vacíos: al editar el título desde el
@@ -77,7 +77,7 @@ export default function Hero() {
             style={{
               fontStyle: i === 1 ? "italic" : "normal",
               fontWeight: i === 1 ? 400 : 300,
-              color: i === 1 ? "var(--terracota)" : "var(--grano)",
+              color: i === 1 ? "var(--terracota)" : "var(--titulo-portada)",
             }}
           >
             {line}
@@ -87,17 +87,17 @@ export default function Hero() {
 
       {/* Two-column grid */}
       <div
-        style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "stretch" }}
-        className="max-md:!grid-cols-1 max-md:!gap-8"
+        style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center", marginTop: 44 }}
+        className="max-md:!grid-cols-1 max-md:!gap-8 max-sm:!mt-7"
       >
         {/* Left: copy */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <div>
           {/* El logo, al lado de la foto del local.
               Hueco de tamaño fijo con objectFit "contain": así el acomodo no
               se mueve si se cambia el archivo, tenga el margen que tenga. */}
           <div
-            style={{ width: 210, height: 210, flexShrink: 0 }}
-            className="max-sm:!w-[150px] max-sm:!h-[150px]"
+            style={{ width: 300, height: 300, margin: "0 auto 40px" }}
+            className="max-sm:!w-[200px] max-sm:!h-[200px] max-sm:!mt-6"
           >
             <Image
               src={LOGO}
@@ -109,7 +109,7 @@ export default function Hero() {
             />
           </div>
 
-          <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--grano-soft)", maxWidth: 560, marginTop: 0 }} className="max-sm:!text-base">
+          <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--grano-soft)", maxWidth: 560, margin: 0 }} className="max-sm:!text-base">
             {h.body[lang]}
           </p>
 

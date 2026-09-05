@@ -333,7 +333,7 @@ function Mapa({
 
       {/* ─── portada ─── */}
       <div style={{ background: c.cremaLight, padding: "14px 12px", ...z("fondo") }}>
-        <div style={{ fontFamily: pareja.display, fontSize: 19, lineHeight: 1.1, color: c.grano, ...z("tituloPortada") }}>
+        <div style={{ fontFamily: pareja.display, fontSize: 19, lineHeight: 1.1, color: c.tituloPortada, ...z("tituloPortada") }}>
           Maíz cacahuazintle
         </div>
         <div style={{ fontFamily: pareja.body, fontSize: 8.5, lineHeight: 1.5, color: c.granoSoft, marginTop: 5, maxWidth: "44ch", ...z("parrafoPortada") }}>
