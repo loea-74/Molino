@@ -28,1305 +28,4978 @@
   ],
   "departamentos": [
     {
+      "clave": "ABARROTES",
       "nombre": "Abarrotes",
-      "total": 325,
       "categorias": [
         {
+          "clave": "CONDIMENTOS",
           "nombre": "Condimentos",
-          "total": 54,
-          "muestra": [
-            "Concentrado de Fresa",
-            "Concentrado de Frutas Rojas",
-            "Condimento Bisteck Yucateco",
-            "Esencia Algodón de Azúcar",
-            "Esencia Almendra"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11146",
+              "nombre": "Concentrado de Fresa"
+            },
+            {
+              "clave": "11147",
+              "nombre": "Concentrado de Frutas Rojas"
+            },
+            {
+              "clave": "10079",
+              "nombre": "Condimento Bisteck Yucateco"
+            },
+            {
+              "clave": "21016",
+              "nombre": "Esencia Algodón de Azúcar"
+            },
+            {
+              "clave": "10923",
+              "nombre": "Esencia Almendra"
+            },
+            {
+              "clave": "10685",
+              "nombre": "Esencia Azahar"
+            },
+            {
+              "clave": "10921",
+              "nombre": "Esencia Canela"
+            },
+            {
+              "clave": "10896",
+              "nombre": "Esencia Cereza"
+            },
+            {
+              "clave": "10931",
+              "nombre": "Esencia Chocolate"
+            },
+            {
+              "clave": "10747",
+              "nombre": "Esencia Coco"
+            },
+            {
+              "clave": "14110",
+              "nombre": "Esencia Frambuesa"
+            },
+            {
+              "clave": "10895",
+              "nombre": "Esencia Fresa"
+            },
+            {
+              "clave": "12380",
+              "nombre": "Esencia Fresa"
+            },
+            {
+              "clave": "10696",
+              "nombre": "Esencia Grosella"
+            },
+            {
+              "clave": "10937",
+              "nombre": "Esencia Hierbabuena"
+            },
+            {
+              "clave": "11129",
+              "nombre": "Esencia Humo"
+            },
+            {
+              "clave": "10748",
+              "nombre": "Esencia Jerez"
+            },
+            {
+              "clave": "10749",
+              "nombre": "Esencia Limón"
+            },
+            {
+              "clave": "12336",
+              "nombre": "Esencia Mandarina"
+            },
+            {
+              "clave": "10750",
+              "nombre": "Esencia Mango"
+            },
+            {
+              "clave": "10936",
+              "nombre": "Esencia Menta"
+            },
+            {
+              "clave": "10684",
+              "nombre": "Esencia Naranja"
+            },
+            {
+              "clave": "10751",
+              "nombre": "Esencia Nuez"
+            },
+            {
+              "clave": "10841",
+              "nombre": "Esencia Pistaque"
+            },
+            {
+              "clave": "10767",
+              "nombre": "Esencia Piña"
+            },
+            {
+              "clave": "10695",
+              "nombre": "Esencia Rompope"
+            },
+            {
+              "clave": "10922",
+              "nombre": "Esencia Ron"
+            },
+            {
+              "clave": "10752",
+              "nombre": "Esencia Vainilla"
+            },
+            {
+              "clave": "15302",
+              "nombre": "Knorr Caja 24"
+            },
+            {
+              "clave": "10394",
+              "nombre": "Knorr Caja C/2"
+            },
+            {
+              "clave": "10340",
+              "nombre": "Knorr Caldo de Camarón Cubo"
+            },
+            {
+              "clave": "10437",
+              "nombre": "Knorr Camarón Caja"
+            },
+            {
+              "clave": "10654",
+              "nombre": "Knorr Capeador"
+            },
+            {
+              "clave": "10484",
+              "nombre": "Knorr Polvo Chef Camarón"
+            },
+            {
+              "clave": "10393",
+              "nombre": "Knorr Polvo Chef Pollo"
+            },
+            {
+              "clave": "10244",
+              "nombre": "Knorr Polvo Chef Res"
+            },
+            {
+              "clave": "12133",
+              "nombre": "Knorr Polvo Pollo Bt1.5k"
+            },
+            {
+              "clave": "12017",
+              "nombre": "Pragna Sazonador Bt"
+            },
+            {
+              "clave": "11071",
+              "nombre": "Pragna Sazonador Gr"
+            },
+            {
+              "clave": "11118",
+              "nombre": "Saborizante Pan de Muerto"
+            },
+            {
+              "clave": "11116",
+              "nombre": "Saz. Arrachera Bt"
+            },
+            {
+              "clave": "11115",
+              "nombre": "Saz. Arrachera Gr"
+            },
+            {
+              "clave": "11114",
+              "nombre": "Saz. Condimento Bt."
+            },
+            {
+              "clave": "11106",
+              "nombre": "Saz. Condimento Gr"
+            },
+            {
+              "clave": "11113",
+              "nombre": "Saz. Mariscos Bt."
+            },
+            {
+              "clave": "11108",
+              "nombre": "Saz. Mariscos Gr"
+            },
+            {
+              "clave": "11112",
+              "nombre": "Saz. Pimienta Bt"
+            },
+            {
+              "clave": "11107",
+              "nombre": "Saz. Pimienta Gr."
+            },
+            {
+              "clave": "11160",
+              "nombre": "Saz. Sal C/ajo Bote"
+            },
+            {
+              "clave": "11161",
+              "nombre": "Saz. Sal C/ajo Gr"
+            },
+            {
+              "clave": "10387",
+              "nombre": "Sazonador Cajun"
+            },
+            {
+              "clave": "10436",
+              "nombre": "Sazonador Carne"
+            },
+            {
+              "clave": "10435",
+              "nombre": "Sazonador Fajitas"
+            },
+            {
+              "clave": "10434",
+              "nombre": "Sazonador Pollo"
+            }
           ]
         },
         {
+          "clave": "ACEITES",
           "nombre": "Aceites",
-          "total": 41,
-          "muestra": [
-            "Aceite Borges Ajo Frito 250ml",
-            "Aceite Borges Soya y Jengibre 250ml",
-            "Aceite Cristal 1.5lt",
-            "Aceite Cristal 1lt",
-            "Aceite San Lucas Ajo 180ml"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10934",
+              "nombre": "Aceite Borges Ajo Frito 250ml"
+            },
+            {
+              "clave": "10933",
+              "nombre": "Aceite Borges Soya y Jengibre 250ml"
+            },
+            {
+              "clave": "10129",
+              "nombre": "Aceite Cristal 1.5lt"
+            },
+            {
+              "clave": "10035",
+              "nombre": "Aceite Cristal 1lt"
+            },
+            {
+              "clave": "10836",
+              "nombre": "Aceite San Lucas Ajo 180ml"
+            },
+            {
+              "clave": "10837",
+              "nombre": "Aceite San Lucas Ajo 250ml"
+            },
+            {
+              "clave": "10838",
+              "nombre": "Aceite San Lucas Uva 180 Ml"
+            },
+            {
+              "clave": "10900",
+              "nombre": "Aceite de Aguacate Chosen Foods 250ml"
+            },
+            {
+              "clave": "10908",
+              "nombre": "Aceite de Aguacate San Lucas 1lt"
+            },
+            {
+              "clave": "10899",
+              "nombre": "Aceite de Aguacate San Lucas 500ml"
+            },
+            {
+              "clave": "10512",
+              "nombre": "Aceite de Coco Granel"
+            },
+            {
+              "clave": "10929",
+              "nombre": "Aceite de Coco Ines 470gr"
+            },
+            {
+              "clave": "10604",
+              "nombre": "Aceite de Coco San Lucas 230gr"
+            },
+            {
+              "clave": "10516",
+              "nombre": "Aceite de Coco San Lucas 450ml"
+            },
+            {
+              "clave": "11109",
+              "nombre": "Aceite de Linaza"
+            },
+            {
+              "clave": "10459",
+              "nombre": "Aceite de Oliva Carbonell 250 Ml"
+            },
+            {
+              "clave": "10655",
+              "nombre": "Aceite de Oliva Carbonell 500 Ml"
+            },
+            {
+              "clave": "10765",
+              "nombre": "Aceite de Oliva Carbonell 750ml"
+            },
+            {
+              "clave": "10563",
+              "nombre": "Aceite de Oliva Carbonell Lata 450 M"
+            },
+            {
+              "clave": "10342",
+              "nombre": "Aceite de Oliva Carbonell Lata 950g"
+            },
+            {
+              "clave": "10066",
+              "nombre": "Aceite de Oliva Oli Aderezar 250ml"
+            },
+            {
+              "clave": "10863",
+              "nombre": "Aceite de Oliva Ybarra Lata 200 Ml"
+            },
+            {
+              "clave": "10570",
+              "nombre": "Aceite de Oliva Ybarra Lata 473 Ml"
+            },
+            {
+              "clave": "10448",
+              "nombre": "Aceite el Olivo 180 Ml"
+            },
+            {
+              "clave": "10447",
+              "nombre": "Aceite el Olivo 45 Ml"
+            },
+            {
+              "clave": "10898",
+              "nombre": "Ines Aceite Ajonjolí Tostado 1lt"
+            },
+            {
+              "clave": "10681",
+              "nombre": "Ines Aceite Ajonjolí Tostado 250ml"
+            },
+            {
+              "clave": "10897",
+              "nombre": "Ines Aceite Oliva Virgen 1lt"
+            },
+            {
+              "clave": "10345",
+              "nombre": "Oli Cocinar 250 Ml"
+            },
+            {
+              "clave": "11105",
+              "nombre": "Oli Cocinar 500 Ml"
+            },
+            {
+              "clave": "10166",
+              "nombre": "Pam Oliva"
+            },
+            {
+              "clave": "10839",
+              "nombre": "San Lucas Aceite Uva 250ml"
+            },
+            {
+              "clave": "10682",
+              "nombre": "San Lucas Ajonjolí Extra Virgen 250ml"
+            },
+            {
+              "clave": "10103",
+              "nombre": "Vinagre Barrilito Blanco"
+            },
+            {
+              "clave": "11059",
+              "nombre": "Vinagre Barrilito Caña Obscuro"
+            },
+            {
+              "clave": "10254",
+              "nombre": "Vinagre Barrilito Manzana"
+            },
+            {
+              "clave": "10493",
+              "nombre": "Vinagre Carbonell Balsámico"
+            },
+            {
+              "clave": "10339",
+              "nombre": "Vinagre Carbonell Vino Blanco"
+            },
+            {
+              "clave": "10071",
+              "nombre": "Vinagre Carbonell Vino Tinto"
+            },
+            {
+              "clave": "10326",
+              "nombre": "Vinagre Carbonell de Jerez"
+            },
+            {
+              "clave": "10822",
+              "nombre": "Vinagre de Arroz"
+            }
           ]
         },
         {
+          "clave": "SOPAS",
           "nombre": "Sopas",
-          "total": 24,
-          "muestra": [
-            "Campbells Elote",
-            "Campbells Flor de Calabaza",
-            "Campbells Lentejas",
-            "Campbells P/tortilla",
-            "Campbells Pollo C/champiã‘ones"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10455",
+              "nombre": "Campbells Elote"
+            },
+            {
+              "clave": "10451",
+              "nombre": "Campbells Flor de Calabaza"
+            },
+            {
+              "clave": "10456",
+              "nombre": "Campbells Lentejas"
+            },
+            {
+              "clave": "10457",
+              "nombre": "Campbells P/tortilla"
+            },
+            {
+              "clave": "10453",
+              "nombre": "Campbells Pollo C/champiã‘ones"
+            },
+            {
+              "clave": "10452",
+              "nombre": "Campbells Queso"
+            },
+            {
+              "clave": "10454",
+              "nombre": "Campbells Tomate"
+            },
+            {
+              "clave": "10556",
+              "nombre": "Gallo Nature Fideo Garbanzo"
+            },
+            {
+              "clave": "10555",
+              "nombre": "Gallo Nature Helice Garbanzo"
+            },
+            {
+              "clave": "10554",
+              "nombre": "Gallo Nature Helice Lenteja"
+            },
+            {
+              "clave": "10893",
+              "nombre": "Gallo Nature Hélices Integral"
+            },
+            {
+              "clave": "10553",
+              "nombre": "Gallo Nature Macarrón Guisante"
+            },
+            {
+              "clave": "10892",
+              "nombre": "Gallo Nature Plumas Integral"
+            },
+            {
+              "clave": "10894",
+              "nombre": "Gallo Nature Spaghetti sin Gluten"
+            },
+            {
+              "clave": "10891",
+              "nombre": "Gallo Nature Spaguetti Integral"
+            },
+            {
+              "clave": "10443",
+              "nombre": "Pasta Barilla Codo N4 500g"
+            },
+            {
+              "clave": "11094",
+              "nombre": "Pasta Barilla Fettuccine 450 G"
+            },
+            {
+              "clave": "10442",
+              "nombre": "Pasta Barilla Fusilli 500 G"
+            },
+            {
+              "clave": "10313",
+              "nombre": "Pasta Barilla Penne"
+            },
+            {
+              "clave": "11128",
+              "nombre": "Pasta Barilla Spaghetti 850 G"
+            },
+            {
+              "clave": "10439",
+              "nombre": "Pasta Barilla Spaguetti No. 5 1kg"
+            },
+            {
+              "clave": "10440",
+              "nombre": "Pasta Barilla Spaguetti No. 7 500g"
+            },
+            {
+              "clave": "10319",
+              "nombre": "Pasta Barilla Spaguetti No.5 500g"
+            },
+            {
+              "clave": "10407",
+              "nombre": "Pasta Barilla Spaguetti No.7 200 G"
+            }
           ]
         },
         {
+          "clave": "ACEITUNAS Y VEGETALES ENLATADOS",
           "nombre": "Aceitunas y Vegetales Enlatados",
-          "total": 23,
-          "muestra": [
-            "Aceituna Carbonell Alcaparra",
-            "Aceituna Carbonell Deshuesada 180g",
-            "Aceituna Carbonell Deshuesada 350gr",
-            "Aceituna Carbonell con Hueso 185gr",
-            "Aceituna Carbonell con Hueso 350g"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10314",
+              "nombre": "Aceituna Carbonell Alcaparra"
+            },
+            {
+              "clave": "10344",
+              "nombre": "Aceituna Carbonell Deshuesada 180g"
+            },
+            {
+              "clave": "10161",
+              "nombre": "Aceituna Carbonell Deshuesada 350gr"
+            },
+            {
+              "clave": "10307",
+              "nombre": "Aceituna Carbonell con Hueso 185gr"
+            },
+            {
+              "clave": "10343",
+              "nombre": "Aceituna Carbonell con Hueso 350g"
+            },
+            {
+              "clave": "10315",
+              "nombre": "Aceituna Carbonell con Pimentón"
+            },
+            {
+              "clave": "10323",
+              "nombre": "Aceituna Negra Rodajas"
+            },
+            {
+              "clave": "11001",
+              "nombre": "Aceituna Negra sin Hueso 180g"
+            },
+            {
+              "clave": "10324",
+              "nombre": "Aceituna Negra sin Hueso 340gr"
+            },
+            {
+              "clave": "10408",
+              "nombre": "Aceituna Zaphron"
+            },
+            {
+              "clave": "10245",
+              "nombre": "Aceitunas Lol-tun 140gr C/hueso"
+            },
+            {
+              "clave": "10163",
+              "nombre": "Aceitunas Lol-tun 250 Gr C/hueso"
+            },
+            {
+              "clave": "10356",
+              "nombre": "Aceitunas Lol-tun 250g S/hueso"
+            },
+            {
+              "clave": "12000",
+              "nombre": "Aceitunas San Lucas 245g S/hueso"
+            },
+            {
+              "clave": "10349",
+              "nombre": "Aceitunas Serpis Jamón Serrano"
+            },
+            {
+              "clave": "10351",
+              "nombre": "Aceitunas Serpis Queso Azul"
+            },
+            {
+              "clave": "11002",
+              "nombre": "Alcaparra Lol-tun"
+            },
+            {
+              "clave": "10479",
+              "nombre": "Alcaparra Serpis"
+            },
+            {
+              "clave": "10286",
+              "nombre": "Cereza Lol-tun 132 Gr"
+            },
+            {
+              "clave": "10246",
+              "nombre": "Cereza Lol-tun 304 Gr"
+            },
+            {
+              "clave": "10241",
+              "nombre": "Chimichurri"
+            },
+            {
+              "clave": "10656",
+              "nombre": "Pepinillos Serpis 225g"
+            },
+            {
+              "clave": "10172",
+              "nombre": "Pepinillos Serpis 330g"
+            }
           ]
         },
         {
+          "clave": "COLORANTE Y ESENCIAS",
           "nombre": "Colorante y Esencias",
-          "total": 22,
-          "muestra": [
-            "Amarillo Huevo 100gr Alta",
-            "Amarillo Huevo 100gr Baja",
-            "Amarillo Naranja 100g",
-            "Amarillo Naranja Sobre",
-            "Amarillo Sobre"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12015",
+              "nombre": "Amarillo Huevo 100gr Alta"
+            },
+            {
+              "clave": "10138",
+              "nombre": "Amarillo Huevo 100gr Baja"
+            },
+            {
+              "clave": "10652",
+              "nombre": "Amarillo Naranja 100g"
+            },
+            {
+              "clave": "11136",
+              "nombre": "Amarillo Naranja Sobre"
+            },
+            {
+              "clave": "10139",
+              "nombre": "Amarillo Sobre"
+            },
+            {
+              "clave": "10668",
+              "nombre": "Azul 100gr"
+            },
+            {
+              "clave": "10667",
+              "nombre": "Azul Sobre"
+            },
+            {
+              "clave": "11135",
+              "nombre": "Caramelo Sobre"
+            },
+            {
+              "clave": "12016",
+              "nombre": "Carboximetil Celulosa 100gr"
+            },
+            {
+              "clave": "11121",
+              "nombre": "Chocolate 100gr"
+            },
+            {
+              "clave": "10473",
+              "nombre": "Chocolate Sobre"
+            },
+            {
+              "clave": "11133",
+              "nombre": "Colorante Liquido"
+            },
+            {
+              "clave": "10651",
+              "nombre": "Grosella 100gr"
+            },
+            {
+              "clave": "10329",
+              "nombre": "Grosella Sobre"
+            },
+            {
+              "clave": "10134",
+              "nombre": "Rojo Fresa 100gr"
+            },
+            {
+              "clave": "10135",
+              "nombre": "Rojo Fresa Sobre"
+            },
+            {
+              "clave": "10136",
+              "nombre": "Rosa 100gr"
+            },
+            {
+              "clave": "10137",
+              "nombre": "Rosa Sobre"
+            },
+            {
+              "clave": "10140",
+              "nombre": "Verde 100gr"
+            },
+            {
+              "clave": "10141",
+              "nombre": "Verde Sobre"
+            },
+            {
+              "clave": "11122",
+              "nombre": "Violeta 100gr"
+            },
+            {
+              "clave": "11134",
+              "nombre": "Violeta Sobre"
+            }
           ]
         },
         {
+          "clave": "SALSAS Y MERMELADAS",
           "nombre": "Salsas y Mermeladas",
-          "total": 20,
-          "muestra": [
-            "Cajeta",
-            "Catsup Heinz 567g",
-            "Chamoy 1.5 Lt",
-            "Chamoy 1lt",
-            "Chamoy 500ml"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10164",
+              "nombre": "Cajeta"
+            },
+            {
+              "clave": "10156",
+              "nombre": "Catsup Heinz 567g"
+            },
+            {
+              "clave": "10090",
+              "nombre": "Chamoy 1.5 Lt"
+            },
+            {
+              "clave": "10118",
+              "nombre": "Chamoy 1lt"
+            },
+            {
+              "clave": "10203",
+              "nombre": "Chamoy 500ml"
+            },
+            {
+              "clave": "11171",
+              "nombre": "Chamoy Ciruela 1lt"
+            },
+            {
+              "clave": "10181",
+              "nombre": "Jugo Maggi"
+            },
+            {
+              "clave": "10000",
+              "nombre": "Jugo de Ostion"
+            },
+            {
+              "clave": "10043",
+              "nombre": "Miel Abeja 1l"
+            },
+            {
+              "clave": "12601",
+              "nombre": "Miel Abeja 1l Premium"
+            },
+            {
+              "clave": "10044",
+              "nombre": "Miel Abeja 500ml"
+            },
+            {
+              "clave": "12600",
+              "nombre": "Miel Abeja 500ml Premium"
+            },
+            {
+              "clave": "10716",
+              "nombre": "Miel Agave 500g"
+            },
+            {
+              "clave": "10845",
+              "nombre": "Mostaza Dijon"
+            },
+            {
+              "clave": "10293",
+              "nombre": "Mostaza Heinz 368g"
+            },
+            {
+              "clave": "10458",
+              "nombre": "Pesto Barilla"
+            },
+            {
+              "clave": "10470",
+              "nombre": "Soya Kikkoman 148g"
+            },
+            {
+              "clave": "10471",
+              "nombre": "Soya Kikkoman 296g"
+            },
+            {
+              "clave": "10239",
+              "nombre": "Valentina Sobres Amarilla"
+            },
+            {
+              "clave": "10240",
+              "nombre": "Valentina Sobres Negra"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS Y ESPECIAS PICANTES",
           "nombre": "Semillas y Especias Picantes",
-          "total": 16,
-          "muestra": [
-            "Frutimich 1lt",
-            "Lenteja Chica",
-            "Lenteja Grande",
-            "Miguelito Bote",
-            "Miguelito Garrafón 980gr"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10779",
+              "nombre": "Frutimich 1lt"
+            },
+            {
+              "clave": "10251",
+              "nombre": "Lenteja Chica"
+            },
+            {
+              "clave": "10511",
+              "nombre": "Lenteja Grande"
+            },
+            {
+              "clave": "10117",
+              "nombre": "Miguelito Bote"
+            },
+            {
+              "clave": "15406",
+              "nombre": "Miguelito Garrafón 980gr"
+            },
+            {
+              "clave": "10607",
+              "nombre": "Miguelito Granel Chamoy"
+            },
+            {
+              "clave": "10609",
+              "nombre": "Miguelito Granel Mora"
+            },
+            {
+              "clave": "10606",
+              "nombre": "Miguelito Granel Pelón"
+            },
+            {
+              "clave": "10608",
+              "nombre": "Miguelito Granel Sandia"
+            },
+            {
+              "clave": "10605",
+              "nombre": "Miguelito Granel Tradicional"
+            },
+            {
+              "clave": "10610",
+              "nombre": "Miguelito Granel Uva"
+            },
+            {
+              "clave": "11132",
+              "nombre": "Miguelito Pelón"
+            },
+            {
+              "clave": "10666",
+              "nombre": "Tajín Chilim"
+            },
+            {
+              "clave": "10565",
+              "nombre": "Tajín Gourmet"
+            },
+            {
+              "clave": "10564",
+              "nombre": "Tajín Natural"
+            },
+            {
+              "clave": "10269",
+              "nombre": "Vaso de Chamoy"
+            }
           ]
         },
         {
+          "clave": "ACHIOTES",
           "nombre": "Achiotes",
-          "total": 14,
-          "muestra": [
-            "Achiote Anita Anita 110g",
-            "Achiote Anita Anita 440 G",
-            "Achiote Anita Receta Especial",
-            "Achiote Liquido Yucateco",
-            "Achiote Liquido el Anita"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10571",
+              "nombre": "Achiote Anita Anita 110g"
+            },
+            {
+              "clave": "10574",
+              "nombre": "Achiote Anita Anita 440 G"
+            },
+            {
+              "clave": "10594",
+              "nombre": "Achiote Anita Receta Especial"
+            },
+            {
+              "clave": "12013",
+              "nombre": "Achiote Liquido Yucateco"
+            },
+            {
+              "clave": "10068",
+              "nombre": "Achiote Liquido el Anita"
+            },
+            {
+              "clave": "10069",
+              "nombre": "Achiote Lol-tun"
+            },
+            {
+              "clave": "10282",
+              "nombre": "Achiote Merida 100gr"
+            },
+            {
+              "clave": "10280",
+              "nombre": "Achiote Merida 1k"
+            },
+            {
+              "clave": "10226",
+              "nombre": "Achiote el Yucateco 100gr"
+            },
+            {
+              "clave": "10227",
+              "nombre": "Achiote el Yucateco 1kl"
+            },
+            {
+              "clave": "15404",
+              "nombre": "Achiote el Yucateco Caja"
+            },
+            {
+              "clave": "10262",
+              "nombre": "Chilmole 100g Yucateco"
+            },
+            {
+              "clave": "10263",
+              "nombre": "Chilmole 1k"
+            },
+            {
+              "clave": "10504",
+              "nombre": "Marin Achiote"
+            }
           ]
         },
         {
+          "clave": "VAINILLA",
           "nombre": "Vainilla",
-          "total": 14,
-          "muestra": [
-            "Extracto de Vainilla",
-            "Vaina Vainilla Chica",
-            "Vaina Vainilla Paq. Grande",
-            "Vaina Vainilla Paq.chica",
-            "Vainilla 1/2"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "15003",
+              "nombre": "Extracto de Vainilla"
+            },
+            {
+              "clave": "10721",
+              "nombre": "Vaina Vainilla Chica"
+            },
+            {
+              "clave": "10720",
+              "nombre": "Vaina Vainilla Paq. Grande"
+            },
+            {
+              "clave": "10726",
+              "nombre": "Vaina Vainilla Paq.chica"
+            },
+            {
+              "clave": "10083",
+              "nombre": "Vainilla 1/2"
+            },
+            {
+              "clave": "10925",
+              "nombre": "Vainilla 125 Ml Canela"
+            },
+            {
+              "clave": "10926",
+              "nombre": "Vainilla 125 Ml Nuez"
+            },
+            {
+              "clave": "10077",
+              "nombre": "Vainilla 1\\4"
+            },
+            {
+              "clave": "11111",
+              "nombre": "Vainilla 1\\4 Ron"
+            },
+            {
+              "clave": "10076",
+              "nombre": "Vainilla 1\\8"
+            },
+            {
+              "clave": "10097",
+              "nombre": "Vainilla 1lt"
+            },
+            {
+              "clave": "10927",
+              "nombre": "Vainilla 250 Ml Canela"
+            },
+            {
+              "clave": "10928",
+              "nombre": "Vainilla 250 Ml Nuez"
+            },
+            {
+              "clave": "10472",
+              "nombre": "Vainilla 65ml"
+            }
           ]
         },
         {
+          "clave": "CAFÉ, AZUCAR, SUSTITUTOS",
           "nombre": "Café, Azucar, Sustitutos",
-          "total": 13,
-          "muestra": [
-            "Alulosa Stevia Bolsa",
-            "Alulosa Stevia Granel",
-            "Arroz",
-            "Azúcar Glass",
-            "Azúcar Mascabada"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10802",
+              "nombre": "Alulosa Stevia Bolsa"
+            },
+            {
+              "clave": "10803",
+              "nombre": "Alulosa Stevia Granel"
+            },
+            {
+              "clave": "10183",
+              "nombre": "Arroz"
+            },
+            {
+              "clave": "10047",
+              "nombre": "Azúcar Glass"
+            },
+            {
+              "clave": "10861",
+              "nombre": "Azúcar Mascabada"
+            },
+            {
+              "clave": "10467",
+              "nombre": "Azúcar Morena"
+            },
+            {
+              "clave": "10469",
+              "nombre": "Azúcar Refinada C/20 Sobres"
+            },
+            {
+              "clave": "10391",
+              "nombre": "Café Descafeinado"
+            },
+            {
+              "clave": "10205",
+              "nombre": "Café Espresso"
+            },
+            {
+              "clave": "10157",
+              "nombre": "Café Mexicano"
+            },
+            {
+              "clave": "10401",
+              "nombre": "Café Soluble"
+            },
+            {
+              "clave": "10410",
+              "nombre": "Café en Grano"
+            },
+            {
+              "clave": "10737",
+              "nombre": "Matcha Orgánica"
+            }
           ]
         },
         {
+          "clave": "CHOCOLATE Y ENLATADOS DULCES",
           "nombre": "Chocolate y Enlatados Dulces",
-          "total": 12,
-          "muestra": [
-            "Choc. Don Gustavo Barra",
-            "Choc. Don Gustavo Caja C/6",
-            "Chocolate Abuelita Barra",
-            "Chocolate Abuelita Caja",
-            "Chocolate Abuelita Marqueta"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10508",
+              "nombre": "Choc. Don Gustavo Barra"
+            },
+            {
+              "clave": "10507",
+              "nombre": "Choc. Don Gustavo Caja C/6"
+            },
+            {
+              "clave": "10301",
+              "nombre": "Chocolate Abuelita Barra"
+            },
+            {
+              "clave": "10275",
+              "nombre": "Chocolate Abuelita Caja"
+            },
+            {
+              "clave": "10575",
+              "nombre": "Chocolate Abuelita Marqueta"
+            },
+            {
+              "clave": "10322",
+              "nombre": "Chocolate Abuelita Polvo .76kg"
+            },
+            {
+              "clave": "10281",
+              "nombre": "Chocolate Abuelita Polvo 1kg"
+            },
+            {
+              "clave": "10096",
+              "nombre": "Chocolate Ibarra 1 Barra"
+            },
+            {
+              "clave": "10100",
+              "nombre": "Chocolate Ibarra Paquete"
+            },
+            {
+              "clave": "10723",
+              "nombre": "Chongos Zamoranos 240g"
+            },
+            {
+              "clave": "10722",
+              "nombre": "Chongos Zamoranos 470g"
+            },
+            {
+              "clave": "10719",
+              "nombre": "Chongos Zamoranos 910g"
+            }
           ]
         },
         {
+          "clave": "ROYAL, GENETINA LEVADURA",
           "nombre": "Royal, Genetina Levadura",
-          "total": 11,
-          "muestra": [
-            "Grenetina 250gr",
-            "Grenetina Granel",
-            "Levadura Tradipan Paquete",
-            "Levadura Tradipan Sobre",
-            "Rexal Ph Chico 100gr"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10461",
+              "nombre": "Grenetina 250gr"
+            },
+            {
+              "clave": "10112",
+              "nombre": "Grenetina Granel"
+            },
+            {
+              "clave": "10075",
+              "nombre": "Levadura Tradipan Paquete"
+            },
+            {
+              "clave": "10074",
+              "nombre": "Levadura Tradipan Sobre"
+            },
+            {
+              "clave": "10818",
+              "nombre": "Rexal Ph Chico 100gr"
+            },
+            {
+              "clave": "11025",
+              "nombre": "Rexal Ph Grande 500gr"
+            },
+            {
+              "clave": "10819",
+              "nombre": "Rexal Ph Mediano 250gr"
+            },
+            {
+              "clave": "11117",
+              "nombre": "Rexal Ph Mini 50gr"
+            },
+            {
+              "clave": "10087",
+              "nombre": "Royal 100 Gr"
+            },
+            {
+              "clave": "10088",
+              "nombre": "Royal 220 Gr"
+            },
+            {
+              "clave": "10093",
+              "nombre": "Royal 450 Gr"
+            }
           ]
         },
         {
+          "clave": "MAIZENA SOBRES",
           "nombre": "Maizena Sobres",
-          "total": 8,
-          "muestra": [
-            "Maizena Cereza",
-            "Maizena Sobres Arroz con Leche",
-            "Maizena Sobres Chocolate",
-            "Maizena Sobres Coco",
-            "Maizena Sobres Fresa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12130",
+              "nombre": "Maizena Cereza"
+            },
+            {
+              "clave": "10370",
+              "nombre": "Maizena Sobres Arroz con Leche"
+            },
+            {
+              "clave": "10369",
+              "nombre": "Maizena Sobres Chocolate"
+            },
+            {
+              "clave": "10366",
+              "nombre": "Maizena Sobres Coco"
+            },
+            {
+              "clave": "10365",
+              "nombre": "Maizena Sobres Fresa"
+            },
+            {
+              "clave": "10368",
+              "nombre": "Maizena Sobres Guayaba"
+            },
+            {
+              "clave": "10367",
+              "nombre": "Maizena Sobres Nuez"
+            },
+            {
+              "clave": "10295",
+              "nombre": "Maizena Sobres Vainilla"
+            }
           ]
         },
         {
+          "clave": "BOLSAS COSTALES",
           "nombre": "Bolsas Costales",
-          "total": 5,
-          "muestra": [
-            "Bolsa",
-            "Bolsa Asa",
-            "Bolsa Jalisciense",
-            "Costal Chico",
-            "Costal Grande"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10214",
+              "nombre": "Bolsa"
+            },
+            {
+              "clave": "10197",
+              "nombre": "Bolsa Asa"
+            },
+            {
+              "clave": "10215",
+              "nombre": "Bolsa Jalisciense"
+            },
+            {
+              "clave": "10480",
+              "nombre": "Costal Chico"
+            },
+            {
+              "clave": "10149",
+              "nombre": "Costal Grande"
+            }
           ]
         },
         {
+          "clave": "FRUTAS ENLATADAS",
           "nombre": "Frutas Enlatadas",
-          "total": 5,
-          "muestra": [
-            "Cereza Diana 260gr",
-            "Cocktail Frutas en Almíbar",
-            "Durazno en Almíbar",
-            "Piña en Almíbar Rebanada",
-            "Piña en Almíbar Trozo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10788",
+              "nombre": "Cereza Diana 260gr"
+            },
+            {
+              "clave": "10462",
+              "nombre": "Cocktail Frutas en Almíbar"
+            },
+            {
+              "clave": "11192",
+              "nombre": "Durazno en Almíbar"
+            },
+            {
+              "clave": "10347",
+              "nombre": "Piña en Almíbar Rebanada"
+            },
+            {
+              "clave": "10346",
+              "nombre": "Piña en Almíbar Trozo"
+            }
           ]
         },
         {
+          "clave": "MERMELADAS",
           "nombre": "Mermeladas",
-          "total": 4,
-          "muestra": [
-            "Mermelada Fresa 670g",
-            "Mermelada Fresa Mccornik 1.2k",
-            "Mermelada Piña 450g",
-            "Mermelada Zarzamora"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10429",
+              "nombre": "Mermelada Fresa 670g"
+            },
+            {
+              "clave": "10428",
+              "nombre": "Mermelada Fresa Mccornik 1.2k"
+            },
+            {
+              "clave": "10430",
+              "nombre": "Mermelada Piña 450g"
+            },
+            {
+              "clave": "10787",
+              "nombre": "Mermelada Zarzamora"
+            }
           ]
         },
         {
+          "clave": "CHILES",
           "nombre": "Chiles",
-          "total": 3,
-          "muestra": [
-            "Jalapeños Enteros la Costeña 240gr",
-            "Jalapeños Rajas la Costeña 240gr",
-            "Pimiento Moron la Costeña 200gr"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11051",
+              "nombre": "Jalapeños Enteros la Costeña 240gr"
+            },
+            {
+              "clave": "11050",
+              "nombre": "Jalapeños Rajas la Costeña 240gr"
+            },
+            {
+              "clave": "11053",
+              "nombre": "Pimiento Moron la Costeña 200gr"
+            }
           ]
         },
         {
+          "clave": "SALEROS Y ESPECIEROS",
           "nombre": "Saleros y Especieros",
-          "total": 3,
-          "muestra": [
-            "Especiero / Dulcero",
-            "Especiero Grandre",
-            "Saleros"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10177",
+              "nombre": "Especiero / Dulcero"
+            },
+            {
+              "clave": "10362",
+              "nombre": "Especiero Grandre"
+            },
+            {
+              "clave": "10273",
+              "nombre": "Saleros"
+            }
           ]
         },
         {
+          "clave": "FRUTIMICH",
           "nombre": "Frutimich",
-          "total": 2,
-          "muestra": [
-            "Frutimich 500ml",
-            "Frutimich Liquido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11007",
+              "nombre": "Frutimich 500ml"
+            },
+            {
+              "clave": "11158",
+              "nombre": "Frutimich Liquido"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS Y ESPECIAS",
           "nombre": "Semillas y Especias",
-          "total": 2,
-          "muestra": [
-            "Piã±on Blanco",
-            "Piã±on Rosa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10773",
+              "nombre": "Piã±on Blanco"
+            },
+            {
+              "clave": "10774",
+              "nombre": "Piã±on Rosa"
+            }
           ]
         },
         {
+          "clave": "ACEITES Y VINAGRES",
           "nombre": "Aceites y Vinagres",
-          "total": 1,
-          "muestra": [
-            "Aceite de Aguacate Chosen Foods 1lt"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10914",
+              "nombre": "Aceite de Aguacate Chosen Foods 1lt"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 28,
-          "muestra": [
-            "Acitrón",
-            "Bacalao Noruego",
-            "Bolsa de Papel X100 N8",
-            "Bolsa para Hornear",
-            "Charolas Aluminio Chica"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10409",
+              "nombre": "Acitrón"
+            },
+            {
+              "clave": "10222",
+              "nombre": "Bacalao Noruego"
+            },
+            {
+              "clave": "10817",
+              "nombre": "Bolsa de Papel X100 N8"
+            },
+            {
+              "clave": "10212",
+              "nombre": "Bolsa para Hornear"
+            },
+            {
+              "clave": "10769",
+              "nombre": "Charolas Aluminio Chica"
+            },
+            {
+              "clave": "10770",
+              "nombre": "Charolas Aluminio Grande"
+            },
+            {
+              "clave": "10777",
+              "nombre": "Charolas Botanera"
+            },
+            {
+              "clave": "11095",
+              "nombre": "Cucharas de Madera"
+            },
+            {
+              "clave": "11006",
+              "nombre": "Cucharón"
+            },
+            {
+              "clave": "10807",
+              "nombre": "Espirulina Azul"
+            },
+            {
+              "clave": "10045",
+              "nombre": "Fecula de Yuca"
+            },
+            {
+              "clave": "10287",
+              "nombre": "Hilo Mixote"
+            },
+            {
+              "clave": "10771",
+              "nombre": "Leche en Polvo"
+            },
+            {
+              "clave": "10828",
+              "nombre": "Macha Mama Catita Alto"
+            },
+            {
+              "clave": "10829",
+              "nombre": "Macha Mama Catita Medio"
+            },
+            {
+              "clave": "10664",
+              "nombre": "Mixiote Bolsa"
+            },
+            {
+              "clave": "10147",
+              "nombre": "Mixiote Papel"
+            },
+            {
+              "clave": "10379",
+              "nombre": "Mixiote Papel 100x"
+            },
+            {
+              "clave": "10285",
+              "nombre": "Mixiote Papel 10x"
+            },
+            {
+              "clave": "10377",
+              "nombre": "Mixiote Papel 50x"
+            },
+            {
+              "clave": "10776",
+              "nombre": "Muñeco Rosca Dorado"
+            },
+            {
+              "clave": "12335",
+              "nombre": "Palitos de Miel"
+            },
+            {
+              "clave": "10793",
+              "nombre": "Papel Estrella Granel"
+            },
+            {
+              "clave": "11005",
+              "nombre": "Pozolera Grande 30l"
+            },
+            {
+              "clave": "10143",
+              "nombre": "Pozolera Mediana 28l"
+            },
+            {
+              "clave": "10672",
+              "nombre": "Vaporera con Division Chica"
+            },
+            {
+              "clave": "10674",
+              "nombre": "Vaporera con Division Grande"
+            },
+            {
+              "clave": "10673",
+              "nombre": "Vaporera con Division Mediana"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "FRUTOS SECOS",
       "nombre": "Frutos Secos",
-      "total": 269,
       "categorias": [
         {
+          "clave": "FRUTAS",
           "nombre": "Frutas",
-          "total": 39,
-          "muestra": [
-            "Banderilla Tamarindo",
-            "Bolimango",
-            "Bolitas Choc Enchilado Roja",
-            "Bolitas Mango Naranja",
-            "Bolitas Tamarindo Mini Rojas"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11159",
+              "nombre": "Banderilla Tamarindo"
+            },
+            {
+              "clave": "10581",
+              "nombre": "Bolimango"
+            },
+            {
+              "clave": "10813",
+              "nombre": "Bolitas Choc Enchilado Roja"
+            },
+            {
+              "clave": "10816",
+              "nombre": "Bolitas Mango Naranja"
+            },
+            {
+              "clave": "10814",
+              "nombre": "Bolitas Tamarindo Mini Rojas"
+            },
+            {
+              "clave": "10812",
+              "nombre": "Cereza Agridulce"
+            },
+            {
+              "clave": "10858",
+              "nombre": "Cereza Deshidratada C/chocolate"
+            },
+            {
+              "clave": "10857",
+              "nombre": "Cereza Deshidratada Deshidrata"
+            },
+            {
+              "clave": "12011",
+              "nombre": "Cereza Enchilada"
+            },
+            {
+              "clave": "10476",
+              "nombre": "Chabacano C/chamoy"
+            },
+            {
+              "clave": "10820",
+              "nombre": "Chabacano N"
+            },
+            {
+              "clave": "10580",
+              "nombre": "Ciruela Pasa C/hueso"
+            },
+            {
+              "clave": "10237",
+              "nombre": "Ciruela Pasa S/hueso"
+            },
+            {
+              "clave": "11100",
+              "nombre": "Cocada"
+            },
+            {
+              "clave": "10026",
+              "nombre": "Coco Rallado"
+            },
+            {
+              "clave": "11014",
+              "nombre": "Coco Tostado"
+            },
+            {
+              "clave": "10187",
+              "nombre": "Datil C/hueso"
+            },
+            {
+              "clave": "10255",
+              "nombre": "Datil S/hueso"
+            },
+            {
+              "clave": "10509",
+              "nombre": "Fresa Enchilada"
+            },
+            {
+              "clave": "11155",
+              "nombre": "Fresa Matcha"
+            },
+            {
+              "clave": "10775",
+              "nombre": "Fruta Navideña"
+            },
+            {
+              "clave": "10376",
+              "nombre": "Frutas Cristalizadas"
+            },
+            {
+              "clave": "10832",
+              "nombre": "Frutas Horneadas Coco Hojuelas"
+            },
+            {
+              "clave": "10833",
+              "nombre": "Frutas Horneadas Naranja Limón"
+            },
+            {
+              "clave": "10831",
+              "nombre": "Frutas Horneadas Piña Ench"
+            },
+            {
+              "clave": "12458",
+              "nombre": "Manzana Deshidratada"
+            },
+            {
+              "clave": "10830",
+              "nombre": "Manzana Enchilada"
+            },
+            {
+              "clave": "10441",
+              "nombre": "Manzana Horneada"
+            },
+            {
+              "clave": "10547",
+              "nombre": "Piña Chamoy Tajín"
+            },
+            {
+              "clave": "10546",
+              "nombre": "Piña Enchilada"
+            },
+            {
+              "clave": "10550",
+              "nombre": "Piña con Chile"
+            },
+            {
+              "clave": "10862",
+              "nombre": "Tamarindo Enchilado"
+            },
+            {
+              "clave": "10867",
+              "nombre": "Tarugo Chile"
+            },
+            {
+              "clave": "11124",
+              "nombre": "Tarugo Dulce"
+            },
+            {
+              "clave": "10915",
+              "nombre": "Tarugo Fresa"
+            },
+            {
+              "clave": "10759",
+              "nombre": "Tarugo Mango"
+            },
+            {
+              "clave": "10630",
+              "nombre": "Tarugo Mora Azul"
+            },
+            {
+              "clave": "10637",
+              "nombre": "Tarugo Piña"
+            },
+            {
+              "clave": "10638",
+              "nombre": "Tarugo Tajín"
+            }
           ]
         },
         {
+          "clave": "NUEZ",
           "nombre": "Nuez",
-          "total": 21,
-          "muestra": [
-            "Macadamia Chocolate",
-            "Macadamia Cocoa",
-            "Macadamia Matcha",
-            "Macadamia Natural",
-            "Nuez Castilla"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10653",
+              "nombre": "Macadamia Chocolate"
+            },
+            {
+              "clave": "10566",
+              "nombre": "Macadamia Cocoa"
+            },
+            {
+              "clave": "10584",
+              "nombre": "Macadamia Matcha"
+            },
+            {
+              "clave": "10108",
+              "nombre": "Macadamia Natural"
+            },
+            {
+              "clave": "10294",
+              "nombre": "Nuez Castilla"
+            },
+            {
+              "clave": "10115",
+              "nombre": "Nuez Chocolate Amargo"
+            },
+            {
+              "clave": "10133",
+              "nombre": "Nuez Cocoa"
+            },
+            {
+              "clave": "10328",
+              "nombre": "Nuez Dulce"
+            },
+            {
+              "clave": "10175",
+              "nombre": "Nuez Entera"
+            },
+            {
+              "clave": "10176",
+              "nombre": "Nuez Granillo"
+            },
+            {
+              "clave": "10028",
+              "nombre": "Nuez India C/sal"
+            },
+            {
+              "clave": "10527",
+              "nombre": "Nuez India Choc S/azucar"
+            },
+            {
+              "clave": "11072",
+              "nombre": "Nuez India Japonesa"
+            },
+            {
+              "clave": "11174",
+              "nombre": "Nuez India Sin/sal"
+            },
+            {
+              "clave": "11013",
+              "nombre": "Nuez India Tostada"
+            },
+            {
+              "clave": "10758",
+              "nombre": "Nuez India con Chile"
+            },
+            {
+              "clave": "10159",
+              "nombre": "Nuez Moscada Entera"
+            },
+            {
+              "clave": "10579",
+              "nombre": "Nuez Moscada Molida"
+            },
+            {
+              "clave": "10073",
+              "nombre": "Nuez Trozada"
+            },
+            {
+              "clave": "10693",
+              "nombre": "Nuez de Brasil"
+            },
+            {
+              "clave": "10619",
+              "nombre": "Nuez de la India C/ch Ajo"
+            }
           ]
         },
         {
+          "clave": "BOTANAS",
           "nombre": "Botanas",
-          "total": 19,
-          "muestra": [
-            "Botana Exótica",
-            "Botana Mix Canela",
-            "Botana Mix Enchilada",
-            "Botana Mix Fina",
-            "Garbanzo Enchilado"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10629",
+              "nombre": "Botana Exótica"
+            },
+            {
+              "clave": "10414",
+              "nombre": "Botana Mix Canela"
+            },
+            {
+              "clave": "10663",
+              "nombre": "Botana Mix Enchilada"
+            },
+            {
+              "clave": "10662",
+              "nombre": "Botana Mix Fina"
+            },
+            {
+              "clave": "10404",
+              "nombre": "Garbanzo Enchilado"
+            },
+            {
+              "clave": "10641",
+              "nombre": "Haba Enchilada"
+            },
+            {
+              "clave": "12417",
+              "nombre": "Haba Natural"
+            },
+            {
+              "clave": "10642",
+              "nombre": "Haba Salada"
+            },
+            {
+              "clave": "10127",
+              "nombre": "Higo Cristalizado"
+            },
+            {
+              "clave": "10860",
+              "nombre": "Jamaica Enchilada"
+            },
+            {
+              "clave": "10692",
+              "nombre": "M & Ms"
+            },
+            {
+              "clave": "15006",
+              "nombre": "Maíz Tostado Ajo y Cebolla"
+            },
+            {
+              "clave": "10545",
+              "nombre": "Maíz Tostado Chipotle"
+            },
+            {
+              "clave": "10530",
+              "nombre": "Maíz Tostado Habanero"
+            },
+            {
+              "clave": "10826",
+              "nombre": "Maíz Tostado Queso"
+            },
+            {
+              "clave": "10544",
+              "nombre": "Maíz Tostado Salado"
+            },
+            {
+              "clave": "10561",
+              "nombre": "Mix Verde"
+            },
+            {
+              "clave": "10870",
+              "nombre": "Mix de Ajo"
+            },
+            {
+              "clave": "10029",
+              "nombre": "Semilla de Girasol Natural"
+            }
           ]
         },
         {
+          "clave": "ATE",
           "nombre": "Ate",
-          "total": 15,
-          "muestra": [
-            "Ate Chamoy",
-            "Ate Durazno Pza",
-            "Ate Fresa Pza",
-            "Ate Granel Sabor Durazno",
-            "Ate Granel Sabor Fresa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10687",
+              "nombre": "Ate Chamoy"
+            },
+            {
+              "clave": "10718",
+              "nombre": "Ate Durazno Pza"
+            },
+            {
+              "clave": "10729",
+              "nombre": "Ate Fresa Pza"
+            },
+            {
+              "clave": "10596",
+              "nombre": "Ate Granel Sabor Durazno"
+            },
+            {
+              "clave": "10390",
+              "nombre": "Ate Granel Sabor Fresa"
+            },
+            {
+              "clave": "10094",
+              "nombre": "Ate Granel Sabor Guayaba"
+            },
+            {
+              "clave": "10406",
+              "nombre": "Ate Granel Sabor Manzana"
+            },
+            {
+              "clave": "10095",
+              "nombre": "Ate Granel Sabor Membrillo"
+            },
+            {
+              "clave": "10102",
+              "nombre": "Ate Granel Sabor Tejocote"
+            },
+            {
+              "clave": "10595",
+              "nombre": "Ate Granel Sabor Zarzamora"
+            },
+            {
+              "clave": "10710",
+              "nombre": "Ate Guayaba Pza"
+            },
+            {
+              "clave": "10727",
+              "nombre": "Ate Manzana Pza"
+            },
+            {
+              "clave": "10724",
+              "nombre": "Ate Membrillo Pza"
+            },
+            {
+              "clave": "10725",
+              "nombre": "Ate Tejocote Pza"
+            },
+            {
+              "clave": "10728",
+              "nombre": "Ate Zarzamora Pza"
+            }
           ]
         },
         {
+          "clave": "GOMITAS",
           "nombre": "Gomitas",
-          "total": 15,
-          "muestra": [
-            "Gomita Anís",
-            "Gomita Chica",
-            "Gomita Coco",
-            "Gomita Corazón",
-            "Gomita Corazón Bicolor"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10903",
+              "nombre": "Gomita Anís"
+            },
+            {
+              "clave": "10850",
+              "nombre": "Gomita Chica"
+            },
+            {
+              "clave": "10290",
+              "nombre": "Gomita Coco"
+            },
+            {
+              "clave": "10902",
+              "nombre": "Gomita Corazón"
+            },
+            {
+              "clave": "10913",
+              "nombre": "Gomita Corazón Bicolor"
+            },
+            {
+              "clave": "10474",
+              "nombre": "Gomita Enchilada"
+            },
+            {
+              "clave": "10849",
+              "nombre": "Gomita Grande"
+            },
+            {
+              "clave": "10935",
+              "nombre": "Gomita Hierbabuena"
+            },
+            {
+              "clave": "10678",
+              "nombre": "Gomita Lombriz"
+            },
+            {
+              "clave": "10418",
+              "nombre": "Gomita Mandarina"
+            },
+            {
+              "clave": "11099",
+              "nombre": "Gomita Menta"
+            },
+            {
+              "clave": "11104",
+              "nombre": "Gomita Picagoma"
+            },
+            {
+              "clave": "10901",
+              "nombre": "Gomita Rompope"
+            },
+            {
+              "clave": "12412",
+              "nombre": "Gomita Sandia"
+            },
+            {
+              "clave": "15100",
+              "nombre": "Gomita Tamarindo"
+            }
           ]
         },
         {
+          "clave": "DULCES",
           "nombre": "Dulces",
-          "total": 14,
-          "muestra": [
-            "Bittes Choco Oreo",
-            "Caja Borratchitos",
-            "Chocobola",
-            "Chocomenta",
-            "Dulce Corazón"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10628",
+              "nombre": "Bittes Choco Oreo"
+            },
+            {
+              "clave": "11056",
+              "nombre": "Caja Borratchitos"
+            },
+            {
+              "clave": "10843",
+              "nombre": "Chocobola"
+            },
+            {
+              "clave": "10912",
+              "nombre": "Chocomenta"
+            },
+            {
+              "clave": "11137",
+              "nombre": "Dulce Corazón"
+            },
+            {
+              "clave": "10086",
+              "nombre": "Dulce Suave"
+            },
+            {
+              "clave": "10911",
+              "nombre": "Fresca"
+            },
+            {
+              "clave": "10411",
+              "nombre": "Gragea Colores"
+            },
+            {
+              "clave": "10153",
+              "nombre": "Hojuela Chocolate"
+            },
+            {
+              "clave": "10325",
+              "nombre": "Huevito Chocolate"
+            },
+            {
+              "clave": "10834",
+              "nombre": "Moneda Chocolate 2 Piezas"
+            },
+            {
+              "clave": "10835",
+              "nombre": "Moneda Chocolate Granel"
+            },
+            {
+              "clave": "12131",
+              "nombre": "Oreo Chispas"
+            },
+            {
+              "clave": "10660",
+              "nombre": "Trufa"
+            }
           ]
         },
         {
+          "clave": "CACAHUATE",
           "nombre": "Cacahuate",
-          "total": 12,
-          "muestra": [
-            "Cacahuate Cantinero",
-            "Cacahuate Chipotle/ Ajo",
-            "Cacahuate Enchilado",
-            "Cacahuate Espaã‘ol",
-            "Cacahuate Espaã‘ol C/ajo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12012",
+              "nombre": "Cacahuate Cantinero"
+            },
+            {
+              "clave": "10018",
+              "nombre": "Cacahuate Chipotle/ Ajo"
+            },
+            {
+              "clave": "10104",
+              "nombre": "Cacahuate Enchilado"
+            },
+            {
+              "clave": "10030",
+              "nombre": "Cacahuate Espaã‘ol"
+            },
+            {
+              "clave": "10614",
+              "nombre": "Cacahuate Espaã‘ol C/ajo"
+            },
+            {
+              "clave": "10665",
+              "nombre": "Cacahuate Habanero"
+            },
+            {
+              "clave": "10002",
+              "nombre": "Cacahuate Japonés"
+            },
+            {
+              "clave": "11140",
+              "nombre": "Cacahuate Mix"
+            },
+            {
+              "clave": "10180",
+              "nombre": "Cacahuate Morita"
+            },
+            {
+              "clave": "10201",
+              "nombre": "Cacahuate Natural"
+            },
+            {
+              "clave": "10202",
+              "nombre": "Cacahuate Salado"
+            },
+            {
+              "clave": "11098",
+              "nombre": "Cacahuate con Ajo y Tortilla"
+            }
           ]
         },
         {
+          "clave": "MAZAPAN",
           "nombre": "Mazapán",
-          "total": 12,
-          "muestra": [
-            "Mazapán 1miniatura",
-            "Mazapán 3 Miniatura",
-            "Mazapán Arándano",
-            "Mazapán Avena",
-            "Mazapán Capuchino"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10526",
+              "nombre": "Mazapán 1miniatura"
+            },
+            {
+              "clave": "10524",
+              "nombre": "Mazapán 3 Miniatura"
+            },
+            {
+              "clave": "10500",
+              "nombre": "Mazapán Arándano"
+            },
+            {
+              "clave": "10502",
+              "nombre": "Mazapán Avena"
+            },
+            {
+              "clave": "10597",
+              "nombre": "Mazapán Capuchino"
+            },
+            {
+              "clave": "10501",
+              "nombre": "Mazapán Chocolate"
+            },
+            {
+              "clave": "10503",
+              "nombre": "Mazapán Coco"
+            },
+            {
+              "clave": "10639",
+              "nombre": "Mazapán Galleta"
+            },
+            {
+              "clave": "10810",
+              "nombre": "Mazapán Mini Caja"
+            },
+            {
+              "clave": "10866",
+              "nombre": "Mazapán Plátano"
+            },
+            {
+              "clave": "10640",
+              "nombre": "Mazapán Tradicional"
+            },
+            {
+              "clave": "10623",
+              "nombre": "Mazapán sin Azúcar"
+            }
           ]
         },
         {
+          "clave": "ALMENDRA",
           "nombre": "Almendra",
-          "total": 11,
-          "muestra": [
-            "Almendra Ahumada",
-            "Almendra Choc. Blanco & Café",
-            "Almendra Choc. sin Azúcar",
-            "Almendra Chocolate Amargo",
-            "Almendra Cocoa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10178",
+              "nombre": "Almendra Ahumada"
+            },
+            {
+              "clave": "10421",
+              "nombre": "Almendra Choc. Blanco & Café"
+            },
+            {
+              "clave": "10528",
+              "nombre": "Almendra Choc. sin Azúcar"
+            },
+            {
+              "clave": "10420",
+              "nombre": "Almendra Chocolate Amargo"
+            },
+            {
+              "clave": "10167",
+              "nombre": "Almendra Cocoa"
+            },
+            {
+              "clave": "10130",
+              "nombre": "Almendra Entera"
+            },
+            {
+              "clave": "10599",
+              "nombre": "Almendra Entera Pelada"
+            },
+            {
+              "clave": "10199",
+              "nombre": "Almendra Fileteada"
+            },
+            {
+              "clave": "10644",
+              "nombre": "Almendra Granillo"
+            },
+            {
+              "clave": "10419",
+              "nombre": "Almendra Matcha C/chocolate"
+            },
+            {
+              "clave": "15405",
+              "nombre": "Almendra Salada Himalaya"
+            }
           ]
         },
         {
+          "clave": "BARRAS",
           "nombre": "Barras",
-          "total": 11,
-          "muestra": [
-            "Alegria",
-            "Barra Amaranto Chocolate",
-            "Barra Amaranto Chocolate y Nuez",
-            "Barra Amaranto Fresa/chocolate Ch.",
-            "Barra Amaranto Fresa/chocolate Gr"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12500",
+              "nombre": "Alegria"
+            },
+            {
+              "clave": "10582",
+              "nombre": "Barra Amaranto Chocolate"
+            },
+            {
+              "clave": "10703",
+              "nombre": "Barra Amaranto Chocolate y Nuez"
+            },
+            {
+              "clave": "10631",
+              "nombre": "Barra Amaranto Fresa/chocolate Ch."
+            },
+            {
+              "clave": "10583",
+              "nombre": "Barra Amaranto Fresa/chocolate Gr"
+            },
+            {
+              "clave": "10890",
+              "nombre": "Barra Amaranto Menta Choc"
+            },
+            {
+              "clave": "10910",
+              "nombre": "Barra Cereal Mixto"
+            },
+            {
+              "clave": "10823",
+              "nombre": "Barra Chocolate Almendra"
+            },
+            {
+              "clave": "10427",
+              "nombre": "Barra Confitier Blanco"
+            },
+            {
+              "clave": "10600",
+              "nombre": "Barra Confitier Choc. S/azucar"
+            },
+            {
+              "clave": "10424",
+              "nombre": "Barra Confitier Choc. Semiamargo"
+            }
           ]
         },
         {
+          "clave": "GARAPIÑADO",
           "nombre": "Garapiñado",
-          "total": 8,
-          "muestra": [
-            "Ajonjolí Garapiñado",
-            "Ajonjolí Garapiñado Enchilado",
-            "Avellana Garapiñada",
-            "Cacahuate Garapiñado",
-            "Nuez Garapiñada"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10154",
+              "nombre": "Ajonjolí Garapiñado"
+            },
+            {
+              "clave": "11074",
+              "nombre": "Ajonjolí Garapiñado Enchilado"
+            },
+            {
+              "clave": "10868",
+              "nombre": "Avellana Garapiñada"
+            },
+            {
+              "clave": "10413",
+              "nombre": "Cacahuate Garapiñado"
+            },
+            {
+              "clave": "10229",
+              "nombre": "Nuez Garapiñada"
+            },
+            {
+              "clave": "10717",
+              "nombre": "Nuez India Garapiñada"
+            },
+            {
+              "clave": "10742",
+              "nombre": "Pepita Semilla Garapiñada"
+            },
+            {
+              "clave": "10160",
+              "nombre": "Semilla de Girasol Garapiñada"
+            }
           ]
         },
         {
+          "clave": "MANGO",
           "nombre": "Mango",
-          "total": 8,
-          "muestra": [
-            "Mango Chamoy",
-            "Mango Chicloso Picoso",
-            "Mango Gomita Enchilado",
-            "Mango Tajín",
-            "Mangos Ench Choc Blanco"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10626",
+              "nombre": "Mango Chamoy"
+            },
+            {
+              "clave": "10627",
+              "nombre": "Mango Chicloso Picoso"
+            },
+            {
+              "clave": "10321",
+              "nombre": "Mango Gomita Enchilado"
+            },
+            {
+              "clave": "10624",
+              "nombre": "Mango Tajín"
+            },
+            {
+              "clave": "11189",
+              "nombre": "Mangos Ench Choc Blanco"
+            },
+            {
+              "clave": "10506",
+              "nombre": "Mangos Ench Choc Obscuro"
+            },
+            {
+              "clave": "10505",
+              "nombre": "Mangos Enchilados"
+            },
+            {
+              "clave": "10598",
+              "nombre": "Mangos Enchilados Mango Ench.bolita"
+            }
           ]
         },
         {
+          "clave": "ARANDANO",
           "nombre": "Arándano",
-          "total": 7,
-          "muestra": [
-            "Arándano C/cocoa",
-            "Arándano Choc. Blanco",
-            "Arándano Chocolate Dulce",
-            "Arándano Chocolate Obscuro",
-            "Arándano Matcha C/chocolate"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10475",
+              "nombre": "Arándano C/cocoa"
+            },
+            {
+              "clave": "10743",
+              "nombre": "Arándano Choc. Blanco"
+            },
+            {
+              "clave": "10540",
+              "nombre": "Arándano Chocolate Dulce"
+            },
+            {
+              "clave": "10438",
+              "nombre": "Arándano Chocolate Obscuro"
+            },
+            {
+              "clave": "10422",
+              "nombre": "Arándano Matcha C/chocolate"
+            },
+            {
+              "clave": "10224",
+              "nombre": "Arándano Natural"
+            },
+            {
+              "clave": "10225",
+              "nombre": "Arándano con Chile"
+            }
           ]
         },
         {
+          "clave": "GALLETA",
           "nombre": "Galleta",
-          "total": 7,
-          "muestra": [
-            "Corazón Choc. P1",
-            "Corazón Choc. P3",
-            "Enjambre Cereal",
-            "Galleta Ajonjolí",
-            "Galleta Chocolate Bolsita"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12340",
+              "nombre": "Corazón Choc. P1"
+            },
+            {
+              "clave": "12342",
+              "nombre": "Corazón Choc. P3"
+            },
+            {
+              "clave": "11010",
+              "nombre": "Enjambre Cereal"
+            },
+            {
+              "clave": "10698",
+              "nombre": "Galleta Ajonjolí"
+            },
+            {
+              "clave": "10906",
+              "nombre": "Galleta Chocolate Bolsita"
+            },
+            {
+              "clave": "10905",
+              "nombre": "Galleta Chocolate Granel"
+            },
+            {
+              "clave": "11009",
+              "nombre": "Galleta Semillas"
+            }
           ]
         },
         {
+          "clave": "GRANILLO",
           "nombre": "Granillo",
-          "total": 7,
-          "muestra": [
-            "Granillo 3 Chocolates",
-            "Granillo Aperlado",
-            "Granillo Blanco",
-            "Granillo Capuchino",
-            "Granillo Chocolate"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10804",
+              "nombre": "Granillo 3 Chocolates"
+            },
+            {
+              "clave": "10298",
+              "nombre": "Granillo Aperlado"
+            },
+            {
+              "clave": "10305",
+              "nombre": "Granillo Blanco"
+            },
+            {
+              "clave": "10067",
+              "nombre": "Granillo Capuchino"
+            },
+            {
+              "clave": "10304",
+              "nombre": "Granillo Chocolate"
+            },
+            {
+              "clave": "10805",
+              "nombre": "Granillo Leche"
+            },
+            {
+              "clave": "10806",
+              "nombre": "Granillo Semi Amargo"
+            }
           ]
         },
         {
+          "clave": "PASAS",
           "nombre": "Pasas",
-          "total": 7,
-          "muestra": [
-            "Pasas C/chocolate",
-            "Pasas C/chocolate Amargo",
-            "Pasas Chica",
-            "Pasas Cocoa",
-            "Pasas Grande"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10070",
+              "nombre": "Pasas C/chocolate"
+            },
+            {
+              "clave": "10279",
+              "nombre": "Pasas C/chocolate Amargo"
+            },
+            {
+              "clave": "10252",
+              "nombre": "Pasas Chica"
+            },
+            {
+              "clave": "10613",
+              "nombre": "Pasas Cocoa"
+            },
+            {
+              "clave": "10253",
+              "nombre": "Pasas Grande"
+            },
+            {
+              "clave": "10005",
+              "nombre": "Pasas Gã¼era"
+            },
+            {
+              "clave": "10744",
+              "nombre": "Pasas Matcha"
+            }
           ]
         },
         {
+          "clave": "PEPITA",
           "nombre": "Pepita",
-          "total": 7,
-          "muestra": [
-            "Pepita Semilla Cascara Himalaya",
-            "Pepita Semilla Chipotle",
-            "Pepita Semilla Frita Morita",
-            "Pepita Semilla Frita con Sal",
-            "Pepita Semilla Natural"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10840",
+              "nombre": "Pepita Semilla Cascara Himalaya"
+            },
+            {
+              "clave": "10699",
+              "nombre": "Pepita Semilla Chipotle"
+            },
+            {
+              "clave": "10827",
+              "nombre": "Pepita Semilla Frita Morita"
+            },
+            {
+              "clave": "10278",
+              "nombre": "Pepita Semilla Frita con Sal"
+            },
+            {
+              "clave": "10277",
+              "nombre": "Pepita Semilla Natural"
+            },
+            {
+              "clave": "10700",
+              "nombre": "Pepita Semilla con Ajo"
+            },
+            {
+              "clave": "10276",
+              "nombre": "Pepita Semilla con Sal"
+            }
           ]
         },
         {
+          "clave": "CHISPAS",
           "nombre": "Chispas",
-          "total": 6,
-          "muestra": [
-            "Chispas Chocolate Azul",
-            "Chispas Chocolate Bicolor",
-            "Chispas Chocolate Blanco",
-            "Chispas Chocolate Grande",
-            "Chispas Chocolate Rosa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10701",
+              "nombre": "Chispas Chocolate Azul"
+            },
+            {
+              "clave": "10702",
+              "nombre": "Chispas Chocolate Bicolor"
+            },
+            {
+              "clave": "10024",
+              "nombre": "Chispas Chocolate Blanco"
+            },
+            {
+              "clave": "12411",
+              "nombre": "Chispas Chocolate Grande"
+            },
+            {
+              "clave": "10050",
+              "nombre": "Chispas Chocolate Rosa"
+            },
+            {
+              "clave": "10204",
+              "nombre": "Chispas Chocolate Semi Amargo"
+            }
           ]
         },
         {
+          "clave": "OBLEAS",
           "nombre": "Obleas",
-          "total": 5,
-          "muestra": [
-            "Morelianas",
-            "Oblea Grande",
-            "Oblea Mini",
-            "Palanqueta",
-            "Palanqueta Galleta"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11123",
+              "nombre": "Morelianas"
+            },
+            {
+              "clave": "10874",
+              "nombre": "Oblea Grande"
+            },
+            {
+              "clave": "10886",
+              "nombre": "Oblea Mini"
+            },
+            {
+              "clave": "10824",
+              "nombre": "Palanqueta"
+            },
+            {
+              "clave": "15101",
+              "nombre": "Palanqueta Galleta"
+            }
           ]
         },
         {
+          "clave": "PRETZEL",
           "nombre": "Pretzel",
-          "total": 5,
-          "muestra": [
-            "Pretzel C/chocolate Amargo",
-            "Pretzel C/chocolate Blanco",
-            "Pretzel C/chocolate Dulce",
-            "Pretzel C/yogurt",
-            "Pretzel Salado"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10542",
+              "nombre": "Pretzel C/chocolate Amargo"
+            },
+            {
+              "clave": "11097",
+              "nombre": "Pretzel C/chocolate Blanco"
+            },
+            {
+              "clave": "11093",
+              "nombre": "Pretzel C/chocolate Dulce"
+            },
+            {
+              "clave": "10541",
+              "nombre": "Pretzel C/yogurt"
+            },
+            {
+              "clave": "10904",
+              "nombre": "Pretzel Salado"
+            }
           ]
         },
         {
+          "clave": "AMARANTO",
           "nombre": "Amaranto",
-          "total": 4,
-          "muestra": [
-            "Amaranto",
-            "Amaranto Cubitos Chocolate",
-            "Amaranto Cubitos Nuez",
-            "Avena"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10150",
+              "nombre": "Amaranto"
+            },
+            {
+              "clave": "10634",
+              "nombre": "Amaranto Cubitos Chocolate"
+            },
+            {
+              "clave": "10632",
+              "nombre": "Amaranto Cubitos Nuez"
+            },
+            {
+              "clave": "10023",
+              "nombre": "Avena"
+            }
           ]
         },
         {
+          "clave": "BOMBON",
           "nombre": "Bombón",
-          "total": 4,
-          "muestra": [
-            "Bombón Choc Grande 3*20",
-            "Bombón con Chocolate Bolsita",
-            "Bombón con Chocolate Grande",
-            "Bombón con Chocolate Granel Mini"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11138",
+              "nombre": "Bombón Choc Grande 3*20"
+            },
+            {
+              "clave": "10350",
+              "nombre": "Bombón con Chocolate Bolsita"
+            },
+            {
+              "clave": "10463",
+              "nombre": "Bombón con Chocolate Grande"
+            },
+            {
+              "clave": "10299",
+              "nombre": "Bombón con Chocolate Granel Mini"
+            }
           ]
         },
         {
+          "clave": "LUNETAS",
           "nombre": "Lunetas",
-          "total": 4,
-          "muestra": [
-            "Luneta Café",
-            "Luneta Pastel",
-            "Luneta Tradicional",
-            "Luneta Yogurt"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10680",
+              "nombre": "Luneta Café"
+            },
+            {
+              "clave": "10616",
+              "nombre": "Luneta Pastel"
+            },
+            {
+              "clave": "10679",
+              "nombre": "Luneta Tradicional"
+            },
+            {
+              "clave": "10798",
+              "nombre": "Luneta Yogurt"
+            }
           ]
         },
         {
+          "clave": "PISTACHE",
           "nombre": "Pistache",
-          "total": 4,
-          "muestra": [
-            "Pistache Cascara",
-            "Pistache Choolate",
-            "Pistache Enchilado",
-            "Pistache Pelado"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10585",
+              "nombre": "Pistache Cascara"
+            },
+            {
+              "clave": "10815",
+              "nombre": "Pistache Choolate"
+            },
+            {
+              "clave": "10033",
+              "nombre": "Pistache Enchilado"
+            },
+            {
+              "clave": "10586",
+              "nombre": "Pistache Pelado"
+            }
           ]
         },
         {
+          "clave": "CHOCHITO",
           "nombre": "Chochito",
-          "total": 3,
-          "muestra": [
-            "Chochito Colores",
-            "Chochito Garibaldi",
-            "Chocho Chamoy"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10306",
+              "nombre": "Chochito Colores"
+            },
+            {
+              "clave": "10025",
+              "nombre": "Chochito Garibaldi"
+            },
+            {
+              "clave": "10741",
+              "nombre": "Chocho Chamoy"
+            }
           ]
         },
         {
+          "clave": "AVELLANA",
           "nombre": "Avellana",
-          "total": 2,
-          "muestra": [
-            "Avellana Cocoa",
-            "Avellana Natural"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10754",
+              "nombre": "Avellana Cocoa"
+            },
+            {
+              "clave": "10753",
+              "nombre": "Avellana Natural"
+            }
           ]
         },
         {
+          "clave": "CAFÉ DULCE",
           "nombre": "Café Dulce",
-          "total": 2,
-          "muestra": [
-            "Café & Choc. S/azucar",
-            "Café Chocolate Amargo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10423",
+              "nombre": "Café & Choc. S/azucar"
+            },
+            {
+              "clave": "10825",
+              "nombre": "Café Chocolate Amargo"
+            }
           ]
         },
         {
+          "clave": "CHIA",
           "nombre": "Chía",
-          "total": 2,
-          "muestra": [
-            "Chía C/choc",
-            "Chía Natural"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10848",
+              "nombre": "Chía C/choc"
+            },
+            {
+              "clave": "10847",
+              "nombre": "Chía Natural"
+            }
           ]
         },
         {
+          "clave": "GRANOLA",
           "nombre": "Granola",
-          "total": 2,
-          "muestra": [
-            "Granola Artesanal Natural",
-            "Granola Artesanal con Miel"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10235",
+              "nombre": "Granola Artesanal Natural"
+            },
+            {
+              "clave": "10236",
+              "nombre": "Granola Artesanal con Miel"
+            }
           ]
         },
         {
+          "clave": "QUINOA",
           "nombre": "Quinoa",
-          "total": 2,
-          "muestra": [
-            "Quinoa C/chocolate",
-            "Quinoa Simple"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10425",
+              "nombre": "Quinoa C/chocolate"
+            },
+            {
+              "clave": "10426",
+              "nombre": "Quinoa Simple"
+            }
           ]
         },
         {
+          "clave": "CEREAL",
           "nombre": "Cereal",
-          "total": 1,
-          "muestra": [
-            "Cereal C/matcha"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10529",
+              "nombre": "Cereal C/matcha"
+            }
           ]
         },
         {
+          "clave": "CHOCOLATE Y ENLATADOS DULCES",
           "nombre": "Chocolate y Enlatados Dulces",
-          "total": 1,
-          "muestra": [
-            "Bites Choc Blanco"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11193",
+              "nombre": "Bites Choc Blanco"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS",
           "nombre": "Semillas",
-          "total": 1,
-          "muestra": [
-            "Tapioca"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10643",
+              "nombre": "Tapioca"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 1,
-          "muestra": [
-            "Petalo de Rosa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10046",
+              "nombre": "Petalo de Rosa"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "SALSAS",
       "nombre": "Salsas",
-      "total": 132,
       "categorias": [
         {
+          "clave": "YUCATECO",
           "nombre": "Yucateco",
-          "total": 16,
-          "muestra": [
-            "Yucateco Café",
-            "Yucateco Caribbean",
-            "Yucateco Chiltepín",
-            "Yucateco Chipotle",
-            "Yucateco Ghost"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11101",
+              "nombre": "Yucateco Café"
+            },
+            {
+              "clave": "10162",
+              "nombre": "Yucateco Caribbean"
+            },
+            {
+              "clave": "10001",
+              "nombre": "Yucateco Chiltepín"
+            },
+            {
+              "clave": "10735",
+              "nombre": "Yucateco Chipotle"
+            },
+            {
+              "clave": "10821",
+              "nombre": "Yucateco Ghost"
+            },
+            {
+              "clave": "12001",
+              "nombre": "Yucateco Mango"
+            },
+            {
+              "clave": "10734",
+              "nombre": "Yucateco Marisquera"
+            },
+            {
+              "clave": "11073",
+              "nombre": "Yucateco Minimix"
+            },
+            {
+              "clave": "10736",
+              "nombre": "Yucateco Negra"
+            },
+            {
+              "clave": "10232",
+              "nombre": "Yucateco Piña"
+            },
+            {
+              "clave": "10020",
+              "nombre": "Yucateco Roja 120ml"
+            },
+            {
+              "clave": "11070",
+              "nombre": "Yucateco Roja 240ml"
+            },
+            {
+              "clave": "12456",
+              "nombre": "Yucateco Roja 2ll"
+            },
+            {
+              "clave": "10230",
+              "nombre": "Yucateco Verde 120ml"
+            },
+            {
+              "clave": "11119",
+              "nombre": "Yucateco Verde 240ml"
+            },
+            {
+              "clave": "10464",
+              "nombre": "Yucateco Verde Extra Picante"
+            }
           ]
         },
         {
+          "clave": "MUZUL",
           "nombre": "Muzul",
-          "total": 11,
-          "muestra": [
-            "Muzul Habanera 1l",
-            "Muzul Ik Café",
-            "Muzul Ik Chocolate",
-            "Muzul Ik Habanera",
-            "Muzul Ik Mango"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "15001",
+              "nombre": "Muzul Habanera 1l"
+            },
+            {
+              "clave": "11181",
+              "nombre": "Muzul Ik Café"
+            },
+            {
+              "clave": "10762",
+              "nombre": "Muzul Ik Chocolate"
+            },
+            {
+              "clave": "10572",
+              "nombre": "Muzul Ik Habanera"
+            },
+            {
+              "clave": "10691",
+              "nombre": "Muzul Ik Mango"
+            },
+            {
+              "clave": "11180",
+              "nombre": "Muzul Ik Morada"
+            },
+            {
+              "clave": "10855",
+              "nombre": "Muzul Ik Naranja"
+            },
+            {
+              "clave": "10573",
+              "nombre": "Muzul Ik Pasta Naranja"
+            },
+            {
+              "clave": "10856",
+              "nombre": "Muzul Ik Roja"
+            },
+            {
+              "clave": "11176",
+              "nombre": "Muzul Ik Tamarindo"
+            },
+            {
+              "clave": "10690",
+              "nombre": "Muzul Ik Verde"
+            }
           ]
         },
         {
+          "clave": "ISLA",
           "nombre": "Isla",
-          "total": 10,
-          "muestra": [
-            "Isla Amarilla",
-            "Isla Arándano",
-            "Isla Cacahuate",
-            "Isla Fresa",
-            "Isla Mango"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10646",
+              "nombre": "Isla Amarilla"
+            },
+            {
+              "clave": "10082",
+              "nombre": "Isla Arándano"
+            },
+            {
+              "clave": "10661",
+              "nombre": "Isla Cacahuate"
+            },
+            {
+              "clave": "10567",
+              "nombre": "Isla Fresa"
+            },
+            {
+              "clave": "10569",
+              "nombre": "Isla Mango"
+            },
+            {
+              "clave": "15007",
+              "nombre": "Isla Mango 1/2"
+            },
+            {
+              "clave": "10648",
+              "nombre": "Isla Roja"
+            },
+            {
+              "clave": "10647",
+              "nombre": "Isla Tamarindo"
+            },
+            {
+              "clave": "10649",
+              "nombre": "Isla Tequila"
+            },
+            {
+              "clave": "10568",
+              "nombre": "Isla Verde"
+            }
           ]
         },
         {
+          "clave": "LOLTUN",
           "nombre": "Loltun",
-          "total": 9,
-          "muestra": [
-            "Bufalo Jalapeño",
-            "Chiles Guerros Lol-tun 320gr",
-            "Guacamaya",
-            "Habanero Escabeche Lol-tun",
-            "Loltun Roja Habanero 240ml"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10397",
+              "nombre": "Bufalo Jalapeño"
+            },
+            {
+              "clave": "11003",
+              "nombre": "Chiles Guerros Lol-tun 320gr"
+            },
+            {
+              "clave": "10146",
+              "nombre": "Guacamaya"
+            },
+            {
+              "clave": "10059",
+              "nombre": "Habanero Escabeche Lol-tun"
+            },
+            {
+              "clave": "10186",
+              "nombre": "Loltun Roja Habanero 240ml"
+            },
+            {
+              "clave": "10669",
+              "nombre": "Loltun Roja Habanero 500ml"
+            },
+            {
+              "clave": "10145",
+              "nombre": "Loltun Roja Habanero150ml"
+            },
+            {
+              "clave": "10111",
+              "nombre": "Loltun Verde Habanero150ml"
+            },
+            {
+              "clave": "11004",
+              "nombre": "Rajas Habanero en Escabeche 238g"
+            }
           ]
         },
         {
+          "clave": "PREGO",
           "nombre": "Prego",
-          "total": 8,
-          "muestra": [
-            "Prego y Barilla Salsas Alfredo 411g",
-            "Prego y Barilla Salsas Arrabbiata",
-            "Prego y Barilla Salsas C/carne 680g",
-            "Prego y Barilla Salsas Cuatro Quesos 411g",
-            "Prego y Barilla Salsas Parmesano 400g"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10513",
+              "nombre": "Prego y Barilla Salsas Alfredo 411g"
+            },
+            {
+              "clave": "10517",
+              "nombre": "Prego y Barilla Salsas Arrabbiata"
+            },
+            {
+              "clave": "10449",
+              "nombre": "Prego y Barilla Salsas C/carne 680g"
+            },
+            {
+              "clave": "10518",
+              "nombre": "Prego y Barilla Salsas Cuatro Quesos 411g"
+            },
+            {
+              "clave": "10514",
+              "nombre": "Prego y Barilla Salsas Parmesano 400g"
+            },
+            {
+              "clave": "10515",
+              "nombre": "Prego y Barilla Salsas Puttanesca 400g"
+            },
+            {
+              "clave": "10450",
+              "nombre": "Prego y Barilla Salsas Tradicional 397g"
+            },
+            {
+              "clave": "10485",
+              "nombre": "Prego y Barilla Salsas Tradicional 680g"
+            }
           ]
         },
         {
+          "clave": "VALENTINA",
           "nombre": "Valentina",
-          "total": 8,
-          "muestra": [
-            "Anita Adobo Pastor",
-            "Valentina Amarilla 1 Lt",
-            "Valentina Amarilla 1lt",
-            "Valentina Amarilla 370ml",
-            "Valentina Amarilla Polvo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12455",
+              "nombre": "Anita Adobo Pastor"
+            },
+            {
+              "clave": "10302",
+              "nombre": "Valentina Amarilla 1 Lt"
+            },
+            {
+              "clave": "10123",
+              "nombre": "Valentina Amarilla 1lt"
+            },
+            {
+              "clave": "10091",
+              "nombre": "Valentina Amarilla 370ml"
+            },
+            {
+              "clave": "10198",
+              "nombre": "Valentina Amarilla Polvo"
+            },
+            {
+              "clave": "10300",
+              "nombre": "Valentina Mariscos 370 Ml"
+            },
+            {
+              "clave": "10125",
+              "nombre": "Valentina Negra 1 L"
+            },
+            {
+              "clave": "10092",
+              "nombre": "Valentina Negra 370 Ml"
+            }
           ]
         },
         {
+          "clave": "ZACHILA",
           "nombre": "Zachila",
-          "total": 8,
-          "muestra": [
-            "Zachila 3 Chiles",
-            "Zachila Arbol Taquero",
-            "Zachila Chamoy",
-            "Zachila Chipotle",
-            "Zachila Guacamole"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10538",
+              "nombre": "Zachila 3 Chiles"
+            },
+            {
+              "clave": "10591",
+              "nombre": "Zachila Arbol Taquero"
+            },
+            {
+              "clave": "10592",
+              "nombre": "Zachila Chamoy"
+            },
+            {
+              "clave": "10756",
+              "nombre": "Zachila Chipotle"
+            },
+            {
+              "clave": "10593",
+              "nombre": "Zachila Guacamole"
+            },
+            {
+              "clave": "10589",
+              "nombre": "Zachila Habanero Flamas"
+            },
+            {
+              "clave": "11060",
+              "nombre": "Zachila Habanero Negro"
+            },
+            {
+              "clave": "10757",
+              "nombre": "Zachila Queso/jalapeño"
+            }
           ]
         },
         {
+          "clave": "DON EMILIO",
           "nombre": "Don Emilio",
-          "total": 7,
-          "muestra": [
-            "Don Emilio Ajo 250g",
-            "Don Emilio Arbol 440gr",
-            "Don Emilio Cacahuate 250g",
-            "Don Emilio Chile Morita 250g",
-            "Don Emilio Chile de Arbol 250g"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10031",
+              "nombre": "Don Emilio Ajo 250g"
+            },
+            {
+              "clave": "10576",
+              "nombre": "Don Emilio Arbol 440gr"
+            },
+            {
+              "clave": "10658",
+              "nombre": "Don Emilio Cacahuate 250g"
+            },
+            {
+              "clave": "10521",
+              "nombre": "Don Emilio Chile Morita 250g"
+            },
+            {
+              "clave": "10519",
+              "nombre": "Don Emilio Chile de Arbol 250g"
+            },
+            {
+              "clave": "10520",
+              "nombre": "Don Emilio Morita 440gr"
+            },
+            {
+              "clave": "10657",
+              "nombre": "Don Emilio Semillas 440gr"
+            }
           ]
         },
         {
+          "clave": "BIZA",
           "nombre": "Biza",
-          "total": 5,
-          "muestra": [
-            "Biza Arándano",
-            "Biza Cacahuate",
-            "Biza Mora",
-            "Biza Semillas",
-            "Biza Tamarindo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10371",
+              "nombre": "Biza Arándano"
+            },
+            {
+              "clave": "10128",
+              "nombre": "Biza Cacahuate"
+            },
+            {
+              "clave": "10373",
+              "nombre": "Biza Mora"
+            },
+            {
+              "clave": "10372",
+              "nombre": "Biza Semillas"
+            },
+            {
+              "clave": "10374",
+              "nombre": "Biza Tamarindo"
+            }
           ]
         },
         {
+          "clave": "BUFALO",
           "nombre": "Bufalo",
-          "total": 5,
-          "muestra": [
-            "Botanera Salsa Verde",
-            "Bufalo Clásica",
-            "Bufalo Clásica 990ml",
-            "Bufalo Extra Picante",
-            "Bufalo Habanero"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10089",
+              "nombre": "Botanera Salsa Verde"
+            },
+            {
+              "clave": "10320",
+              "nombre": "Bufalo Clásica"
+            },
+            {
+              "clave": "10468",
+              "nombre": "Bufalo Clásica 990ml"
+            },
+            {
+              "clave": "10265",
+              "nombre": "Bufalo Extra Picante"
+            },
+            {
+              "clave": "10400",
+              "nombre": "Bufalo Habanero"
+            }
           ]
         },
         {
+          "clave": "CHIPOTLES",
           "nombre": "Chipotles",
-          "total": 5,
-          "muestra": [
-            "Chipotles Clemente Jacques 220g",
-            "Chipotles Clemente Jaques 105g",
-            "Chipotles Dulces",
-            "Chipotles Herdez 198g",
-            "Chipotles la Costeña 220g"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11054",
+              "nombre": "Chipotles Clemente Jacques 220g"
+            },
+            {
+              "clave": "10040",
+              "nombre": "Chipotles Clemente Jaques 105g"
+            },
+            {
+              "clave": "10126",
+              "nombre": "Chipotles Dulces"
+            },
+            {
+              "clave": "10871",
+              "nombre": "Chipotles Herdez 198g"
+            },
+            {
+              "clave": "10179",
+              "nombre": "Chipotles la Costeña 220g"
+            }
           ]
         },
         {
+          "clave": "MACHA",
           "nombre": "Macha",
-          "total": 5,
-          "muestra": [
-            "Macha al Carbã“n Fuerte Chica",
-            "Macha al Carbã“n Fuerte Grande",
-            "Macha al Carbã“n Suave Chica",
-            "Macha al Carbã“n Suave Grande",
-            "Macha al Maros"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10650",
+              "nombre": "Macha al Carbã“n Fuerte Chica"
+            },
+            {
+              "clave": "10763",
+              "nombre": "Macha al Carbã“n Fuerte Grande"
+            },
+            {
+              "clave": "10764",
+              "nombre": "Macha al Carbã“n Suave Chica"
+            },
+            {
+              "clave": "10761",
+              "nombre": "Macha al Carbã“n Suave Grande"
+            },
+            {
+              "clave": "15507",
+              "nombre": "Macha al Maros"
+            }
           ]
         },
         {
+          "clave": "BOTANERA",
           "nombre": "Botanera",
-          "total": 4,
-          "muestra": [
-            "Botanera Clásica 1.5l",
-            "Botanera Clásica 1l",
-            "Botanera Clásica 500ml",
-            "Botanera Limón"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10491",
+              "nombre": "Botanera Clásica 1.5l"
+            },
+            {
+              "clave": "10213",
+              "nombre": "Botanera Clásica 1l"
+            },
+            {
+              "clave": "10207",
+              "nombre": "Botanera Clásica 500ml"
+            },
+            {
+              "clave": "10206",
+              "nombre": "Botanera Limón"
+            }
           ]
         },
         {
+          "clave": "PURHEPECHA",
           "nombre": "Purhepecha",
-          "total": 4,
-          "muestra": [
-            "Purhepecha Marisquera",
-            "Purhepecha Naranja",
-            "Purhepecha Roja",
-            "Purhepecha Verde"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10689",
+              "nombre": "Purhepecha Marisquera"
+            },
+            {
+              "clave": "10488",
+              "nombre": "Purhepecha Naranja"
+            },
+            {
+              "clave": "10487",
+              "nombre": "Purhepecha Roja"
+            },
+            {
+              "clave": "10489",
+              "nombre": "Purhepecha Verde"
+            }
           ]
         },
         {
+          "clave": "TABASCO",
           "nombre": "Tabasco",
-          "total": 4,
-          "muestra": [
-            "Tabasco Clásica",
-            "Tabasco Garlic Pepper Sauce",
-            "Tabasco Habanero Sauce",
-            "Tabasco Mild Flavor"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10248",
+              "nombre": "Tabasco Clásica"
+            },
+            {
+              "clave": "10536",
+              "nombre": "Tabasco Garlic Pepper Sauce"
+            },
+            {
+              "clave": "10543",
+              "nombre": "Tabasco Habanero Sauce"
+            },
+            {
+              "clave": "10539",
+              "nombre": "Tabasco Mild Flavor"
+            }
           ]
         },
         {
+          "clave": "TAMAZULA",
           "nombre": "Tamazula",
-          "total": 4,
-          "muestra": [
-            "Tamazula Amarilla 140 G",
-            "Tamazula Amarilla 250 G",
-            "Tamazula Negra 140 G",
-            "Tamazula Negra 250 G"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10445",
+              "nombre": "Tamazula Amarilla 140 G"
+            },
+            {
+              "clave": "10303",
+              "nombre": "Tamazula Amarilla 250 G"
+            },
+            {
+              "clave": "10243",
+              "nombre": "Tamazula Negra 140 G"
+            },
+            {
+              "clave": "10537",
+              "nombre": "Tamazula Negra 250 G"
+            }
           ]
         },
         {
+          "clave": "HUICHOL",
           "nombre": "Huichol",
-          "total": 3,
-          "muestra": [
-            "Huichol Habanera",
-            "Huichol Negra",
-            "Lol-tun Habanero 950ml"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10233",
+              "nombre": "Huichol Habanera"
+            },
+            {
+              "clave": "10234",
+              "nombre": "Huichol Negra"
+            },
+            {
+              "clave": "10909",
+              "nombre": "Lol-tun Habanero 950ml"
+            }
           ]
         },
         {
+          "clave": "TOKUI",
           "nombre": "Tokui",
-          "total": 3,
-          "muestra": [
-            "Soya Tokio 250",
-            "Soya Tokui 250",
-            "Soya Tokui Litro"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11120",
+              "nombre": "Soya Tokio 250"
+            },
+            {
+              "clave": "10272",
+              "nombre": "Soya Tokui 250"
+            },
+            {
+              "clave": "10271",
+              "nombre": "Soya Tokui Litro"
+            }
           ]
         },
         {
+          "clave": "SALSAS Y MERMELADAS",
           "nombre": "Salsas y Mermeladas",
-          "total": 2,
-          "muestra": [
-            "Chilly 180ml",
-            "Chilly 50ml"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11177",
+              "nombre": "Chilly 180ml"
+            },
+            {
+              "clave": "11178",
+              "nombre": "Chilly 50ml"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 11,
-          "muestra": [
-            "Bbq Hunts",
-            "Cholula Salsa",
-            "Habanero Mayacut",
-            "Habaneros Merida",
-            "Huichol Roja"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10308",
+              "nombre": "Bbq Hunts"
+            },
+            {
+              "clave": "10022",
+              "nombre": "Cholula Salsa"
+            },
+            {
+              "clave": "10659",
+              "nombre": "Habanero Mayacut"
+            },
+            {
+              "clave": "10072",
+              "nombre": "Habaneros Merida"
+            },
+            {
+              "clave": "10107",
+              "nombre": "Huichol Roja"
+            },
+            {
+              "clave": "10559",
+              "nombre": "Inglesa 145ml"
+            },
+            {
+              "clave": "10558",
+              "nombre": "Inglesa 290ml"
+            },
+            {
+              "clave": "10560",
+              "nombre": "Inglesa 50ml"
+            },
+            {
+              "clave": "10267",
+              "nombre": "Jugo Maggi 145ml"
+            },
+            {
+              "clave": "10671",
+              "nombre": "Salsa Chingona"
+            },
+            {
+              "clave": "10590",
+              "nombre": "Salsas Mexicanas"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "ESPECIAS",
       "nombre": "Especias",
-      "total": 113,
       "categorias": [
         {
+          "clave": "SAL",
           "nombre": "Sal",
-          "total": 12,
-          "muestra": [
-            "Sal Ahumada Fina",
-            "Sal Ahumada Gruesa",
-            "Sal Ajo Limón",
-            "Sal Praga",
-            "Sal de Ajo Badia Granel"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10846",
+              "nombre": "Sal Ahumada Fina"
+            },
+            {
+              "clave": "10844",
+              "nombre": "Sal Ahumada Gruesa"
+            },
+            {
+              "clave": "10395",
+              "nombre": "Sal Ajo Limón"
+            },
+            {
+              "clave": "10405",
+              "nombre": "Sal Praga"
+            },
+            {
+              "clave": "10797",
+              "nombre": "Sal de Ajo Badia Granel"
+            },
+            {
+              "clave": "10796",
+              "nombre": "Sal de Ajo Bote"
+            },
+            {
+              "clave": "10677",
+              "nombre": "Sal de Gusano"
+            },
+            {
+              "clave": "10477",
+              "nombre": "Sal de Himalaya Bote 900g"
+            },
+            {
+              "clave": "10378",
+              "nombre": "Sal de Himalaya Fina"
+            },
+            {
+              "clave": "10380",
+              "nombre": "Sal de Himalaya Gruesa"
+            },
+            {
+              "clave": "10375",
+              "nombre": "Sal la Fina de Grano"
+            },
+            {
+              "clave": "10220",
+              "nombre": "Sal la Fina de Mesa"
+            }
           ]
         },
         {
+          "clave": "TES",
           "nombre": "Tes",
-          "total": 12,
-          "muestra": [
-            "Lavanda",
-            "Manzanilla",
-            "Mejorana",
-            "Menta Hoja",
-            "Pasiflora"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10852",
+              "nombre": "Lavanda"
+            },
+            {
+              "clave": "10853",
+              "nombre": "Manzanilla"
+            },
+            {
+              "clave": "10431",
+              "nombre": "Mejorana"
+            },
+            {
+              "clave": "10800",
+              "nombre": "Menta Hoja"
+            },
+            {
+              "clave": "10854",
+              "nombre": "Pasiflora"
+            },
+            {
+              "clave": "11080",
+              "nombre": "Te Chay"
+            },
+            {
+              "clave": "11131",
+              "nombre": "Te Verde"
+            },
+            {
+              "clave": "15005",
+              "nombre": "Tisana Chocolate Amargo"
+            },
+            {
+              "clave": "10132",
+              "nombre": "Tisana Durazno"
+            },
+            {
+              "clave": "15002",
+              "nombre": "Tisana Frutos Negros"
+            },
+            {
+              "clave": "10385",
+              "nombre": "Tisana Guayaba"
+            },
+            {
+              "clave": "10384",
+              "nombre": "Tisana Manzana"
+            }
           ]
         },
         {
+          "clave": "PIMIENTAS",
           "nombre": "Pimientas",
-          "total": 11,
-          "muestra": [
-            "Pimienta Blanca Entera",
-            "Pimienta Blanca Molida",
-            "Pimienta Cayena",
-            "Pimienta Gruesa Entera",
-            "Pimienta Gruesa Molida"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10048",
+              "nombre": "Pimienta Blanca Entera"
+            },
+            {
+              "clave": "10525",
+              "nombre": "Pimienta Blanca Molida"
+            },
+            {
+              "clave": "10158",
+              "nombre": "Pimienta Cayena"
+            },
+            {
+              "clave": "10063",
+              "nombre": "Pimienta Gruesa Entera"
+            },
+            {
+              "clave": "10196",
+              "nombre": "Pimienta Gruesa Molida"
+            },
+            {
+              "clave": "10060",
+              "nombre": "Pimienta Negra Entera"
+            },
+            {
+              "clave": "10740",
+              "nombre": "Pimienta Negra Martajada"
+            },
+            {
+              "clave": "10195",
+              "nombre": "Pimienta Negra Molida"
+            },
+            {
+              "clave": "10064",
+              "nombre": "Pimienta Rosa"
+            },
+            {
+              "clave": "11076",
+              "nombre": "Pimienta Sal Limón"
+            },
+            {
+              "clave": "10238",
+              "nombre": "Pimienta Verde"
+            }
           ]
         },
         {
+          "clave": "HIERBAS",
           "nombre": "Hierbas",
-          "total": 8,
-          "muestra": [
-            "Hierbas Finas",
-            "Hierbas de Olor",
-            "Hoja Santa",
-            "Hoja de Aguacate",
-            "Hojas Laurel"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10510",
+              "nombre": "Hierbas Finas"
+            },
+            {
+              "clave": "10602",
+              "nombre": "Hierbas de Olor"
+            },
+            {
+              "clave": "10601",
+              "nombre": "Hoja Santa"
+            },
+            {
+              "clave": "10615",
+              "nombre": "Hoja de Aguacate"
+            },
+            {
+              "clave": "10492",
+              "nombre": "Hojas Laurel"
+            },
+            {
+              "clave": "10296",
+              "nombre": "Perejil"
+            },
+            {
+              "clave": "10185",
+              "nombre": "Romero"
+            },
+            {
+              "clave": "10184",
+              "nombre": "Tomillo"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS Y ESPECIAS",
           "nombre": "Semillas y Especias",
-          "total": 7,
-          "muestra": [
-            "Ajo Entero",
-            "Ajonjolí Negro",
-            "Albahaca",
-            "Anís Entero",
-            "Anís Estrella"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12009",
+              "nombre": "Ajo Entero"
+            },
+            {
+              "clave": "10297",
+              "nombre": "Ajonjolí Negro"
+            },
+            {
+              "clave": "11163",
+              "nombre": "Albahaca"
+            },
+            {
+              "clave": "10053",
+              "nombre": "Anís Entero"
+            },
+            {
+              "clave": "10116",
+              "nombre": "Anís Estrella"
+            },
+            {
+              "clave": "10190",
+              "nombre": "Anís Molido"
+            },
+            {
+              "clave": "10709",
+              "nombre": "Apio Molido"
+            }
           ]
         },
         {
+          "clave": "CAMARON",
           "nombre": "Camarón",
-          "total": 6,
-          "muestra": [
-            "Camarón Chico sin Cabeza",
-            "Camarón Grande con Cabeza",
-            "Camarón Grande sin Cabeza",
-            "Camarón Mediano",
-            "Camarón Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10098",
+              "nombre": "Camarón Chico sin Cabeza"
+            },
+            {
+              "clave": "11200",
+              "nombre": "Camarón Grande con Cabeza"
+            },
+            {
+              "clave": "10021",
+              "nombre": "Camarón Grande sin Cabeza"
+            },
+            {
+              "clave": "10348",
+              "nombre": "Camarón Mediano"
+            },
+            {
+              "clave": "10152",
+              "nombre": "Camarón Molido"
+            },
+            {
+              "clave": "10338",
+              "nombre": "Pulpa de Camarón"
+            }
           ]
         },
         {
+          "clave": "PAPRIKA",
           "nombre": "Paprika",
-          "total": 6,
-          "muestra": [
-            "Paprika Choricero Picoso 1k",
-            "Paprika Dulce 75g",
-            "Paprika Granel Dulce",
-            "Paprika Granel Picoso",
-            "Paprika Lata 90g Dulce"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10562",
+              "nombre": "Paprika Choricero Picoso 1k"
+            },
+            {
+              "clave": "10876",
+              "nombre": "Paprika Dulce 75g"
+            },
+            {
+              "clave": "10877",
+              "nombre": "Paprika Granel Dulce"
+            },
+            {
+              "clave": "10173",
+              "nombre": "Paprika Granel Picoso"
+            },
+            {
+              "clave": "10552",
+              "nombre": "Paprika Lata 90g Dulce"
+            },
+            {
+              "clave": "10551",
+              "nombre": "Paprika Lata 90g Picante"
+            }
           ]
         },
         {
+          "clave": "COCOA Y CACAO",
           "nombre": "Cocoa y Cacao",
-          "total": 5,
-          "muestra": [
-            "Cacao Entero",
-            "Cacao Moneda",
-            "Cacao Tostado Molido",
-            "Cacao Tostado Triturado",
-            "Cocoa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10621",
+              "nombre": "Cacao Entero"
+            },
+            {
+              "clave": "10645",
+              "nombre": "Cacao Moneda"
+            },
+            {
+              "clave": "10216",
+              "nombre": "Cacao Tostado Molido"
+            },
+            {
+              "clave": "10622",
+              "nombre": "Cacao Tostado Triturado"
+            },
+            {
+              "clave": "10027",
+              "nombre": "Cocoa"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS",
           "nombre": "Semillas",
-          "total": 5,
-          "muestra": [
-            "Ajonjolí Blanco",
-            "Ajonjolí sin Cuticula",
-            "Piñón Blanco",
-            "Piñón Confitado",
-            "Piñón Rosa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10120",
+              "nombre": "Ajonjolí Blanco"
+            },
+            {
+              "clave": "10625",
+              "nombre": "Ajonjolí sin Cuticula"
+            },
+            {
+              "clave": "11012",
+              "nombre": "Piñón Blanco"
+            },
+            {
+              "clave": "11190",
+              "nombre": "Piñón Confitado"
+            },
+            {
+              "clave": "11011",
+              "nombre": "Piñón Rosa"
+            }
           ]
         },
         {
+          "clave": "OREGANO",
           "nombre": "Orégano",
-          "total": 4,
-          "muestra": [
-            "Bolsa Orégano Entero",
-            "Bolsaoregano Molido",
-            "Orégano Entero Granel",
-            "Orégano Molido Granel"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11092",
+              "nombre": "Bolsa Orégano Entero",
+              "destacado": true
+            },
+            {
+              "clave": "11091",
+              "nombre": "Bolsaoregano Molido",
+              "destacado": true
+            },
+            {
+              "clave": "10056",
+              "nombre": "Orégano Entero Granel"
+            },
+            {
+              "clave": "10194",
+              "nombre": "Orégano Molido Granel"
+            }
           ]
         },
         {
+          "clave": "CANELA",
           "nombre": "Canela",
-          "total": 3,
-          "muestra": [
-            "Canela Entera",
-            "Canela Molida",
-            "Canela Molida Endulzada"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10188",
+              "nombre": "Canela Entera"
+            },
+            {
+              "clave": "10189",
+              "nombre": "Canela Molida"
+            },
+            {
+              "clave": "10865",
+              "nombre": "Canela Molida Endulzada"
+            }
           ]
         },
         {
+          "clave": "PILONCILLO",
           "nombre": "Piloncillo",
-          "total": 3,
-          "muestra": [
-            "Piloncillo Chico",
-            "Piloncillo Grande",
-            "Piloncillo Mediano"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10192",
+              "nombre": "Piloncillo Chico"
+            },
+            {
+              "clave": "10191",
+              "nombre": "Piloncillo Grande"
+            },
+            {
+              "clave": "10049",
+              "nombre": "Piloncillo Mediano"
+            }
           ]
         },
         {
+          "clave": "AJO",
           "nombre": "Ajo",
-          "total": 2,
-          "muestra": [
-            "Ajo Hojuelas",
-            "Ajo Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11065",
+              "nombre": "Ajo Hojuelas"
+            },
+            {
+              "clave": "10522",
+              "nombre": "Ajo Molido"
+            }
           ]
         },
         {
+          "clave": "CEBOLLA",
           "nombre": "Cebolla",
-          "total": 2,
-          "muestra": [
-            "Cebolla Hojuela",
-            "Cebolla Molida"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10578",
+              "nombre": "Cebolla Hojuela"
+            },
+            {
+              "clave": "10577",
+              "nombre": "Cebolla Molida"
+            }
           ]
         },
         {
+          "clave": "COMINO",
           "nombre": "Comino",
-          "total": 2,
-          "muestra": [
-            "Comino Entero",
-            "Comino Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10062",
+              "nombre": "Comino Entero"
+            },
+            {
+              "clave": "10193",
+              "nombre": "Comino Molido"
+            }
           ]
         },
         {
+          "clave": "CONDIMENTOS",
           "nombre": "Condimentos",
-          "total": 2,
-          "muestra": [
-            "Azahar Bolsa",
-            "Habanero Polvo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10676",
+              "nombre": "Azahar Bolsa"
+            },
+            {
+              "clave": "11149",
+              "nombre": "Habanero Polvo"
+            }
           ]
         },
         {
+          "clave": "LINAZA",
           "nombre": "Linaza",
-          "total": 2,
-          "muestra": [
-            "Linaza Molida",
-            "Linaza Simple"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10532",
+              "nombre": "Linaza Molida"
+            },
+            {
+              "clave": "10531",
+              "nombre": "Linaza Simple"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS Y ESPECIAS PICANTES",
           "nombre": "Semillas y Especias Picantes",
-          "total": 1,
-          "muestra": [
-            "Azafrán Bag"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10869",
+              "nombre": "Azafrán Bag"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 20,
-          "muestra": [
-            "Ablandador de Carne Bt 100gr",
-            "Acido Cítrico",
-            "Bicarbonato",
-            "Cardamomo",
-            "Cebada"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10772",
+              "nombre": "Ablandador de Carne Bt 100gr"
+            },
+            {
+              "clave": "10014",
+              "nombre": "Acido Cítrico"
+            },
+            {
+              "clave": "10051",
+              "nombre": "Bicarbonato"
+            },
+            {
+              "clave": "10054",
+              "nombre": "Cardamomo"
+            },
+            {
+              "clave": "10795",
+              "nombre": "Cebada"
+            },
+            {
+              "clave": "10055",
+              "nombre": "Clavo"
+            },
+            {
+              "clave": "10058",
+              "nombre": "Curry"
+            },
+            {
+              "clave": "10057",
+              "nombre": "Cúrcuma"
+            },
+            {
+              "clave": "10412",
+              "nombre": "Eneldo"
+            },
+            {
+              "clave": "10705",
+              "nombre": "Estragón"
+            },
+            {
+              "clave": "10706",
+              "nombre": "Hinojo"
+            },
+            {
+              "clave": "10688",
+              "nombre": "Jazmín"
+            },
+            {
+              "clave": "10105",
+              "nombre": "Jengibre"
+            },
+            {
+              "clave": "10670",
+              "nombre": "Pingüica"
+            },
+            {
+              "clave": "10065",
+              "nombre": "Pinole"
+            },
+            {
+              "clave": "10801",
+              "nombre": "Semilla de Amapola"
+            },
+            {
+              "clave": "10171",
+              "nombre": "Semilla de Cilantro"
+            },
+            {
+              "clave": "11130",
+              "nombre": "Semilla de Hemp"
+            },
+            {
+              "clave": "10364",
+              "nombre": "Semilla de Mostaza"
+            },
+            {
+              "clave": "10603",
+              "nombre": "Tequesquite"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "HARINAS Y MAIZ",
       "nombre": "Harinas y Maíz",
-      "total": 52,
       "categorias": [
         {
+          "clave": "HARINAS",
           "nombre": "Harinas",
-          "total": 23,
-          "muestra": [
-            "Harina Batida para Tamal",
-            "Harina P/tamal",
-            "Hoja Tamal",
-            "Hojas de Tamal Especial",
-            "Garbanzo Entero"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10006",
+              "nombre": "Harina Batida para Tamal",
+              "destacado": true
+            },
+            {
+              "clave": "10011",
+              "nombre": "Harina P/tamal",
+              "destacado": true
+            },
+            {
+              "clave": "10490",
+              "nombre": "Hoja Tamal",
+              "destacado": true
+            },
+            {
+              "clave": "12014",
+              "nombre": "Hojas de Tamal Especial",
+              "destacado": true
+            },
+            {
+              "clave": "10148",
+              "nombre": "Garbanzo Entero"
+            },
+            {
+              "clave": "10714",
+              "nombre": "Harina Amaranto"
+            },
+            {
+              "clave": "10715",
+              "nombre": "Harina Avena"
+            },
+            {
+              "clave": "10007",
+              "nombre": "Harina Cacahuazintle (atole)"
+            },
+            {
+              "clave": "10711",
+              "nombre": "Harina Coco"
+            },
+            {
+              "clave": "10713",
+              "nombre": "Harina Quinoa"
+            },
+            {
+              "clave": "10712",
+              "nombre": "Harina Tapioca"
+            },
+            {
+              "clave": "10085",
+              "nombre": "Harina de Almendra"
+            },
+            {
+              "clave": "10008",
+              "nombre": "Harina de Arroz"
+            },
+            {
+              "clave": "12338",
+              "nombre": "Harina de Cebada"
+            },
+            {
+              "clave": "10746",
+              "nombre": "Harina de Fuerza"
+            },
+            {
+              "clave": "10009",
+              "nombre": "Harina de Garbanzo"
+            },
+            {
+              "clave": "10010",
+              "nombre": "Harina de Haba"
+            },
+            {
+              "clave": "10939",
+              "nombre": "Harina de Soya"
+            },
+            {
+              "clave": "10209",
+              "nombre": "Harina de Trigo"
+            },
+            {
+              "clave": "10381",
+              "nombre": "Harina de Trigo Integral"
+            },
+            {
+              "clave": "10620",
+              "nombre": "Hojas de Tamal Chica"
+            },
+            {
+              "clave": "10486",
+              "nombre": "Hojas de Tamal Piña"
+            },
+            {
+              "clave": "10460",
+              "nombre": "Masa Tortilla"
+            }
           ]
         },
         {
+          "clave": "MAIZENAS",
           "nombre": "Maizenas",
-          "total": 11,
-          "muestra": [
-            "Maizena Natural",
-            "Maizena de Sabor Cajeta",
-            "Maizena de Sabor Chocolate",
-            "Maizena de Sabor Coco",
-            "Maizena de Sabor Fresa"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10223",
+              "nombre": "Maizena Natural"
+            },
+            {
+              "clave": "10618",
+              "nombre": "Maizena de Sabor Cajeta"
+            },
+            {
+              "clave": "10466",
+              "nombre": "Maizena de Sabor Chocolate"
+            },
+            {
+              "clave": "10686",
+              "nombre": "Maizena de Sabor Coco"
+            },
+            {
+              "clave": "10357",
+              "nombre": "Maizena de Sabor Fresa"
+            },
+            {
+              "clave": "10617",
+              "nombre": "Maizena de Sabor Galleta"
+            },
+            {
+              "clave": "10432",
+              "nombre": "Maizena de Sabor Guayaba"
+            },
+            {
+              "clave": "10358",
+              "nombre": "Maizena de Sabor Nuez"
+            },
+            {
+              "clave": "10587",
+              "nombre": "Maizena de Sabor Pistache"
+            },
+            {
+              "clave": "10588",
+              "nombre": "Maizena de Sabor Piã‘a"
+            },
+            {
+              "clave": "10694",
+              "nombre": "Maizena de Sabor Vainilla"
+            }
           ]
         },
         {
+          "clave": "MAIZ",
           "nombre": "Maíz",
-          "total": 4,
-          "muestra": [
-            "Alto Vacío 1k",
-            "Maíz para Pozole",
-            "Maíz Azul",
-            "Maíz Palomero"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "15009",
+              "nombre": "Alto Vacío 1k",
+              "destacado": true
+            },
+            {
+              "clave": "10013",
+              "nombre": "Maíz para Pozole",
+              "destacado": true
+            },
+            {
+              "clave": "10708",
+              "nombre": "Maíz Azul"
+            },
+            {
+              "clave": "10012",
+              "nombre": "Maíz Palomero"
+            }
           ]
         },
         {
+          "clave": "MANTECAS",
           "nombre": "Mantecas",
-          "total": 2,
-          "muestra": [
-            "Manteca Vegetal",
-            "Manteca de Cerdo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10099",
+              "nombre": "Manteca Vegetal"
+            },
+            {
+              "clave": "10101",
+              "nombre": "Manteca de Cerdo"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 12,
-          "muestra": [
-            "Cornflakes",
-            "Fecula de Maíz",
-            "Fecula de Tapioca",
-            "Palomitas Chicas",
-            "Pan Molido 1/2 Kilo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10119",
+              "nombre": "Cornflakes"
+            },
+            {
+              "clave": "10483",
+              "nombre": "Fecula de Maíz"
+            },
+            {
+              "clave": "10859",
+              "nombre": "Fecula de Tapioca"
+            },
+            {
+              "clave": "10122",
+              "nombre": "Palomitas Chicas"
+            },
+            {
+              "clave": "10534",
+              "nombre": "Pan Molido 1/2 Kilo"
+            },
+            {
+              "clave": "10535",
+              "nombre": "Pan Molido 1/4 Kilo"
+            },
+            {
+              "clave": "10533",
+              "nombre": "Pan Molido Granel"
+            },
+            {
+              "clave": "10121",
+              "nombre": "Polenta"
+            },
+            {
+              "clave": "10106",
+              "nombre": "Polvo para Hornear"
+            },
+            {
+              "clave": "10707",
+              "nombre": "Salvado"
+            },
+            {
+              "clave": "10478",
+              "nombre": "Semola de Centeno"
+            },
+            {
+              "clave": "10842",
+              "nombre": "Semola de Trigo"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "TOSTADAS",
       "nombre": "Tostadas",
-      "total": 42,
       "categorias": [
         {
+          "clave": "HORNEADA",
           "nombre": "Horneada",
-          "total": 9,
-          "muestra": [
-            "Frita C/25",
-            "Frita C/50",
-            "Horneada C/25",
-            "Horneada C/25 Nopal",
-            "Horneada C/50"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11188",
+              "nombre": "Frita C/25",
+              "destacado": true
+            },
+            {
+              "clave": "11000",
+              "nombre": "Frita C/50",
+              "destacado": true
+            },
+            {
+              "clave": "10038",
+              "nombre": "Horneada C/25",
+              "destacado": true
+            },
+            {
+              "clave": "11175",
+              "nombre": "Horneada C/25 Nopal",
+              "destacado": true
+            },
+            {
+              "clave": "10039",
+              "nombre": "Horneada C/50",
+              "destacado": true
+            },
+            {
+              "clave": "12010",
+              "nombre": "Horneada C/50 Nopal",
+              "destacado": true
+            },
+            {
+              "clave": "10037",
+              "nombre": "Horneada Cuadrada",
+              "destacado": true
+            },
+            {
+              "clave": "12459",
+              "nombre": "Tostada Raspada",
+              "destacado": true
+            },
+            {
+              "clave": "11055",
+              "nombre": "Chilaquiles Horneados"
+            }
           ]
         },
         {
+          "clave": "CHARRO",
           "nombre": "Charro",
-          "total": 7,
-          "muestra": [
-            "Casera Charro 100",
-            "Casera Charro 25",
-            "Casera Charro 50",
-            "Nachos el Charro 1/2k",
-            "Nachos el Charro 1k"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10635",
+              "nombre": "Casera Charro 100"
+            },
+            {
+              "clave": "10683",
+              "nombre": "Casera Charro 25"
+            },
+            {
+              "clave": "10633",
+              "nombre": "Casera Charro 50"
+            },
+            {
+              "clave": "15011",
+              "nombre": "Nachos el Charro 1/2k"
+            },
+            {
+              "clave": "15012",
+              "nombre": "Nachos el Charro 1k"
+            },
+            {
+              "clave": "10611",
+              "nombre": "Sopa de Tortilla Charro"
+            },
+            {
+              "clave": "10289",
+              "nombre": "Totopos el Charro"
+            }
           ]
         },
         {
+          "clave": "TIO BETO",
           "nombre": "Tio Beto",
-          "total": 7,
-          "muestra": [
-            "Sopa de Tortilla Tio Beto",
-            "Tio Beto Ajonjolí",
-            "Tio Beto Amaranto",
-            "Tio Beto Linaza",
-            "Tio Beto Tostibonita"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10612",
+              "nombre": "Sopa de Tortilla Tio Beto"
+            },
+            {
+              "clave": "10481",
+              "nombre": "Tio Beto Ajonjolí"
+            },
+            {
+              "clave": "10250",
+              "nombre": "Tio Beto Amaranto"
+            },
+            {
+              "clave": "10482",
+              "nombre": "Tio Beto Linaza"
+            },
+            {
+              "clave": "10755",
+              "nombre": "Tio Beto Tostibonita"
+            },
+            {
+              "clave": "10636",
+              "nombre": "Tio Beto Totopo Ajonjolí"
+            },
+            {
+              "clave": "10745",
+              "nombre": "Tio Beto Totopo Casero"
+            }
           ]
         },
         {
+          "clave": "SHERYN",
           "nombre": "Sheryn",
-          "total": 5,
-          "muestra": [
-            "Dianis",
-            "Emperador Light 20",
-            "Jalisco Emperador",
-            "Chilaquiles Sheryn 500g",
-            "Sopa Tortilla Sheryn"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10034",
+              "nombre": "Dianis",
+              "destacado": true
+            },
+            {
+              "clave": "10318",
+              "nombre": "Emperador Light 20",
+              "destacado": true
+            },
+            {
+              "clave": "10036",
+              "nombre": "Jalisco Emperador",
+              "destacado": true
+            },
+            {
+              "clave": "10309",
+              "nombre": "Chilaquiles Sheryn 500g"
+            },
+            {
+              "clave": "10864",
+              "nombre": "Sopa Tortilla Sheryn"
+            }
           ]
         },
         {
+          "clave": "TORTILLA",
           "nombre": "Tortilla",
-          "total": 4,
-          "muestra": [
-            "Tortilla Burrito",
-            "Tortilla Harina",
-            "Tortilla Integral",
-            "Tortilla Mantequilla"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10382",
+              "nombre": "Tortilla Burrito"
+            },
+            {
+              "clave": "10383",
+              "nombre": "Tortilla Harina"
+            },
+            {
+              "clave": "10386",
+              "nombre": "Tortilla Integral"
+            },
+            {
+              "clave": "10415",
+              "nombre": "Tortilla Mantequilla"
+            }
           ]
         },
         {
+          "clave": "MAIZAL",
           "nombre": "Maizal",
-          "total": 3,
-          "muestra": [
-            "Tostadas Ajonjolí Maizsal",
-            "Tostada Chía Maizsal",
-            "Totopos Maizsal"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10256",
+              "nombre": "Tostadas Ajonjolí Maizsal",
+              "destacado": true
+            },
+            {
+              "clave": "10219",
+              "nombre": "Tostada Chía Maizsal"
+            },
+            {
+              "clave": "10155",
+              "nombre": "Totopos Maizsal"
+            }
           ]
         },
         {
+          "clave": "TLAYUDAS",
           "nombre": "Tlayudas",
-          "total": 2,
-          "muestra": [
-            "Tlayudas Chicas 10 Pz",
-            "Tlayudas Grandes 10pz"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10312",
+              "nombre": "Tlayudas Chicas 10 Pz"
+            },
+            {
+              "clave": "10311",
+              "nombre": "Tlayudas Grandes 10pz"
+            }
           ]
         },
         {
+          "clave": "CARIOCAS",
           "nombre": "Cariocas",
-          "total": 1,
-          "muestra": [
-            "Tostadas Cariocas"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10760",
+              "nombre": "Tostadas Cariocas"
+            }
           ]
         },
         {
+          "clave": "CHALUPAS",
           "nombre": "Chalupas",
-          "total": 1,
-          "muestra": [
-            "Chalupas"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10217",
+              "nombre": "Chalupas"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 3,
-          "muestra": [
-            "Nachos",
-            "Tostada Azul",
-            "Tostada Botanera"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10446",
+              "nombre": "Nachos"
+            },
+            {
+              "clave": "10218",
+              "nombre": "Tostada Azul"
+            },
+            {
+              "clave": "10738",
+              "nombre": "Tostada Botanera"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "CHILES",
       "nombre": "Chiles",
-      "total": 28,
       "categorias": [
         {
+          "clave": "PIQUIN",
           "nombre": "Piquin",
-          "total": 7,
-          "muestra": [
-            "Piquin Martajado Bolsa",
-            "Piquin Martajado Granel",
-            "Piquin C/limon",
-            "Piquin Entero",
-            "Piquin Natural"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11090",
+              "nombre": "Piquin Martajado Bolsa",
+              "destacado": true
+            },
+            {
+              "clave": "10019",
+              "nombre": "Piquin Martajado Granel",
+              "destacado": true
+            },
+            {
+              "clave": "10731",
+              "nombre": "Piquin C/limon"
+            },
+            {
+              "clave": "12020",
+              "nombre": "Piquin Entero"
+            },
+            {
+              "clave": "10732",
+              "nombre": "Piquin Natural"
+            },
+            {
+              "clave": "10733",
+              "nombre": "Piquin Picoso"
+            },
+            {
+              "clave": "10730",
+              "nombre": "Piquin Preparado"
+            }
           ]
         },
         {
+          "clave": "ARBOL",
           "nombre": "Arbol",
-          "total": 3,
-          "muestra": [
-            "Chile de Arbol sin Pata",
-            "Chile Arbol Polvo",
-            "Chile de Arbol con Pata"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10017",
+              "nombre": "Chile de Arbol sin Pata",
+              "destacado": true
+            },
+            {
+              "clave": "10403",
+              "nombre": "Chile Arbol Polvo"
+            },
+            {
+              "clave": "11081",
+              "nombre": "Chile de Arbol con Pata"
+            }
           ]
         },
         {
+          "clave": "GUAJILLO",
           "nombre": "Guajillo",
-          "total": 3,
-          "muestra": [
-            "Chile Guajillo Entero",
-            "Puya \\ Guajillo",
-            "Chile Guajillo Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10274",
+              "nombre": "Chile Guajillo Entero",
+              "destacado": true
+            },
+            {
+              "clave": "10113",
+              "nombre": "Puya \\ Guajillo",
+              "destacado": true
+            },
+            {
+              "clave": "10032",
+              "nombre": "Chile Guajillo Molido"
+            }
           ]
         },
         {
+          "clave": "ANCHO",
           "nombre": "Ancho",
-          "total": 2,
-          "muestra": [
-            "Chile Ancho Entero",
-            "Chile Ancho Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10283",
+              "nombre": "Chile Ancho Entero"
+            },
+            {
+              "clave": "10015",
+              "nombre": "Chile Ancho Molido"
+            }
           ]
         },
         {
+          "clave": "PASILLA",
           "nombre": "Pasilla",
-          "total": 2,
-          "muestra": [
-            "Chile Pasilla Entero",
-            "Chile Pasilla Molido"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10016",
+              "nombre": "Chile Pasilla Entero"
+            },
+            {
+              "clave": "10284",
+              "nombre": "Chile Pasilla Molido"
+            }
           ]
         },
         {
+          "clave": "SEMILLAS Y ESPECIAS",
           "nombre": "Semillas y Especias",
-          "total": 1,
-          "muestra": [
-            "Chile Serrano"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11185",
+              "nombre": "Chile Serrano"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 10,
-          "muestra": [
-            "Chile Cascabel",
-            "Chile Catarina",
-            "Chile Chiltepín",
-            "Chile Chiltepín Molido Bt",
-            "Chile Chipotle Entero"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10704",
+              "nombre": "Chile Cascabel"
+            },
+            {
+              "clave": "10811",
+              "nombre": "Chile Catarina"
+            },
+            {
+              "clave": "11153",
+              "nombre": "Chile Chiltepín"
+            },
+            {
+              "clave": "14235",
+              "nombre": "Chile Chiltepín Molido Bt"
+            },
+            {
+              "clave": "10739",
+              "nombre": "Chile Chipotle Entero"
+            },
+            {
+              "clave": "12019",
+              "nombre": "Chile Chipotle Molido"
+            },
+            {
+              "clave": "10052",
+              "nombre": "Chile Mora"
+            },
+            {
+              "clave": "10142",
+              "nombre": "Chile Morita"
+            },
+            {
+              "clave": "10144",
+              "nombre": "Chile Mulato"
+            },
+            {
+              "clave": "11170",
+              "nombre": "Salsa Chiltepín"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "JARABES",
       "nombre": "Jarabes",
-      "total": 23,
       "categorias": [
         {
+          "clave": "SIROPE",
           "nombre": "Sirope",
-          "total": 17,
-          "muestra": [
-            "Jarabe Sirope Baylis",
-            "Jarabe Sirope Capuchino",
-            "Jarabe Sirope Cereza",
-            "Jarabe Sirope Curacao",
-            "Jarabe Sirope Curazao Gliter"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "11078",
+              "nombre": "Jarabe Sirope Baylis"
+            },
+            {
+              "clave": "11079",
+              "nombre": "Jarabe Sirope Capuchino"
+            },
+            {
+              "clave": "10786",
+              "nombre": "Jarabe Sirope Cereza"
+            },
+            {
+              "clave": "10799",
+              "nombre": "Jarabe Sirope Curacao"
+            },
+            {
+              "clave": "10792",
+              "nombre": "Jarabe Sirope Curazao Gliter"
+            },
+            {
+              "clave": "12414",
+              "nombre": "Jarabe Sirope Fresa"
+            },
+            {
+              "clave": "10697",
+              "nombre": "Jarabe Sirope Frutos Rojos"
+            },
+            {
+              "clave": "10808",
+              "nombre": "Jarabe Sirope Granadina"
+            },
+            {
+              "clave": "12415",
+              "nombre": "Jarabe Sirope Grosella"
+            },
+            {
+              "clave": "12413",
+              "nombre": "Jarabe Sirope Mango"
+            },
+            {
+              "clave": "12416",
+              "nombre": "Jarabe Sirope Manzana"
+            },
+            {
+              "clave": "10790",
+              "nombre": "Jarabe Sirope Menta Azul"
+            },
+            {
+              "clave": "10789",
+              "nombre": "Jarabe Sirope Menta Transparente"
+            },
+            {
+              "clave": "10785",
+              "nombre": "Jarabe Sirope Mora"
+            },
+            {
+              "clave": "10809",
+              "nombre": "Jarabe Sirope Natural"
+            },
+            {
+              "clave": "10791",
+              "nombre": "Jarabe Sirope Vainilla"
+            },
+            {
+              "clave": "11077",
+              "nombre": "Jarabe Sirope Vainilla"
+            }
           ]
         },
         {
+          "clave": "HORCHATINOL",
           "nombre": "Horchatinol",
-          "total": 4,
-          "muestra": [
-            "Cebada Preparada (agua)",
-            "Jarabes Horchata",
-            "Jarabes Jamaica",
-            "Jarabes Tamarindo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "12234",
+              "nombre": "Cebada Preparada (agua)"
+            },
+            {
+              "clave": "10170",
+              "nombre": "Jarabes Horchata"
+            },
+            {
+              "clave": "10168",
+              "nombre": "Jarabes Jamaica"
+            },
+            {
+              "clave": "10169",
+              "nombre": "Jarabes Tamarindo"
+            }
           ]
         },
         {
+          "clave": "FLOR NATURAL",
           "nombre": "Flor Natural",
-          "total": 2,
-          "muestra": [
-            "Jamaica Natural",
-            "Tamarindo Natural"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10208",
+              "nombre": "Jamaica Natural"
+            },
+            {
+              "clave": "10327",
+              "nombre": "Tamarindo Natural"
+            }
           ]
         }
       ]
     },
     {
+      "clave": "MOLES",
       "nombre": "Moles",
-      "total": 20,
       "categorias": [
         {
+          "clave": "CASA",
           "nombre": "Casa",
-          "total": 6,
-          "muestra": [
-            "M Casa Pasta Picante",
-            "M Casa Pasta Polvo Picante",
-            "Mole Casero",
-            "Mole Jalisciense",
-            "Mole Pasta Dulce"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10398",
+              "nombre": "M Casa Pasta Picante"
+            },
+            {
+              "clave": "10399",
+              "nombre": "M Casa Pasta Polvo Picante"
+            },
+            {
+              "clave": "10249",
+              "nombre": "Mole Casero"
+            },
+            {
+              "clave": "10081",
+              "nombre": "Mole Jalisciense"
+            },
+            {
+              "clave": "11102",
+              "nombre": "Mole Pasta Dulce"
+            },
+            {
+              "clave": "11103",
+              "nombre": "Mole Polvo Dulce"
+            }
           ]
         },
         {
+          "clave": "ALMENDRADO",
           "nombre": "Almendrado",
-          "total": 3,
-          "muestra": [
-            "Mole Almendrado C/camarã³n",
-            "Mole Almendrado Esp. Pasta",
-            "Mole Almendrado Esp. Polvo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10444",
+              "nombre": "Mole Almendrado C/camarã³n"
+            },
+            {
+              "clave": "10317",
+              "nombre": "Mole Almendrado Esp. Pasta"
+            },
+            {
+              "clave": "10316",
+              "nombre": "Mole Almendrado Esp. Polvo"
+            }
           ]
         },
         {
+          "clave": "ADOBO",
           "nombre": "Adobo",
-          "total": 2,
-          "muestra": [
-            "Adobo Pasta",
-            "Adobo Polvo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10766",
+              "nombre": "Adobo Pasta"
+            },
+            {
+              "clave": "10266",
+              "nombre": "Adobo Polvo"
+            }
           ]
         },
         {
+          "clave": "MOLES",
           "nombre": "Moles",
-          "total": 2,
-          "muestra": [
-            "Pepita Verde Compuesta",
-            "Pepita Verde Simple"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10061",
+              "nombre": "Pepita Verde Compuesta"
+            },
+            {
+              "clave": "10004",
+              "nombre": "Pepita Verde Simple"
+            }
           ]
         },
         {
+          "clave": "PIPIAN",
           "nombre": "Pipian",
-          "total": 2,
-          "muestra": [
-            "Pipian Pasta",
-            "Pipian Polvo"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10417",
+              "nombre": "Pipian Pasta"
+            },
+            {
+              "clave": "10416",
+              "nombre": "Pipian Polvo"
+            }
           ]
         },
         {
+          "clave": "OTROS",
           "nombre": "Otros",
-          "total": 5,
-          "muestra": [
-            "Encacahuatado",
-            "Mole Negro",
-            "Mole Poblano",
-            "Mole Verde",
-            "Pasta Ajonjolí"
+          "cuantos": 5,
+          "productos": [
+            {
+              "clave": "10003",
+              "nombre": "Encacahuatado"
+            },
+            {
+              "clave": "10257",
+              "nombre": "Mole Negro"
+            },
+            {
+              "clave": "10165",
+              "nombre": "Mole Poblano"
+            },
+            {
+              "clave": "10109",
+              "nombre": "Mole Verde"
+            },
+            {
+              "clave": "10114",
+              "nombre": "Pasta Ajonjolí"
+            }
           ]
         }
       ]

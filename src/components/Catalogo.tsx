@@ -20,10 +20,25 @@ import siteContent from "@/content/site.json";
  * a preguntar por WhatsApp, que además abre conversación.
  */
 
-type Categoria = { nombre: string; total: number; muestra: string[] };
-type Departamento = { nombre: string; total: number; categorias: Categoria[] };
+type Producto = { clave: string; nombre: string; oculto?: boolean };
+type Categoria = { clave: string; nombre: string; cuantos: number; productos: Producto[]; oculto?: boolean };
+type Departamento = { clave: string; nombre: string; categorias: Categoria[]; oculto?: boolean };
 
-const DEPARTAMENTOS = catalogo.departamentos as Departamento[];
+/** Lo que se ve, ya sin lo escondido desde el panel. */
+const DEPARTAMENTOS: Departamento[] = (catalogo.departamentos as Departamento[])
+  .filter((d) => !d.oculto)
+  .map((d) => ({
+    ...d,
+    categorias: d.categorias
+      .filter((c) => !c.oculto)
+      .map((c) => ({ ...c, productos: c.productos.filter((p) => !p.oculto) }))
+      .filter((c) => c.productos.length > 0),
+  }))
+  .filter((d) => d.categorias.length > 0);
+
+/** Cuántos productos tiene un departamento, ya descontado lo escondido. */
+const cuenta = (d: Departamento) =>
+  d.categorias.reduce((n, c) => n + c.productos.length, 0);
 const SERVICIOS = catalogo.servicios as { nombre: string; nota: string }[];
 
 export default function Catalogo() {
@@ -92,7 +107,7 @@ export default function Catalogo() {
                 className={"cat-dep" + (on ? " cat-dep-on" : "")}
               >
                 {d.nombre}
-                <span className="cat-dep-n">{d.total}</span>
+                <span className="cat-dep-n">{cuenta(d)}</span>
               </button>
             );
           })}
@@ -107,7 +122,8 @@ export default function Catalogo() {
           className="max-md:!columns-2 max-sm:!columns-1"
         >
           {dep.categorias.map((c) => {
-            const resto = c.total - c.muestra.length;
+            const visibles = c.productos.slice(0, c.cuantos);
+            const resto = c.productos.length - visibles.length;
             return (
               <div key={c.nombre} style={{ breakInside: "avoid", marginBottom: 30 }}>
                 <h3
@@ -120,15 +136,15 @@ export default function Catalogo() {
                   }}
                 >
                   <span>{c.nombre}</span>
-                  <span style={{ color: "var(--grano-soft)", opacity: 0.7 }}>{c.total}</span>
+                  <span style={{ color: "var(--grano-soft)", opacity: 0.7 }}>{c.productos.length}</span>
                 </h3>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-                  {c.muestra.map((p) => (
+                  {visibles.map((p) => (
                     <li
-                      key={p}
+                      key={p.clave}
                       style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--grano-soft)", marginBottom: 3 }}
                     >
-                      {p}
+                      {p.nombre}
                     </li>
                   ))}
                   {resto > 0 && (

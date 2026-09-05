@@ -23,6 +23,7 @@ export const L = {
     productsTitle: "Lo que sale del molino",
     productsBody: "Producto fresco, molido el mismo día. Pedidos por WhatsApp para llevar o recoger en tienda.",
     productsOrder: "Pedir",
+    productsAsk: "Consultar",
     productsMore: "Ver catálogo completo",
 
     // History
@@ -74,6 +75,7 @@ export const L = {
     productsTitle: "What comes out of the mill",
     productsBody: "Fresh product, milled the same day. WhatsApp orders for pickup or delivery.",
     productsOrder: "Order",
+    productsAsk: "Ask us",
     productsMore: "See full catalogue",
 
     // History

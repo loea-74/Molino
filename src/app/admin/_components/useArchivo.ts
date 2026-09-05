@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { cargarDelAdmin, mensajeDeError } from "@/lib/adminFetch";
 
-export type Archivo = "site" | "recipes" | "products" | "testimonials";
+export type Archivo = "site" | "recipes" | "products" | "testimonials" | "catalogo";
 
 /** Lo que devuelve useArchivo. Se nombra para poder pasarlo entero como prop. */
 export type Control<T> = {

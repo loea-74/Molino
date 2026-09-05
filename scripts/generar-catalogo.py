@@ -79,6 +79,40 @@ def leer_control():
     )
 
 
+def lo_editado_a_mano():
+    """
+    Lo que se haya corregido desde el panel, indexado por clave.
+
+    Sin esto, cada export nuevo borraría el trabajo hecho a mano: "PIÑON" se
+    volvería a limpiar a "Piñon" y quien lo arregló tendría que arreglarlo otra
+    vez. Se cruza por clave y no por nombre, precisamente porque el nombre es
+    lo que cambia.
+    """
+    if not SALIDA.exists():
+        return {}, {}, {}
+    try:
+        actual = json.loads(SALIDA.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}, {}, {}
+
+    prods, cats, deps = {}, {}, {}
+    for d in actual.get("departamentos", []):
+        if "clave" not in d:
+            continue  # formato viejo, sin claves: no hay nada que cruzar
+        deps[d["clave"]] = {"nombre": d.get("nombre"), "oculto": d.get("oculto", False)}
+        for c in d.get("categorias", []):
+            cats[(d["clave"], c.get("clave"))] = {
+                "nombre": c.get("nombre"), "oculto": c.get("oculto", False),
+                "cuantos": c.get("cuantos"),
+            }
+            for x in c.get("productos", []):
+                prods[x["clave"]] = {
+                    "nombre": x.get("nombre"), "oculto": x.get("oculto", False),
+                    "destacado": x.get("destacado", False),
+                }
+    return prods, cats, deps
+
+
 def si(valor, por_omision=True):
     """Lee un SI/NO del archivo de control. Vacío = lo que diga por omisión."""
     if valor is None or str(valor).strip() == "":
@@ -97,6 +131,8 @@ def main() -> None:
 
     ctrl_menu, ctrl_cats, ctrl_prods = leer_control()
     hay_control = bool(ctrl_menu or ctrl_cats or ctrl_prods)
+    ed_prods, ed_cats, ed_deps = lo_editado_a_mano()
+    conservados = 0
     ocultos = {"productos": 0, "categorias": 0, "departamentos": 0}
     renombrados = 0
 
@@ -106,17 +142,29 @@ def main() -> None:
         if not si(reg.get("Mostrar")):
             ocultos["productos"] += 1
             continue
-        nombre = texto(reg.get("Nombre en la web")) or p["nombre"]
+        # Manda el Excel de control; si no dice nada, lo corregido desde el
+        # panel; y si tampoco, el nombre limpiado automáticamente.
+        editado = ed_prods.get(p["clave"], {})
+        nombre = texto(reg.get("Nombre en la web")) or editado.get("nombre") or p["nombre"]
         if nombre != p["nombre"]:
             renombrados += 1
+            if not texto(reg.get("Nombre en la web")):
+                conservados += 1
+        if editado.get("oculto") and si(reg.get("Mostrar")):
+            ocultos["productos"] += 1
+            continue
         arbol[p["departamento"]][p["categoria"]].append({
+            "clave": p["clave"],
             "nombre": nombre,
-            "destacado": si(reg.get("Destacar"), p["favorito"]),
+            "destacado": si(reg.get("Destacar"), editado.get("destacado", p["favorito"])),
         })
 
     departamentos = []
     for dep in arbol:
         reg_dep = ctrl_menu.get((dep,), {})
+        if ed_deps.get(dep, {}).get("oculto"):
+            ocultos["departamentos"] += 1
+            continue
         if not si(reg_dep.get("Mostrar")):
             ocultos["departamentos"] += 1
             continue
@@ -124,6 +172,9 @@ def main() -> None:
         categorias = []
         for cat, prods in arbol[dep].items():
             reg_cat = ctrl_cats.get((dep, cat), {})
+            if ed_cats.get((dep, cat), {}).get("oculto"):
+                ocultos["categorias"] += 1
+                continue
             if not si(reg_cat.get("Mostrar"), not es_codigo(cat)):
                 ocultos["categorias"] += 1
                 continue
@@ -134,9 +185,10 @@ def main() -> None:
             # primero lo destacado, luego alfabético
             orden = sorted(prods, key=lambda x: (not x["destacado"], x["nombre"]))
             categorias.append({
+                "clave": cat,
                 "nombre": texto(reg_cat.get("Nombre en la web")) or bonito(cat),
-                "total": len(prods),
-                "muestra": [x["nombre"] for x in orden[:cuantos]],
+                "cuantos": cuantos,
+                "productos": orden,
                 # "Otros" al final: es el cajón de sastre, no una categoría real
                 "_orden": (cat == "OTROS", -len(prods), cat),
             })
@@ -144,13 +196,25 @@ def main() -> None:
         if not categorias:
             continue
         categorias.sort(key=lambda c: c["_orden"])
-        total = sum(c["total"] for c in categorias)
+        total = sum(len(c["productos"]) for c in categorias)
         orden_dep = reg_dep.get("Orden")
         departamentos.append({
+            "clave": dep,
             "nombre": texto(reg_dep.get("Nombre en la web")) or bonito(dep),
-            "total": total,
             "categorias": [
-                OrderedDict([("nombre", c["nombre"]), ("total", c["total"]), ("muestra", c["muestra"])])
+                OrderedDict([
+                    ("clave", c["clave"]),
+                    ("nombre", c["nombre"]),
+                    ("cuantos", c["cuantos"]),
+                    # van TODOS, no sólo los de muestra: así el panel puede
+                    # buscar y corregir cualquiera, y esconder uno deja que
+                    # el siguiente ocupe su sitio en vez de dejar el hueco
+                    ("productos", [
+                        OrderedDict([("clave", x["clave"]), ("nombre", x["nombre"])]
+                                    + ([("destacado", True)] if x["destacado"] else []))
+                        for x in c["productos"]
+                    ]),
+                ])
                 for c in categorias
             ],
             "_orden": (orden_dep if isinstance(orden_dep, int) else 999, -total),
@@ -158,7 +222,7 @@ def main() -> None:
 
     departamentos.sort(key=lambda d: d["_orden"])
     limpios = [
-        OrderedDict([("nombre", d["nombre"]), ("total", d["total"]), ("categorias", d["categorias"])])
+        OrderedDict([("clave", d["clave"]), ("nombre", d["nombre"]), ("categorias", d["categorias"])])
         for d in departamentos
     ]
 
@@ -174,12 +238,14 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    total = sum(d["total"] for d in limpios)
-    muestra = sum(len(c["muestra"]) for d in limpios for c in d["categorias"])
+    total = sum(len(c["productos"]) for d in limpios for c in d["categorias"])
+    muestra = sum(min(c["cuantos"], len(c["productos"])) for d in limpios for c in d["categorias"])
     cats = sum(len(d["categorias"]) for d in limpios)
     print(f"{SALIDA.relative_to(RAIZ)}")
     print(f"  {len(limpios)} departamentos · {cats} categorías · {total} productos")
     print(f"  {muestra} de muestra · {len(SERVICIOS)} servicios")
+    if conservados:
+        print(f"  {conservados} nombres corregidos a mano se conservaron")
     if hay_control:
         print(f"  control aplicado: {renombrados} renombrados · ocultos "
               f"{ocultos['productos']} productos, {ocultos['categorias']} categorías, "

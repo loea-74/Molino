@@ -109,13 +109,27 @@ export default function Products() {
               }}
               className="max-sm:!grid-cols-1"
             >
+              {/* La foto. Antes aquí sólo había un recuadro gris con el texto
+                  alternativo escrito dentro: el panel dejaba subir una foto y
+                  la página no la dibujaba nunca. El recuadro se queda como
+                  reserva, para los productos que aún no tienen foto. */}
               <div
-                style={{ minHeight: 160, background: "var(--linea)", display: "flex", alignItems: "center", justifyContent: "center" }}
+                style={{ position: "relative", minHeight: 160, background: "var(--linea)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}
                 className="max-sm:h-36"
               >
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--grano-soft)", padding: "0 12px", textAlign: "center" }}>
-                  {p.imageAlt}
-                </span>
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt={p.imageAlt || p.name[lang]}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 180px"
+                  />
+                ) : (
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--grano-soft)", padding: "0 12px", textAlign: "center" }}>
+                    {p.imageAlt}
+                  </span>
+                )}
               </div>
 
               <div style={{ padding: "24px 26px" }} className="max-sm:!p-4">
@@ -138,8 +152,16 @@ export default function Products() {
                 </p>
 
                 <div style={{ marginTop: 16, paddingTop: 14, borderTop: "1px dashed var(--linea)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--grano-soft)" }}>
-                    {p.unit[lang]}
+                  {/* El precio tampoco se pintaba, aunque el panel lo pedía y
+                      avisaba de que si se dejaba vacío la página diría que se
+                      consultara. Ahora lo dice de verdad. */}
+                  <span style={{ display: "flex", alignItems: "baseline", gap: 8, minWidth: 0 }}>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 19, color: "var(--grano)", lineHeight: 1 }}>
+                      {typeof p.price === "number" ? `$${p.price}` : t.productsAsk}
+                    </span>
+                    <span style={{ fontSize: 11, fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--grano-soft)" }}>
+                      {p.unit[lang]}
+                    </span>
                   </span>
                   <a
                     href={waUrl(p.whatsappMessage)}

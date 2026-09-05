@@ -14,7 +14,7 @@ import PanelRecetas, { type Recipe } from "./PanelRecetas";
 import PanelCatalogo, { type Product } from "./PanelCatalogo";
 import PanelTestimonios, { type Testimonial } from "./PanelTestimonios";
 import PanelApariencia from "./PanelApariencia";
-import PanelCatalogoCategorias from "./PanelCatalogoCategorias";
+import PanelCatalogoCategorias, { type Catalogo } from "./PanelCatalogoCategorias";
 
 /**
  * El menú sigue el mismo orden que la página. Antes había cuatro pestañas y,
@@ -24,7 +24,7 @@ import PanelCatalogoCategorias from "./PanelCatalogoCategorias";
 const SECCIONES: (Seccion & { archivo: Archivo })[] = [
   { id: "inicio", nombre: "Inicio", donde: "Lo primero de la página", archivo: "site" },
   { id: "recetas", nombre: "Recetas y noticias", donde: "Las tarjetas con foto o video", archivo: "recipes" },
-  { id: "catalogo", nombre: "Catálogo", donde: "Todo, por categorías", archivo: "site" },
+  { id: "catalogo", nombre: "Catálogo", donde: "Todo, por categorías", archivo: "catalogo" },
   { id: "relevantes", nombre: "Productos relevantes", donde: "Las tarjetas con foto y precio", archivo: "products" },
   { id: "historia", nombre: "Historia", donde: "El texto sobre el molino", archivo: "site" },
   { id: "testimonios", nombre: "Testimonios", donde: "Lo que dicen los clientes", archivo: "testimonials" },
@@ -68,12 +68,14 @@ export default function AdminEditor() {
   const recetas = useArchivo<Recipe[]>("recipes", "recipes");
   const productos = useArchivo<Product[]>("products", "products");
   const testimonios = useArchivo<Testimonial[]>("testimonials", "testimonials");
+  const catalogo = useArchivo<Catalogo>("catalogo", "catalogo");
 
   const porArchivo: Record<Archivo, Estado> = {
     site: sitio,
     recipes: recetas,
     products: productos,
     testimonials: testimonios,
+    catalogo,
   };
 
   const seccion = SECCIONES.find((s) => s.id === activa)!;
@@ -96,11 +98,12 @@ export default function AdminEditor() {
       [recetas, "Recetas y noticias"],
       [productos, "Catálogo"],
       [testimonios, "Testimonios"],
+      [catalogo, "Catálogo"],
     ] as const
   )
     .filter(([a]) => a.sucio)
     .map(([, nombre]) => nombre);
-  const todos = [sitio, recetas, productos, testimonios];
+  const todos = [sitio, recetas, productos, testimonios, catalogo];
   const hayCambios = todos.some((a) => a.sucio);
 
   useAvisoSinGuardar(hayCambios);
@@ -171,7 +174,12 @@ export default function AdminEditor() {
                 />
               )}
               {activa === "catalogo" && (
-                <PanelCatalogoCategorias site={sitio.datos} set={sitio.cambiar} />
+                <PanelCatalogoCategorias
+                  site={sitio.datos}
+                  set={sitio.cambiar}
+                  datos={catalogo.datos}
+                  cambiar={catalogo.cambiar}
+                />
               )}
               {activa === "relevantes" && (
                 <PanelCatalogo
