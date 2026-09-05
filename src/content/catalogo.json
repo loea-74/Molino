@@ -1235,7 +1235,8 @@
               "clave": "10149",
               "nombre": "Costal Grande"
             }
-          ]
+          ],
+          "oculto": true
         },
         {
           "clave": "FRUTAS ENLATADAS",
@@ -1743,7 +1744,8 @@
               "clave": "10619",
               "nombre": "Nuez de la India C/ch Ajo"
             }
-          ]
+          ],
+          "oculto": false
         },
         {
           "clave": "BOTANAS",
@@ -2805,7 +2807,8 @@
             }
           ]
         }
-      ]
+      ],
+      "oculto": false
     },
     {
       "clave": "SALSAS",
