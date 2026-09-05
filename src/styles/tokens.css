@@ -19,8 +19,9 @@
      la franja sin teñir todos los titulos. El peor caso era --crema-light:
      fondo de la pagina Y texto sobre las franjas oscuras, de modo que oscurecer
      el fondo dejaba ese texto invisible. */
-  --franja-oscura: #2A1D14;  /* fondo de la franja de recetas y del pie */
-  --franja-naranja: #B8542E; /* fondo de "Ven al molino" */
+  --franja-oscura: #2A1D14;  /* fondo de historia, recetas y "Ven al molino" */
+  --pie-fondo: #2A1D14;      /* fondo del pie de pagina, aparte para poder
+                                pintarlo distinto del resto */
   --texto-claro: #FBF6ED;    /* texto encima de esas dos franjas */
 
   /* Tipografía.

@@ -5,7 +5,8 @@ import { C, esp, radio, campo, etiqueta, botonSuave } from "./ui";
 import { Bloque } from "./campos";
 import type { Site } from "./PanelesSitio";
 import {
-  GRUPOS_COLOR, PAREJAS, PAREJA_OMISION, COLORES, temaCompleto, type DefColor,
+  GRUPOS_COLOR, PAREJAS, PAREJA_OMISION, COLORES, temaCompleto,
+  avisosDeContraste, type DefColor,
 } from "@/lib/tema";
 
 type Props = { site: Site; set: (f: (s: Site) => Site) => void };
@@ -78,6 +79,7 @@ export default function PanelApariencia({ site, set }: Props) {
               def={c}
               valor={tema.colores[c.clave]}
               propio={(site.theme?.colores?.[c.clave] ?? "").trim() !== ""}
+              avisos={avisosDeContraste(c.clave, tema.colores)}
               señalado={resaltado === c.clave}
               onSeñalar={() => señalar(c.clave)}
               onChange={(v) => ponerColor(c.clave, v)}
@@ -146,11 +148,13 @@ export default function PanelApariencia({ site, set }: Props) {
 /* ───────────────────────── UNA FILA DE COLOR ───────────────────────── */
 
 function FilaColor({
-  def, valor, propio, señalado, onSeñalar, onChange,
+  def, valor, propio, avisos, señalado, onSeñalar, onChange,
 }: {
   def: DefColor; valor: string; propio: boolean;
+  avisos: { que: string; razon: number; grave: boolean }[];
   señalado: boolean; onSeñalar: () => void; onChange: (v: string) => void;
 }) {
+  const grave = avisos.some((a) => a.grave);
   return (
     <div
       style={{
@@ -228,6 +232,36 @@ function FilaColor({
         >
           Deshacer
         </button>
+      )}
+
+      {/* Aviso de lectura. Va aquí y no escondido en una ayuda porque el daño
+          es invisible desde el panel: se elige un color bonito y el texto de la
+          página deja de leerse sin que nada lo indique. */}
+      {avisos.length > 0 && (
+        <div
+          role="alert"
+          style={{
+            flexBasis: "100%",
+            marginTop: 4,
+            padding: "9px 12px",
+            borderRadius: radio.chico,
+            background: grave ? "#fdf0ee" : "#fdf6e8",
+            border: `1px solid ${grave ? C.error : "#d8a54a"}55`,
+            fontSize: 13,
+            lineHeight: 1.45,
+            color: grave ? C.error : "#8a6212",
+          }}
+        >
+          <strong style={{ fontWeight: 600 }}>
+            {grave ? "Con este color no se lee: " : "Cuesta leer: "}
+          </strong>
+          {avisos.map((a, i) => (
+            <span key={a.que}>
+              {i > 0 && " · "}
+              {a.que} <span style={{ opacity: 0.75 }}>({a.razon.toFixed(1)} de 4.5)</span>
+            </span>
+          ))}
+        </div>
       )}
     </div>
   );
@@ -418,7 +452,7 @@ function Mapa({
       </div>
 
       {/* ─── franja visítanos (la naranja) ─── */}
-      <div style={{ background: c.franjaNaranja, padding: "13px 12px", ...z("visita") }}>
+      <div style={{ background: c.franjaOscura, padding: "13px 12px", ...z("visita") }}>
         <div style={{ fontFamily: pareja.display, fontSize: 15, color: c.textoClaro, ...z("textoVisita") }}>
           Ven al molino.
         </div>
@@ -439,7 +473,7 @@ function Mapa({
       </div>
 
       {/* ─── pie ─── */}
-      <div style={{ background: c.franjaOscura, padding: "10px 12px", ...z("pie") }}>
+      <div style={{ background: c.pieFondo, padding: "10px 12px", ...z("pie") }}>
         <span style={{ fontFamily: mono, fontSize: 6.5, color: c.textoClaro, opacity: 0.85, ...z("textoPie") }}>
           © 2026 MOLINO LA GRAN JALISCIENSE
         </span>

@@ -62,7 +62,7 @@ export default function Footer() {
   const t = textos(lang);
 
   return (
-    <footer style={{ background: "var(--franja-oscura)", color: "var(--texto-claro)", padding: "56px 48px 32px" }} className="max-sm:!px-5 max-sm:!py-10">
+    <footer style={{ background: "var(--pie-fondo)", color: "var(--texto-claro)", padding: "56px 48px 32px" }} className="max-sm:!px-5 max-sm:!py-10">
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 32, marginBottom: 36 }} className="max-md:!grid-cols-1 max-md:!gap-8">
           {/* Brand */}

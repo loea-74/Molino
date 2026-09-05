@@ -14,7 +14,7 @@ export default function Visit() {
   return (
     <section
       id="visita"
-      style={{ background: "var(--franja-naranja)", color: "var(--texto-claro)", padding: "96px 48px" }}
+      style={{ background: "var(--franja-oscura)", color: "var(--texto-claro)", padding: "96px 48px" }}
       className="max-sm:!px-5 max-sm:!py-14"
     >
       <div
