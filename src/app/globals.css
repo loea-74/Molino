@@ -152,3 +152,15 @@
   .cat-dep-n { vertical-align: baseline; opacity: 0.75; }
   .cat-dep-on .cat-dep-n { color: var(--crema-light); }
 }
+
+/* ─────────── el título de la portada ───────────
+   Va en un solo renglón corrido: es el nombre del molino y partirlo en dos lo
+   hace parecer dos cosas. El tamaño se ata al ancho de la ventana en lugar de
+   fijarlo, para que quepa entero sin partirse a cualquier medida. Debajo de
+   768 px se deja partir: si no, quedaría en letra diminuta. */
+.hero-titulo {
+  font-size: clamp(44px, 7.2vw, 104px);
+}
+@media (min-width: 768px) {
+  .hero-titulo { white-space: nowrap; }
+}

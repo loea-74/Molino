@@ -7,6 +7,8 @@ import { L } from "@/lib/i18n";
 import type { Tema } from "@/lib/tema";
 
 export type Site = {
+  /** El sello del molino. Sale en la barra, en la portada y en el pie. */
+  logo: string;
   hero: {
     pill: Bilingue;
     title: { es: string[]; en: string[] };
@@ -53,6 +55,17 @@ export function PanelInicio({ site, set }: Props) {
 
   return (
     <>
+      {/* El logo va aquí arriba porque no es sólo de la portada: el mismo
+          archivo sale en la barra de arriba y en el pie de página. */}
+      <Bloque titulo="El logo" nota="Sale en la barra, en la portada y en el pie">
+        <CampoImagen
+          etiqueta="Sello del molino"
+          valor={site.logo ?? ""}
+          onChange={(v) => set((s) => ({ ...s, logo: v }))}
+          ayuda="Mejor un PNG con el fondo transparente: así el sello se recorta solo sobre el crema de la portada, sin cuadro alrededor."
+        />
+      </Bloque>
+
       <Bloque titulo="Lo primero que se ve" nota="La portada, antes de bajar">
         <CampoBilingue rotulo="Etiqueta de arriba" valor={site.hero.pill} onChange={(v) => h("pill", v)} />
 

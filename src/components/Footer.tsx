@@ -7,6 +7,9 @@ import Image from "next/image";
 import { IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconYouTube, IconTwitter, IconLinkedIn } from "./icons";
 import siteContent from "@/content/site.json";
 
+// El logo sale de site.json para poder cambiarlo desde el panel.
+const LOGO = (siteContent as { logo?: string }).logo || "/fotos/logo-grande.png";
+
 const NAV_HREFS = ["#productos", "#historia", "#recetas", "#visita"];
 
 function SocialIcons() {
@@ -70,7 +73,7 @@ export default function Footer() {
             {/* Logo grande, en su propio renglón: a 48 px al lado del nombre
                 no se distinguía nada de lo que dice. */}
             <div style={{ width: 108, height: 108, marginBottom: 16 }}>
-              <Image src="/fotos/logo-grande.png" alt="Molino la Gran Jalisciense" width={324} height={324} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
+              <Image src={LOGO} alt="Molino la Gran Jalisciense" width={324} height={324} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
               <div>

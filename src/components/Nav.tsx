@@ -4,6 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { textos } from "@/lib/textos";
+import siteContent from "@/content/site.json";
+
+// El logo sale de site.json para poder cambiarlo desde el panel.
+const LOGO = (siteContent as { logo?: string }).logo || "/fotos/logo-grande.png";
 import { IconWhatsApp, IconMenu } from "./icons";
 
 const WHATSAPP = "https://wa.me/525543612880";
@@ -41,7 +45,7 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ width: 44, height: 44, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
-            <Image src="/fotos/logo-grande.png" alt="Logo Molino la Jalisciense" width={132} height={132} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
+            <Image src={LOGO} alt="Logo Molino la Jalisciense" width={132} height={132} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 17, letterSpacing: "-0.01em", lineHeight: 1, color: "var(--grano)" }}>

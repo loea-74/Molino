@@ -6,9 +6,7 @@
     },
     "title": {
       "es": [
-        "LA GRAN JALISCIENSE",
-        "",
-        ""
+        "LA GRAN JALISCIENSE"
       ],
       "en": [
         "LA GRAN JALISCIENSE"
@@ -57,6 +55,7 @@
       }
     }
   },
+  "logo": "/fotos/logo-grande.png",
   "history": {
     "title": {
       "es": "Cuatro generaciones en la colonia Juárez.",
