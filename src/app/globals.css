@@ -96,3 +96,59 @@
 .recipe-card.visible:nth-child(4) { animation-delay: 300ms; }
 .recipe-card.visible:nth-child(5) { animation-delay: 400ms; }
 .recipe-card.visible:nth-child(6) { animation-delay: 500ms; }
+
+/* ─────────── índice de departamentos del catálogo ───────────
+   En pantalla ancha son texto subrayado, que es lo elegante. En celular no
+   caben en una fila: se parten en cuatro renglones, se leen como un párrafo
+   corrido en vez de como navegación, y el subrayado del activo — que lleva un
+   margen negativo pensado para una sola fila — acaba cruzando por debajo del
+   renglón siguiente. Ahí pasan a ser botones con forma de pastilla. */
+
+.cat-dep {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 0;
+  margin-bottom: -15px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  color: var(--grano);
+}
+.cat-dep-on {
+  color: var(--terracota);
+  border-bottom-color: var(--terracota);
+}
+.cat-dep-n {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  margin-left: 7px;
+  color: var(--grano-soft);
+  opacity: 0.55;
+  vertical-align: super;
+}
+.cat-dep-on .cat-dep-n { opacity: 1; }
+
+@media (max-width: 640px) {
+  .cat-nav {
+    gap: 8px;
+    padding-bottom: 20px;
+  }
+  .cat-dep {
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    /* 40 px de alto: lo mínimo que se acierta con el pulgar */
+    padding: 9px 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    background: var(--crema-light);
+  }
+  .cat-dep-on {
+    background: var(--terracota);
+    border-color: var(--terracota);
+    color: var(--crema-light);
+  }
+  .cat-dep-n { vertical-align: baseline; opacity: 0.75; }
+  .cat-dep-on .cat-dep-n { color: var(--crema-light); }
+}

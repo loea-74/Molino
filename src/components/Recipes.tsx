@@ -62,10 +62,12 @@ function VideoDestacado({ src, alt }: { src: string; alt: string }) {
           // 44 px: la medida mínima para acertarle con el pulgar.
           width: 44, height: 44, borderRadius: "50%",
           display: "grid", placeItems: "center",
-          background: "rgba(245,237,224,0.16)",
+          // Vive siempre sobre la franja crema — sólo hay botón si hay video —
+          // así que va con tinta oscura, no clara.
+          background: "rgba(42,29,20,0.07)",
           backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(245,237,224,0.3)",
-          color: "var(--texto-claro)", cursor: "pointer", padding: 0,
+          border: "1px solid rgba(42,29,20,0.18)",
+          color: "var(--grano)", cursor: "pointer", padding: 0,
         }}
       >
         <IconoSonido encendido={conSonido} />
@@ -114,6 +116,9 @@ export default function Recipes() {
   const goPrev = () => goTo((active - 1 + n) % n);
 
   const featured = recipes[active];
+  // La franja de arriba es crema cuando hay video (se ve entero y deja franjas)
+  // y es la propia foto cuando hay imagen. La tinta tiene que cambiar con ella.
+  const bandaClara = Boolean("video" in featured && (featured as { video?: string }).video);
 
   return (
     <>
@@ -175,7 +180,10 @@ export default function Recipes() {
             style={{
               gridRow: "1 / 3",
               position: "relative", borderRadius: 18, overflow: "hidden",
-              background: GRADIENTS[active],
+              // Crema y no el degradado naranja: este fondo sólo asoma en las
+              // franjas que deja el video al verse entero, y ahí el naranja
+              // competía con la propia imagen del video.
+              background: "var(--crema)",
               opacity: fading ? 0 : 1,
               transform: fading ? "scale(0.98)" : "scale(1)",
               transition: "opacity 220ms ease, transform 220ms ease",
@@ -199,7 +207,7 @@ export default function Recipes() {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,5,0.96) 0%, rgba(26,18,5,0.45) 55%, transparent 100%)" }} />
 
             {/* Date badge */}
-            <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(245,237,224,0.12)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(245,237,224,0.18)", padding: "5px 14px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--texto-claro)" }}>
+            <div style={{ position: "absolute", top: 20, left: 20, background: bandaClara ? "rgba(42,29,20,0.07)" : "rgba(245,237,224,0.12)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: `1px solid ${bandaClara ? "rgba(42,29,20,0.16)" : "rgba(245,237,224,0.18)"}`, padding: "5px 14px", borderRadius: 999, fontSize: 10, fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: bandaClara ? "var(--grano-soft)" : "var(--texto-claro)" }}>
               {featured.date[lang]}
             </div>
 

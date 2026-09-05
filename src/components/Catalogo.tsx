@@ -75,6 +75,7 @@ export default function Catalogo() {
         {/* ───────── índice de departamentos ───────── */}
         <nav
           aria-label={lang === "es" ? "Departamentos del catálogo" : "Catalogue departments"}
+          className="cat-nav"
           style={{
             display: "flex", flexWrap: "wrap", gap: "4px 26px",
             borderBottom: "1px solid var(--linea)", paddingBottom: 14, marginBottom: 40,
@@ -88,23 +89,10 @@ export default function Catalogo() {
                 type="button"
                 onClick={() => setActivo(i)}
                 aria-current={on ? "true" : undefined}
-                style={{
-                  background: "none", border: "none", padding: "6px 0", cursor: "pointer",
-                  fontFamily: "var(--font-display)", fontSize: 19,
-                  color: on ? "var(--terracota)" : "var(--grano)",
-                  borderBottom: `2px solid ${on ? "var(--terracota)" : "transparent"}`,
-                  marginBottom: -15, letterSpacing: "-0.01em",
-                }}
+                className={"cat-dep" + (on ? " cat-dep-on" : "")}
               >
                 {d.nombre}
-                <span
-                  style={{
-                    fontFamily: "var(--font-mono)", fontSize: 10.5, marginLeft: 7,
-                    color: "var(--grano-soft)", opacity: on ? 1 : 0.55, verticalAlign: "super",
-                  }}
-                >
-                  {d.total}
-                </span>
+                <span className="cat-dep-n">{d.total}</span>
               </button>
             );
           })}
